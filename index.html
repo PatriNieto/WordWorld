@@ -332,12 +332,7 @@ function rate(val) {
   updateModeCounts();
 
   setTimeout(() => {
-    // En modo fallos, recalcular el deck para quitar las que ya se saben
-    if (currentMode === 'hard') {
-      updateDeck();
-      return;
-    }
-    // En todos los demás modos (incluido repaso), avanzar a la siguiente
+    // En todos los modos, avanzar a la siguiente
     if (currentIdx < currentDeck.length - 1) {
       currentIdx++; flipped = false; renderCard();
     } else {
