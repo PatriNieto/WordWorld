@@ -404,9 +404,11 @@ document.getElementById('file-input').addEventListener('change', e => {
   r.onload = ev => { try { loadData(JSON.parse(ev.target.result)); } catch(err) { alert('JSON inválido — revisa el formato.'); } };
   r.readAsText(f); e.target.value = '';
 });
-
 loadProgress();
-loadData(SAMPLE);
+fetch('vocab.json')
+  .then(r => r.json())
+  .then(data => loadData(data))
+  .catch(() => loadData(SAMPLE));
 </script>
 </body>
 </html>

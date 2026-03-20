@@ -1,0 +1,837 @@
+{
+  "vocabulary": [
+    {
+      "word": "bustling",
+      "translation": "bullicioso / lleno de actividad",
+      "type": "adj",
+      "example": "The bustling city centre was full of tourists and locals.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "vibrant",
+      "translation": "vibrante / lleno de vida y energía",
+      "type": "adj",
+      "example": "The neighbourhood has a vibrant arts scene.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "lively",
+      "translation": "animado / con mucha energía",
+      "type": "adj",
+      "example": "The market is lively every Saturday morning.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "cosmopolitan",
+      "translation": "cosmopolita / diverso y abierto al mundo",
+      "type": "adj",
+      "example": "London is one of the most cosmopolitan cities in the world.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "hectic",
+      "translation": "frenético / con ritmo de vida estresante",
+      "type": "adj",
+      "example": "Life in the capital can be hectic and exhausting.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "picturesque",
+      "translation": "pintoresco / visualmente encantador",
+      "type": "adj",
+      "example": "We walked through a picturesque old quarter.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "sprawling",
+      "translation": "vasto / extenso y desordenado sobre un área grande",
+      "type": "adj",
+      "example": "The sprawling suburbs stretch for miles in every direction.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "affluent",
+      "translation": "próspero / rico",
+      "type": "adj",
+      "example": "They moved to an affluent neighbourhood on the outskirts.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "up-and-coming",
+      "translation": "prometedor / en auge, que mejora rápidamente",
+      "type": "adj",
+      "example": "It's an up-and-coming area that's becoming very popular.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "congested",
+      "translation": "congestionado / lleno de tráfico o gente",
+      "type": "adj",
+      "example": "The roads are heavily congested during rush hour.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "spotless",
+      "translation": "impecable / extremadamente limpio",
+      "type": "adj",
+      "example": "The streets were spotless — not a trace of rubbish anywhere.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "well-run",
+      "translation": "bien gestionado / organizado eficientemente",
+      "type": "adj",
+      "example": "It's a well-run city with excellent public services.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "deprived",
+      "translation": "desfavorecido / que carece de recursos básicos",
+      "type": "adj",
+      "example": "Many families in deprived areas lack access to good schools.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "run-down",
+      "translation": "descuidado / deteriorado por falta de mantenimiento",
+      "type": "adj",
+      "example": "The city centre looked run-down with peeling paint everywhere.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "chaotic",
+      "translation": "caótico / desordenado y sin control",
+      "type": "adj",
+      "example": "The traffic was chaotic during the festival.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "polluted",
+      "translation": "contaminado / con aire, agua o tierra sucios",
+      "type": "adj",
+      "example": "The river running through the city is heavily polluted.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "compact",
+      "translation": "compacto / pequeño y bien organizado",
+      "type": "adj",
+      "example": "It's a compact city — you can walk almost everywhere.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "touristy",
+      "translation": "muy turístico / lleno de turistas",
+      "type": "adj",
+      "example": "The old town feels a bit touristy in summer.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "crowded",
+      "translation": "abarrotado / lleno de gente",
+      "type": "adj",
+      "example": "The underground is always crowded at rush hour.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "ancient",
+      "translation": "antiguo / de muy lejana antigüedad",
+      "type": "adj",
+      "example": "The city has an ancient historical centre that dates back 300 years.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "historic",
+      "translation": "histórico / de gran importancia en la historia",
+      "type": "adj",
+      "example": "We stayed in the historic quarter near the cathedral.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "contemporary",
+      "translation": "contemporáneo / actual, de nuestro tiempo",
+      "type": "adj",
+      "example": "The museum focuses on contemporary urban art.",
+      "topic": "Describing Cities"
+    },
+    {
+      "word": "spring up",
+      "translation": "brotar / aparecer o construirse rápidamente",
+      "type": "phrase",
+      "example": "New shops are springing up all over the place.",
+      "topic": "City Life"
+    },
+    {
+      "word": "a real buzz",
+      "translation": "mucho entusiasmo / energía en el ambiente",
+      "type": "phrase",
+      "example": "There's a real buzz about the place since the renovation.",
+      "topic": "City Life"
+    },
+    {
+      "word": "grind to a halt",
+      "translation": "detenerse por completo (especialmente el tráfico)",
+      "type": "phrase",
+      "example": "Traffic ground to a halt after the accident on the motorway.",
+      "topic": "City Life"
+    },
+    {
+      "word": "choke on the fumes",
+      "translation": "asfixiarse con los gases del escape",
+      "type": "phrase",
+      "example": "Cyclists were choking on the fumes in the tunnel.",
+      "topic": "City Life"
+    },
+    {
+      "word": "not a trace of rubbish",
+      "translation": "ni rastro de basura",
+      "type": "phrase",
+      "example": "The streets were immaculate — not a trace of rubbish.",
+      "topic": "City Life"
+    },
+    {
+      "word": "settle down",
+      "translation": "establecerse / mudarse para vivir a largo plazo",
+      "type": "phrase",
+      "example": "Many young professionals are settling down in this neighbourhood.",
+      "topic": "City Life"
+    },
+    {
+      "word": "on the outskirts",
+      "translation": "en las afueras / en la periferia",
+      "type": "phrase",
+      "example": "They built a new shopping centre on the outskirts of the city.",
+      "topic": "City Life"
+    },
+    {
+      "word": "sounding their horns",
+      "translation": "tocar el claxon / la bocina",
+      "type": "phrase",
+      "example": "Frustrated drivers were sounding their horns in the traffic jam.",
+      "topic": "City Life"
+    },
+    {
+      "word": "dark and dingy",
+      "translation": "oscuro y de aspecto sucio / de mala muerte",
+      "type": "phrase",
+      "example": "The underpass was dark and dingy and felt unsafe at night.",
+      "topic": "City Life"
+    },
+    {
+      "word": "crammed",
+      "translation": "abarrotado / muy lleno o apretado",
+      "type": "adj",
+      "example": "The streets were crammed with people during the festival.",
+      "topic": "City Life"
+    },
+    {
+      "word": "middle class",
+      "translation": "clase media",
+      "type": "noun",
+      "example": "The middle class tends to move in as an area gentrifies.",
+      "topic": "City Life"
+    },
+    {
+      "word": "city centre",
+      "translation": "centro de la ciudad",
+      "type": "noun",
+      "example": "The city centre has been pedestrianised to reduce traffic.",
+      "topic": "City Life"
+    },
+    {
+      "word": "mugger",
+      "translation": "atracador / ladrón que asalta en la calle",
+      "type": "noun",
+      "example": "She was warned about muggers in that part of the city.",
+      "topic": "City Life"
+    },
+    {
+      "word": "invest heavily",
+      "translation": "invertir fuertemente / grandes sumas de dinero",
+      "type": "phrase",
+      "example": "The council invested heavily in the new transport infrastructure.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "transport infrastructure",
+      "translation": "infraestructura de transporte (carreteras, vías, estaciones)",
+      "type": "noun",
+      "example": "Improving transport infrastructure is key to reducing congestion.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "run very smoothly",
+      "translation": "funcionar a la perfección / sin interrupciones",
+      "type": "phrase",
+      "example": "Since the upgrade, the metro system runs very smoothly.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "experiencing gentrification",
+      "translation": "experimentar gentrificación / transformación de barrio humilde a clase media-alta",
+      "type": "phrase",
+      "example": "The area is experiencing gentrification as new cafés and galleries open.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "residential developments",
+      "translation": "urbanizaciones / complejos residenciales",
+      "type": "noun",
+      "example": "New residential developments are springing up on the outskirts.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "somewhat neglected",
+      "translation": "algo descuidado / parcialmente abandonado",
+      "type": "phrase",
+      "example": "The park had been somewhat neglected for years.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "derelict buildings",
+      "translation": "edificios en ruinas / abandonados",
+      "type": "noun",
+      "example": "The council plans to demolish the derelict buildings near the station.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "peeling paint",
+      "translation": "pintura desconchada / que se está cayendo",
+      "type": "noun",
+      "example": "The walls were covered in peeling paint and graffiti.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "gated apartments",
+      "translation": "apartamentos en urbanización privada con seguridad",
+      "type": "noun",
+      "example": "The new gated apartments contrast sharply with the surrounding area.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "alongside",
+      "translation": "al lado de / junto a",
+      "type": "adv",
+      "example": "Luxury flats were built alongside affordable social housing.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "smog",
+      "translation": "niebla contaminante / smog",
+      "type": "noun",
+      "example": "The city was covered in smog on windless winter days.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "littering",
+      "translation": "tirar basura al suelo",
+      "type": "noun",
+      "example": "Littering is subject to heavy fines in Singapore.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "council",
+      "translation": "ayuntamiento / consejo municipal",
+      "type": "noun",
+      "example": "The council approved the new housing development last month.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "consultation",
+      "translation": "consulta / proceso de recogida de opiniones",
+      "type": "noun",
+      "example": "The project went through a public consultation before approval.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "envisage",
+      "translation": "prever / tener en mente como plan o posibilidad",
+      "type": "verb",
+      "example": "The architects envisage a fully pedestrian city centre by 2030.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "materialize",
+      "translation": "materializarse / llegar a hacerse realidad",
+      "type": "verb",
+      "example": "Unfortunately, the promised investment never materialized.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "demolish",
+      "translation": "demoler / derribar un edificio",
+      "type": "verb",
+      "example": "They plan to demolish the old factory and build a park.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "from scratch",
+      "translation": "desde cero / sin nada previo",
+      "type": "phrase",
+      "example": "The new district was built entirely from scratch.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "pilot",
+      "translation": "proyecto piloto / prueba a pequeña escala",
+      "type": "noun",
+      "example": "They ran a pilot scheme in one neighbourhood before expanding it.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "scale it up",
+      "translation": "ampliar / llevar algo a mayor escala",
+      "type": "phrase",
+      "example": "Once the pilot worked, they scaled it up to the whole city.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "thriving",
+      "translation": "próspero / que crece y funciona muy bien",
+      "type": "adj",
+      "example": "The city now has a thriving tech industry.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "harness",
+      "translation": "aprovechar / canalizar una fuente de energía o recurso",
+      "type": "verb",
+      "example": "The city plans to harness solar energy to power public transport.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "renovate",
+      "translation": "renovar / restaurar un edificio o zona",
+      "type": "verb",
+      "example": "The council renovated the old market building into a cultural centre.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "sustainable living",
+      "translation": "vida sostenible / estilo de vida respetuoso con el medio ambiente",
+      "type": "noun",
+      "example": "The new development was designed with sustainable living in mind.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "green technology",
+      "translation": "tecnología verde / tecnología respetuosa con el medio ambiente",
+      "type": "noun",
+      "example": "The city invested in green technology to reduce emissions.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "renewables",
+      "translation": "energías renovables",
+      "type": "noun",
+      "example": "The plan is to power the city entirely on renewables by 2040.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "amenities",
+      "translation": "servicios e instalaciones / comodidades urbanas",
+      "type": "noun",
+      "example": "The neighbourhood lacks basic amenities like parks and shops.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "beacon",
+      "translation": "referente / faro, ejemplo a seguir",
+      "type": "noun",
+      "example": "The city became a beacon of sustainable urban planning.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "inward investment",
+      "translation": "inversión externa / capital que entra en una zona desde fuera",
+      "type": "noun",
+      "example": "The tax breaks attracted significant inward investment.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "post-oil economy",
+      "translation": "economía post-petróleo / economía sin dependencia del petróleo",
+      "type": "noun",
+      "example": "The city is positioning itself as a leader in the post-oil economy.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "top-down",
+      "translation": "de arriba abajo / impuesto desde el gobierno o autoridad",
+      "type": "adj",
+      "example": "Critics argued the plan was too top-down and ignored residents.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "on a small scale",
+      "translation": "a pequeña escala",
+      "type": "phrase",
+      "example": "They tested the scheme on a small scale before rolling it out.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "undertook",
+      "translation": "emprendió / se comprometió a hacer algo (pasado de undertake)",
+      "type": "verb",
+      "example": "The city undertook a major renovation of its historic centre.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "credited",
+      "translation": "reconocido / al que se atribuye el mérito de algo",
+      "type": "verb",
+      "example": "The mayor is credited with transforming the waterfront area.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "pump (money into)",
+      "translation": "inyectar / invertir grandes cantidades de dinero",
+      "type": "verb",
+      "example": "The government pumped millions into the regeneration project.",
+      "topic": "Urban Planning"
+    },
+    {
+      "word": "urban legend",
+      "translation": "leyenda urbana",
+      "type": "noun",
+      "example": "The story about alligators in the sewers is a classic urban legend.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "passed on by word of mouth",
+      "translation": "transmitido de boca en boca",
+      "type": "phrase",
+      "example": "Urban myths are typically passed on by word of mouth.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "from generation to generation",
+      "translation": "de generación en generación",
+      "type": "phrase",
+      "example": "These stories have been told from generation to generation.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "carry a moral",
+      "translation": "tener una moraleja / transmitir un principio",
+      "type": "phrase",
+      "example": "Most fairy tales carry a moral about right and wrong.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "plot",
+      "translation": "trama / argumento de una historia",
+      "type": "noun",
+      "example": "The plot of the urban legend always has a shocking twist.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "give an air of",
+      "translation": "dar un aire de / aparentar",
+      "type": "phrase",
+      "example": "The detail in the story gives it an air of authenticity.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "to maim",
+      "translation": "herir gravemente / mutilar",
+      "type": "verb",
+      "example": "In the legend, the creature maimed anyone who got too close.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "rumour",
+      "translation": "rumor",
+      "type": "noun",
+      "example": "The rumour spread quickly through social media.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "conspiracy",
+      "translation": "conspiración",
+      "type": "noun",
+      "example": "Some people believe the story is part of a wider conspiracy.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "sewer",
+      "translation": "alcantarillado / cloaca",
+      "type": "noun",
+      "example": "The legend claims that giant rats live in the city sewers.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "misogynistic",
+      "translation": "misógino / con actitud de odio hacia las mujeres",
+      "type": "adj",
+      "example": "Some critics argue the story has misogynistic undertones.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "widespread",
+      "translation": "generalizado / muy extendido",
+      "type": "adj",
+      "example": "The belief in this myth is surprisingly widespread.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "partly counteract",
+      "translation": "neutralizar parcialmente / contrarrestar en parte",
+      "type": "phrase",
+      "example": "The campaign partly counteracted the spread of misinformation.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "on closer examination",
+      "translation": "mirándolo más de cerca / si se analiza con detalle",
+      "type": "phrase",
+      "example": "On closer examination, the story falls apart completely.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "fake news",
+      "translation": "noticias falsas / desinformación",
+      "type": "noun",
+      "example": "Many urban legends are the fake news of previous centuries.",
+      "topic": "Urban Myths"
+    },
+    {
+      "word": "by and large",
+      "translation": "en general / en líneas generales",
+      "type": "phrase",
+      "example": "By and large, the plan was well received by residents.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "checks and balances",
+      "translation": "controles y contrapesos / sistema de equilibrio de poderes",
+      "type": "phrase",
+      "example": "A democracy needs proper checks and balances to function.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "cut and dried",
+      "translation": "claro y resuelto / sin ambigüedad",
+      "type": "phrase",
+      "example": "The situation isn't as cut and dried as it seems.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "far and wide",
+      "translation": "por todas partes / de lejos y de cerca",
+      "type": "phrase",
+      "example": "People came from far and wide to see the new development.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "first and foremost",
+      "translation": "ante todo / en primer lugar y principalmente",
+      "type": "phrase",
+      "example": "First and foremost, we need to address the housing crisis.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "here and there",
+      "translation": "aquí y allá / en varios sitios",
+      "type": "phrase",
+      "example": "There were signs of neglect here and there throughout the estate.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "hit and miss",
+      "translation": "irregular / a veces bien y a veces mal",
+      "type": "phrase",
+      "example": "The quality of the renovation work was rather hit and miss.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "hustle and bustle",
+      "translation": "ajetreo / bullicio y actividad intensa",
+      "type": "phrase",
+      "example": "She loves the hustle and bustle of city life.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "law and order",
+      "translation": "ley y orden / seguridad y cumplimiento de las normas",
+      "type": "phrase",
+      "example": "The new mayor promised to restore law and order in the streets.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "out and about",
+      "translation": "por ahí / activo y moviéndose por la ciudad",
+      "type": "phrase",
+      "example": "On sunny days, everyone is out and about in the park.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "part and parcel",
+      "translation": "parte integral / algo inseparable de otra cosa",
+      "type": "phrase",
+      "example": "Traffic congestion is part and parcel of city living.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "rise and fall",
+      "translation": "auge y caída / ascenso y declive",
+      "type": "phrase",
+      "example": "The documentary explores the rise and fall of industrial cities.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "rules and regulations",
+      "translation": "normas y reglamentos / conjunto de reglas oficiales",
+      "type": "phrase",
+      "example": "Developers must comply with all the rules and regulations.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "safe and sound",
+      "translation": "sano y salvo / sin daño alguno",
+      "type": "phrase",
+      "example": "The children arrived home safe and sound.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "straight and narrow",
+      "translation": "el buen camino / conducta correcta y honesta",
+      "type": "phrase",
+      "example": "The youth programme aims to keep teenagers on the straight and narrow.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "to and fro",
+      "translation": "de un lado a otro / de ida y vuelta",
+      "type": "phrase",
+      "example": "Commuters travel to and fro between the suburbs and the city.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "violence and horror",
+      "translation": "violencia y terror / contenido perturbador",
+      "type": "phrase",
+      "example": "Urban legends often involve scenes of violence and horror.",
+      "topic": "Binomials"
+    },
+    {
+      "word": "is projected to be completed",
+      "translation": "se prevé que se complete / está proyectado para terminarse",
+      "type": "phrase",
+      "example": "The new metro line is projected to be completed by 2027.",
+      "topic": "Grammar: Passives"
+    },
+    {
+      "word": "is intended to be",
+      "translation": "está previsto que sea / tiene como objetivo ser",
+      "type": "phrase",
+      "example": "The park is intended to be a green space for all residents.",
+      "topic": "Grammar: Passives"
+    },
+    {
+      "word": "is set to rise",
+      "translation": "está previsto que aumente / se espera que suba",
+      "type": "phrase",
+      "example": "The population is set to rise significantly over the next decade.",
+      "topic": "Grammar: Passives"
+    },
+    {
+      "word": "is expected to have reached",
+      "translation": "se espera que haya alcanzado",
+      "type": "phrase",
+      "example": "By 2030, the city is expected to have reached carbon neutrality.",
+      "topic": "Grammar: Passives"
+    },
+    {
+      "word": "were expected to provide",
+      "translation": "se esperaba que proporcionaran",
+      "type": "phrase",
+      "example": "The new buildings were expected to provide 500 affordable homes.",
+      "topic": "Grammar: Passives"
+    },
+    {
+      "word": "a wide range of",
+      "translation": "un amplio abanico de / una gran variedad de",
+      "type": "phrase",
+      "example": "The city offers a wide range of cultural activities.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "similarly",
+      "translation": "de manera similar / del mismo modo",
+      "type": "adv",
+      "example": "Similarly, other cities have faced the same urban challenges.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "a term popularized by",
+      "translation": "un término popularizado por",
+      "type": "phrase",
+      "example": "It's a term popularized by academics in the 1980s.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "encompasses a wide range of",
+      "translation": "abarca un amplio abanico de",
+      "type": "phrase",
+      "example": "The term encompasses a wide range of social phenomena.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "on closer examination",
+      "translation": "mirándolo más de cerca / analizándolo con detalle",
+      "type": "phrase",
+      "example": "On closer examination, the data tells a different story.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "to some extent",
+      "translation": "hasta cierto punto / en cierta medida",
+      "type": "phrase",
+      "example": "To some extent, the problem is caused by poor planning.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "for context",
+      "translation": "para contextualizar / para dar más información de fondo",
+      "type": "phrase",
+      "example": "For context, the city's population doubled in just 20 years.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "give or take",
+      "translation": "más o menos / aproximadamente",
+      "type": "phrase",
+      "example": "The project cost ten million euros, give or take.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "so to speak",
+      "translation": "por así decirlo / en cierto sentido",
+      "type": "phrase",
+      "example": "The city is the engine room, so to speak, of the national economy.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "also known as",
+      "translation": "también conocido como",
+      "type": "phrase",
+      "example": "The phenomenon, also known as urban sprawl, affects most big cities.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "in close",
+      "translation": "de cerca / en detalle",
+      "type": "phrase",
+      "example": "Let's look at this in close to understand the real impact.",
+      "topic": "Useful Phrases"
+    },
+    {
+      "word": "that dates back",
+      "translation": "que se remonta a / que tiene su origen en",
+      "type": "phrase",
+      "example": "The city has a historical centre that dates back 300 years.",
+      "topic": "Useful Phrases"
+    }
+  ]
+}
