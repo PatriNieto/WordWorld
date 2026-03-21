@@ -231,10 +231,15 @@ function filteredVocab(){ return currentTopic==='all'?vocab:vocab.filter(v=>v.to
 
 function updateDeck(){
   const base=filteredVocab();
-  const order={no:0,hard:1,undefined:2,known:3};
-  if(currentMode==='hard')        currentDeck=base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no');
-  else if(currentMode==='review') currentDeck=base.filter(v=>progress[v.word]==='known');
-  else currentDeck=[...base].sort((a,b)=>(order[progress[a.word]]??2)-(order[progress[b.word]]??2));
+  if(currentMode==='hard')        currentDeck=shuffle(base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no'));
+  else if(currentMode==='review') currentDeck=shuffle(base.filter(v=>progress[v.word]==='known'));
+  else {
+    const no=shuffle(base.filter(v=>progress[v.word]==='no'));
+    const hard=shuffle(base.filter(v=>progress[v.word]==='hard'));
+    const unseen=shuffle(base.filter(v=>!progress[v.word]));
+    const known=shuffle(base.filter(v=>progress[v.word]==='known'));
+    currentDeck=[...no,...hard,...unseen,...known];
+  }
   currentIdx=0; flipped=false; updateModeCounts(); renderCard();
 }
 
