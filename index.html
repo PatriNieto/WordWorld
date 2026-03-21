@@ -3,68 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vocab Flashcards</title>
+  <title>English Study</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #ffffff;
-      --bg2: #f5f4f0;
-      --bg3: #eeede9;
-      --text: #1a1a1a;
-      --text2: #666;
-      --text3: #999;
-      --border: rgba(0,0,0,0.12);
-      --border2: rgba(0,0,0,0.2);
-      --radius: 8px;
-      --radius-lg: 12px;
+      --bg: #ffffff; --bg2: #f5f4f0; --bg3: #eeede9;
+      --text: #1a1a1a; --text2: #666; --text3: #999;
+      --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.2);
+      --radius: 8px; --radius-lg: 12px;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1e1e1e; --bg2: #2a2a2a; --bg3: #333;
-        --text: #f0f0f0; --text2: #aaa; --text3: #666;
-        --border: rgba(255,255,255,0.12); --border2: rgba(255,255,255,0.2);
-      }
+      :root { --bg:#1e1e1e; --bg2:#2a2a2a; --bg3:#333; --text:#f0f0f0; --text2:#aaa; --text3:#666; --border:rgba(255,255,255,0.12); --border2:rgba(255,255,255,0.2); }
     }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg3); color: var(--text); min-height: 100vh; padding: 1.5rem 1rem; }
     .app { max-width: 560px; margin: 0 auto; }
 
     .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 8px; }
     .header h1 { font-size: 20px; font-weight: 600; }
-    .header-btns { display: flex; gap: 8px; }
-    .icon-btn { font-size: 13px; padding: 7px 14px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .header-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .icon-btn { font-size: 12px; padding: 7px 12px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: background 0.15s; white-space: nowrap; }
     .icon-btn:hover { background: var(--bg2); }
     .icon-btn.danger { color: #A32D2D; border-color: #F09595; }
     .icon-btn.danger:hover { background: #FCEBEB; }
 
+    .tabs { display: flex; gap: 4px; margin-bottom: 1.5rem; background: var(--bg2); border-radius: var(--radius); padding: 4px; }
+    .tab-btn { flex: 1; padding: 8px; font-size: 13px; font-weight: 500; border: none; border-radius: 6px; background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; }
+    .tab-btn.active { background: var(--bg); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* GLOBAL STATS */
     .global-stats { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 12px 16px; margin-bottom: 1.5rem; }
     .global-stats-title { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
-    .global-progress-bar { width: 100%; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; display: flex; gap: 1px; margin-bottom: 8px; }
-    .gp-known { background: #639922; transition: width 0.4s; }
-    .gp-hard  { background: #EF9F27; transition: width 0.4s; }
-    .gp-no    { background: #E24B4A; transition: width 0.4s; }
-    .gp-new   { background: var(--bg3); flex: 1; }
+    .global-progress-bar { width: 100%; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; display: flex; margin-bottom: 8px; }
+    .gp-known{background:#639922;transition:width 0.4s} .gp-hard{background:#EF9F27;transition:width 0.4s} .gp-no{background:#E24B4A;transition:width 0.4s}
     .global-stats-row { display: flex; gap: 16px; flex-wrap: wrap; }
     .gstat { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text2); }
-    .gstat-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .gstat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .gstat-num { font-weight: 600; color: var(--text); }
 
+    /* FLASHCARDS */
     .mode-bar { display: flex; gap: 8px; margin-bottom: 1rem; }
     .mode-btn { flex: 1; padding: 9px 6px; font-size: 12px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; line-height: 1.3; }
     .mode-btn.active { background: #26215C; border-color: #26215C; color: white; }
     .mode-btn:hover:not(.active) { background: var(--bg2); }
     .mode-btn .count { font-size: 11px; display: block; opacity: 0.7; margin-top: 2px; }
-
     .topic-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .topic-btn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; }
     .topic-btn.active { background: #E6F1FB; border-color: #378ADD; color: #185FA5; font-weight: 500; }
     .topic-btn:hover:not(.active) { background: var(--bg2); }
-
     .card-area { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
     .progress-line { width: 100%; display: flex; align-items: center; gap: 10px; }
     .progress-bar { flex: 1; height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
     .progress-fill { height: 100%; background: #378ADD; border-radius: 2px; transition: width 0.3s; }
     .progress-label { font-size: 12px; color: var(--text2); white-space: nowrap; }
-
     .card-wrap { width: 100%; perspective: 1000px; height: 250px; cursor: pointer; }
     .card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(.4,0,.2,1); }
     .card-wrap.flipped .card-inner { transform: rotateY(180deg); }
@@ -77,208 +69,217 @@
     .card-translation { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
     .card-example { font-size: 13px; color: var(--text2); font-style: italic; max-width: 340px; line-height: 1.6; }
     .card-type { font-size: 11px; padding: 3px 10px; border-radius: 12px; margin-bottom: 14px; font-weight: 500; }
-    .type-noun { background: #E1F5EE; color: #0F6E56; }
-    .type-verb { background: #E6F1FB; color: #185FA5; }
-    .type-adj  { background: #FAEEDA; color: #854F0B; }
-    .type-adv  { background: #FBEAF0; color: #993556; }
-    .type-phrase { background: #EEEDFE; color: #534AB7; }
-
+    .type-noun{background:#E1F5EE;color:#0F6E56} .type-verb{background:#E6F1FB;color:#185FA5} .type-adj{background:#FAEEDA;color:#854F0B} .type-adv{background:#FBEAF0;color:#993556} .type-phrase{background:#EEEDFE;color:#534AB7}
     .status-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: 12px; right: 12px; font-size: 11px; font-weight: 600; }
-    .status-known { background: #EAF3DE; color: #3B6D11; }
-    .status-hard  { background: #FAEEDA; color: #854F0B; }
-    .status-no    { background: #FCEBEB; color: #A32D2D; }
-
+    .status-known{background:#EAF3DE;color:#3B6D11} .status-hard{background:#FAEEDA;color:#854F0B} .status-no{background:#FCEBEB;color:#A32D2D}
     .action-btns-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
     .reveal-btn { width: 100%; padding: 11px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg2); color: var(--text2); font-size: 14px; cursor: pointer; transition: background 0.15s; }
     .reveal-btn:hover { background: var(--bg); }
     .action-row { display: flex; gap: 10px; width: 100%; }
     .action-btn { flex: 1; padding: 11px 6px; border-radius: var(--radius); border: 0.5px solid transparent; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; flex-direction: column; align-items: center; gap: 3px; }
     .action-btn:hover { transform: translateY(-2px); }
-    .btn-no   { background: #FCEBEB; border-color: #F09595; color: #A32D2D; }
-    .btn-hard { background: #FAEEDA; border-color: #FAC775; color: #854F0B; }
-    .btn-yes  { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; }
+    .btn-no{background:#FCEBEB;border-color:#F09595;color:#A32D2D} .btn-hard{background:#FAEEDA;border-color:#FAC775;color:#854F0B} .btn-yes{background:#EAF3DE;border-color:#C0DD97;color:#3B6D11}
     .btn-label { font-size: 11px; opacity: 0.8; font-weight: 400; }
-
     .nav-row { display: flex; justify-content: space-between; width: 100%; }
     .nav-btn { font-size: 13px; padding: 7px 16px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: background 0.15s; }
     .nav-btn:hover:not(:disabled) { background: var(--bg2); }
     .nav-btn:disabled { opacity: 0.3; cursor: default; }
 
+    /* GRAMMAR QUIZ */
+    .quiz-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .quiz-score { font-size: 13px; color: var(--text2); }
+    .quiz-score b { color: var(--text); }
+    .quiz-filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .quiz-filter-btn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; }
+    .quiz-filter-btn.active { background: #EEEDFE; border-color: #7F77DD; color: #3C3489; font-weight: 500; }
+    .quiz-filter-btn:hover:not(.active) { background: var(--bg2); }
+    .quiz-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .quiz-meta { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; display: flex; justify-content: space-between; }
+    .quiz-prompt { font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 1.25rem; white-space: pre-wrap; }
+    .quiz-prompt .blank { display: inline-block; min-width: 72px; border-bottom: 2px solid #378ADD; color: #378ADD; font-weight: 600; text-align: center; padding: 0 4px; }
+    .options-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
+    .option-btn { width: 100%; padding: 11px 16px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg2); color: var(--text); font-size: 14px; text-align: left; cursor: pointer; transition: all 0.15s; }
+    .option-btn:hover:not(:disabled) { background: var(--bg); transform: translateX(3px); }
+    .option-btn.correct { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; font-weight: 500; }
+    .option-btn.wrong   { background: #FCEBEB; border-color: #F09595; color: #A32D2D; }
+    .option-btn:disabled { cursor: default; transform: none; }
+    .explanation-box { padding: 12px 14px; border-radius: var(--radius); border-left: 3px solid #378ADD; background: #E6F1FB; font-size: 13px; line-height: 1.65; color: #185FA5; margin-top: 1rem; }
+    .explanation-box.loading { color: var(--text3); border-color: var(--border2); background: var(--bg2); font-style: italic; }
+    .explanation-box.wrong-ex { border-color: #E24B4A; background: #FCEBEB; color: #A32D2D; }
+    .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; opacity: 0.8; }
+    .quiz-next-row { display: flex; justify-content: flex-end; margin-top: 1rem; }
+
     .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text2); font-size: 14px; line-height: 1.8; }
     .empty-state .big { font-size: 36px; margin-bottom: 1rem; }
-
-    .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: white; font-size: 13px; padding: 8px 18px; border-radius: 20px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; }
+    .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: white; font-size: 13px; padding: 8px 18px; border-radius: 20px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; white-space: nowrap; }
     .toast.show { opacity: 1; }
   </style>
 </head>
 <body>
 <div class="app">
+
   <div class="header">
-    <h1>Vocab Flashcards</h1>
+    <h1>English Study</h1>
     <div class="header-btns">
-      <label class="icon-btn">+ JSON <input type="file" accept=".json" id="file-input" style="display:none"></label>
+      <label class="icon-btn">+ Vocab <input type="file" accept=".json" id="file-input" style="display:none"></label>
+      <label class="icon-btn">+ Ejercicios <input type="file" accept=".json" id="ex-file-input" style="display:none"></label>
       <button class="icon-btn danger" onclick="confirmReset()">↺ Reset</button>
     </div>
   </div>
 
-  <div class="global-stats" id="global-stats">
-    <div class="global-stats-title">Progreso global</div>
-    <div class="global-progress-bar" id="gp-bar">
-      <div class="gp-known" id="gp-known" style="width:0%"></div>
-      <div class="gp-hard"  id="gp-hard"  style="width:0%"></div>
-      <div class="gp-no"    id="gp-no"    style="width:0%"></div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('flashcards')">📚 Vocabulario</button>
+    <button class="tab-btn"       onclick="switchTab('grammar')">✏️ Gramática</button>
+  </div>
+
+  <!-- FLASHCARDS -->
+  <div class="tab-content active" id="tab-flashcards">
+    <div class="global-stats">
+      <div class="global-stats-title">Progreso global</div>
+      <div class="global-progress-bar">
+        <div class="gp-known" id="gp-known" style="width:0%"></div>
+        <div class="gp-hard"  id="gp-hard"  style="width:0%"></div>
+        <div class="gp-no"    id="gp-no"    style="width:0%"></div>
+      </div>
+      <div class="global-stats-row">
+        <div class="gstat"><div class="gstat-dot" style="background:#639922"></div><span class="gstat-num" id="g-known">0</span> sabidas</div>
+        <div class="gstat"><div class="gstat-dot" style="background:#EF9F27"></div><span class="gstat-num" id="g-hard">0</span> difíciles</div>
+        <div class="gstat"><div class="gstat-dot" style="background:#E24B4A"></div><span class="gstat-num" id="g-no">0</span> no sé</div>
+        <div class="gstat"><div class="gstat-dot" style="background:var(--bg3);border:1px solid var(--border2)"></div><span class="gstat-num" id="g-new">0</span> nuevas</div>
+        <div class="gstat" style="margin-left:auto"><span class="gstat-num" id="g-total">0</span> total</div>
+      </div>
     </div>
-    <div class="global-stats-row">
-      <div class="gstat"><div class="gstat-dot" style="background:#639922"></div><span class="gstat-num" id="g-known">0</span> sabidas</div>
-      <div class="gstat"><div class="gstat-dot" style="background:#EF9F27"></div><span class="gstat-num" id="g-hard">0</span> difíciles</div>
-      <div class="gstat"><div class="gstat-dot" style="background:#E24B4A"></div><span class="gstat-num" id="g-no">0</span> no sé</div>
-      <div class="gstat"><div class="gstat-dot" style="background:var(--bg3); border: 1px solid var(--border2)"></div><span class="gstat-num" id="g-new">0</span> nuevas</div>
-      <div class="gstat" style="margin-left:auto"><span class="gstat-num" id="g-total">0</span> total</div>
+    <div class="mode-bar">
+      <button class="mode-btn active" data-mode="all"    onclick="setMode('all')">Estudiar todo<span class="count" id="mc-all"></span></button>
+      <button class="mode-btn"        data-mode="hard"   onclick="setMode('hard')">Fallos<span class="count" id="mc-hard"></span></button>
+      <button class="mode-btn"        data-mode="review" onclick="setMode('review')">Repaso<span class="count" id="mc-review"></span></button>
+    </div>
+    <div class="topic-bar" id="topic-bar"></div>
+    <div class="card-area" id="card-area">
+      <div class="empty-state"><div class="big">📚</div>Importa un JSON de vocabulario para empezar.</div>
     </div>
   </div>
 
-  <div class="mode-bar">
-    <button class="mode-btn active" data-mode="all"    onclick="setMode('all')">Estudiar todo<span class="count" id="mc-all"></span></button>
-    <button class="mode-btn"        data-mode="hard"   onclick="setMode('hard')">Fallos<span class="count" id="mc-hard"></span></button>
-    <button class="mode-btn"        data-mode="review" onclick="setMode('review')">Repaso<span class="count" id="mc-review"></span></button>
+  <!-- GRAMMAR -->
+  <div class="tab-content" id="tab-grammar">
+    <div class="quiz-topbar">
+      <div class="quiz-score">Pregunta <b id="q-current">—</b> de <b id="q-total">—</b> &nbsp;·&nbsp; ✓ <b id="q-score">0</b></div>
+      <button class="nav-btn" onclick="restartQuiz()">↺ Reiniciar</button>
+    </div>
+    <div class="quiz-filter-bar" id="quiz-filter-bar"></div>
+    <div id="quiz-area">
+      <div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Usa el botón "+ Ejercicios" arriba.</small></div>
+    </div>
   </div>
 
-  <div class="topic-bar" id="topic-bar"></div>
-  <div class="card-area" id="card-area">
-    <div class="empty-state"><div class="big">📚</div>Importa un JSON con tu vocabulario para empezar.</div>
-  </div>
 </div>
-
 <div class="toast" id="toast"></div>
 
 <script>
-const STORAGE_KEY = 'vocab_progress_v2';
-const VOCAB_KEY   = 'vocab_data_v2';
+/* ── SHARED ── */
+const PROGRESS_KEY='vocab_progress_v2', VOCAB_KEY='vocab_data_v2', EXER_KEY='exercises_data_v1';
 
-let vocab = [], progress = {}, currentDeck = [], currentIdx = 0, currentMode = 'all', currentTopic = 'all', flipped = false;
-
-function loadProgress() {
-  try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { progress = {}; }
-}
-function saveProgress() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch(e) {}
-}
-function saveVocab(data) {
-  try { localStorage.setItem(VOCAB_KEY, JSON.stringify(data)); } catch(e) {}
-}
-function loadSavedVocab() {
-  try { const d = localStorage.getItem(VOCAB_KEY); return d ? JSON.parse(d) : null; } catch(e) { return null; }
+function switchTab(tab){
+  ['flashcards','grammar'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('active',t===tab);
+  });
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',(i===0&&tab==='flashcards')||(i===1&&tab==='grammar')));
 }
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
 }
 
-function confirmReset() {
-  if (confirm('¿Borrar todo el progreso? Las palabras no se eliminarán.')) {
-    progress = {};
-    saveProgress();
-    updateGlobalStats();
-    updateModeCounts();
-    renderCard();
-    showToast('Progreso borrado');
-  }
+function confirmReset(){
+  if(!confirm('¿Borrar todo el progreso?')) return;
+  progress={}; quizScore=0;
+  try{ localStorage.removeItem(PROGRESS_KEY); }catch(e){}
+  updateGlobalStats(); updateModeCounts(); renderCard(); renderQuiz();
+  showToast('Progreso borrado');
 }
 
-function loadData(data) {
-  vocab = data.vocabulary || (Array.isArray(data) ? data : []);
-  saveVocab(data);
-  buildTopics();
-  updateGlobalStats();
-  updateDeck();
+/* ── FLASHCARDS ── */
+let vocab=[], progress={}, currentDeck=[], currentIdx=0, currentMode='all', currentTopic='all', flipped=false;
+
+function loadProgress(){ try{ progress=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{}'); }catch(e){ progress={}; } }
+function saveProgress(){ try{ localStorage.setItem(PROGRESS_KEY,JSON.stringify(progress)); }catch(e){} }
+function saveVocab(d){ try{ localStorage.setItem(VOCAB_KEY,JSON.stringify(d)); }catch(e){} }
+function loadSavedVocab(){ try{ const d=localStorage.getItem(VOCAB_KEY); return d?JSON.parse(d):null; }catch(e){ return null; } }
+
+function loadData(data){
+  vocab=data.vocabulary||(Array.isArray(data)?data:[]);
+  saveVocab(data); buildTopics(); updateGlobalStats(); updateDeck();
 }
 
-function buildTopics() {
-  const topics = ['all', ...new Set(vocab.map(v => v.topic).filter(Boolean))];
-  document.getElementById('topic-bar').innerHTML = topics.map(t =>
+function buildTopics(){
+  const topics=['all',...new Set(vocab.map(v=>v.topic).filter(Boolean))];
+  document.getElementById('topic-bar').innerHTML=topics.map(t=>
     `<button class="topic-btn${t===currentTopic?' active':''}" onclick="setTopic('${t}')">${t==='all'?'Todos':t}</button>`
   ).join('');
 }
 
-function setTopic(t) { currentTopic = t; buildTopics(); updateDeck(); }
-function setMode(m) {
-  currentMode = m;
-  document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode===m));
+function setTopic(t){ currentTopic=t; buildTopics(); updateDeck(); }
+function setMode(m){
+  currentMode=m;
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
   updateDeck();
 }
 
-function filteredVocab() {
-  return currentTopic === 'all' ? vocab : vocab.filter(v => v.topic === currentTopic);
+function filteredVocab(){ return currentTopic==='all'?vocab:vocab.filter(v=>v.topic===currentTopic); }
+
+function updateDeck(){
+  const base=filteredVocab();
+  const order={no:0,hard:1,undefined:2,known:3};
+  if(currentMode==='hard')        currentDeck=base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no');
+  else if(currentMode==='review') currentDeck=base.filter(v=>progress[v.word]==='known');
+  else currentDeck=[...base].sort((a,b)=>(order[progress[a.word]]??2)-(order[progress[b.word]]??2));
+  currentIdx=0; flipped=false; updateModeCounts(); renderCard();
 }
 
-function updateDeck() {
-  const base = filteredVocab();
-  if (currentMode === 'hard')   currentDeck = base.filter(v => progress[v.word]==='hard' || progress[v.word]==='no');
-  else if (currentMode === 'review') currentDeck = base.filter(v => progress[v.word]==='known');
-  else currentDeck = [...base].sort((a,b) => {
-    const o = {no:0, hard:1, undefined:2, known:3};
-    return (o[progress[a.word]]??2) - (o[progress[b.word]]??2);
-  });
-  currentIdx = 0; flipped = false;
-  updateModeCounts();
-  renderCard();
+function updateGlobalStats(){
+  const total=vocab.length,
+        known=vocab.filter(v=>progress[v.word]==='known').length,
+        hard=vocab.filter(v=>progress[v.word]==='hard').length,
+        no=vocab.filter(v=>progress[v.word]==='no').length;
+  document.getElementById('g-total').textContent=total;
+  document.getElementById('g-known').textContent=known;
+  document.getElementById('g-hard').textContent=hard;
+  document.getElementById('g-no').textContent=no;
+  document.getElementById('g-new').textContent=total-known-hard-no;
+  const pct=n=>total?Math.round((n/total)*100)+'%':'0%';
+  document.getElementById('gp-known').style.width=pct(known);
+  document.getElementById('gp-hard').style.width=pct(hard);
+  document.getElementById('gp-no').style.width=pct(no);
 }
 
-function updateGlobalStats() {
-  const total  = vocab.length;
-  const known  = vocab.filter(v => progress[v.word]==='known').length;
-  const hard   = vocab.filter(v => progress[v.word]==='hard').length;
-  const no     = vocab.filter(v => progress[v.word]==='no').length;
-  const newW   = total - known - hard - no;
-
-  document.getElementById('g-total').textContent = total;
-  document.getElementById('g-known').textContent = known;
-  document.getElementById('g-hard').textContent  = hard;
-  document.getElementById('g-no').textContent    = no;
-  document.getElementById('g-new').textContent   = newW;
-
-  const pct = n => total ? Math.round((n/total)*100) + '%' : '0%';
-  document.getElementById('gp-known').style.width = pct(known);
-  document.getElementById('gp-hard').style.width  = pct(hard);
-  document.getElementById('gp-no').style.width    = pct(no);
+function updateModeCounts(){
+  const base=filteredVocab();
+  document.getElementById('mc-all').textContent='\n'+base.length+' cards';
+  document.getElementById('mc-hard').textContent='\n'+base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no').length+' cards';
+  document.getElementById('mc-review').textContent='\n'+base.filter(v=>progress[v.word]==='known').length+' cards';
 }
 
-function updateModeCounts() {
-  const base = filteredVocab();
-  document.getElementById('mc-all').textContent    = '\n' + base.length + ' cards';
-  document.getElementById('mc-hard').textContent   = '\n' + base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no').length + ' cards';
-  document.getElementById('mc-review').textContent = '\n' + base.filter(v=>progress[v.word]==='known').length + ' cards';
-}
-
-function typeClass(t) { return ({verb:'type-verb',noun:'type-noun',adj:'type-adj',adv:'type-adv',phrase:'type-phrase'}[t]||'type-noun'); }
-function typeName(t)  { return ({verb:'verbo',noun:'sustantivo',adj:'adjetivo',adv:'adverbio',phrase:'frase'}[t]||t||''); }
-
-function statusIcon(w) {
-  const s = progress[w];
-  if (s==='known') return '<div class="status-icon status-known" title="Sabida">✓</div>';
-  if (s==='hard')  return '<div class="status-icon status-hard"  title="Difícil">~</div>';
-  if (s==='no')    return '<div class="status-icon status-no"    title="No sé">✗</div>';
+function typeClass(t){ return({verb:'type-verb',noun:'type-noun',adj:'type-adj',adv:'type-adv',phrase:'type-phrase'}[t]||'type-noun'); }
+function typeName(t){ return({verb:'verbo',noun:'sustantivo',adj:'adjetivo',adv:'adverbio',phrase:'frase'}[t]||t||''); }
+function statusIcon(w){
+  const s=progress[w];
+  if(s==='known') return '<div class="status-icon status-known">✓</div>';
+  if(s==='hard')  return '<div class="status-icon status-hard">~</div>';
+  if(s==='no')    return '<div class="status-icon status-no">✗</div>';
   return '';
 }
 
-function renderCard() {
-  const area = document.getElementById('card-area');
-  if (!currentDeck.length) {
-    const msgs = {
-      hard:   '¡No tienes palabras marcadas como difíciles en este tema! 🎉',
-      review: 'Aún no has acertado ninguna en este tema. ¡Ánimo!',
-      all:    vocab.length ? 'No hay palabras para este filtro.' : 'Importa un JSON con tu vocabulario para empezar.'
-    };
-    area.innerHTML = `<div class="empty-state"><div class="big">${currentMode==='hard'?'🎉':'📚'}</div>${msgs[currentMode]}</div>`;
+function renderCard(){
+  const area=document.getElementById('card-area');
+  if(!currentDeck.length){
+    const msgs={hard:'¡No tienes palabras difíciles en este tema! 🎉',review:'Aún no has acertado ninguna aquí. ¡Ánimo!',all:vocab.length?'No hay palabras para este filtro.':'Importa un JSON de vocabulario.'};
+    area.innerHTML=`<div class="empty-state"><div class="big">${currentMode==='hard'?'🎉':'📚'}</div>${msgs[currentMode]}</div>`;
     return;
   }
-
-  const card = currentDeck[currentIdx];
-  const pct  = Math.round((currentIdx / currentDeck.length) * 100);
-
-  area.innerHTML = `
+  const card=currentDeck[currentIdx], pct=Math.round((currentIdx/currentDeck.length)*100);
+  area.innerHTML=`
     <div class="progress-line">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
       <span class="progress-label">${currentIdx+1} / ${currentDeck.length}</span>
@@ -289,14 +290,14 @@ function renderCard() {
           ${statusIcon(card.word)}
           <div class="card-tag">${card.topic||''}</div>
           <div class="card-word">${card.word}</div>
-          ${card.phonetic ? `<div class="card-phonetic">${card.phonetic}</div>` : ''}
+          ${card.phonetic?`<div class="card-phonetic">${card.phonetic}</div>`:''}
           <div class="card-hint">Toca para ver la traducción</div>
         </div>
         <div class="card-face card-back">
           ${statusIcon(card.word)}
           <span class="card-type ${typeClass(card.type)}">${typeName(card.type)}</span>
           <div class="card-translation">${card.translation}</div>
-          ${card.example ? `<div class="card-example">"${card.example}"</div>` : ''}
+          ${card.example?`<div class="card-example">"${card.example}"</div>`:''}
         </div>
       </div>
     </div>
@@ -309,76 +310,191 @@ function renderCard() {
     </div>`;
 }
 
-function flipCard() {
-  const wrap = document.getElementById('the-card');
-  if (!wrap) return;
-  flipped = !flipped;
-  wrap.classList.toggle('flipped', flipped);
-  document.getElementById('action-area').innerHTML = flipped
-    ? `<div class="action-row">
+function flipCard(){
+  const wrap=document.getElementById('the-card'); if(!wrap) return;
+  flipped=!flipped; wrap.classList.toggle('flipped',flipped);
+  document.getElementById('action-area').innerHTML=flipped
+    ?`<div class="action-row">
         <button class="action-btn btn-no"   onclick="rate('no')">✗<span class="btn-label">No sé</span></button>
         <button class="action-btn btn-hard" onclick="rate('hard')">~<span class="btn-label">Difícil</span></button>
         <button class="action-btn btn-yes"  onclick="rate('known')">✓<span class="btn-label">Lo sé</span></button>
        </div>`
-    : `<button class="reveal-btn" onclick="flipCard()">Ver traducción</button>`;
+    :`<button class="reveal-btn" onclick="flipCard()">Ver traducción</button>`;
 }
 
-function rate(val) {
-  const word = currentDeck[currentIdx].word;
-  const prev = progress[word];
-  progress[word] = val;
-  saveProgress();
-  updateGlobalStats();
-  updateModeCounts();
-
-  setTimeout(() => {
-    // En todos los modos, avanzar a la siguiente
-    if (currentIdx < currentDeck.length - 1) {
-      currentIdx++; flipped = false; renderCard();
-    } else {
-      const known = vocab.filter(v => progress[v.word]==='known').length;
-      document.getElementById('card-area').innerHTML = `
-        <div class="empty-state">
-          <div class="big">🎯</div>
-          <b>¡Ronda completada!</b><br><br>
-          ${known} de ${vocab.length} palabras dominadas en total.<br><br>
-          <button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="updateDeck()">Repetir</button>
-        </div>`;
+function rate(val){
+  progress[currentDeck[currentIdx].word]=val;
+  saveProgress(); updateGlobalStats(); updateModeCounts();
+  setTimeout(()=>{
+    if(currentIdx<currentDeck.length-1){ currentIdx++; flipped=false; renderCard(); }
+    else{
+      const known=vocab.filter(v=>progress[v.word]==='known').length;
+      document.getElementById('card-area').innerHTML=`<div class="empty-state"><div class="big">🎯</div><b>¡Ronda completada!</b><br><br>${known} de ${vocab.length} palabras dominadas.<br><br><button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="updateDeck()">Repetir</button></div>`;
     }
-  }, 200);
+  },200);
 }
 
-function nextCard() { if (currentIdx < currentDeck.length-1) { currentIdx++; flipped=false; renderCard(); } }
-function prevCard() { if (currentIdx > 0)                    { currentIdx--; flipped=false; renderCard(); } }
+function nextCard(){ if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();} }
+function prevCard(){ if(currentIdx>0){currentIdx--;flipped=false;renderCard();} }
 
-document.getElementById('file-input').addEventListener('change', e => {
-  const f = e.target.files[0]; if (!f) return;
-  const r = new FileReader();
-  r.onload = ev => {
-    try {
-      loadData(JSON.parse(ev.target.result));
-      showToast('Vocabulario cargado ✓');
-    } catch(err) { alert('JSON inválido — revisa el formato.'); }
-  };
-  r.readAsText(f); e.target.value = '';
+/* ── GRAMMAR QUIZ ── */
+let exercises=[], quizDeck=[], quizIdx=0, quizScore=0, quizTopic='all', quizAnswered=false;
+
+function saveEx(d){ try{ localStorage.setItem(EXER_KEY,JSON.stringify(d)); }catch(e){} }
+function loadSavedEx(){ try{ const d=localStorage.getItem(EXER_KEY); return d?JSON.parse(d):null; }catch(e){ return null; } }
+
+function loadExercises(data){
+  exercises=data.exercises||(Array.isArray(data)?data:[]);
+  saveEx(data); buildQuizFilters(); restartQuiz();
+}
+
+function buildQuizFilters(){
+  const topics=['all',...new Set(exercises.map(e=>e.topic).filter(Boolean))];
+  document.getElementById('quiz-filter-bar').innerHTML=topics.map(t=>
+    `<button class="quiz-filter-btn${t===quizTopic?' active':''}" onclick="setQuizTopic('${t}')">${t==='all'?'Todos':t}</button>`
+  ).join('');
+}
+
+function setQuizTopic(t){ quizTopic=t; buildQuizFilters(); restartQuiz(); }
+
+function restartQuiz(){
+  const base=quizTopic==='all'?exercises:exercises.filter(e=>e.topic===quizTopic);
+  quizDeck=shuffle([...base]); quizIdx=0; quizScore=0; quizAnswered=false;
+  document.getElementById('q-score').textContent='0';
+  renderQuiz();
+}
+
+function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+
+function renderQuiz(){
+  const area=document.getElementById('quiz-area');
+  document.getElementById('q-score').textContent=quizScore;
+
+  if(!quizDeck.length){
+    document.getElementById('q-current').textContent='—';
+    document.getElementById('q-total').textContent='—';
+    area.innerHTML=`<div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Usa el botón "+ Ejercicios" arriba.</small></div>`;
+    return;
+  }
+
+  if(quizIdx>=quizDeck.length){
+    document.getElementById('q-current').textContent=quizDeck.length;
+    document.getElementById('q-total').textContent=quizDeck.length;
+    const pct=Math.round((quizScore/quizDeck.length)*100);
+    area.innerHTML=`<div class="empty-state"><div class="big">${pct>=70?'🎉':'💪'}</div>
+      <b>¡Test completado!</b><br><br>
+      Acertaste <b>${quizScore} de ${quizDeck.length}</b> (${pct}%)<br><br>
+      <button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="restartQuiz()">↺ Repetir</button>
+    </div>`;
+    return;
+  }
+
+  const ex=quizDeck[quizIdx];
+  document.getElementById('q-current').textContent=quizIdx+1;
+  document.getElementById('q-total').textContent=quizDeck.length;
+  quizAnswered=false;
+
+  const promptHtml=ex.prompt.replace(/___+/g,'<span class="blank">___</span>');
+  const opts=shuffle([ex.answer,...(ex.distractors||[])]);
+
+  area.innerHTML=`
+    <div class="quiz-card">
+      <div class="quiz-meta">
+        <span>${ex.topic||''}</span>
+        <span>${ex.unit?'Unidad '+ex.unit:''}</span>
+      </div>
+      <div class="quiz-prompt">${promptHtml}</div>
+      <div class="options-grid" id="options-grid">
+        ${opts.map((o,i)=>`<button class="option-btn" onclick="selectOption(${i})" data-val="${encodeURIComponent(o)}">${o}</button>`).join('')}
+      </div>
+      <div id="explanation-area"></div>
+    </div>
+    <div class="quiz-next-row">
+      <button class="nav-btn" id="next-btn" onclick="nextQuestion()" style="visibility:hidden">Siguiente →</button>
+    </div>`;
+}
+
+function selectOption(idx){
+  if(quizAnswered) return;
+  quizAnswered=true;
+  const ex=quizDeck[quizIdx];
+  const btns=document.querySelectorAll('.option-btn');
+  const chosen=decodeURIComponent(btns[idx].dataset.val);
+  const correct=chosen===ex.answer;
+
+  if(correct) quizScore++;
+  document.getElementById('q-score').textContent=quizScore;
+
+  btns.forEach(b=>{
+    b.disabled=true;
+    const v=decodeURIComponent(b.dataset.val);
+    if(v===ex.answer) b.classList.add('correct');
+    else if(b===btns[idx]&&!correct) b.classList.add('wrong');
+  });
+
+  const nextBtn=document.getElementById('next-btn');
+  if(nextBtn) nextBtn.style.visibility='visible';
+
+  fetchExplanation(ex, chosen, correct);
+}
+
+async function fetchExplanation(ex, chosen, correct){
+  const box=document.getElementById('explanation-area');
+  if(!box) return;
+  box.innerHTML=`<div class="explanation-box loading"><div class="ex-label">Explicación</div>Generando explicación...</div>`;
+
+  const system=`Eres un profesor de inglés experto. Explica de forma muy concisa (2-3 frases máximo) por qué la respuesta correcta es correcta. Responde siempre en español. Sin saludos ni despedidas.`;
+  const user=`Ejercicio: "${ex.prompt}"
+Respuesta correcta: "${ex.answer}"
+El estudiante eligió: "${chosen}" (${correct?'CORRECTO':'INCORRECTO'})
+Tema: ${ex.topic||'gramática inglesa'}
+${ex.explanation?'Contexto adicional: '+ex.explanation:''}`;
+
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1000, system, messages:[{role:'user',content:user}] })
+    });
+    const data=await res.json();
+    const text=data.content?.find(c=>c.type==='text')?.text||'No se pudo generar explicación.';
+    if(!document.getElementById('explanation-area')) return;
+    box.className=`explanation-box${correct?'':' wrong-ex'}`;
+    box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${text}`;
+  }catch(e){
+    if(!document.getElementById('explanation-area')) return;
+    const fallback=ex.explanation||'Revisa la regla gramatical de este tema en tus apuntes.';
+    box.className=`explanation-box${correct?'':' wrong-ex'}`;
+    box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${fallback}`;
+  }
+}
+
+function nextQuestion(){ quizIdx++; renderQuiz(); }
+
+/* ── FILE INPUTS ── */
+document.getElementById('file-input').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=ev=>{ try{ loadData(JSON.parse(ev.target.result)); showToast('Vocabulario cargado ✓'); }catch(err){ alert('JSON inválido.'); } };
+  r.readAsText(f); e.target.value='';
 });
 
-// Init
+document.getElementById('ex-file-input').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=ev=>{ try{ loadExercises(JSON.parse(ev.target.result)); showToast('Ejercicios cargados ✓'); }catch(err){ alert('JSON inválido.'); } };
+  r.readAsText(f); e.target.value='';
+});
+
+/* ── INIT ── */
 loadProgress();
-const saved = loadSavedVocab();
-if (saved) {
-  loadData(saved);
-} else {
-  fetch('vocab.json')
-    .then(r => r.json())
-    .then(data => loadData(data))
-    .catch(() => {
-      document.getElementById('card-area').innerHTML =
-        `<div class="empty-state"><div class="big">📚</div>Importa un JSON con tu vocabulario para empezar.</div>`;
-      updateGlobalStats();
-      updateModeCounts();
-    });
-}
+const sv=loadSavedVocab();
+if(sv){ loadData(sv); }
+else{ fetch('vocab.json').then(r=>r.json()).then(loadData).catch(()=>{ updateGlobalStats(); updateModeCounts(); }); }
+
+const se=loadSavedEx();
+if(se){ loadExercises(se); }
+else{ fetch('exercises.json').then(r=>r.json()).then(loadExercises).catch(()=>{}); }
 </script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+{
+  "exercises": [
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Are you going to the meeting today?\nB: Yes, I ___.",
+      "answer": "am",
+      "distractors": ["do", "did", "have"],
+      "explanation": "La pregunta usa 'are you going', una estructura con 'be' en presente. En la respuesta se omite 'going to the meeting' y solo se conserva el auxiliar 'am'."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Has anyone fixed the supply line yet?\nB: Yes, I ___ yesterday.",
+      "answer": "did",
+      "distractors": ["have", "was", "am"],
+      "explanation": "Se usa 'did' para sustituir 'fixed the supply line' (substitution). Como hay un marcador de tiempo pasado 'yesterday', usamos el pasado simple 'did'."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Do Emilia and Jose speak English?\nB: No, but their son ___.",
+      "answer": "does",
+      "distractors": ["do", "did", "is"],
+      "explanation": "Se usa 'does' para sustituir 'speaks English'. Como el sujeto es 'their son' (3ª persona singular, presente), usamos 'does'."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Are you going to complain to your boss about your colleague?\nB: No, and I have no intention to ___ so.",
+      "answer": "do",
+      "distractors": ["make", "have", "be"],
+      "explanation": "Se usa 'do so' en contextos más formales para sustituir una acción. 'I have no intention to do so' = I have no intention to complain."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Would you like to meet for coffee later?\nB: Yes, I'd love ___.",
+      "answer": "to",
+      "distractors": ["it", "so", "that"],
+      "explanation": "Cuando un verbo va seguido de 'to + infinitivo', podemos omitir todo lo que viene después del 'to'. 'I'd love to' = I'd love to meet for coffee."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: How are your wedding plans coming along?\nB: Tim wants a big wedding, but I ___.",
+      "answer": "don't",
+      "distractors": ["haven't", "won't", "didn't"],
+      "explanation": "Se omite 'want a big wedding' y se conserva solo el auxiliar negativo. Como es presente simple, usamos 'don't' para hacer la elipsis."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: How long has Frank been here?\nB: I'm not sure. He got here before I ___.",
+      "answer": "did",
+      "distractors": ["had", "was", "have"],
+      "explanation": "Se sustituye 'got here' con 'did'. En pasado simple, la sustitución se hace con 'did'."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: You should have joined us at the parade.\nB: I ___ going to, but a friend called me at the last minute.",
+      "answer": "was",
+      "distractors": ["would", "had", "were"],
+      "explanation": "'I was going to' es una estructura de elipsis que omite el infinitivo 'join you'. Se usa 'was going to' para indicar intención pasada que no se llevó a cabo."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Is your department attending the seminar?\nB: Most people aren't going, but I ___. I haven't decided yet.",
+      "answer": "might",
+      "distractors": ["will", "am", "do"],
+      "explanation": "Se puede usar un verbo modal diferente al original para hacer elipsis. 'I might' = I might go/attend, expresando posibilidad e incertidumbre."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Did they approve the new policy?\nB: Yes, and once they had ___ so, they sent the report to all departments.",
+      "answer": "done",
+      "distractors": ["made", "did", "been"],
+      "explanation": "'Have done so' es la forma de sustitución formal para referirse a una acción ya mencionada. Se usa en contextos formales y con decisiones o procesos."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Is Maria coming to the conference?\nB: I think she ___. She mentioned it last week.",
+      "answer": "is",
+      "distractors": ["does", "will", "has"],
+      "explanation": "La pregunta usa 'is ... coming' (presente continuo con 'be'). En la elipsis se conserva solo el auxiliar 'is', omitiendo 'coming to the conference'."
+    },
+    {
+      "topic": "Ellipsis & Substitution",
+      "unit": "6",
+      "prompt": "A: Have you read the new report?\nB: No, but Sarah ___.",
+      "answer": "has",
+      "distractors": ["did", "does", "had"],
+      "explanation": "La pregunta usa 'have you read' (presente perfecto). En la sustitución se usa 'has' porque el sujeto es 'Sarah' (3ª persona singular)."
+    }
+  ]
+}
