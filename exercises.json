@@ -1,100 +1,188 @@
 {
   "exercises": [
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Are you going to the meeting today?\nB: Yes, I ___.",
-      "answer": "am",
-      "distractors": ["do", "did", "have"],
-      "explanation": "La pregunta usa 'are you going', una estructura con 'be' en presente. En la respuesta se omite 'going to the meeting' y solo se conserva el auxiliar 'am'."
+      "topic": "Mediation · Grammar",
+      "unit": "Remedial",
+      "prompt": "Correct the mistake:\nShe ___ a visa if she ___ more than three months.",
+      "answer": "doesn't need / stays",
+      "distractors": ["don't need / stay", "doesn't needs / stays", "didn't need / stayed"],
+      "explanation": "3rd person singular: 'she doesn't need' + 'she stays'. Both verbs need -s in present simple."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Has anyone fixed the supply line yet?\nB: Yes, I ___ yesterday.",
-      "answer": "did",
-      "distractors": ["have", "was", "am"],
-      "explanation": "Se usa 'did' para sustituir 'fixed the supply line' (substitution). Como hay un marcador de tiempo pasado 'yesterday', usamos el pasado simple 'did'."
+      "topic": "Mediation · Grammar",
+      "unit": "Remedial",
+      "prompt": "Correct the mistake:\nThe documents ___ required by the administration.",
+      "answer": "are",
+      "distractors": ["is", "be", "were"],
+      "explanation": "'Documents' is plural → requires 'are', not 'is'. Subject-verb agreement error."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Do Emilia and Jose speak English?\nB: No, but their son ___.",
-      "answer": "does",
-      "distractors": ["do", "did", "is"],
-      "explanation": "Se usa 'does' para sustituir 'speaks English'. Como el sujeto es 'their son' (3ª persona singular, presente), usamos 'does'."
+      "topic": "Mediation · Grammar",
+      "unit": "Remedial",
+      "prompt": "Choose the correct verb pattern:\nShe will need to ___ a student visa.",
+      "answer": "apply for",
+      "distractors": ["request for", "demand for", "ask to"],
+      "explanation": "'Apply for' is the correct collocation with visas, scholarships, and jobs. 'Request for' adds an incorrect preposition."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Are you going to complain to your boss about your colleague?\nB: No, and I have no intention to ___ so.",
-      "answer": "do",
-      "distractors": ["make", "have", "be"],
-      "explanation": "Se usa 'do so' en contextos más formales para sustituir una acción. 'I have no intention to do so' = I have no intention to complain."
+      "topic": "Mediation · False Friends",
+      "unit": "Remedial",
+      "prompt": "Replace the incorrect word:\nThe ___ system in Spain is quite different from the UK.",
+      "answer": "education",
+      "distractors": ["educative", "educacional", "educational system (remove 'system')"],
+      "explanation": "'Education system' — NOT 'educative system'. 'Educative' exists in English but is rarely used and NOT the right term here."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Would you like to meet for coffee later?\nB: Yes, I'd love ___.",
-      "answer": "to",
-      "distractors": ["it", "so", "that"],
-      "explanation": "Cuando un verbo va seguido de 'to + infinitivo', podemos omitir todo lo que viene después del 'to'. 'I'd love to' = I'd love to meet for coffee."
+      "topic": "Mediation · False Friends",
+      "unit": "Remedial",
+      "prompt": "Replace the incorrect word:\nHe has no ___ record, so the application should be fine.",
+      "answer": "criminal",
+      "distractors": ["penal", "penalty", "judicial"],
+      "explanation": "'Criminal record' is the correct term in English. 'Penal antecedents' is a literal translation from Spanish 'antecedentes penales'."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: How are your wedding plans coming along?\nB: Tim wants a big wedding, but I ___.",
-      "answer": "don't",
-      "distractors": ["haven't", "won't", "didn't"],
-      "explanation": "Se omite 'want a big wedding' y se conserva solo el auxiliar negativo. Como es presente simple, usamos 'don't' para hacer la elipsis."
+      "topic": "Mediation · False Friends",
+      "unit": "Remedial",
+      "prompt": "Replace the incorrect word:\nHer ___ level of English is B2.",
+      "answer": "current",
+      "distractors": ["actual", "present-day", "real"],
+      "explanation": "'Actual' in English means 'real' or 'genuine', not 'current'. Use 'current' for the present moment."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: How long has Frank been here?\nB: I'm not sure. He got here before I ___.",
-      "answer": "did",
-      "distractors": ["had", "was", "have"],
-      "explanation": "Se sustituye 'got here' con 'did'. En pasado simple, la sustitución se hace con 'did'."
+      "topic": "Mediation · False Friends",
+      "unit": "Remedial",
+      "prompt": "Replace the incorrect word:\nShe needs more ___ before applying for the job.",
+      "answer": "training",
+      "distractors": ["formation", "forming", "formed"],
+      "explanation": "'Training' or 'education' — NOT 'formation'. 'Formation' in English refers to shapes or military units, not professional development."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: You should have joined us at the parade.\nB: I ___ going to, but a friend called me at the last minute.",
-      "answer": "was",
-      "distractors": ["would", "had", "were"],
-      "explanation": "'I was going to' es una estructura de elipsis que omite el infinitivo 'join you'. Se usa 'was going to' para indicar intención pasada que no se llevó a cabo."
+      "topic": "Mediation · Spanish Structures",
+      "unit": "Remedial",
+      "prompt": "Rewrite in natural English:\n'It is recommended ___ you consult the embassy before travelling.'",
+      "answer": "that",
+      "distractors": ["to", "for", "—"],
+      "explanation": "'It is recommended that + subject + verb' is the correct English structure. The Spanish calque uses the infinitive directly, which sounds unnatural."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Is your department attending the seminar?\nB: Most people aren't going, but I ___. I haven't decided yet.",
-      "answer": "might",
-      "distractors": ["will", "am", "do"],
-      "explanation": "Se puede usar un verbo modal diferente al original para hacer elipsis. 'I might' = I might go/attend, expresando posibilidad e incertidumbre."
+      "topic": "Mediation · Spanish Structures",
+      "unit": "Remedial",
+      "prompt": "Choose the natural English version:\n'___ the requirements, students must submit their passport.'",
+      "answer": "Regarding",
+      "distractors": ["Regarding to", "With regards to the", "In regards to"],
+      "explanation": "'Regarding' is a preposition and does NOT take 'to'. Compare: 'with regard to' (correct) vs 'regarding to' (incorrect)."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Did they approve the new policy?\nB: Yes, and once they had ___ so, they sent the report to all departments.",
-      "answer": "done",
-      "distractors": ["made", "did", "been"],
-      "explanation": "'Have done so' es la forma de sustitución formal para referirse a una acción ya mencionada. Se usa en contextos formales y con decisiones o procesos."
+      "topic": "Mediation · Vocabulary",
+      "unit": "Remedial",
+      "prompt": "She needs a private health ___.\na) assistance\nb) assurance\nc) insurance",
+      "answer": "insurance",
+      "distractors": ["assistance", "assurance"],
+      "explanation": "'Health insurance' is the correct term. 'Assistance' = help/support. 'Assurance' = life insurance (UK) or a promise. 'Insurance' covers health, car, home, etc."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Is Maria coming to the conference?\nB: I think she ___. She mentioned it last week.",
-      "answer": "is",
-      "distractors": ["does", "will", "has"],
-      "explanation": "La pregunta usa 'is ... coming' (presente continuo con 'be'). En la elipsis se conserva solo el auxiliar 'is', omitiendo 'coming to the conference'."
+      "topic": "Mediation · Vocabulary",
+      "unit": "Remedial",
+      "prompt": "Megan will need an ___ letter from the school.",
+      "answer": "admission",
+      "distractors": ["recommendation", "invitation", "acceptance"],
+      "explanation": "An 'admission letter' confirms acceptance into a programme. A 'recommendation letter' is written by a third party to support an application — different document."
     },
     {
-      "topic": "Ellipsis & Substitution",
-      "unit": "6",
-      "prompt": "A: Have you read the new report?\nB: No, but Sarah ___.",
-      "answer": "has",
-      "distractors": ["did", "does", "had"],
-      "explanation": "La pregunta usa 'have you read' (presente perfecto). En la sustitución se usa 'has' porque el sujeto es 'Sarah' (3ª persona singular)."
+      "topic": "Mediation · Interpretation",
+      "unit": "Remedial",
+      "prompt": "According to the article, non-EU students staying longer than three months:",
+      "answer": "usually need a student visa",
+      "distractors": ["never need a visa", "only need a passport", "are always exempt if under 18"],
+      "explanation": "Minors can attend COMPULSORY education without a visa, but Bachillerato is NOT compulsory. Always hedge: 'usually', 'in most cases', 'requirements may vary'."
+    },
+    {
+      "topic": "Proposals · Grammar",
+      "unit": "Remedial",
+      "prompt": "Correct the sentence:\n'___ doesn't need to boost the budget for this.'",
+      "answer": "The government",
+      "distractors": ["Government", "Governments", "The governments"],
+      "explanation": "When referring to a specific government as an institution, use the definite article: 'The government'. 'Government don't...' has two errors: missing article + wrong agreement."
+    },
+    {
+      "topic": "Proposals · Collocations",
+      "unit": "Remedial",
+      "prompt": "Choose the correct collocation:\nThe project aims to ___ the use of bicycles in the city.",
+      "answer": "encourage",
+      "distractors": ["boost", "make", "do"],
+      "explanation": "'Encourage the use of' is more precise and C1-appropriate than the overused 'boost'. Other good options: 'promote', 'facilitate', 'increase'."
+    },
+    {
+      "topic": "Proposals · Hedging",
+      "unit": "Remedial",
+      "prompt": "Which sentence uses correct C1 hedging for predictions?",
+      "answer": "This could encourage people to change their means of transport.",
+      "distractors": ["People will change their transport without a doubt.", "Pollution will definitely decrease in the first year.", "Everyone will start cycling immediately."],
+      "explanation": "Absolute predictions are penalised at C1. Use modal verbs (could, may, might) or expressions like 'is likely to', 'may lead to' to hedge your claims."
+    },
+    {
+      "topic": "Proposals · False Friends",
+      "unit": "Remedial",
+      "prompt": "Choose the correct word:\nThe ___ of the new policy will take at least six months.",
+      "answer": "implementation",
+      "distractors": ["installation", "implantation", "formation"],
+      "explanation": "'Implementation' = putting a plan into action. 'Installation' refers to physical equipment. 'Formation' is a false friend from Spanish 'formación'."
+    },
+    {
+      "topic": "Cover Letter · Grammar",
+      "unit": "Remedial",
+      "prompt": "Correct the sentence:\n'I ___ always shown a strong interest in working with young people.'",
+      "answer": "have",
+      "distractors": ["always", "had", "was"],
+      "explanation": "Present perfect requires 'have/has + past participle'. 'I always shown' is missing the auxiliary verb 'have'."
+    },
+    {
+      "topic": "Cover Letter · False Friends",
+      "unit": "Remedial",
+      "prompt": "Choose the correct word:\nDue to my ___ to the cause, I have volunteered every weekend.",
+      "answer": "commitment",
+      "distractors": ["compromise", "compromising", "compulsion"],
+      "explanation": "'Commitment' = dedication/loyalty. 'Compromise' in English means reaching a middle ground, NOT personal dedication. False friend from 'compromiso'."
+    },
+    {
+      "topic": "Cover Letter · Register",
+      "unit": "Remedial",
+      "prompt": "Choose the more natural C1 opening for a cover letter:",
+      "answer": "I am writing regarding the volunteer position advertised on your website.",
+      "distractors": ["I am writing to you in concern of the volunteer position.", "I write you about the volunteer position.", "This letter is for the volunteer position."],
+      "explanation": "'I am writing regarding...' or 'I am writing with regard to...' are the standard formal openers. 'In concern of' is a Spanish calque ('en relación con')."
+    },
+    {
+      "topic": "Reading & Listening · Strategy",
+      "unit": "EOI Exam",
+      "prompt": "At C1 level, when two options are both true according to the text, you should:",
+      "answer": "Choose the one that directly answers the question asked",
+      "distractors": ["Choose the most general one", "Choose the first true option you find", "Choose the longest option"],
+      "explanation": "C1 tests whether you can identify RELEVANCE, not just truth. More than one option may be true, but only one answers the specific question (reason, purpose, attitude, etc.)."
+    },
+    {
+      "topic": "Reading & Listening · Strategy",
+      "unit": "EOI Exam",
+      "prompt": "A multiple-choice option uses the same vocabulary as the text but with a different meaning. This is an example of:",
+      "answer": "Word-spotting distractor",
+      "distractors": ["True but irrelevant distractor", "Overgeneralisation distractor", "Common sense distractor"],
+      "explanation": "Word-spotting is a classic C1 trap: the option repeats words from the text, making you think it's correct, but the meaning is different. Always match meaning, not words."
+    },
+    {
+      "topic": "Reading & Listening · Strategy",
+      "unit": "EOI Exam",
+      "prompt": "An answer option says 'Everyone always prefers cycling to driving.' This is most likely a:",
+      "answer": "Overgeneralisation distractor",
+      "distractors": ["True but irrelevant distractor", "Word-spotting distractor", "Correct answer"],
+      "explanation": "Words like 'always', 'never', 'everyone', 'completely' are red flags at C1. Texts almost never support such absolute claims."
+    },
+    {
+      "topic": "Reading & Listening · Strategy",
+      "unit": "EOI Exam",
+      "prompt": "In a gap-fill, the sentence before the gap ends with a contrast marker (However, ...). The gap should be filled with:",
+      "answer": "A sentence that introduces a contrasting or limiting idea",
+      "distractors": ["A sentence that adds more supporting information", "A sentence that changes the topic completely", "A sentence that summarises what came before"],
+      "explanation": "Cohesion is key in gap-fill. 'However' signals contrast, so the gap must contain a contrasting idea. Grammatically correct ≠ logically correct."
     }
   ]
 }

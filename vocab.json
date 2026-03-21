@@ -2610,6 +2610,342 @@
       "type": "noun",
       "example": "Linkers of consequence help show cause-and-effect relationships.",
       "topic": "Writing · Reports & Proposals"
+    },
+    {
+      "word": "education system",
+      "translation": "❌ educative system",
+      "type": "error",
+      "explanation": "Correct: 'the education system' — NOT 'educative system' (false friend from Spanish 'educativo').",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "criminal record",
+      "translation": "❌ penal antecedents",
+      "type": "error",
+      "explanation": "Correct: 'criminal record' — NOT 'penal antecedents' (false friend from Spanish 'antecedentes penales').",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "current level",
+      "translation": "❌ actual level",
+      "type": "error",
+      "explanation": "Correct: 'current level' — NOT 'actual level'. 'Actual' in English means 'real', not 'current'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "training / education",
+      "translation": "❌ formation",
+      "type": "error",
+      "explanation": "Correct: 'training' or 'education' — NOT 'formation' (false friend from Spanish 'formación').",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "student visa",
+      "translation": "❌ study permission",
+      "type": "error",
+      "explanation": "Correct: 'student visa' — NOT 'study permission'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "private health insurance",
+      "translation": "❌ private health assistance",
+      "type": "error",
+      "explanation": "Correct: 'private health insurance' — NOT 'health assistance'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "higher education",
+      "translation": "❌ superior studies",
+      "type": "error",
+      "explanation": "Correct: 'higher education' — NOT 'superior studies'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "young people / young students",
+      "translation": "❌ foreign youngs",
+      "type": "error",
+      "explanation": "Correct: 'young people' or 'young students' — adjectives are never pluralised in English.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "quality of education",
+      "translation": "❌ educative quality",
+      "type": "error",
+      "explanation": "Correct: 'quality of education' — NOT 'educative quality'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "increase / upgrade",
+      "translation": "❌ upload (for improvement)",
+      "type": "error",
+      "explanation": "Correct: 'increase' or 'upgrade' — NOT 'upload' (false friend from Spanish 'subir').",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "implementation",
+      "translation": "❌ installation (of ideas/plans)",
+      "type": "error",
+      "explanation": "Correct: 'implementation' — NOT 'installation' when referring to plans or policies.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "financial benefit",
+      "translation": "❌ economical improvement",
+      "type": "error",
+      "explanation": "Correct: 'financial benefit' — NOT 'economical improvement'. 'Economical' means 'cheap/efficient', not 'financial'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "eco-friendly vehicles",
+      "translation": "❌ ecology vehicles",
+      "type": "error",
+      "explanation": "Correct: 'eco-friendly vehicles' — NOT 'ecology vehicles'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "empathetic",
+      "translation": "❌ emphatic",
+      "type": "error",
+      "explanation": "Correct: 'empathetic' (understanding others' feelings) ≠ 'emphatic' (forceful/strong).",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "commitment",
+      "translation": "❌ compromise (as 'compromiso')",
+      "type": "error",
+      "explanation": "Correct: 'commitment' — NOT 'compromise'. 'Compromise' in English means reaching a middle ground.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "current job",
+      "translation": "❌ actual job",
+      "type": "error",
+      "explanation": "Correct: 'current job' — NOT 'actual job'. 'Actual' = real, not current.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "customer-facing roles",
+      "translation": "❌ public attention jobs",
+      "type": "error",
+      "explanation": "Correct: 'customer-facing roles' — NOT 'public attention jobs'.",
+      "topic": "Errors · False Friends"
+    },
+    {
+      "word": "apply for a scholarship",
+      "translation": "❌ gain a scholarship",
+      "type": "error",
+      "explanation": "Correct collocation: 'apply for a scholarship' — you apply for it, not gain it directly.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "submit the documentation",
+      "translation": "❌ pass the documentation",
+      "type": "error",
+      "explanation": "Correct collocation: 'submit the documentation' — NOT 'pass'.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "complete the homologation process",
+      "translation": "❌ make the homologation",
+      "type": "error",
+      "explanation": "Correct: 'complete / start the recognition or homologation process'.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "offer training courses",
+      "translation": "❌ do courses to teach how to ride",
+      "type": "error",
+      "explanation": "Correct: 'offer training courses on safe cycling' — more formal and accurate.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "encourage the use of bicycles",
+      "translation": "❌ boost the use of bicycles (overused)",
+      "type": "error",
+      "explanation": "Better C1: 'encourage', 'promote', or 'facilitate' instead of the overused 'boost'.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "apply for a student visa",
+      "translation": "❌ request for a student visa",
+      "type": "error",
+      "explanation": "Correct: 'apply for a student visa' — NOT 'request for'. 'Apply for' is the standard collocation.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "to improve her Spanish",
+      "translation": "❌ to study in Spain improve her Spanish",
+      "type": "error",
+      "explanation": "Missing infinitive marker: '...to study in Spain TO improve her Spanish'.",
+      "topic": "Errors · Collocations"
+    },
+    {
+      "word": "She needs a student visa",
+      "translation": "❌ She need a student visa",
+      "type": "error",
+      "explanation": "Subject-verb agreement: 3rd person singular needs -s. 'She need' is a B2 error heavily penalised at C1.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "Megan doesn't need a visa",
+      "translation": "❌ Megan don't need a visa",
+      "type": "error",
+      "explanation": "Subject-verb agreement: 3rd person singular uses 'doesn't', not 'don't'.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "The documents are required",
+      "translation": "❌ The documents is required",
+      "type": "error",
+      "explanation": "Subject-verb agreement: 'documents' is plural → 'are', not 'is'.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "The government doesn't need to boost the budget",
+      "translation": "❌ Government don't need to boost the budget",
+      "type": "error",
+      "explanation": "Missing article + wrong agreement: 'The government doesn't...' (3rd person singular, negative).",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "I have always shown interest",
+      "translation": "❌ I always shown interest",
+      "type": "error",
+      "explanation": "Missing auxiliary: perfect tense requires 'have'. 'I have always shown interest'.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "I am a fast learner",
+      "translation": "❌ I can fast learner",
+      "type": "error",
+      "explanation": "Wrong structure: 'can' is a modal and cannot replace 'am'. 'I am a fast learner'.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "I have a Master's degree",
+      "translation": "❌ I have a Masters degree",
+      "type": "error",
+      "explanation": "Apostrophe required: 'Master's degree' (possessive). Common error in cover letters.",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "These positions have allowed me to gain experience",
+      "translation": "❌ This kind of positions has let me the gaining of experience",
+      "type": "error",
+      "explanation": "Multiple errors: agreement ('these positions'), verb choice ('allowed'), and structure ('to gain', not 'the gaining of').",
+      "topic": "Errors · Grammar"
+    },
+    {
+      "word": "It is recommended that you consult the embassy",
+      "translation": "❌ It is recommended to consult the embassy",
+      "type": "error",
+      "explanation": "Spanish calque: in English, use 'It is recommended that + subject + verb', not the infinitive directly.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "Regarding the requirements",
+      "translation": "❌ Regarding to the requirements",
+      "type": "error",
+      "explanation": "'Regarding' is a preposition and does NOT take 'to'. Compare with 'with regard to'.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "Madrid has many schools that receive foreign students",
+      "translation": "❌ It is many schools in Madrid",
+      "type": "error",
+      "explanation": "Spanish calque of 'hay': use 'Madrid has...' or 'There are many schools in Madrid that...'.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "I am writing regarding",
+      "translation": "❌ I am writing to you in concern of",
+      "type": "error",
+      "explanation": "Correct formal phrase: 'I am writing regarding...' or 'I am writing with regard to...'",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "Helping them integrate into society",
+      "translation": "❌ Help them integrate our society is the big challenge",
+      "type": "error",
+      "explanation": "Gerund as subject: 'Helping them integrate INTO society is a major challenge'.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "Although many people use this service",
+      "translation": "❌ Although there are a lot of people that use this service",
+      "type": "error",
+      "explanation": "More natural C1: 'Although many people use...' — avoid clunky 'there are... that' constructions.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "Several studies show that",
+      "translation": "❌ It is shown by studies that",
+      "type": "error",
+      "explanation": "Awkward passive calque: use active voice 'Several studies show that...' for a stronger C1 style.",
+      "topic": "Errors · Spanish Structures"
+    },
+    {
+      "word": "In most cases, non-EU students need a student visa if they stay longer than three months",
+      "translation": "❌ She doesn't need any visa (absolute statement)",
+      "type": "error",
+      "explanation": "Avoid absolute statements in mediation. Use hedging: 'In most cases...' / 'Requirements may vary depending on...'",
+      "topic": "Errors · Hedging"
+    },
+    {
+      "word": "This could encourage people to change their means of transport",
+      "translation": "❌ People will change their transport without a doubt",
+      "type": "error",
+      "explanation": "C1 hedging: replace absolute predictions with 'could', 'may', 'might', 'is likely to'.",
+      "topic": "Errors · Hedging"
+    },
+    {
+      "word": "This may lead to a reduction in pollution over time",
+      "translation": "❌ Pollution will decrease significantly in the first year",
+      "type": "error",
+      "explanation": "Avoid overly specific or absolute predictions. Use 'may lead to', 'could result in', 'is likely to'.",
+      "topic": "Errors · Hedging"
+    },
+    {
+      "word": "Requirements may vary depending on nationality and type of studies",
+      "translation": "❌ The documents are always the same",
+      "type": "error",
+      "explanation": "Never use 'always' or 'never' in mediation unless the source text is explicit. Hedge your interpretation.",
+      "topic": "Errors · Hedging"
+    },
+    {
+      "word": "To conclude,",
+      "translation": "❌ To finish,",
+      "type": "error",
+      "explanation": "More formal connector: 'To conclude,' or 'In conclusion,' — 'To finish' is too informal for C1 writing.",
+      "topic": "Errors · Register"
+    },
+    {
+      "word": "This leads to the next point:",
+      "translation": "❌ Which brings me to the next point (sentence fragment)",
+      "type": "error",
+      "explanation": "'Which brings me to...' is a sentence fragment. Use 'This leads to the next point:' instead.",
+      "topic": "Errors · Register"
+    },
+    {
+      "word": "make the city better connected",
+      "translation": "❌ makes the city more efficiently connected",
+      "type": "error",
+      "explanation": "Awkward adverb placement: 'better connected' is cleaner and more natural than 'more efficiently connected'.",
+      "topic": "Errors · Register"
+    },
+    {
+      "word": "cycle lanes",
+      "translation": "❌ cycle line",
+      "type": "error",
+      "explanation": "Correct term: 'cycle lanes' (plural) — NOT 'cycle line'. A common vocabulary error in transport proposals.",
+      "topic": "Errors · Register"
+    },
+    {
+      "word": "the use of bicycles",
+      "translation": "❌ the bicycles use",
+      "type": "error",
+      "explanation": "Noun phrase structure: in English, use 'the use of bicycles' — NOT the Spanish word order 'the bicycles use'.",
+      "topic": "Errors · Register"
     }
   ]
 }

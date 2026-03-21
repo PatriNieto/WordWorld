@@ -3,139 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Study</title>
+  <title>English C1 Study</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #ffffff; --bg2: #f5f4f0; --bg3: #eeede9;
-      --text: #1a1a1a; --text2: #666; --text3: #999;
-      --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.2);
-      --radius: 8px; --radius-lg: 12px;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#fff;--bg2:#f5f4f0;--bg3:#eeede9;
+      --text:#1a1a1a;--text2:#666;--text3:#999;
+      --border:rgba(0,0,0,0.12);--border2:rgba(0,0,0,0.2);
+      --radius:8px;--radius-lg:12px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#1e1e1e; --bg2:#2a2a2a; --bg3:#333; --text:#f0f0f0; --text2:#aaa; --text3:#666; --border:rgba(255,255,255,0.12); --border2:rgba(255,255,255,0.2); }
+    @media(prefers-color-scheme:dark){
+      :root{--bg:#1e1e1e;--bg2:#2a2a2a;--bg3:#333;--text:#f0f0f0;--text2:#aaa;--text3:#666;--border:rgba(255,255,255,0.12);--border2:rgba(255,255,255,0.2)}
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg3); color: var(--text); min-height: 100vh; padding: 1.5rem 1rem; }
-    .app { max-width: 560px; margin: 0 auto; }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;padding:1.5rem 1rem}
+    .app{max-width:560px;margin:0 auto}
 
-    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 8px; }
-    .header h1 { font-size: 20px; font-weight: 600; }
-    .header-btns { display: flex; gap: 6px; flex-wrap: wrap; }
-    .icon-btn { font-size: 12px; padding: 7px 12px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: background 0.15s; white-space: nowrap; }
-    .icon-btn:hover { background: var(--bg2); }
-    .icon-btn.danger { color: #A32D2D; border-color: #F09595; }
-    .icon-btn.danger:hover { background: #FCEBEB; }
+    /* HEADER */
+    .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:8px}
+    .header h1{font-size:20px;font-weight:600}
+    .header-btns{display:flex;gap:6px;flex-wrap:wrap}
+    .icon-btn{font-size:12px;padding:6px 12px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;transition:background .15s;white-space:nowrap}
+    .icon-btn:hover{background:var(--bg2)}
+    .icon-btn.danger{color:#A32D2D;border-color:#F09595}
+    .icon-btn.danger:hover{background:#FCEBEB}
 
-    .tabs { display: flex; gap: 4px; margin-bottom: 1.5rem; background: var(--bg2); border-radius: var(--radius); padding: 4px; }
-    .tab-btn { flex: 1; padding: 8px; font-size: 13px; font-weight: 500; border: none; border-radius: 6px; background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; }
-    .tab-btn.active { background: var(--bg); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    /* TABS */
+    .tabs{display:flex;gap:3px;margin-bottom:1.5rem;background:var(--bg2);border-radius:var(--radius);padding:4px}
+    .tab-btn{flex:1;padding:7px 4px;font-size:12px;font-weight:500;border:none;border-radius:6px;background:transparent;color:var(--text2);cursor:pointer;transition:all .15s;line-height:1.3;text-align:center}
+    .tab-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .tab-content{display:none}
+    .tab-content.active{display:block}
 
     /* GLOBAL STATS */
-    .global-stats { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 12px 16px; margin-bottom: 1.5rem; }
-    .global-stats-title { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
-    .global-progress-bar { width: 100%; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; display: flex; margin-bottom: 8px; }
-    .gp-known{background:#639922;transition:width 0.4s} .gp-hard{background:#EF9F27;transition:width 0.4s} .gp-no{background:#E24B4A;transition:width 0.4s}
-    .global-stats-row { display: flex; gap: 16px; flex-wrap: wrap; }
-    .gstat { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text2); }
-    .gstat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .gstat-num { font-weight: 600; color: var(--text); }
+    .global-stats{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:1.5rem}
+    .global-stats-title{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+    .global-progress-bar{width:100%;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;display:flex;margin-bottom:8px}
+    .gp-known{background:#639922;transition:width .4s}.gp-hard{background:#EF9F27;transition:width .4s}.gp-no{background:#E24B4A;transition:width .4s}
+    .global-stats-row{display:flex;gap:16px;flex-wrap:wrap}
+    .gstat{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text2)}
+    .gstat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .gstat-num{font-weight:600;color:var(--text)}
 
-    /* FLASHCARDS */
-    .mode-bar { display: flex; gap: 8px; margin-bottom: 1rem; }
-    .mode-btn { flex: 1; padding: 9px 6px; font-size: 12px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; line-height: 1.3; }
-    .mode-btn.active { background: #26215C; border-color: #26215C; color: white; }
-    .mode-btn:hover:not(.active) { background: var(--bg2); }
-    .mode-btn .count { font-size: 11px; display: block; opacity: 0.7; margin-top: 2px; }
-    .topic-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .topic-btn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; }
-    .topic-btn.active { background: #E6F1FB; border-color: #378ADD; color: #185FA5; font-weight: 500; }
-    .topic-btn:hover:not(.active) { background: var(--bg2); }
-    .card-area { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-    .progress-line { width: 100%; display: flex; align-items: center; gap: 10px; }
-    .progress-bar { flex: 1; height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
-    .progress-fill { height: 100%; background: #378ADD; border-radius: 2px; transition: width 0.3s; }
-    .progress-label { font-size: 12px; color: var(--text2); white-space: nowrap; }
-    .card-wrap { width: 100%; perspective: 1000px; height: 250px; cursor: pointer; }
-    .card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(.4,0,.2,1); }
-    .card-wrap.flipped .card-inner { transform: rotateY(180deg); }
-    .card-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: var(--radius-lg); border: 0.5px solid var(--border); background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; text-align: center; user-select: none; }
-    .card-back { transform: rotateY(180deg); background: var(--bg2); }
-    .card-tag { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
-    .card-word { font-size: 30px; font-weight: 600; margin-bottom: 8px; }
-    .card-phonetic { font-size: 14px; color: var(--text2); margin-bottom: 8px; }
-    .card-hint { font-size: 12px; color: var(--text3); margin-top: 14px; }
-    .card-translation { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
-    .card-example { font-size: 13px; color: var(--text2); font-style: italic; max-width: 340px; line-height: 1.6; }
-    .card-type { font-size: 11px; padding: 3px 10px; border-radius: 12px; margin-bottom: 14px; font-weight: 500; }
-    .type-noun{background:#E1F5EE;color:#0F6E56} .type-verb{background:#E6F1FB;color:#185FA5} .type-adj{background:#FAEEDA;color:#854F0B} .type-adv{background:#FBEAF0;color:#993556} .type-phrase{background:#EEEDFE;color:#534AB7}
-    .status-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: 12px; right: 12px; font-size: 11px; font-weight: 600; }
-    .status-known{background:#EAF3DE;color:#3B6D11} .status-hard{background:#FAEEDA;color:#854F0B} .status-no{background:#FCEBEB;color:#A32D2D}
-    .action-btns-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
-    .reveal-btn { width: 100%; padding: 11px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg2); color: var(--text2); font-size: 14px; cursor: pointer; transition: background 0.15s; }
-    .reveal-btn:hover { background: var(--bg); }
-    .action-row { display: flex; gap: 10px; width: 100%; }
-    .action-btn { flex: 1; padding: 11px 6px; border-radius: var(--radius); border: 0.5px solid transparent; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; flex-direction: column; align-items: center; gap: 3px; }
-    .action-btn:hover { transform: translateY(-2px); }
-    .btn-no{background:#FCEBEB;border-color:#F09595;color:#A32D2D} .btn-hard{background:#FAEEDA;border-color:#FAC775;color:#854F0B} .btn-yes{background:#EAF3DE;border-color:#C0DD97;color:#3B6D11}
-    .btn-label { font-size: 11px; opacity: 0.8; font-weight: 400; }
-    .nav-row { display: flex; justify-content: space-between; width: 100%; }
-    .nav-btn { font-size: 13px; padding: 7px 16px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: background 0.15s; }
-    .nav-btn:hover:not(:disabled) { background: var(--bg2); }
-    .nav-btn:disabled { opacity: 0.3; cursor: default; }
+    /* FLASHCARDS SHARED */
+    .mode-bar{display:flex;gap:8px;margin-bottom:1rem}
+    .mode-btn{flex:1;padding:9px 6px;font-size:12px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;transition:all .15s;line-height:1.3}
+    .mode-btn.active{background:#26215C;border-color:#26215C;color:white}
+    .mode-btn:hover:not(.active){background:var(--bg2)}
+    .mode-btn .count{font-size:11px;display:block;opacity:.7;margin-top:2px}
+    .topic-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
+    .topic-btn{font-size:12px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;transition:all .15s}
+    .topic-btn.active{background:#E6F1FB;border-color:#378ADD;color:#185FA5;font-weight:500}
+    .topic-btn:hover:not(.active){background:var(--bg2)}
+    .card-area{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+    .progress-line{width:100%;display:flex;align-items:center;gap:10px}
+    .progress-bar{flex:1;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
+    .progress-fill{height:100%;background:#378ADD;border-radius:2px;transition:width .3s}
+    .progress-label{font-size:12px;color:var(--text2);white-space:nowrap}
 
-    /* GRAMMAR QUIZ */
-    .quiz-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .quiz-score { font-size: 13px; color: var(--text2); }
-    .quiz-score b { color: var(--text); }
-    .quiz-filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .quiz-filter-btn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text2); cursor: pointer; transition: all 0.15s; }
-    .quiz-filter-btn.active { background: #EEEDFE; border-color: #7F77DD; color: #3C3489; font-weight: 500; }
-    .quiz-filter-btn:hover:not(.active) { background: var(--bg2); }
-    .quiz-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
-    .quiz-meta { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; display: flex; justify-content: space-between; }
-    .quiz-prompt { font-size: 15px; line-height: 1.8; color: var(--text); margin-bottom: 1.25rem; white-space: pre-wrap; }
-    .quiz-prompt .blank { display: inline-block; min-width: 72px; border-bottom: 2px solid #378ADD; color: #378ADD; font-weight: 600; text-align: center; padding: 0 4px; }
-    .options-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
-    .option-btn { width: 100%; padding: 11px 16px; border-radius: var(--radius); border: 0.5px solid var(--border2); background: var(--bg2); color: var(--text); font-size: 14px; text-align: left; cursor: pointer; transition: all 0.15s; }
-    .option-btn:hover:not(:disabled) { background: var(--bg); transform: translateX(3px); }
-    .option-btn.correct { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; font-weight: 500; }
-    .option-btn.wrong   { background: #FCEBEB; border-color: #F09595; color: #A32D2D; }
-    .option-btn:disabled { cursor: default; transform: none; }
-    .explanation-box { padding: 12px 14px; border-radius: var(--radius); border-left: 3px solid #378ADD; background: #E6F1FB; font-size: 13px; line-height: 1.65; color: #185FA5; margin-top: 1rem; }
-    .explanation-box.loading { color: var(--text3); border-color: var(--border2); background: var(--bg2); font-style: italic; }
-    .explanation-box.wrong-ex { border-color: #E24B4A; background: #FCEBEB; color: #A32D2D; }
-    .ex-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; opacity: 0.8; }
-    .quiz-next-row { display: flex; justify-content: flex-end; margin-top: 1rem; }
+    /* VOCAB CARD */
+    .card-wrap{width:100%;perspective:1000px;height:250px;cursor:pointer}
+    .card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+    .card-wrap.flipped .card-inner{transform:rotateY(180deg)}
+    .card-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius-lg);border:0.5px solid var(--border);background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;user-select:none}
+    .card-back{transform:rotateY(180deg);background:var(--bg2)}
+    .card-tag{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+    .card-word{font-size:28px;font-weight:600;margin-bottom:8px;line-height:1.2}
+    .card-phonetic{font-size:14px;color:var(--text2);margin-bottom:8px}
+    .card-hint{font-size:12px;color:var(--text3);margin-top:14px}
+    .card-translation{font-size:21px;font-weight:600;margin-bottom:10px;line-height:1.3}
+    .card-example{font-size:13px;color:var(--text2);font-style:italic;max-width:340px;line-height:1.6}
+    .card-type{font-size:11px;padding:3px 10px;border-radius:12px;margin-bottom:14px;font-weight:500}
+    .type-noun{background:#E1F5EE;color:#0F6E56}.type-verb{background:#E6F1FB;color:#185FA5}.type-adj{background:#FAEEDA;color:#854F0B}.type-adv{background:#FBEAF0;color:#993556}.type-phrase{background:#EEEDFE;color:#534AB7}.type-error{background:#FCEBEB;color:#A32D2D}
+    .status-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:12px;right:12px;font-size:11px;font-weight:600}
+    .status-known{background:#EAF3DE;color:#3B6D11}.status-hard{background:#FAEEDA;color:#854F0B}.status-no{background:#FCEBEB;color:#A32D2D}
+    .action-btns-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+    .reveal-btn{width:100%;padding:11px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg2);color:var(--text2);font-size:14px;cursor:pointer;transition:background .15s}
+    .reveal-btn:hover{background:var(--bg)}
+    .action-row{display:flex;gap:10px;width:100%}
+    .action-btn{flex:1;padding:11px 6px;border-radius:var(--radius);border:0.5px solid transparent;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:3px}
+    .action-btn:hover{transform:translateY(-2px)}
+    .btn-no{background:#FCEBEB;border-color:#F09595;color:#A32D2D}.btn-hard{background:#FAEEDA;border-color:#FAC775;color:#854F0B}.btn-yes{background:#EAF3DE;border-color:#C0DD97;color:#3B6D11}
+    .btn-label{font-size:11px;opacity:.8;font-weight:400}
+    .nav-row{display:flex;justify-content:space-between;width:100%}
+    .nav-btn{font-size:13px;padding:7px 16px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;transition:background .15s}
+    .nav-btn:hover:not(:disabled){background:var(--bg2)}
+    .nav-btn:disabled{opacity:.3;cursor:default}
 
-    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text2); font-size: 14px; line-height: 1.8; }
-    .empty-state .big { font-size: 36px; margin-bottom: 1rem; }
-    .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: white; font-size: 13px; padding: 8px 18px; border-radius: 20px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 999; white-space: nowrap; }
-    .toast.show { opacity: 1; }
+    /* ERROR CARD special */
+    .error-card-front{background:var(--bg)}
+    .correct-badge{font-size:11px;font-weight:600;color:#3B6D11;background:#EAF3DE;padding:3px 10px;border-radius:12px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+    .error-form{font-size:13px;color:#A32D2D;background:#FCEBEB;border-radius:var(--radius);padding:8px 14px;margin-top:10px;width:100%;text-align:left;line-height:1.6}
+    .error-form .ef-label{font-size:11px;font-weight:600;opacity:.7;margin-bottom:3px}
+
+    /* QUIZ */
+    .quiz-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+    .quiz-score{font-size:13px;color:var(--text2)}
+    .quiz-score b{color:var(--text)}
+    .quiz-filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
+    .quiz-filter-btn{font-size:12px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;transition:all .15s}
+    .quiz-filter-btn.active{background:#EEEDFE;border-color:#7F77DD;color:#3C3489;font-weight:500}
+    .quiz-filter-btn:hover:not(.active){background:var(--bg2)}
+    .quiz-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem}
+    .quiz-meta{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;display:flex;justify-content:space-between}
+    .quiz-prompt{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:1.25rem;white-space:pre-wrap}
+    .quiz-prompt .blank{display:inline-block;min-width:72px;border-bottom:2px solid #378ADD;color:#378ADD;font-weight:600;text-align:center;padding:0 4px}
+    .options-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+    .option-btn{width:100%;padding:11px 16px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg2);color:var(--text);font-size:14px;text-align:left;cursor:pointer;transition:all .15s}
+    .option-btn:hover:not(:disabled){background:var(--bg);transform:translateX(3px)}
+    .option-btn.correct{background:#EAF3DE;border-color:#C0DD97;color:#3B6D11;font-weight:500}
+    .option-btn.wrong{background:#FCEBEB;border-color:#F09595;color:#A32D2D}
+    .option-btn:disabled{cursor:default;transform:none}
+    .explanation-box{padding:12px 14px;border-radius:var(--radius);border-left:3px solid #378ADD;background:#E6F1FB;font-size:13px;line-height:1.65;color:#185FA5;margin-top:1rem}
+    .explanation-box.loading{color:var(--text3);border-color:var(--border2);background:var(--bg2);font-style:italic}
+    .explanation-box.wrong-ex{border-color:#E24B4A;background:#FCEBEB;color:#A32D2D}
+    .ex-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;opacity:.8}
+    .quiz-next-row{display:flex;justify-content:flex-end;margin-top:1rem}
+
+    /* THEORY TAB */
+    .theory-section{margin-bottom:1rem}
+    .theory-header{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;transition:background .15s;text-align:left}
+    .theory-header:hover{background:var(--bg2)}
+    .theory-header.open{border-radius:var(--radius-lg) var(--radius-lg) 0 0;border-bottom-color:transparent}
+    .theory-title{font-size:14px;font-weight:600;color:var(--text)}
+    .theory-subtitle{font-size:12px;color:var(--text2);margin-top:2px}
+    .theory-arrow{font-size:12px;color:var(--text3);transition:transform .2s;flex-shrink:0}
+    .theory-header.open .theory-arrow{transform:rotate(180deg)}
+    .theory-body{display:none;background:var(--bg);border:0.5px solid var(--border);border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);padding:16px}
+    .theory-body.open{display:block}
+    .theory-rule{margin-bottom:14px;padding-bottom:14px;border-bottom:0.5px solid var(--border)}
+    .theory-rule:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+    .rule-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .rule-label.good{color:#3B6D11}.rule-label.bad{color:#A32D2D}.rule-label.tip{color:#185FA5}.rule-label.neutral{color:var(--text2)}
+    .rule-text{font-size:13px;line-height:1.7;color:var(--text2)}
+    .rule-example{font-size:13px;margin-top:6px;padding:8px 12px;border-radius:var(--radius);line-height:1.6}
+    .rule-example.good-ex{background:#EAF3DE;color:#3B6D11;border-left:3px solid #C0DD97}
+    .rule-example.bad-ex{background:#FCEBEB;color:#A32D2D;border-left:3px solid #F09595}
+    .rule-example.tip-ex{background:#E6F1FB;color:#185FA5;border-left:3px solid #85B7EB}
+    .theory-tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin:2px;font-weight:500}
+    .theory-tag.warn{background:#FAEEDA;color:#854F0B}
+    .theory-tag.good{background:#EAF3DE;color:#3B6D11}
+    .theory-tag.info{background:#E6F1FB;color:#185FA5}
+
+    /* SHARED */
+    .empty-state{text-align:center;padding:3rem 1rem;color:var(--text2);font-size:14px;line-height:1.8}
+    .empty-state .big{font-size:36px;margin-bottom:1rem}
+    .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#1a1a1a;color:white;font-size:13px;padding:8px 18px;border-radius:20px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;white-space:nowrap}
+    .toast.show{opacity:1}
   </style>
 </head>
 <body>
 <div class="app">
 
   <div class="header">
-    <h1>English Study</h1>
+    <h1>English C1</h1>
     <div class="header-btns">
-      <label class="icon-btn">+ Vocab <input type="file" accept=".json" id="file-input" style="display:none"></label>
-      <label class="icon-btn">+ Ejercicios <input type="file" accept=".json" id="ex-file-input" style="display:none"></label>
+      <label class="icon-btn">+ Vocab<input type="file" accept=".json" id="file-input" style="display:none"></label>
+      <label class="icon-btn">+ Ejercicios<input type="file" accept=".json" id="ex-file-input" style="display:none"></label>
       <button class="icon-btn danger" onclick="confirmReset()">↺ Reset</button>
     </div>
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('flashcards')">📚 Vocabulario</button>
-    <button class="tab-btn"       onclick="switchTab('grammar')">✏️ Gramática</button>
+    <button class="tab-btn active"  onclick="switchTab('flashcards')">📚 Vocab</button>
+    <button class="tab-btn"         onclick="switchTab('errors')">❌ Errores</button>
+    <button class="tab-btn"         onclick="switchTab('grammar')">✏️ Quiz</button>
+    <button class="tab-btn"         onclick="switchTab('theory')">📖 Teoría</button>
   </div>
 
-  <!-- FLASHCARDS -->
+  <!-- ══════════════ FLASHCARDS ══════════════ -->
   <div class="tab-content active" id="tab-flashcards">
     <div class="global-stats">
-      <div class="global-stats-title">Progreso global</div>
+      <div class="global-stats-title">Progreso vocabulario</div>
       <div class="global-progress-bar">
         <div class="gp-known" id="gp-known" style="width:0%"></div>
         <div class="gp-hard"  id="gp-hard"  style="width:0%"></div>
@@ -160,7 +198,34 @@
     </div>
   </div>
 
-  <!-- GRAMMAR -->
+  <!-- ══════════════ ERRORS TAB ══════════════ -->
+  <div class="tab-content" id="tab-errors">
+    <div class="global-stats">
+      <div class="global-stats-title">Progreso errores</div>
+      <div class="global-progress-bar">
+        <div class="gp-known" id="ep-known" style="width:0%"></div>
+        <div class="gp-hard"  id="ep-hard"  style="width:0%"></div>
+        <div class="gp-no"    id="ep-no"    style="width:0%"></div>
+      </div>
+      <div class="global-stats-row">
+        <div class="gstat"><div class="gstat-dot" style="background:#639922"></div><span class="gstat-num" id="eg-known">0</span> dominados</div>
+        <div class="gstat"><div class="gstat-dot" style="background:#EF9F27"></div><span class="gstat-num" id="eg-hard">0</span> difíciles</div>
+        <div class="gstat"><div class="gstat-dot" style="background:var(--bg3);border:1px solid var(--border2)"></div><span class="gstat-num" id="eg-new">0</span> nuevos</div>
+        <div class="gstat" style="margin-left:auto"><span class="gstat-num" id="eg-total">0</span> total</div>
+      </div>
+    </div>
+    <div class="mode-bar">
+      <button class="mode-btn active" data-emode="all"    onclick="setEMode('all')">Estudiar todo<span class="count" id="emc-all"></span></button>
+      <button class="mode-btn"        data-emode="hard"   onclick="setEMode('hard')">Fallos<span class="count" id="emc-hard"></span></button>
+      <button class="mode-btn"        data-emode="review" onclick="setEMode('review')">Repaso<span class="count" id="emc-review"></span></button>
+    </div>
+    <div class="topic-bar" id="error-topic-bar"></div>
+    <div class="card-area" id="error-card-area">
+      <div class="empty-state"><div class="big">❌</div>Las flashcards de errores se cargan con el mismo JSON de vocabulario.<br><small style="color:var(--text3)">Importa un vocab.json que incluya entradas de tipo "error".</small></div>
+    </div>
+  </div>
+
+  <!-- ══════════════ QUIZ ══════════════ -->
   <div class="tab-content" id="tab-grammar">
     <div class="quiz-topbar">
       <div class="quiz-score">Pregunta <b id="q-current">—</b> de <b id="q-total">—</b> &nbsp;·&nbsp; ✓ <b id="q-score">0</b></div>
@@ -168,49 +233,68 @@
     </div>
     <div class="quiz-filter-bar" id="quiz-filter-bar"></div>
     <div id="quiz-area">
-      <div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Usa el botón "+ Ejercicios" arriba.</small></div>
+      <div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Botón "+ Ejercicios" arriba.</small></div>
     </div>
+  </div>
+
+  <!-- ══════════════ THEORY ══════════════ -->
+  <div class="tab-content" id="tab-theory">
+    <div id="theory-content"></div>
   </div>
 
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
-/* ── SHARED ── */
+/* ═══════════════════════════════════════════════
+   SHARED
+═══════════════════════════════════════════════ */
 const PROGRESS_KEY='vocab_progress_v2', VOCAB_KEY='vocab_data_v2', EXER_KEY='exercises_data_v1';
+const EPROGRESS_KEY='error_progress_v1';
 
 function switchTab(tab){
-  ['flashcards','grammar'].forEach(t=>{
+  const tabs=['flashcards','errors','grammar','theory'];
+  tabs.forEach(t=>{
     document.getElementById('tab-'+t).classList.toggle('active',t===tab);
   });
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',(i===0&&tab==='flashcards')||(i===1&&tab==='grammar')));
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===tabs.indexOf(tab)));
 }
 
 function showToast(msg){
   const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
+  t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2200);
 }
 
 function confirmReset(){
   if(!confirm('¿Borrar todo el progreso?')) return;
-  progress={}; quizScore=0;
-  try{ localStorage.removeItem(PROGRESS_KEY); }catch(e){}
-  updateGlobalStats(); updateModeCounts(); renderCard(); renderQuiz();
+  progress={};eprogress={};quizScore=0;
+  try{localStorage.removeItem(PROGRESS_KEY);localStorage.removeItem(EPROGRESS_KEY);}catch(e){}
+  updateGlobalStats();updateModeCounts();renderCard();
+  updateErrorStats();updateEModeCounts();renderErrorCard();
+  document.getElementById('q-score').textContent='0';
   showToast('Progreso borrado');
 }
 
-/* ── FLASHCARDS ── */
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+
+/* ═══════════════════════════════════════════════
+   VOCAB FLASHCARDS
+═══════════════════════════════════════════════ */
 let vocab=[], progress={}, currentDeck=[], currentIdx=0, currentMode='all', currentTopic='all', flipped=false;
 
-function loadProgress(){ try{ progress=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{}'); }catch(e){ progress={}; } }
-function saveProgress(){ try{ localStorage.setItem(PROGRESS_KEY,JSON.stringify(progress)); }catch(e){} }
-function saveVocab(d){ try{ localStorage.setItem(VOCAB_KEY,JSON.stringify(d)); }catch(e){} }
-function loadSavedVocab(){ try{ const d=localStorage.getItem(VOCAB_KEY); return d?JSON.parse(d):null; }catch(e){ return null; } }
+function loadProgress(){try{progress=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{}');}catch(e){progress={};}}
+function saveProgress(){try{localStorage.setItem(PROGRESS_KEY,JSON.stringify(progress));}catch(e){}}
+function saveVocab(d){try{localStorage.setItem(VOCAB_KEY,JSON.stringify(d));}catch(e){}}
+function loadSavedVocab(){try{const d=localStorage.getItem(VOCAB_KEY);return d?JSON.parse(d):null;}catch(e){return null;}}
 
 function loadData(data){
-  vocab=data.vocabulary||(Array.isArray(data)?data:[]);
-  saveVocab(data); buildTopics(); updateGlobalStats(); updateDeck();
+  const all=data.vocabulary||(Array.isArray(data)?data:[]);
+  vocab=all.filter(v=>v.type!=='error');
+  errorVocab=all.filter(v=>v.type==='error');
+  saveVocab(data);
+  buildTopics();updateGlobalStats();updateDeck();
+  buildErrorTopics();updateErrorStats();updateEModeCounts();updateEDeck();
 }
 
 function buildTopics(){
@@ -220,27 +304,27 @@ function buildTopics(){
   ).join('');
 }
 
-function setTopic(t){ currentTopic=t; buildTopics(); updateDeck(); }
+function setTopic(t){currentTopic=t;buildTopics();updateDeck();}
 function setMode(m){
   currentMode=m;
-  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+  document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
   updateDeck();
 }
 
-function filteredVocab(){ return currentTopic==='all'?vocab:vocab.filter(v=>v.topic===currentTopic); }
+function filteredVocab(){return currentTopic==='all'?vocab:vocab.filter(v=>v.topic===currentTopic);}
 
 function updateDeck(){
   const base=filteredVocab();
-  if(currentMode==='hard')        currentDeck=shuffle(base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no'));
-  else if(currentMode==='review') currentDeck=shuffle(base.filter(v=>progress[v.word]==='known'));
-  else {
+  if(currentMode==='hard')       currentDeck=shuffle(base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no'));
+  else if(currentMode==='review')currentDeck=shuffle(base.filter(v=>progress[v.word]==='known'));
+  else{
     const no=shuffle(base.filter(v=>progress[v.word]==='no'));
     const hard=shuffle(base.filter(v=>progress[v.word]==='hard'));
     const unseen=shuffle(base.filter(v=>!progress[v.word]));
     const known=shuffle(base.filter(v=>progress[v.word]==='known'));
     currentDeck=[...no,...hard,...unseen,...known];
   }
-  currentIdx=0; flipped=false; updateModeCounts(); renderCard();
+  currentIdx=0;flipped=false;updateModeCounts();renderCard();
 }
 
 function updateGlobalStats(){
@@ -266,24 +350,24 @@ function updateModeCounts(){
   document.getElementById('mc-review').textContent='\n'+base.filter(v=>progress[v.word]==='known').length+' cards';
 }
 
-function typeClass(t){ return({verb:'type-verb',noun:'type-noun',adj:'type-adj',adv:'type-adv',phrase:'type-phrase'}[t]||'type-noun'); }
-function typeName(t){ return({verb:'verbo',noun:'sustantivo',adj:'adjetivo',adv:'adverbio',phrase:'frase'}[t]||t||''); }
-function statusIcon(w){
-  const s=progress[w];
-  if(s==='known') return '<div class="status-icon status-known">✓</div>';
-  if(s==='hard')  return '<div class="status-icon status-hard">~</div>';
-  if(s==='no')    return '<div class="status-icon status-no">✗</div>';
-  return '';
+function typeClass(t){return({verb:'type-verb',noun:'type-noun',adj:'type-adj',adv:'type-adv',phrase:'type-phrase',error:'type-error'}[t]||'type-noun');}
+function typeName(t){return({verb:'verbo',noun:'sustantivo',adj:'adjetivo',adv:'adverbio',phrase:'frase',error:'error común'}[t]||t||'');}
+function statusIcon(w,prog){
+  const s=(prog||progress)[w];
+  if(s==='known')return'<div class="status-icon status-known">✓</div>';
+  if(s==='hard') return'<div class="status-icon status-hard">~</div>';
+  if(s==='no')   return'<div class="status-icon status-no">✗</div>';
+  return'';
 }
 
 function renderCard(){
   const area=document.getElementById('card-area');
   if(!currentDeck.length){
-    const msgs={hard:'¡No tienes palabras difíciles en este tema! 🎉',review:'Aún no has acertado ninguna aquí. ¡Ánimo!',all:vocab.length?'No hay palabras para este filtro.':'Importa un JSON de vocabulario.'};
+    const msgs={hard:'¡No tienes palabras difíciles en este tema! 🎉',review:'Aún no has acertado ninguna aquí.',all:vocab.length?'No hay palabras para este filtro.':'Importa un JSON de vocabulario.'};
     area.innerHTML=`<div class="empty-state"><div class="big">${currentMode==='hard'?'🎉':'📚'}</div>${msgs[currentMode]}</div>`;
     return;
   }
-  const card=currentDeck[currentIdx], pct=Math.round((currentIdx/currentDeck.length)*100);
+  const card=currentDeck[currentIdx],pct=Math.round((currentIdx/currentDeck.length)*100);
   area.innerHTML=`
     <div class="progress-line">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -306,9 +390,7 @@ function renderCard(){
         </div>
       </div>
     </div>
-    <div class="action-btns-wrap" id="action-area">
-      <button class="reveal-btn" onclick="flipCard()">Ver traducción</button>
-    </div>
+    <div class="action-btns-wrap" id="action-area"><button class="reveal-btn" onclick="flipCard()">Ver traducción</button></div>
     <div class="nav-row">
       <button class="nav-btn" onclick="prevCard()" ${currentIdx===0?'disabled':''}>← Anterior</button>
       <button class="nav-btn" onclick="nextCard()" ${currentIdx===currentDeck.length-1?'disabled':''}>Siguiente →</button>
@@ -316,8 +398,8 @@ function renderCard(){
 }
 
 function flipCard(){
-  const wrap=document.getElementById('the-card'); if(!wrap) return;
-  flipped=!flipped; wrap.classList.toggle('flipped',flipped);
+  const wrap=document.getElementById('the-card');if(!wrap)return;
+  flipped=!flipped;wrap.classList.toggle('flipped',flipped);
   document.getElementById('action-area').innerHTML=flipped
     ?`<div class="action-row">
         <button class="action-btn btn-no"   onclick="rate('no')">✗<span class="btn-label">No sé</span></button>
@@ -329,9 +411,9 @@ function flipCard(){
 
 function rate(val){
   progress[currentDeck[currentIdx].word]=val;
-  saveProgress(); updateGlobalStats(); updateModeCounts();
+  saveProgress();updateGlobalStats();updateModeCounts();
   setTimeout(()=>{
-    if(currentIdx<currentDeck.length-1){ currentIdx++; flipped=false; renderCard(); }
+    if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();}
     else{
       const known=vocab.filter(v=>progress[v.word]==='known').length;
       document.getElementById('card-area').innerHTML=`<div class="empty-state"><div class="big">🎯</div><b>¡Ronda completada!</b><br><br>${known} de ${vocab.length} palabras dominadas.<br><br><button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="updateDeck()">Repetir</button></div>`;
@@ -339,18 +421,147 @@ function rate(val){
   },200);
 }
 
-function nextCard(){ if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();} }
-function prevCard(){ if(currentIdx>0){currentIdx--;flipped=false;renderCard();} }
+function nextCard(){if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();}}
+function prevCard(){if(currentIdx>0){currentIdx--;flipped=false;renderCard();}}
 
-/* ── GRAMMAR QUIZ ── */
+/* ═══════════════════════════════════════════════
+   ERROR FLASHCARDS
+═══════════════════════════════════════════════ */
+let errorVocab=[], eprogress={}, eDeck=[], eIdx=0, eMode='all', eTopic='all', eFlipped=false;
+
+function loadEProgress(){try{eprogress=JSON.parse(localStorage.getItem(EPROGRESS_KEY)||'{}');}catch(e){eprogress={};}}
+function saveEProgress(){try{localStorage.setItem(EPROGRESS_KEY,JSON.stringify(eprogress));}catch(e){}}
+
+function buildErrorTopics(){
+  const topics=['all',...new Set(errorVocab.map(v=>v.topic).filter(Boolean))];
+  document.getElementById('error-topic-bar').innerHTML=topics.map(t=>
+    `<button class="topic-btn${t===eTopic?' active':''}" onclick="setETopic('${t}')">${t==='all'?'Todos':t}</button>`
+  ).join('');
+}
+
+function setETopic(t){eTopic=t;buildErrorTopics();updateEDeck();}
+function setEMode(m){
+  eMode=m;
+  document.querySelectorAll('[data-emode]').forEach(b=>b.classList.toggle('active',b.dataset.emode===m));
+  updateEDeck();
+}
+
+function filteredErrors(){return eTopic==='all'?errorVocab:errorVocab.filter(v=>v.topic===eTopic);}
+
+function updateEDeck(){
+  const base=filteredErrors();
+  if(eMode==='hard')       eDeck=shuffle(base.filter(v=>eprogress[v.word]==='hard'||eprogress[v.word]==='no'));
+  else if(eMode==='review')eDeck=shuffle(base.filter(v=>eprogress[v.word]==='known'));
+  else{
+    const no=shuffle(base.filter(v=>eprogress[v.word]==='no'));
+    const hard=shuffle(base.filter(v=>eprogress[v.word]==='hard'));
+    const unseen=shuffle(base.filter(v=>!eprogress[v.word]));
+    const known=shuffle(base.filter(v=>eprogress[v.word]==='known'));
+    eDeck=[...no,...hard,...unseen,...known];
+  }
+  eIdx=0;eFlipped=false;updateEModeCounts();renderErrorCard();
+}
+
+function updateErrorStats(){
+  const total=errorVocab.length,
+        known=errorVocab.filter(v=>eprogress[v.word]==='known').length,
+        hard=errorVocab.filter(v=>eprogress[v.word]==='hard').length,
+        no=errorVocab.filter(v=>eprogress[v.word]==='no').length;
+  document.getElementById('eg-total').textContent=total;
+  document.getElementById('eg-known').textContent=known;
+  document.getElementById('eg-hard').textContent=hard;
+  document.getElementById('eg-new').textContent=total-known-hard-no;
+  const pct=n=>total?Math.round((n/total)*100)+'%':'0%';
+  document.getElementById('ep-known').style.width=pct(known);
+  document.getElementById('ep-hard').style.width=pct(hard);
+  document.getElementById('ep-no').style.width=pct(no);
+}
+
+function updateEModeCounts(){
+  const base=filteredErrors();
+  document.getElementById('emc-all').textContent='\n'+base.length+' cards';
+  document.getElementById('emc-hard').textContent='\n'+base.filter(v=>eprogress[v.word]==='hard'||eprogress[v.word]==='no').length+' cards';
+  document.getElementById('emc-review').textContent='\n'+base.filter(v=>eprogress[v.word]==='known').length+' cards';
+}
+
+function renderErrorCard(){
+  const area=document.getElementById('error-card-area');
+  if(!eDeck.length){
+    const msgs={hard:'¡No tienes errores marcados como difíciles! 🎉',review:'Aún no has dominado ninguno.',all:errorVocab.length?'No hay tarjetas para este filtro.':'El JSON no contiene entradas de tipo "error".'};
+    area.innerHTML=`<div class="empty-state"><div class="big">${eMode==='hard'?'🎉':'❌'}</div>${msgs[eMode]}</div>`;
+    return;
+  }
+  const card=eDeck[eIdx],pct=Math.round((eIdx/eDeck.length)*100);
+  // card.word = correct form, card.translation = error label + wrong form(s), card.example = context
+  area.innerHTML=`
+    <div class="progress-line">
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <span class="progress-label">${eIdx+1} / ${eDeck.length}</span>
+    </div>
+    <div class="card-wrap" id="the-ecard" onclick="flipECard()">
+      <div class="card-inner">
+        <div class="card-face error-card-front">
+          ${statusIcon(card.word,eprogress)}
+          <div class="card-tag">${card.topic||''}</div>
+          <div class="correct-badge">✅ forma correcta</div>
+          <div class="card-word">${card.word}</div>
+          ${card.example?`<div class="card-example" style="margin-top:8px">${card.example}</div>`:''}
+          <div class="card-hint">Toca para ver el error típico</div>
+        </div>
+        <div class="card-face card-back">
+          ${statusIcon(card.word,eprogress)}
+          <div class="card-tag">${card.topic||''}</div>
+          <div class="card-type type-error">❌ error común</div>
+          <div class="card-translation" style="color:#A32D2D">${card.translation}</div>
+          ${card.explanation?`<div class="card-example" style="margin-top:8px;font-style:normal;color:var(--text2)">${card.explanation}</div>`:''}
+        </div>
+      </div>
+    </div>
+    <div class="action-btns-wrap" id="eaction-area"><button class="reveal-btn" onclick="flipECard()">Ver el error típico</button></div>
+    <div class="nav-row">
+      <button class="nav-btn" onclick="prevECard()" ${eIdx===0?'disabled':''}>← Anterior</button>
+      <button class="nav-btn" onclick="nextECard()" ${eIdx===eDeck.length-1?'disabled':''}>Siguiente →</button>
+    </div>`;
+}
+
+function flipECard(){
+  const wrap=document.getElementById('the-ecard');if(!wrap)return;
+  eFlipped=!eFlipped;wrap.classList.toggle('flipped',eFlipped);
+  document.getElementById('eaction-area').innerHTML=eFlipped
+    ?`<div class="action-row">
+        <button class="action-btn btn-no"   onclick="rateE('no')">✗<span class="btn-label">No sé</span></button>
+        <button class="action-btn btn-hard" onclick="rateE('hard')">~<span class="btn-label">Difícil</span></button>
+        <button class="action-btn btn-yes"  onclick="rateE('known')">✓<span class="btn-label">Lo tengo</span></button>
+       </div>`
+    :`<button class="reveal-btn" onclick="flipECard()">Ver el error típico</button>`;
+}
+
+function rateE(val){
+  eprogress[eDeck[eIdx].word]=val;
+  saveEProgress();updateErrorStats();updateEModeCounts();
+  setTimeout(()=>{
+    if(eIdx<eDeck.length-1){eIdx++;eFlipped=false;renderErrorCard();}
+    else{
+      const known=errorVocab.filter(v=>eprogress[v.word]==='known').length;
+      document.getElementById('error-card-area').innerHTML=`<div class="empty-state"><div class="big">🎯</div><b>¡Ronda completada!</b><br><br>${known} de ${errorVocab.length} errores dominados.<br><br><button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="updateEDeck()">Repetir</button></div>`;
+    }
+  },200);
+}
+
+function nextECard(){if(eIdx<eDeck.length-1){eIdx++;eFlipped=false;renderErrorCard();}}
+function prevECard(){if(eIdx>0){eIdx--;eFlipped=false;renderErrorCard();}}
+
+/* ═══════════════════════════════════════════════
+   GRAMMAR QUIZ
+═══════════════════════════════════════════════ */
 let exercises=[], quizDeck=[], quizIdx=0, quizScore=0, quizTopic='all', quizAnswered=false;
 
-function saveEx(d){ try{ localStorage.setItem(EXER_KEY,JSON.stringify(d)); }catch(e){} }
-function loadSavedEx(){ try{ const d=localStorage.getItem(EXER_KEY); return d?JSON.parse(d):null; }catch(e){ return null; } }
+function saveEx(d){try{localStorage.setItem(EXER_KEY,JSON.stringify(d));}catch(e){}}
+function loadSavedEx(){try{const d=localStorage.getItem(EXER_KEY);return d?JSON.parse(d):null;}catch(e){return null;}}
 
 function loadExercises(data){
   exercises=data.exercises||(Array.isArray(data)?data:[]);
-  saveEx(data); buildQuizFilters(); restartQuiz();
+  saveEx(data);buildQuizFilters();restartQuiz();
 }
 
 function buildQuizFilters(){
@@ -360,54 +571,40 @@ function buildQuizFilters(){
   ).join('');
 }
 
-function setQuizTopic(t){ quizTopic=t; buildQuizFilters(); restartQuiz(); }
+function setQuizTopic(t){quizTopic=t;buildQuizFilters();restartQuiz();}
 
 function restartQuiz(){
   const base=quizTopic==='all'?exercises:exercises.filter(e=>e.topic===quizTopic);
-  quizDeck=shuffle([...base]); quizIdx=0; quizScore=0; quizAnswered=false;
+  quizDeck=shuffle([...base]);quizIdx=0;quizScore=0;quizAnswered=false;
   document.getElementById('q-score').textContent='0';
   renderQuiz();
 }
 
-function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
-
 function renderQuiz(){
   const area=document.getElementById('quiz-area');
   document.getElementById('q-score').textContent=quizScore;
-
   if(!quizDeck.length){
     document.getElementById('q-current').textContent='—';
     document.getElementById('q-total').textContent='—';
-    area.innerHTML=`<div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Usa el botón "+ Ejercicios" arriba.</small></div>`;
+    area.innerHTML=`<div class="empty-state"><div class="big">✏️</div>Importa un JSON de ejercicios.<br><small style="color:var(--text3)">Botón "+ Ejercicios" arriba.</small></div>`;
     return;
   }
-
   if(quizIdx>=quizDeck.length){
     document.getElementById('q-current').textContent=quizDeck.length;
     document.getElementById('q-total').textContent=quizDeck.length;
     const pct=Math.round((quizScore/quizDeck.length)*100);
-    area.innerHTML=`<div class="empty-state"><div class="big">${pct>=70?'🎉':'💪'}</div>
-      <b>¡Test completado!</b><br><br>
-      Acertaste <b>${quizScore} de ${quizDeck.length}</b> (${pct}%)<br><br>
-      <button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="restartQuiz()">↺ Repetir</button>
-    </div>`;
+    area.innerHTML=`<div class="empty-state"><div class="big">${pct>=70?'🎉':'💪'}</div><b>¡Test completado!</b><br><br>Acertaste <b>${quizScore} de ${quizDeck.length}</b> (${pct}%)<br><br><button class="nav-btn" style="margin:0 auto;display:block;padding:10px 24px" onclick="restartQuiz()">↺ Repetir</button></div>`;
     return;
   }
-
   const ex=quizDeck[quizIdx];
   document.getElementById('q-current').textContent=quizIdx+1;
   document.getElementById('q-total').textContent=quizDeck.length;
   quizAnswered=false;
-
   const promptHtml=ex.prompt.replace(/___+/g,'<span class="blank">___</span>');
   const opts=shuffle([ex.answer,...(ex.distractors||[])]);
-
   area.innerHTML=`
     <div class="quiz-card">
-      <div class="quiz-meta">
-        <span>${ex.topic||''}</span>
-        <span>${ex.unit?'Unidad '+ex.unit:''}</span>
-      </div>
+      <div class="quiz-meta"><span>${ex.topic||''}</span><span>${ex.unit?'Unidad '+ex.unit:''}</span></div>
       <div class="quiz-prompt">${promptHtml}</div>
       <div class="options-grid" id="options-grid">
         ${opts.map((o,i)=>`<button class="option-btn" onclick="selectOption(${i})" data-val="${encodeURIComponent(o)}">${o}</button>`).join('')}
@@ -420,86 +617,208 @@ function renderQuiz(){
 }
 
 function selectOption(idx){
-  if(quizAnswered) return;
+  if(quizAnswered)return;
   quizAnswered=true;
   const ex=quizDeck[quizIdx];
   const btns=document.querySelectorAll('.option-btn');
   const chosen=decodeURIComponent(btns[idx].dataset.val);
   const correct=chosen===ex.answer;
-
-  if(correct) quizScore++;
+  if(correct)quizScore++;
   document.getElementById('q-score').textContent=quizScore;
-
-  btns.forEach(b=>{
-    b.disabled=true;
-    const v=decodeURIComponent(b.dataset.val);
-    if(v===ex.answer) b.classList.add('correct');
-    else if(b===btns[idx]&&!correct) b.classList.add('wrong');
-  });
-
-  const nextBtn=document.getElementById('next-btn');
-  if(nextBtn) nextBtn.style.visibility='visible';
-
-  fetchExplanation(ex, chosen, correct);
+  btns.forEach(b=>{b.disabled=true;const v=decodeURIComponent(b.dataset.val);if(v===ex.answer)b.classList.add('correct');else if(b===btns[idx]&&!correct)b.classList.add('wrong');});
+  const nb=document.getElementById('next-btn');if(nb)nb.style.visibility='visible';
+  fetchExplanation(ex,chosen,correct);
 }
 
-async function fetchExplanation(ex, chosen, correct){
-  const box=document.getElementById('explanation-area');
-  if(!box) return;
+async function fetchExplanation(ex,chosen,correct){
+  const box=document.getElementById('explanation-area');if(!box)return;
   box.innerHTML=`<div class="explanation-box loading"><div class="ex-label">Explicación</div>Generando explicación...</div>`;
-
-  const system=`Eres un profesor de inglés experto. Explica de forma muy concisa (2-3 frases máximo) por qué la respuesta correcta es correcta. Responde siempre en español. Sin saludos ni despedidas.`;
-  const user=`Ejercicio: "${ex.prompt}"
-Respuesta correcta: "${ex.answer}"
-El estudiante eligió: "${chosen}" (${correct?'CORRECTO':'INCORRECTO'})
-Tema: ${ex.topic||'gramática inglesa'}
-${ex.explanation?'Contexto adicional: '+ex.explanation:''}`;
-
+  const system=`Eres un profesor de inglés C1. Explica de forma muy concisa (2-3 frases) por qué la respuesta correcta es correcta. Responde siempre en español. Sin saludos ni despedidas.`;
+  const user=`Ejercicio: "${ex.prompt}"\nRespuesta correcta: "${ex.answer}"\nEl estudiante eligió: "${chosen}" (${correct?'CORRECTO':'INCORRECTO'})\nTema: ${ex.topic||'gramática inglesa'}\n${ex.explanation?'Contexto: '+ex.explanation:''}`;
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1000, system, messages:[{role:'user',content:user}] })
-    });
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system,messages:[{role:'user',content:user}]})});
     const data=await res.json();
     const text=data.content?.find(c=>c.type==='text')?.text||'No se pudo generar explicación.';
-    if(!document.getElementById('explanation-area')) return;
+    if(!document.getElementById('explanation-area'))return;
     box.className=`explanation-box${correct?'':' wrong-ex'}`;
     box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${text}`;
   }catch(e){
-    if(!document.getElementById('explanation-area')) return;
-    const fallback=ex.explanation||'Revisa la regla gramatical de este tema en tus apuntes.';
+    if(!document.getElementById('explanation-area'))return;
+    const fallback=ex.explanation||'Revisa la regla gramatical en tus apuntes.';
     box.className=`explanation-box${correct?'':' wrong-ex'}`;
     box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${fallback}`;
   }
 }
 
-function nextQuestion(){ quizIdx++; renderQuiz(); }
+function nextQuestion(){quizIdx++;renderQuiz();}
 
-/* ── FILE INPUTS ── */
+/* ═══════════════════════════════════════════════
+   THEORY TAB
+═══════════════════════════════════════════════ */
+const THEORY_DATA=[
+  {
+    title:'📝 Writing · Proposals',
+    subtitle:'Estructura, errores y registro C1',
+    sections:[
+      {label:'tip',labelText:'Estructura esperada',text:'Un proposal C1 debe tener encabezados funcionales que guíen al lector. Sin encabezados o con encabezados vagos, el texto baja de nivel aunque las ideas sean buenas.',
+       examples:[{type:'bad',text:'❌ Introduction / Things / More things'},
+                 {type:'good',text:'✅ Aim of the proposal / Current situation / Suggested measures / Conclusion'}]},
+      {label:'bad',labelText:'Errores gramaticales frecuentes',text:'Estos errores aparecen sistemáticamente y reducen el nivel aunque las ideas sean buenas.',
+       examples:[{type:'bad',text:'❌ Government don\'t need to boost the budget\n❌ Bike\'s parkings makes people feel comfortable'},
+                 {type:'good',text:'✅ The government doesn\'t need to boost the budget\n✅ Bike parking facilities make people feel comfortable'}]},
+      {label:'bad',labelText:'False friends en proposals',text:'',
+       examples:[{type:'bad',text:'❌ upload (for improvement) → ✅ increase / upgrade\n❌ installation (of ideas) → ✅ implementation\n❌ economical improvement → ✅ financial benefit\n❌ formation (citizens) → ✅ training / education\n❌ ecology vehicles → ✅ eco-friendly vehicles'}]},
+      {label:'bad',labelText:'Collocaciones incorrectas',text:'',
+       examples:[{type:'bad',text:'❌ do courses to teach how to ride\n❌ boost the use of bicycles (overused)\n❌ make residents feel safe in their cycling daily trips'},
+                 {type:'good',text:'✅ offer training courses on safe cycling\n✅ encourage the use of bicycles\n✅ make residents feel safe during their daily cycling trips'}]},
+      {label:'tip',labelText:'Hedging en predicciones',text:'Evita predicciones absolutas. En C1 se espera lenguaje de cautela (hedging).',
+       examples:[{type:'bad',text:'❌ People will change their transport without a doubt.\n❌ Pollution will decrease significantly in the first year.'},
+                 {type:'good',text:'✅ This could encourage people to change their means of transport.\n✅ This may lead to a reduction in pollution over time.'}]},
+    ]
+  },
+  {
+    title:'✉️ Writing · Cover Letters',
+    subtitle:'Errores frecuentes y registro profesional',
+    sections:[
+      {label:'bad',labelText:'Errores de verbo muy frecuentes',text:'',
+       examples:[{type:'bad',text:'❌ I always shown interest\n❌ I have a Masters degree\n❌ I can fast learner'},
+                 {type:'good',text:"✅ I have always shown interest\n✅ I have a Master's degree\n✅ I am a fast learner"}]},
+      {label:'bad',labelText:'False friends en cover letters',text:'',
+       examples:[{type:'bad',text:"❌ emphatic → ✅ empathetic\n❌ compromise (noun) → ✅ commitment\n❌ formation / resources → ✅ training resources\n❌ actual job → ✅ current job\n❌ Due to my compromise… → ✅ Due to my commitment…"}]},
+      {label:'bad',labelText:'Vocabulario laboral incorrecto',text:'',
+       examples:[{type:'bad',text:'❌ volunteering position for the accommodation of immigrants\n❌ public attention jobs\n❌ security agent (when unclear)'},
+                 {type:'good',text:'✅ a volunteer position supporting immigrant integration\n✅ customer-facing roles\n✅ security officer'}]},
+      {label:'tip',labelText:'Patrones españoles a evitar',text:'',
+       examples:[{type:'bad',text:'❌ I am writing to you in concern of…\n❌ Help them integrate our society is the big challenge'},
+                 {type:'good',text:'✅ I am writing regarding…\n✅ Helping them integrate into society is a major challenge.'}]},
+    ]
+  },
+  {
+    title:'🧩 Mediation · Errores clave',
+    subtitle:'Los errores más penalizados en mediación C1',
+    sections:[
+      {label:'bad',labelText:'Subject-verb agreement',text:'Estos errores son de nivel B2 y están muy penalizados en C1.',
+       examples:[{type:'bad',text:"❌ She need a student visa\n❌ Megan don't need a visa\n❌ The documents is required"},
+                 {type:'good',text:"✅ She needs a student visa\n✅ Megan doesn't need a visa\n✅ The documents are required"}]},
+      {label:'bad',labelText:'False friends en mediación',text:'',
+       examples:[{type:'bad',text:'❌ educative system → ✅ education system\n❌ penal antecedents → ✅ criminal record\n❌ actual level → ✅ current level\n❌ formation → ✅ education / training'}]},
+      {label:'bad',labelText:'Patrones españoles copiados',text:'',
+       examples:[{type:'bad',text:'❌ It is recommended to consult the embassy\n❌ Regarding to the requirements…\n❌ It is many schools in Madrid'},
+                 {type:'good',text:'✅ It is recommended that you consult the embassy\n✅ Regarding the requirements…\n✅ Madrid has many schools that receive foreign students'}]},
+      {label:'bad',labelText:'Vocabulario incorrecto',text:'',
+       examples:[{type:'bad',text:'❌ study permission → ✅ student visa\n❌ private health assistance → ✅ private health insurance\n❌ superior studies → ✅ higher education\n❌ gain a scholarship → ✅ apply for a scholarship\n❌ pass the documentation → ✅ submit the documentation'}]},
+      {label:'tip',labelText:'Interpretación del texto fuente',text:'Uno de los errores más graves es malinterpretar el texto original. No hagas afirmaciones absolutas: usa hedging.',
+       examples:[{type:'bad',text:"❌ She doesn't need any visa because she is under 18."},
+                 {type:'good',text:'✅ According to the article, minors may attend compulsory education without a visa; however, for Bachillerato, students need to regularise their legal situation.'}]},
+    ]
+  },
+  {
+    title:'📖 Reading & Listening · Estrategias C1',
+    subtitle:'Cómo evitar los distractores más comunes',
+    sections:[
+      {label:'tip',labelText:'Idea clave para todas las pruebas',text:'En C1, más de una opción puede ser verdadera según el texto, pero solo una responde a la pregunta. Tu trabajo es elegir lo que es RELEVANTE, no solo lo que es verdadero.',
+       examples:[]},
+      {label:'tip',labelText:'Multiple Choice — distractores frecuentes',text:'',
+       examples:[{type:'bad',text:'❌ Verdadero pero irrelevante: la información aparece en el texto, pero no responde la pregunta.\n❌ Word-spotting: mismo vocabulario que el texto, significado diferente.\n❌ Overgeneralización: "always", "never", "everyone", "completely".\n❌ Common sense: parece lógico, pero no se puede probar desde el texto.'},
+                 {type:'tip',text:'✅ Fíjate en: modificadores (mainly, partly, tends to), marcadores de contraste (however, although, yet), tono (critical, cautious, enthusiastic).'}]},
+      {label:'tip',labelText:'Matching — el error clásico',text:'Mismo tema ≠ mismo significado. Asegúrate de que la opción responde exactamente a lo que se pide.',
+       examples:[{type:'bad',text:'❌ Matching porque hay una palabra en común\n❌ Mismo tema, foco diferente\n❌ No distinguir entre experiencia personal y opinión general'},
+                 {type:'tip',text:'✅ Fíjate en: verbos y acciones, causa → efecto, actitud (positiva, crítica, resignada)'}]},
+      {label:'tip',labelText:'Gap Fill — el error clásico',text:'Gramaticalmente correcto ≠ lógicamente correcto.',
+       examples:[{type:'bad',text:'❌ Frases que repiten información ya dada\n❌ Encajan gramaticalmente pero no lógicamente\n❌ Introducen un tema nuevo de forma abrupta'},
+                 {type:'tip',text:'✅ Fíjate en: conectores (however, therefore, for example), referencias (this, they, such), flujo lógico del párrafo'}]},
+      {label:'tip',labelText:'Listening — estrategias específicas',text:'',
+       examples:[{type:'tip',text:'✅ Pon atención al parafraseo y sinónimos — rara vez se repiten las palabras exactas.\n✅ Fíjate en la entonación y el énfasis.\n✅ Atención a las autocorrecciones: "I thought… but actually…"\n✅ Si pierdes una respuesta, sigue escuchando. No te desconectes.'}]},
+      {label:'tip',labelText:'Checklist final antes de marcar una respuesta',text:'',
+       examples:[{type:'tip',text:'• ¿Esta opción realmente responde a la pregunta?\n• ¿Es verdadera pero irrelevante?\n• ¿Puedo probarlo desde el texto o el audio?\n• ¿Estoy comparando significados, no palabras?'}]},
+    ]
+  },
+  {
+    title:'⚙️ Grammar · Passive structures (plans & predictions)',
+    subtitle:'Estructuras pasivas formales para C1',
+    sections:[
+      {label:'tip',labelText:'Estructuras clave',text:'En inglés formal se usan estas estructuras para hablar de planes y predicciones sin mencionar al agente.',
+       examples:[{type:'good',text:'✅ The new metro line is projected to be completed by 2027.\n✅ The park is intended to be a green space for all residents.\n✅ The population is set to rise significantly over the next decade.\n✅ By 2030, the city is expected to have reached carbon neutrality.\n✅ The buildings were expected to provide 500 affordable homes.'}]},
+      {label:'tip',labelText:'Hedging con pasivas',text:'Combina pasivas con lenguaje de cautela para un nivel más alto.',
+       examples:[{type:'good',text:"✅ It is widely believed that greener areas should be developed.\n✅ The quality of life is likely to be greatly improved.\n✅ It is reported that pollution levels are the highest in a decade."}]},
+    ]
+  },
+  {
+    title:'🔗 Grammar · Ellipsis & Substitution',
+    subtitle:'Cómo evitar repeticiones de forma natural',
+    sections:[
+      {label:'tip',labelText:'Sustitución con "do"',text:'Reemplazamos el verbo o la frase verbal con una forma de "do" para evitar repetición.',
+       examples:[{type:'good',text:"✅ 'Has anyone booked a room?' 'Yeah, I did.'\n✅ 'Does Ricardo speak German?' 'No, but I think Erica does.'"}]},
+      {label:'tip',labelText:'Elipsis tras auxiliar o modal',text:'Cuando hay un auxiliar o modal, podemos omitir el resto de la frase.',
+       examples:[{type:'good',text:"✅ 'Are they coming?' 'Yes, they are.'\n✅ I don't think anyone else is going, but I might.\n✅ 'You should have come.' 'I was going to, but something came up.'"}]},
+      {label:'tip',labelText:'Elipsis tras "to"',text:'Cuando un verbo va seguido de "to + infinitivo", podemos omitir todo lo que viene después del "to".',
+       examples:[{type:'good',text:"✅ 'Would you like to join us?' 'Yes, I'd love to.'\n✅ Some people give up sugar, but I didn't want to."}]},
+      {label:'tip',labelText:'"do so" — uso formal',text:'Se usa en contextos formales y cuando hablamos de decisiones o procesos.',
+       examples:[{type:'good',text:"✅ The minister refused to resign, saying he had no intention to do so.\n✅ Once we have done so, we will send you your account details."}]},
+    ]
+  },
+];
+
+function buildTheory(){
+  const container=document.getElementById('theory-content');
+  container.innerHTML=THEORY_DATA.map((section,si)=>`
+    <div class="theory-section">
+      <button class="theory-header" onclick="toggleTheory(${si})" id="th-${si}">
+        <div>
+          <div class="theory-title">${section.title}</div>
+          <div class="theory-subtitle">${section.subtitle}</div>
+        </div>
+        <span class="theory-arrow">▼</span>
+      </button>
+      <div class="theory-body" id="tb-${si}">
+        ${section.sections.map(s=>`
+          <div class="theory-rule">
+            <div class="rule-label ${s.label}">${s.labelText}</div>
+            ${s.text?`<div class="rule-text">${s.text}</div>`:''}
+            ${s.examples.map(ex=>`<div class="rule-example ${ex.type==='bad'?'bad-ex':ex.type==='good'?'good-ex':'tip-ex'}" style="white-space:pre-wrap">${ex.text}</div>`).join('')}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleTheory(idx){
+  const header=document.getElementById('th-'+idx);
+  const body=document.getElementById('tb-'+idx);
+  header.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+/* ═══════════════════════════════════════════════
+   FILE INPUTS
+═══════════════════════════════════════════════ */
 document.getElementById('file-input').addEventListener('change',e=>{
-  const f=e.target.files[0]; if(!f) return;
+  const f=e.target.files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=ev=>{ try{ loadData(JSON.parse(ev.target.result)); showToast('Vocabulario cargado ✓'); }catch(err){ alert('JSON inválido.'); } };
-  r.readAsText(f); e.target.value='';
+  r.onload=ev=>{try{loadData(JSON.parse(ev.target.result));showToast('Vocabulario cargado ✓');}catch(err){alert('JSON inválido.');}};
+  r.readAsText(f);e.target.value='';
 });
 
 document.getElementById('ex-file-input').addEventListener('change',e=>{
-  const f=e.target.files[0]; if(!f) return;
+  const f=e.target.files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=ev=>{ try{ loadExercises(JSON.parse(ev.target.result)); showToast('Ejercicios cargados ✓'); }catch(err){ alert('JSON inválido.'); } };
-  r.readAsText(f); e.target.value='';
+  r.onload=ev=>{try{loadExercises(JSON.parse(ev.target.result));showToast('Ejercicios cargados ✓');}catch(err){alert('JSON inválido.');}};
+  r.readAsText(f);e.target.value='';
 });
 
-/* ── INIT ── */
-loadProgress();
+/* ═══════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════ */
+loadProgress();loadEProgress();buildTheory();
+
 const sv=loadSavedVocab();
-if(sv){ loadData(sv); }
-else{ fetch('vocab.json').then(r=>r.json()).then(loadData).catch(()=>{ updateGlobalStats(); updateModeCounts(); }); }
+if(sv){loadData(sv);}
+else{fetch('vocab.json').then(r=>r.json()).then(loadData).catch(()=>{updateGlobalStats();updateModeCounts();updateErrorStats();updateEModeCounts();});}
 
 const se=loadSavedEx();
-if(se){ loadExercises(se); }
-else{ fetch('exercises.json').then(r=>r.json()).then(loadExercises).catch(()=>{}); }
+if(se){loadExercises(se);}
+else{fetch('exercises.json').then(r=>r.json()).then(loadExercises).catch(()=>{});}
 </script>
 </body>
 </html>
