@@ -2612,340 +2612,634 @@
       "topic": "Writing · Reports & Proposals"
     },
     {
-      "word": "education system",
-      "translation": "❌ educative system",
-      "type": "error",
-      "explanation": "Correct: 'the education system' — NOT 'educative system' (false friend from Spanish 'educativo').",
-      "topic": "Errors · False Friends"
+      "word": "hope to be + past participle",
+      "translation": "hope → infinitivo pasivo",
+      "type": "phrase",
+      "example": "I hope to be recognized for my work.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "criminal record",
-      "translation": "❌ penal antecedents",
-      "type": "error",
-      "explanation": "Correct: 'criminal record' — NOT 'penal antecedents' (false friend from Spanish 'antecedentes penales').",
-      "topic": "Errors · False Friends"
+      "word": "expect to be + past participle",
+      "translation": "expect → infinitivo pasivo",
+      "type": "phrase",
+      "example": "She expects to be invited to the party.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "current level",
-      "translation": "❌ actual level",
-      "type": "error",
-      "explanation": "Correct: 'current level' — NOT 'actual level'. 'Actual' in English means 'real', not 'current'.",
-      "topic": "Errors · False Friends"
+      "word": "want to be + past participle",
+      "translation": "want → infinitivo pasivo",
+      "type": "phrase",
+      "example": "I want to be promoted soon.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "training / education",
-      "translation": "❌ formation",
-      "type": "error",
-      "explanation": "Correct: 'training' or 'education' — NOT 'formation' (false friend from Spanish 'formación').",
-      "topic": "Errors · False Friends"
+      "word": "need to be + past participle",
+      "translation": "need → infinitivo pasivo (foco en la acción)",
+      "type": "phrase",
+      "example": "This machine needs to be repaired urgently.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "student visa",
-      "translation": "❌ study permission",
-      "type": "error",
-      "explanation": "Correct: 'student visa' — NOT 'study permission'.",
-      "topic": "Errors · False Friends"
+      "word": "deserve to be + past participle",
+      "translation": "deserve → infinitivo pasivo",
+      "type": "phrase",
+      "example": "The problem deserves to be discussed in more detail.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "private health insurance",
-      "translation": "❌ private health assistance",
-      "type": "error",
-      "explanation": "Correct: 'private health insurance' — NOT 'health assistance'.",
-      "topic": "Errors · False Friends"
+      "word": "require to be + past participle",
+      "translation": "require → infinitivo pasivo (formal)",
+      "type": "phrase",
+      "example": "All applicants are required to be informed in advance.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "higher education",
-      "translation": "❌ superior studies",
-      "type": "error",
-      "explanation": "Correct: 'higher education' — NOT 'superior studies'.",
-      "topic": "Errors · False Friends"
+      "word": "arrange to be + past participle",
+      "translation": "arrange → infinitivo pasivo",
+      "type": "phrase",
+      "example": "We arranged to be met at the airport.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "young people / young students",
-      "translation": "❌ foreign youngs",
-      "type": "error",
-      "explanation": "Correct: 'young people' or 'young students' — adjectives are never pluralised in English.",
-      "topic": "Errors · False Friends"
+      "word": "seem to be + past participle",
+      "translation": "seem → infinitivo pasivo",
+      "type": "phrase",
+      "example": "The system doesn't seem to be updated with the latest software.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "quality of education",
-      "translation": "❌ educative quality",
-      "type": "error",
-      "explanation": "Correct: 'quality of education' — NOT 'educative quality'.",
-      "topic": "Errors · False Friends"
+      "word": "agree to be + past participle",
+      "translation": "agree → infinitivo pasivo",
+      "type": "phrase",
+      "example": "She agreed to be interviewed by the committee.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "increase / upgrade",
-      "translation": "❌ upload (for improvement)",
-      "type": "error",
-      "explanation": "Correct: 'increase' or 'upgrade' — NOT 'upload' (false friend from Spanish 'subir').",
-      "topic": "Errors · False Friends"
+      "word": "choose to be + past participle",
+      "translation": "choose → infinitivo pasivo",
+      "type": "phrase",
+      "example": "He chose to be represented by a lawyer.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "implementation",
-      "translation": "❌ installation (of ideas/plans)",
-      "type": "error",
-      "explanation": "Correct: 'implementation' — NOT 'installation' when referring to plans or policies.",
-      "topic": "Errors · False Friends"
+      "word": "prefer to be + past participle",
+      "translation": "prefer → infinitivo pasivo",
+      "type": "phrase",
+      "example": "She prefers to be called by her first name.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "financial benefit",
-      "translation": "❌ economical improvement",
-      "type": "error",
-      "explanation": "Correct: 'financial benefit' — NOT 'economical improvement'. 'Economical' means 'cheap/efficient', not 'financial'.",
-      "topic": "Errors · False Friends"
+      "word": "hate to be + past participle",
+      "translation": "hate → infinitivo pasivo (situación no deseada)",
+      "type": "phrase",
+      "example": "I hate to be the last one to know.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "eco-friendly vehicles",
-      "translation": "❌ ecology vehicles",
-      "type": "error",
-      "explanation": "Correct: 'eco-friendly vehicles' — NOT 'ecology vehicles'.",
-      "topic": "Errors · False Friends"
+      "word": "afford + to-infinitive",
+      "translation": "afford → solo to-infinitive (nunca -ing)",
+      "type": "phrase",
+      "example": "I can't afford to go on holiday.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "empathetic",
-      "translation": "❌ emphatic",
-      "type": "error",
-      "explanation": "Correct: 'empathetic' (understanding others' feelings) ≠ 'emphatic' (forceful/strong).",
-      "topic": "Errors · False Friends"
+      "word": "manage + to-infinitive",
+      "translation": "manage → solo to-infinitive",
+      "type": "phrase",
+      "example": "She managed to finish the report on time.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "commitment",
-      "translation": "❌ compromise (as 'compromiso')",
-      "type": "error",
-      "explanation": "Correct: 'commitment' — NOT 'compromise'. 'Compromise' in English means reaching a middle ground.",
-      "topic": "Errors · False Friends"
+      "word": "refuse + to-infinitive",
+      "translation": "refuse → solo to-infinitive",
+      "type": "phrase",
+      "example": "He refused to sign the contract.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "current job",
-      "translation": "❌ actual job",
-      "type": "error",
-      "explanation": "Correct: 'current job' — NOT 'actual job'. 'Actual' = real, not current.",
-      "topic": "Errors · False Friends"
+      "word": "fail + to-infinitive",
+      "translation": "fail → solo to-infinitive",
+      "type": "phrase",
+      "example": "They failed to submit the documents on time.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "customer-facing roles",
-      "translation": "❌ public attention jobs",
-      "type": "error",
-      "explanation": "Correct: 'customer-facing roles' — NOT 'public attention jobs'.",
-      "topic": "Errors · False Friends"
+      "word": "promise + to-infinitive",
+      "translation": "promise → solo to-infinitive",
+      "type": "phrase",
+      "example": "She promised to call as soon as she arrived.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "apply for a scholarship",
-      "translation": "❌ gain a scholarship",
-      "type": "error",
-      "explanation": "Correct collocation: 'apply for a scholarship' — you apply for it, not gain it directly.",
-      "topic": "Errors · Collocations"
+      "word": "pretend + to-infinitive",
+      "translation": "pretend → solo to-infinitive",
+      "type": "phrase",
+      "example": "He pretended not to notice the mistake.",
+      "topic": "Unit 7 · Verb Patterns: to-infinitive"
     },
     {
-      "word": "submit the documentation",
-      "translation": "❌ pass the documentation",
-      "type": "error",
-      "explanation": "Correct collocation: 'submit the documentation' — NOT 'pass'.",
-      "topic": "Errors · Collocations"
+      "word": "enjoy being + past participle",
+      "translation": "enjoy → gerundio pasivo (proceso, disfrute)",
+      "type": "phrase",
+      "example": "I really enjoyed being involved in the project.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "complete the homologation process",
-      "translation": "❌ make the homologation",
-      "type": "error",
-      "explanation": "Correct: 'complete / start the recognition or homologation process'.",
-      "topic": "Errors · Collocations"
+      "word": "avoid being + past participle",
+      "translation": "avoid → gerundio pasivo",
+      "type": "phrase",
+      "example": "She avoids being seen in public.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "offer training courses",
-      "translation": "❌ do courses to teach how to ride",
-      "type": "error",
-      "explanation": "Correct: 'offer training courses on safe cycling' — more formal and accurate.",
-      "topic": "Errors · Collocations"
+      "word": "remember being + past participle",
+      "translation": "remember → gerundio pasivo (recuerdo de algo recibido)",
+      "type": "phrase",
+      "example": "I remember being told I wasn't clever enough.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "encourage the use of bicycles",
-      "translation": "❌ boost the use of bicycles (overused)",
-      "type": "error",
-      "explanation": "Better C1: 'encourage', 'promote', or 'facilitate' instead of the overused 'boost'.",
-      "topic": "Errors · Collocations"
+      "word": "recall being + past participle",
+      "translation": "recall → gerundio pasivo",
+      "type": "phrase",
+      "example": "I don't recall being informed about this issue.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "apply for a student visa",
-      "translation": "❌ request for a student visa",
-      "type": "error",
-      "explanation": "Correct: 'apply for a student visa' — NOT 'request for'. 'Apply for' is the standard collocation.",
-      "topic": "Errors · Collocations"
+      "word": "hate being + past participle",
+      "translation": "hate → gerundio pasivo (proceso en sí, sin gustar)",
+      "type": "phrase",
+      "example": "My nephew hates being teased by his classmates.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "to improve her Spanish",
-      "translation": "❌ to study in Spain improve her Spanish",
-      "type": "error",
-      "explanation": "Missing infinitive marker: '...to study in Spain TO improve her Spanish'.",
-      "topic": "Errors · Collocations"
+      "word": "mind being + past participle",
+      "translation": "mind → gerundio pasivo",
+      "type": "phrase",
+      "example": "She doesn't mind being asked difficult questions.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "She needs a student visa",
-      "translation": "❌ She need a student visa",
-      "type": "error",
-      "explanation": "Subject-verb agreement: 3rd person singular needs -s. 'She need' is a B2 error heavily penalised at C1.",
-      "topic": "Errors · Grammar"
+      "word": "consider being + past participle",
+      "translation": "consider → gerundio pasivo",
+      "type": "phrase",
+      "example": "They considered being transferred to another branch.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Megan doesn't need a visa",
-      "translation": "❌ Megan don't need a visa",
-      "type": "error",
-      "explanation": "Subject-verb agreement: 3rd person singular uses 'doesn't', not 'don't'.",
-      "topic": "Errors · Grammar"
+      "word": "dislike being + past participle",
+      "translation": "dislike → gerundio pasivo",
+      "type": "phrase",
+      "example": "I dislike being interrupted when I'm speaking.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "The documents are required",
-      "translation": "❌ The documents is required",
-      "type": "error",
-      "explanation": "Subject-verb agreement: 'documents' is plural → 'are', not 'is'.",
-      "topic": "Errors · Grammar"
+      "word": "risk being + past participle",
+      "translation": "risk → gerundio pasivo",
+      "type": "phrase",
+      "example": "They risk being fined if they don't comply.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "The government doesn't need to boost the budget",
-      "translation": "❌ Government don't need to boost the budget",
-      "type": "error",
-      "explanation": "Missing article + wrong agreement: 'The government doesn't...' (3rd person singular, negative).",
-      "topic": "Errors · Grammar"
+      "word": "keep being + past participle",
+      "translation": "keep → gerundio pasivo (acción repetida)",
+      "type": "phrase",
+      "example": "She kept being asked the same question.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "I have always shown interest",
-      "translation": "❌ I always shown interest",
-      "type": "error",
-      "explanation": "Missing auxiliary: perfect tense requires 'have'. 'I have always shown interest'.",
-      "topic": "Errors · Grammar"
+      "word": "insist on being + past participle",
+      "translation": "insist on → preposición + gerundio pasivo",
+      "type": "phrase",
+      "example": "He always insisted on being called 'Sir'.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "I am a fast learner",
-      "translation": "❌ I can fast learner",
-      "type": "error",
-      "explanation": "Wrong structure: 'can' is a modal and cannot replace 'am'. 'I am a fast learner'.",
-      "topic": "Errors · Grammar"
+      "word": "succeed in being + past participle",
+      "translation": "succeed in → preposición + gerundio pasivo",
+      "type": "phrase",
+      "example": "She succeeded in being selected for the position.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "I have a Master's degree",
-      "translation": "❌ I have a Masters degree",
-      "type": "error",
-      "explanation": "Apostrophe required: 'Master's degree' (possessive). Common error in cover letters.",
-      "topic": "Errors · Grammar"
+      "word": "admit + -ing",
+      "translation": "admit → solo -ing (nunca to-infinitive)",
+      "type": "phrase",
+      "example": "He admitted making a mistake in the report.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "These positions have allowed me to gain experience",
-      "translation": "❌ This kind of positions has let me the gaining of experience",
-      "type": "error",
-      "explanation": "Multiple errors: agreement ('these positions'), verb choice ('allowed'), and structure ('to gain', not 'the gaining of').",
-      "topic": "Errors · Grammar"
+      "word": "deny + -ing",
+      "translation": "deny → solo -ing",
+      "type": "phrase",
+      "example": "She denied knowing anything about the incident.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "It is recommended that you consult the embassy",
-      "translation": "❌ It is recommended to consult the embassy",
-      "type": "error",
-      "explanation": "Spanish calque: in English, use 'It is recommended that + subject + verb', not the infinitive directly.",
-      "topic": "Errors · Spanish Structures"
+      "word": "finish + -ing",
+      "translation": "finish → solo -ing",
+      "type": "phrase",
+      "example": "Have you finished writing the proposal?",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Regarding the requirements",
-      "translation": "❌ Regarding to the requirements",
-      "type": "error",
-      "explanation": "'Regarding' is a preposition and does NOT take 'to'. Compare with 'with regard to'.",
-      "topic": "Errors · Spanish Structures"
+      "word": "suggest + -ing",
+      "translation": "suggest → solo -ing (❌ nunca suggest to)",
+      "type": "phrase",
+      "example": "They suggested reducing traffic in the city centre.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Madrid has many schools that receive foreign students",
-      "translation": "❌ It is many schools in Madrid",
-      "type": "error",
-      "explanation": "Spanish calque of 'hay': use 'Madrid has...' or 'There are many schools in Madrid that...'.",
-      "topic": "Errors · Spanish Structures"
+      "word": "recommend + -ing",
+      "translation": "recommend → solo -ing (❌ nunca recommend to)",
+      "type": "phrase",
+      "example": "The report recommends introducing stricter regulations.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "I am writing regarding",
-      "translation": "❌ I am writing to you in concern of",
-      "type": "error",
-      "explanation": "Correct formal phrase: 'I am writing regarding...' or 'I am writing with regard to...'",
-      "topic": "Errors · Spanish Structures"
+      "word": "involve + -ing",
+      "translation": "involve → solo -ing",
+      "type": "phrase",
+      "example": "This proposal involves improving cycling infrastructure.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Helping them integrate into society",
-      "translation": "❌ Help them integrate our society is the big challenge",
-      "type": "error",
-      "explanation": "Gerund as subject: 'Helping them integrate INTO society is a major challenge'.",
-      "topic": "Errors · Spanish Structures"
+      "word": "consider + -ing",
+      "translation": "consider → solo -ing (en sentido de 'valorar')",
+      "type": "phrase",
+      "example": "They considered reducing traffic in the city centre.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Although many people use this service",
-      "translation": "❌ Although there are a lot of people that use this service",
-      "type": "error",
-      "explanation": "More natural C1: 'Although many people use...' — avoid clunky 'there are... that' constructions.",
-      "topic": "Errors · Spanish Structures"
+      "word": "put off + -ing",
+      "translation": "put off → solo -ing",
+      "type": "phrase",
+      "example": "She kept putting off making the decision.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Several studies show that",
-      "translation": "❌ It is shown by studies that",
-      "type": "error",
-      "explanation": "Awkward passive calque: use active voice 'Several studies show that...' for a stronger C1 style.",
-      "topic": "Errors · Spanish Structures"
+      "word": "give up + -ing",
+      "translation": "give up → solo -ing",
+      "type": "phrase",
+      "example": "He gave up trying to fix the machine.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "In most cases, non-EU students need a student visa if they stay longer than three months",
-      "translation": "❌ She doesn't need any visa (absolute statement)",
-      "type": "error",
-      "explanation": "Avoid absolute statements in mediation. Use hedging: 'In most cases...' / 'Requirements may vary depending on...'",
-      "topic": "Errors · Hedging"
+      "word": "fancy + -ing",
+      "translation": "fancy → solo -ing (informal, apetecer)",
+      "type": "phrase",
+      "example": "Do you fancy going out for dinner tonight?",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "This could encourage people to change their means of transport",
-      "translation": "❌ People will change their transport without a doubt",
-      "type": "error",
-      "explanation": "C1 hedging: replace absolute predictions with 'could', 'may', 'might', 'is likely to'.",
-      "topic": "Errors · Hedging"
+      "word": "can't stand + -ing",
+      "translation": "can't stand → solo -ing (no soportar)",
+      "type": "phrase",
+      "example": "She can't stand being kept waiting.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "This may lead to a reduction in pollution over time",
-      "translation": "❌ Pollution will decrease significantly in the first year",
-      "type": "error",
-      "explanation": "Avoid overly specific or absolute predictions. Use 'may lead to', 'could result in', 'is likely to'.",
-      "topic": "Errors · Hedging"
+      "word": "can't help + -ing",
+      "translation": "can't help → solo -ing (no poder evitar)",
+      "type": "phrase",
+      "example": "I can't help feeling that something is wrong.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "Requirements may vary depending on nationality and type of studies",
-      "translation": "❌ The documents are always the same",
-      "type": "error",
-      "explanation": "Never use 'always' or 'never' in mediation unless the source text is explicit. Hedge your interpretation.",
-      "topic": "Errors · Hedging"
+      "word": "practise + -ing",
+      "translation": "practise → solo -ing",
+      "type": "phrase",
+      "example": "You should practise speaking in front of a mirror.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "To conclude,",
-      "translation": "❌ To finish,",
-      "type": "error",
-      "explanation": "More formal connector: 'To conclude,' or 'In conclusion,' — 'To finish' is too informal for C1 writing.",
-      "topic": "Errors · Register"
+      "word": "imagine + -ing",
+      "translation": "imagine → solo -ing",
+      "type": "phrase",
+      "example": "I can't imagine living without access to the internet.",
+      "topic": "Unit 7 · Verb Patterns: -ing"
     },
     {
-      "word": "This leads to the next point:",
-      "translation": "❌ Which brings me to the next point (sentence fragment)",
-      "type": "error",
-      "explanation": "'Which brings me to...' is a sentence fragment. Use 'This leads to the next point:' instead.",
-      "topic": "Errors · Register"
+      "word": "by + -ing",
+      "translation": "by + gerundio / medio para lograr algo",
+      "type": "phrase",
+      "example": "This can be achieved by investing in public transport.",
+      "topic": "Unit 7 · -ing after Prepositions"
     },
     {
-      "word": "make the city better connected",
-      "translation": "❌ makes the city more efficiently connected",
-      "type": "error",
-      "explanation": "Awkward adverb placement: 'better connected' is cleaner and more natural than 'more efficiently connected'.",
-      "topic": "Errors · Register"
+      "word": "without + -ing",
+      "translation": "without + gerundio / sin hacer algo",
+      "type": "phrase",
+      "example": "They left without informing anyone about the decision.",
+      "topic": "Unit 7 · -ing after Prepositions"
     },
     {
-      "word": "cycle lanes",
-      "translation": "❌ cycle line",
-      "type": "error",
-      "explanation": "Correct term: 'cycle lanes' (plural) — NOT 'cycle line'. A common vocabulary error in transport proposals.",
-      "topic": "Errors · Register"
+      "word": "instead of + -ing",
+      "translation": "instead of + gerundio / en lugar de hacer algo",
+      "type": "phrase",
+      "example": "Instead of using cars, people could cycle to work.",
+      "topic": "Unit 7 · -ing after Prepositions"
     },
     {
-      "word": "the use of bicycles",
-      "translation": "❌ the bicycles use",
-      "type": "error",
-      "explanation": "Noun phrase structure: in English, use 'the use of bicycles' — NOT the Spanish word order 'the bicycles use'.",
-      "topic": "Errors · Register"
+      "word": "after + -ing",
+      "translation": "after + gerundio / después de hacer algo",
+      "type": "phrase",
+      "example": "After reviewing the data, we reached a conclusion.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "before + -ing",
+      "translation": "before + gerundio / antes de hacer algo",
+      "type": "phrase",
+      "example": "Before submitting the proposal, check all the headings.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "for + -ing",
+      "translation": "for + gerundio / razón o propósito (❌ nunca for + to-inf)",
+      "type": "phrase",
+      "example": "The city is known for investing heavily in green technology.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "in spite of + -ing",
+      "translation": "in spite of + gerundio / a pesar de hacer algo",
+      "type": "phrase",
+      "example": "In spite of having read the instructions twice, I couldn't understand it.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "on + -ing",
+      "translation": "on + gerundio / inmediatamente después de (formal)",
+      "type": "phrase",
+      "example": "On arriving at the hotel, he went straight to his room.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "about + -ing",
+      "translation": "about + gerundio / a punto de / referido a",
+      "type": "phrase",
+      "example": "She was worried about being left out of the project.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "of + -ing",
+      "translation": "of + gerundio / después de sustantivo o adjetivo",
+      "type": "phrase",
+      "example": "There is a risk of being misunderstood if the tone is too formal.",
+      "topic": "Unit 7 · -ing after Prepositions"
+    },
+    {
+      "word": "remember + -ing (pasado)",
+      "translation": "remember + -ing → recuerdo de algo ya hecho",
+      "type": "phrase",
+      "example": "I remember being told I wasn't clever enough. (= recuerdo que me lo dijeron)",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "remember + to-infinitive (futuro)",
+      "translation": "remember + to-inf → acordarse de hacer algo (obligación)",
+      "type": "phrase",
+      "example": "Did you remember to ring Nigel? (= ¿te acordaste de llamar?)",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "stop + -ing",
+      "translation": "stop + -ing → dejar de hacer algo",
+      "type": "phrase",
+      "example": "She stopped crying as soon as she saw her mother.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "stop + to-infinitive",
+      "translation": "stop + to-inf → pararse para hacer otra cosa",
+      "type": "phrase",
+      "example": "We stopped to buy some water at the motorway service area.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "try + -ing",
+      "translation": "try + -ing → probar a hacer algo (a ver qué pasa)",
+      "type": "phrase",
+      "example": "I tried searching the web and finally found an address.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "try + to-infinitive",
+      "translation": "try + to-inf → intentar hacer algo (con dificultad)",
+      "type": "phrase",
+      "example": "I tried to email Simon but it bounced back.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "go on + -ing",
+      "translation": "go on + -ing → continuar haciendo lo mismo",
+      "type": "phrase",
+      "example": "He went on singing after everyone else had finished.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "go on + to-infinitive",
+      "translation": "go on + to-inf → pasar a hacer algo diferente",
+      "type": "phrase",
+      "example": "She recited a poem, then went on to sing a lovely folk song.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "mean + -ing",
+      "translation": "mean + -ing → implicar / tener como consecuencia",
+      "type": "phrase",
+      "example": "Working in London means leaving home at 6.30.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "mean + to-infinitive",
+      "translation": "mean + to-inf → tener la intención de",
+      "type": "phrase",
+      "example": "I didn't mean to make you cry.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "regret + -ing",
+      "translation": "regret + -ing → lamentarse de algo ya hecho",
+      "type": "phrase",
+      "example": "I regret saying that — it was unkind.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "regret + to-infinitive",
+      "translation": "regret + to-inf → lamentar tener que decir algo (formal)",
+      "type": "phrase",
+      "example": "We regret to inform you that your application was unsuccessful.",
+      "topic": "Unit 7 · Meaning Change: -ing vs to-inf"
+    },
+    {
+      "word": "present participle clause (simultaneous)",
+      "translation": "participio presente / acciones simultáneas → verb-ing",
+      "type": "phrase",
+      "example": "Running to the bus stop, he tripped over.",
+      "topic": "Unit 7 · Participle Clauses"
+    },
+    {
+      "word": "past participle clause (passive)",
+      "translation": "participio pasado / cláusula pasiva reducida → past participle",
+      "type": "phrase",
+      "example": "Directed by Spielberg, the movie was a huge success.",
+      "topic": "Unit 7 · Participle Clauses"
+    },
+    {
+      "word": "perfect participle clause (sequential)",
+      "translation": "participio perfecto / acción anterior → having + past participle",
+      "type": "phrase",
+      "example": "Having studied at university, I got a job in research.",
+      "topic": "Unit 7 · Participle Clauses"
+    },
+    {
+      "word": "having been + past participle (passive perfect)",
+      "translation": "participio perfecto pasivo → having been + past participle",
+      "type": "phrase",
+      "example": "Having been educated at Eton, he had a good start in life.",
+      "topic": "Unit 7 · Participle Clauses"
+    },
+    {
+      "word": "being + past participle (passive present)",
+      "translation": "participio presente pasivo → being + past participle",
+      "type": "phrase",
+      "example": "Being trained as a doctor, she was often asked to help in emergencies.",
+      "topic": "Unit 7 · Participle Clauses"
+    },
+    {
+      "word": "❌ suggest to improve → ✅ suggest improving",
+      "translation": "suggest/recommend/avoid/consider → siempre -ing, NUNCA to-infinitive",
+      "type": "phrase",
+      "example": "❌ They suggested to reduce traffic. ✅ They suggested reducing traffic.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ by invest → ✅ by investing",
+      "translation": "Tras preposición SIEMPRE -ing (by, without, instead of, for...)",
+      "type": "phrase",
+      "example": "❌ This can be achieved by invest more money. ✅ by investing more money.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ needs to address → ✅ needs to be addressed",
+      "translation": "need/deserve/require + to be + past participle (pasivo, no activo)",
+      "type": "phrase",
+      "example": "❌ This issue needs to address. ✅ This issue needs to be addressed.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ for improve → ✅ for improving",
+      "translation": "for + -ing SIEMPRE (❌ for + to-infinitive es calco del español)",
+      "type": "phrase",
+      "example": "❌ for improve safety. ✅ for improving safety.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ the aim is improve → ✅ the aim is to improve",
+      "translation": "aim/goal/objective + to-infinitive (no -ing ni bare infinitive)",
+      "type": "phrase",
+      "example": "❌ The aim is improve traffic. ✅ The aim is to improve traffic.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ people is used to drive → ✅ people are used to driving",
+      "translation": "be used to + -ing (estar acostumbrado), NOT to-infinitive",
+      "type": "phrase",
+      "example": "❌ people is used to drive. ✅ people are used to driving.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ this needs being solved → ✅ this needs to be solved",
+      "translation": "need + to be + past participle (pasivo formal) / need + -ing (compacto, informal)",
+      "type": "phrase",
+      "example": "❌ This needs being solved. ✅ This needs to be solved. / This needs solving.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ without to inform → ✅ without informing",
+      "translation": "Tras preposición SIEMPRE -ing, nunca to-infinitive",
+      "type": "phrase",
+      "example": "❌ They left without to inform anyone. ✅ without informing anyone.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ people should be encouraged to be helped → ✅ encouraged to help",
+      "translation": "No doble pasivo innecesario: encouraged to + active infinitive",
+      "type": "phrase",
+      "example": "❌ People should be encouraged to be helped. ✅ People should be encouraged to help.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ gain a scholarship → ✅ apply for a scholarship",
+      "translation": "Colocación incorrecta: gain/get → apply for a scholarship",
+      "type": "phrase",
+      "example": "❌ She managed to gain a scholarship. ✅ She applied for a scholarship.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ make the homologation → ✅ complete the homologation process",
+      "translation": "make no colocaciona con procesos formales: complete/start/go through",
+      "type": "phrase",
+      "example": "❌ She needs to make the homologation. ✅ complete the homologation process.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ pass the documentation → ✅ submit the documentation",
+      "translation": "submit = entregar documentos formalmente (pass = calco del español)",
+      "type": "phrase",
+      "example": "❌ You need to pass the documentation. ✅ You need to submit the documentation.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ educative system → ✅ education system",
+      "translation": "False friend: educative ≠ educativo. Correcto: education system",
+      "type": "phrase",
+      "example": "❌ the educative system. ✅ the education system.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ penal antecedents → ✅ criminal record",
+      "translation": "False friend: antecedentes penales = criminal record (no penal antecedents)",
+      "type": "phrase",
+      "example": "❌ He has penal antecedents. ✅ He has a criminal record.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ actual level → ✅ current level",
+      "translation": "False friend: actual ≠ actual. actual (inglés) = real/verdadero. actual (español) = current",
+      "type": "phrase",
+      "example": "❌ her actual level of English. ✅ her current level of English.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ formation → ✅ training / education",
+      "translation": "False friend: formación = training or education (no formation)",
+      "type": "phrase",
+      "example": "❌ She has a good formation. ✅ She has received excellent training.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ superior studies → ✅ higher education",
+      "translation": "False friend: estudios superiores = higher education (no superior studies)",
+      "type": "phrase",
+      "example": "❌ She completed her superior studies. ✅ She completed her higher education.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ compromise (noun) → ✅ commitment",
+      "translation": "False friend: compromiso = commitment. compromise (inglés) = acuerdo de concesiones mutuas",
+      "type": "phrase",
+      "example": "❌ Due to my compromise with the project... ✅ Due to my commitment to the project...",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ emphatic → ✅ empathetic",
+      "translation": "False friend: empático = empathetic. emphatic (inglés) = enfático, contundente",
+      "type": "phrase",
+      "example": "❌ She is very emphatic with her students. ✅ She is very empathetic.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
     }
   ]
 }
