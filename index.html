@@ -812,13 +812,19 @@ document.getElementById('ex-file-input').addEventListener('change',e=>{
 ═══════════════════════════════════════════════ */
 loadProgress();loadEProgress();buildTheory();
 
-const sv=loadSavedVocab();
-if(sv){loadData(sv);}
-else{fetch('vocab.json').then(r=>r.json()).then(loadData).catch(()=>{updateGlobalStats();updateModeCounts();updateErrorStats();updateEModeCounts();});}
+// Siempre carga desde el servidor para tener la versión más reciente
+fetch('vocab.json').then(r=>r.json()).then(loadData)
+  .catch(()=>{
+    const sv=loadSavedVocab();
+    if(sv) loadData(sv);
+    else{updateGlobalStats();updateModeCounts();}
+  });
 
-const se=loadSavedEx();
-if(se){loadExercises(se);}
-else{fetch('exercises.json').then(r=>r.json()).then(loadExercises).catch(()=>{});}
+fetch('exercises.json').then(r=>r.json()).then(loadExercises)
+  .catch(()=>{
+    const se=loadSavedEx();
+    if(se) loadExercises(se);
+  });
 </script>
 </body>
 </html>
