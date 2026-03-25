@@ -3240,6 +3240,629 @@
       "type": "phrase",
       "example": "❌ She is very emphatic with her students. ✅ She is very empathetic.",
       "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "long-lasting",
+      "translation": "duradero / que dura mucho tiempo",
+      "type": "adj",
+      "example": "My phone has a long-lasting battery.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "easy-going",
+      "translation": "relajado / tranquilo y sin estrés",
+      "type": "adj",
+      "example": "Tom is an easy-going student who never stresses about exams.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "good-looking",
+      "translation": "atractivo / de buen aspecto físico",
+      "type": "adj",
+      "example": "She introduced us to her good-looking boyfriend.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "slow-moving",
+      "translation": "que se mueve lentamente / de avance lento",
+      "type": "adj",
+      "example": "We were stuck on a slow-moving train for hours.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "loose-fitting",
+      "translation": "holgado / que no ajusta al cuerpo",
+      "type": "adj",
+      "example": "I prefer wearing loose-fitting clothing in summer.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "fast-growing",
+      "translation": "de rápido crecimiento",
+      "type": "adj",
+      "example": "Renewable energy is a fast-growing industry worldwide.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "high-performing",
+      "translation": "de alto rendimiento",
+      "type": "adj",
+      "example": "She manages a high-performing team of engineers.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "far-reaching",
+      "translation": "de gran alcance / con consecuencias amplias",
+      "type": "adj",
+      "example": "The new policy will have far-reaching consequences.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "hard-working",
+      "translation": "trabajador / que trabaja con dedicación",
+      "type": "adj",
+      "example": "She is one of the most hard-working students in the class.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "long-standing",
+      "translation": "de larga trayectoria / que existe desde hace mucho",
+      "type": "adj",
+      "example": "There is a long-standing tradition of debate in this school.",
+      "topic": "Grammar · Compound Adjectives (adj + -ing)"
+    },
+    {
+      "word": "short-haired",
+      "translation": "de pelo corto",
+      "type": "adj",
+      "example": "I've seen that short-haired woman somewhere before.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "old-fashioned",
+      "translation": "anticuado / pasado de moda",
+      "type": "adj",
+      "example": "My father has very old-fashioned ideas about education.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "short-lived",
+      "translation": "efímero / que dura poco tiempo",
+      "type": "adj",
+      "example": "They had a short-lived relationship that ended after two months.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "ready-made",
+      "translation": "prefabricado / ya hecho / listo para usar",
+      "type": "adj",
+      "example": "I eat a lot of ready-made meals during busy weeks.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "deep-fried",
+      "translation": "frito en aceite abundante",
+      "type": "adj",
+      "example": "She ordered some deep-fried chicken and chips.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "well-known",
+      "translation": "conocido / famoso / ampliamente reconocido",
+      "type": "adj",
+      "example": "He is a well-known actor in European cinema.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "short-sighted",
+      "translation": "miope / con poca visión de futuro",
+      "type": "adj",
+      "example": "It would be short-sighted to cut funding for education.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "wide-eyed",
+      "translation": "con los ojos muy abiertos / ingenuo / asombrado",
+      "type": "adj",
+      "example": "She looked at the city wide-eyed, amazed by everything.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "fair-minded",
+      "translation": "justo / imparcial / ecuánime",
+      "type": "adj",
+      "example": "A fair-minded judge considers all the evidence carefully.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "open-minded",
+      "translation": "de mente abierta / tolerante y receptivo",
+      "type": "adj",
+      "example": "You need to be open-minded when living in a new culture.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "strong-willed",
+      "translation": "de voluntad fuerte / determinado",
+      "type": "adj",
+      "example": "She is extremely strong-willed and never gives up.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "narrow-minded",
+      "translation": "de mente cerrada / intolerante",
+      "type": "adj",
+      "example": "Narrow-minded attitudes make it hard to accept change.",
+      "topic": "Grammar · Compound Adjectives (adj + past participle)"
+    },
+    {
+      "word": "long-distance",
+      "translation": "de larga distancia",
+      "type": "adj",
+      "example": "John is a long-distance runner who trains every day.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "last-minute",
+      "translation": "de última hora / en el último momento",
+      "type": "adj",
+      "example": "It was a last-minute decision that changed everything.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "short-term",
+      "translation": "a corto plazo",
+      "type": "adj",
+      "example": "He signed a short-term contract with the company.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "full-length",
+      "translation": "de cuerpo entero / de longitud completa",
+      "type": "adj",
+      "example": "She wore a full-length skirt to the formal dinner.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "high-quality",
+      "translation": "de alta calidad",
+      "type": "adj",
+      "example": "The proposal focuses on delivering high-quality public services.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "full-time",
+      "translation": "a tiempo completo / dedicación plena",
+      "type": "adj",
+      "example": "She works full-time and also studies in the evenings.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "part-time",
+      "translation": "a tiempo parcial / media jornada",
+      "type": "adj",
+      "example": "He has a part-time job at the local library.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "large-scale",
+      "translation": "a gran escala",
+      "type": "adj",
+      "example": "The city undertook a large-scale regeneration project.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "small-scale",
+      "translation": "a pequeña escala / de ámbito reducido",
+      "type": "adj",
+      "example": "They started with a small-scale pilot scheme first.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "high-risk",
+      "translation": "de alto riesgo",
+      "type": "adj",
+      "example": "Investing in new technology can be a high-risk strategy.",
+      "topic": "Grammar · Compound Adjectives (adj + noun)"
+    },
+    {
+      "word": "time-consuming",
+      "translation": "que consume mucho tiempo / laborioso",
+      "type": "adj",
+      "example": "Filling in all these forms is a very time-consuming task.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "English-speaking",
+      "translation": "de habla inglesa",
+      "type": "adj",
+      "example": "Australia is an English-speaking country.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "record-breaking",
+      "translation": "que bate récords",
+      "type": "adj",
+      "example": "It was a record-breaking achievement in the history of science.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "mouth-watering",
+      "translation": "apetitoso / que hace la boca agua",
+      "type": "adj",
+      "example": "She made us a mouth-watering meal with fresh ingredients.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "thought-provoking",
+      "translation": "que hace reflexionar / provocador de ideas",
+      "type": "adj",
+      "example": "It was a thought-provoking lecture on climate change.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "life-changing",
+      "translation": "que cambia la vida",
+      "type": "adj",
+      "example": "Studying abroad was a life-changing experience for her.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "ground-breaking",
+      "translation": "innovador / pionero / revolucionario",
+      "type": "adj",
+      "example": "The scientists published a ground-breaking study last year.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "money-saving",
+      "translation": "que ahorra dinero / económico",
+      "type": "adj",
+      "example": "The council introduced several money-saving measures.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "eye-catching",
+      "translation": "llamativo / que atrae la vista",
+      "type": "adj",
+      "example": "The poster was eye-catching and generated a lot of interest.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "heart-warming",
+      "translation": "que llena el corazón / emotivo y positivo",
+      "type": "adj",
+      "example": "It was a heart-warming story about community spirit.",
+      "topic": "Grammar · Compound Adjectives (noun + -ing)"
+    },
+    {
+      "word": "home-made",
+      "translation": "casero / hecho en casa",
+      "type": "adj",
+      "example": "She brought us some home-made bread from her village.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "sun-dried",
+      "translation": "secado al sol",
+      "type": "adj",
+      "example": "These sun-dried tomatoes add a rich flavour to the dish.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "middle-aged",
+      "translation": "de mediana edad",
+      "type": "adj",
+      "example": "My father is a middle-aged man with a lot of energy.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "wind-powered",
+      "translation": "de energía eólica / impulsado por el viento",
+      "type": "adj",
+      "example": "The island is entirely wind-powered.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "snow-covered",
+      "translation": "cubierto de nieve",
+      "type": "adj",
+      "example": "We drove through snow-covered mountains on our way north.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "hand-made",
+      "translation": "hecho a mano",
+      "type": "adj",
+      "example": "She gave me a hand-made card for my birthday.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "purpose-built",
+      "translation": "construido específicamente para un fin",
+      "type": "adj",
+      "example": "The students live in a purpose-built residence near campus.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "state-sponsored",
+      "translation": "patrocinado por el estado",
+      "type": "adj",
+      "example": "The report accused them of state-sponsored espionage.",
+      "topic": "Grammar · Compound Adjectives (noun + past participle)"
+    },
+    {
+      "word": "ice-cold",
+      "translation": "helado / extremadamente frío",
+      "type": "adj",
+      "example": "I feel like an ice-cold beer on a hot day like this.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "world-famous",
+      "translation": "mundialmente famoso",
+      "type": "adj",
+      "example": "He is a world-famous author translated into 40 languages.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "sugar-free",
+      "translation": "sin azúcar",
+      "type": "adj",
+      "example": "Dan is on a sugar-free diet for health reasons.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "iron-rich",
+      "translation": "rico en hierro",
+      "type": "adj",
+      "example": "Spinach is an iron-rich vegetable recommended for anaemia.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "cruelty-free",
+      "translation": "libre de crueldad / no testado en animales",
+      "type": "adj",
+      "example": "I only buy cruelty-free cosmetics.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "tax-free",
+      "translation": "libre de impuestos / exento de impuestos",
+      "type": "adj",
+      "example": "Duty-free shops sell tax-free goods at airports.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "smoke-free",
+      "translation": "libre de humo / donde no se puede fumar",
+      "type": "adj",
+      "example": "The city introduced smoke-free zones in public spaces.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "rent-free",
+      "translation": "sin pagar alquiler",
+      "type": "adj",
+      "example": "He lived in the flat rent-free for a year while renovating it.",
+      "topic": "Grammar · Compound Adjectives (noun + adj)"
+    },
+    {
+      "word": "well-educated",
+      "translation": "con buena educación / culto",
+      "type": "adj",
+      "example": "She is a very well-educated woman with three degrees.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "highly-respected",
+      "translation": "muy respetado / de gran prestigio",
+      "type": "adj",
+      "example": "He is a highly-respected figure in the scientific community.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "well-behaved",
+      "translation": "bien educado / que se porta bien",
+      "type": "adj",
+      "example": "They have two well-behaved children who are a pleasure to teach.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "brightly-lit",
+      "translation": "bien iluminado / con mucha luz",
+      "type": "adj",
+      "example": "We sat in a brightly-lit room during the interview.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "densely-populated",
+      "translation": "densamente poblado",
+      "type": "adj",
+      "example": "India is a densely-populated country with over a billion people.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "well-written",
+      "translation": "bien escrito / con buena redacción",
+      "type": "adj",
+      "example": "The examiner praised her for a well-written proposal.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "poorly-designed",
+      "translation": "mal diseñado",
+      "type": "adj",
+      "example": "The app failed because it had a poorly-designed interface.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "well-established",
+      "translation": "bien establecido / consolidado",
+      "type": "adj",
+      "example": "It is a well-established fact that exercise improves mental health.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "widely-accepted",
+      "translation": "ampliamente aceptado",
+      "type": "adj",
+      "example": "This is a widely-accepted theory in modern linguistics.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "well-paid",
+      "translation": "bien pagado / con buen sueldo",
+      "type": "adj",
+      "example": "She finally found a well-paid job in the tech sector.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "badly-paid",
+      "translation": "mal pagado / con sueldo bajo",
+      "type": "adj",
+      "example": "Many care workers are badly-paid despite their vital role.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "well-known",
+      "translation": "conocido / reconocido / famoso",
+      "type": "adj",
+      "example": "It is a well-known fact that sleep deprivation affects performance.",
+      "topic": "Grammar · Compound Adjectives (adverb + past participle)"
+    },
+    {
+      "word": "five-minute",
+      "translation": "de cinco minutos (sustantivo en singular)",
+      "type": "adj",
+      "example": "Let's take a five-minute break before we continue.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "one-year",
+      "translation": "de un año (contrato, plazo...)",
+      "type": "adj",
+      "example": "He signed a one-year contract with the research institute.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "six-storey",
+      "translation": "de seis plantas",
+      "type": "adj",
+      "example": "I live in a six-storey building in the city centre.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "two-room",
+      "translation": "de dos habitaciones",
+      "type": "adj",
+      "example": "She rents a two-room flat near the university.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "five-day",
+      "translation": "de cinco días",
+      "type": "adj",
+      "example": "Most people in Europe work a five-day week.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "ten-year-old",
+      "translation": "de diez años (persona o cosa)",
+      "type": "adj",
+      "example": "She has a ten-year-old daughter who loves science.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "three-bedroom",
+      "translation": "de tres dormitorios (sustantivo en singular)",
+      "type": "adj",
+      "example": "They bought a three-bedroom house on the outskirts.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "100-metre",
+      "translation": "de 100 metros (sustantivo en singular)",
+      "type": "adj",
+      "example": "She won the 100-metre race at the regional championships.",
+      "topic": "Grammar · Compound Adjectives (number + noun)"
+    },
+    {
+      "word": "eight-legged",
+      "translation": "de ocho patas",
+      "type": "adj",
+      "example": "Spiders are eight-legged creatures, not insects.",
+      "topic": "Grammar · Compound Adjectives (number + body part)"
+    },
+    {
+      "word": "one-eyed",
+      "translation": "tuerto / de un solo ojo",
+      "type": "adj",
+      "example": "A cyclops is a one-eyed creature from Greek mythology.",
+      "topic": "Grammar · Compound Adjectives (number + body part)"
+    },
+    {
+      "word": "one-armed",
+      "translation": "manco / con un solo brazo",
+      "type": "adj",
+      "example": "He met a one-armed man who had lost his arm in an accident.",
+      "topic": "Grammar · Compound Adjectives (number + body part)"
+    },
+    {
+      "word": "two-headed",
+      "translation": "de dos cabezas",
+      "type": "adj",
+      "example": "The two-headed eagle is a symbol used in many national flags.",
+      "topic": "Grammar · Compound Adjectives (number + body part)"
+    },
+    {
+      "word": "three-horned",
+      "translation": "de tres cuernos",
+      "type": "adj",
+      "example": "A rhinoceros is sometimes called a three-horned animal.",
+      "topic": "Grammar · Compound Adjectives (number + body part)"
+    },
+    {
+      "word": "hyphen before noun ✅",
+      "translation": "Usar guión cuando el compound adjective va ANTES del sustantivo",
+      "type": "phrase",
+      "example": "He is a well-known actor. ✅ / He is well known. (sin guión tras verbo be)",
+      "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "no hyphen after 'be' / sensory verb",
+      "translation": "Sin guión cuando va DESPUÉS de be, look, seem, taste...",
+      "type": "phrase",
+      "example": "The actor is well known. ✅ / The friendship was short lived. ✅",
+      "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "no hyphen with -ly adverbs",
+      "translation": "Adverbios en -ly NO llevan guión (excepto well-)",
+      "type": "phrase",
+      "example": "A beautifully decorated room ✅ (not beautifully-decorated) / A well-trained athlete ✅",
+      "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "number + noun: singular & written out",
+      "translation": "En number+noun: número en letras y sustantivo en SINGULAR",
+      "type": "phrase",
+      "example": "A five-minute break ✅ / A 5-minutes break ❌ / A three-bedroom house ✅",
+      "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "state-of-the-art",
+      "translation": "de última generación / más avanzado disponible (3+ palabras con guiones)",
+      "type": "adj",
+      "example": "They used state-of-the-art technology in their research.",
+      "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "two-year-old",
+      "translation": "de dos años (estructura número-año-old con guiones)",
+      "type": "adj",
+      "example": "She has a two-year-old daughter who is learning to read.",
+      "topic": "Grammar · Compound Adjectives (Rules)"
     }
   ]
 }
