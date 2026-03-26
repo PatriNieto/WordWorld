@@ -15,7 +15,7 @@
   --green:#2F9E44;--green-light:#EBFBEE;
   --red:#E03131;--red-light:#FFF5F5;
   --orange:#E67700;--orange-light:#FFF9DB;
-  --card-h:260px;
+  --card-h:280px;
 }
 @media(prefers-color-scheme:dark){
   :root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f2f2f7;--text2:#aeaeb2;--text3:#636366;--border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.18);--accent-light:#1a1f4a;--green-light:#0d2e15;--red-light:#2d0f0f;--orange-light:#2d1f00}
@@ -72,14 +72,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .card-wrap{width:100%;perspective:1200px;height:var(--card-h);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .42s cubic-bezier(.4,0,.2,1)}
 .card-wrap.flipped .card-inner{transform:rotateY(180deg)}
-.card-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 20px 16px;text-align:center;user-select:none;overflow:hidden}
+.card-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 18px 16px;text-align:center;user-select:none;overflow:hidden}
 .card-back{transform:rotateY(180deg);background:var(--bg2)}
-.card-tag{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.card-word{font-size:clamp(20px,5vw,30px);font-weight:700;margin-bottom:6px;line-height:1.2;word-break:break-word}
+.card-tag{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-word{font-size:clamp(22px,5.5vw,34px);font-weight:800;margin-bottom:8px;line-height:1.2;word-break:break-word}
 .card-phonetic{font-size:14px;color:var(--text2);margin-bottom:6px}
 .card-hint{font-size:12px;color:var(--text3);margin-top:auto;padding-top:8px}
-.card-translation{font-size:clamp(16px,4vw,22px);font-weight:700;margin-bottom:8px;line-height:1.3;word-break:break-word;color:var(--text)}
-.card-example{font-size:13px;color:var(--text2);font-style:italic;line-height:1.6;margin-top:4px}
+.card-translation{font-size:clamp(17px,4.5vw,24px);font-weight:700;margin-bottom:10px;line-height:1.4;word-break:break-word;color:var(--text)}
+.card-example{font-size:14px;color:var(--text2);font-style:italic;line-height:1.65;margin-top:8px}
 .card-type-badge{font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:10px;font-weight:600}
 .tb-noun{background:#E1F5EE;color:#0F6E56}.tb-verb{background:#EEF2FF;color:#3B5BDB}.tb-adj{background:#FFF9DB;color:#854F0B}.tb-adv{background:#F8F0FC;color:#862E9C}.tb-phrase{background:#E7F5FF;color:#1864AB}.tb-error{background:var(--red-light);color:var(--red)}
 .card-status{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:12px;right:12px;font-size:12px;font-weight:700}
@@ -459,6 +459,43 @@ function loadData(data){
   saveVocab(data);
   buildTopics();updateGlobalStats();updateDeck();
   buildErrorTopics();updateErrorStats();updateEModeCounts();updateEDeck();
+  buildVocabQuizzes();
+}
+
+function buildVocabQuizzes(){
+  // Generate quiz exercises from vocab JSON
+  if(!vocab.length)return;
+  const vocabExercises=[];
+  const shuffled=shuffle([...vocab]);
+  shuffled.forEach(v=>{
+    if(!v.word||!v.translation)return;
+    // Exercise 1: word → translation (type-in)
+    vocabExercises.push({
+      topic: v.topic||'Vocabulary',
+      prompt: `¿Qué significa "${v.word}"?`,
+      answer: v.translation.split('/')[0].trim(),
+      distractors: shuffle(vocab.filter(o=>o.word!==v.word&&o.translation)).slice(0,3).map(o=>o.translation.split('/')[0].trim()),
+      explanation: v.example?`Ejemplo: "${v.example}"`:'',
+      source:'vocab'
+    });
+    // Exercise 2: translation → word (type-in, for phrases/patterns)
+    if(v.example){
+      const exWithBlank=v.example.replace(new RegExp(v.word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,'\\$&'),'i'),'___');
+      if(exWithBlank!==v.example){
+        vocabExercises.push({
+          topic: v.topic||'Vocabulary',
+          prompt: `Completa la frase:\n${exWithBlank}`,
+          answer: v.word,
+          distractors: shuffle(vocab.filter(o=>o.word!==v.word)).slice(0,3).map(o=>o.word),
+explanation: `${v.translation}${v.example ? ' | "' + v.example + '"' : ''}`,          source:'vocab'
+        });
+      }
+    }
+  });
+  // Merge with existing exercises from JSON, vocab ones first when filtering by vocab topic
+  vocabExercisesCache=vocabExercises;
+  // Rebuild quiz if it's on vocab mode
+  if(quizTopic!=='all'){buildQuizFilters();restartQuiz();}
 }
 
 function buildTopics(){
@@ -703,7 +740,7 @@ function nextECard(){if(eIdx<eDeck.length-1){eIdx++;eFlipped=false;renderErrorCa
 function prevECard(){if(eIdx>0){eIdx--;eFlipped=false;renderErrorCard();}}
 
 /* ── QUIZ ── */
-let exercises=[],quizDeck=[],quizIdx=0,quizScore=0,quizTopic='all',quizAnswered=false,quizType='all';
+let exercises=[],vocabExercisesCache=[],quizDeck=[],quizIdx=0,quizScore=0,quizTopic='all',quizAnswered=false,quizType='all';
 // match state
 let matchLeft=[],matchRight=[],matchSelected=null,matchSide=null,matchCorrect=0,matchTotal=0;
 
@@ -727,19 +764,17 @@ function setQuizType(qt){
   restartQuiz();
 }
 function restartQuiz(){
-  let base=quizTopic==='all'?exercises:exercises.filter(e=>e.topic===quizTopic);
-  // Build deck based on type
-  if(quizType==='match'){
-    // For match mode, take groups of 4 to make pairs
-    quizDeck=shuffle([...base]);
-  } else if(quizType==='typein'){
-    quizDeck=shuffle([...base]);
-  } else if(quizType==='mc'){
-    quizDeck=shuffle([...base]);
-  } else {
-    // all: mix types
-    quizDeck=shuffle([...base]);
-  }
+  // Merge grammar exercises + vocab exercises
+  const grammarBase=quizTopic==='all'?exercises:exercises.filter(e=>e.topic===quizTopic);
+  const vocabBase=quizTopic==='all'
+    ?vocabExercisesCache
+    :vocabExercisesCache.filter(e=>e.topic===quizTopic);
+  // Mix: 60% grammar, 40% vocab (or all of each if small)
+  const maxGrammar=Math.min(grammarBase.length,30);
+  const maxVocab=Math.min(vocabBase.length,20);
+  let base=[...shuffle(grammarBase).slice(0,maxGrammar),...shuffle(vocabBase).slice(0,maxVocab)];
+  if(!base.length)base=quizTopic==='all'?[...exercises,...vocabExercisesCache]:[...grammarBase,...vocabBase];
+  quizDeck=shuffle(base);
   quizIdx=0;quizScore=0;quizAnswered=false;
   document.getElementById('q-score').textContent='0';
   renderQuiz();
@@ -851,20 +886,19 @@ function checkTypeIn(){
   if(!input||!input.value.trim())return;
   quizAnswered=true;
   const ex=quizDeck[quizIdx];
-  const given=input.value.trim().toLowerCase();
-  const expected=ex.answer.toLowerCase();
-  const correct=given===expected||normalise(given)===normalise(expected);
+  const given=normalise(input.value.trim().toLowerCase());
+  // Accept any slash-separated alternative, case-insensitive
+  const alternatives=ex.answer.split('/').map(a=>normalise(a.trim().toLowerCase()));
+  const correct=alternatives.some(a=>given===a);
   if(correct)quizScore++;
   document.getElementById('q-score').textContent=quizScore;
-  input.disabled=true;
-  btn.disabled=true;
+  input.disabled=true;btn.disabled=true;
   input.classList.add(correct?'correct':'wrong');
   if(!correct){
-    // show correct answer below input
     const wrap=input.parentElement;
     const hint=document.createElement('div');
-    hint.style.cssText='font-size:14px;padding:10px 14px;background:var(--green-light);color:var(--green);border-radius:10px;border-left:4px solid #B2F2BB;font-weight:500';
-    hint.textContent='✅ Respuesta correcta: '+ex.answer;
+    hint.style.cssText='font-size:14px;padding:10px 14px;background:var(--green-light);color:var(--green);border-radius:10px;border-left:4px solid #B2F2BB;font-weight:500;margin-top:8px';
+    hint.textContent='✅ Respuesta: '+ex.answer;
     wrap.appendChild(hint);
   }
   const nb=document.getElementById('next-btn');if(nb)nb.classList.add('visible');
@@ -961,24 +995,12 @@ function selectMatch(side,idx){
 
 function nextQuestion(){quizIdx++;renderQuiz();}
 
-async function fetchExplanation(ex,chosen,correct){
+function fetchExplanation(ex,chosen,correct){
   const box=document.getElementById('explanation-area');if(!box)return;
-  box.innerHTML=`<div class="explanation-box loading"><div class="ex-label">Explicación</div>Generando explicación...</div>`;
-  const system=`Eres un profesor de inglés C1. Explica muy brevemente (2-3 frases) por qué la respuesta correcta es correcta. Responde en español. Sin saludos.`;
-  const user=`Ejercicio: "${ex.prompt}"\nRespuesta correcta: "${ex.answer}"\nEl estudiante escribió: "${chosen}" (${correct?'CORRECTO':'INCORRECTO'})\nTema: ${ex.topic||'gramática C1'}\n${ex.explanation?'Pista: '+ex.explanation:''}`;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system,messages:[{role:'user',content:user}]})});
-    const data=await res.json();
-    const text=data.content?.find(c=>c.type==='text')?.text||'No se pudo generar explicación.';
-    if(!document.getElementById('explanation-area'))return;
-    box.className=`explanation-box${correct?'':' wrong-ex'}`;
-    box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${text}`;
-  }catch(e){
-    if(!document.getElementById('explanation-area'))return;
-    const fallback=ex.explanation||'Revisa la regla gramatical en tus apuntes.';
-    box.className=`explanation-box${correct?'':' wrong-ex'}`;
-    box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${fallback}`;
-  }
+  // Use preloaded explanation — no AI needed
+  const explanation=ex.explanation||'Revisa este punto en tus apuntes.';
+  box.className=`explanation-box${correct?'':' wrong-ex'}`;
+  box.innerHTML=`<div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto — respuesta: '+ex.answer}</div>${explanation}`;
 }
 
 /* ── THEORY ── */
@@ -1126,8 +1148,11 @@ function checkCollComplete(target,word,error,example){
   if(!input||!input.value.trim())return;
   collAnswered=true;
   const given=normalise(input.value.trim().toLowerCase());
-  const expected=normalise(decodeURIComponent(target).toLowerCase());
-  const correct=given===expected||decodeURIComponent(word).toLowerCase().includes(given);
+  const tgt=decodeURIComponent(target);
+  const fullWord=decodeURIComponent(word);
+  // Accept slash-separated alternatives, case-insensitive, ignore articles
+  const alternatives=tgt.split('/').map(a=>normalise(a.trim().toLowerCase()));
+  const correct=alternatives.some(a=>given===a);
   if(correct)collScore++;
   document.getElementById('coll-score').textContent=collScore;
   input.disabled=true;
@@ -1137,9 +1162,10 @@ function checkCollComplete(target,word,error,example){
   const errText=decodeURIComponent(error);
   const exText=decodeURIComponent(example);
   fb.innerHTML=`
-    <div class="coll-correct" style="margin-top:12px">✅ ${decodeURIComponent(word)}</div>
-    ${errText?`<div class="coll-error-badge">${errText}</div>`:''}
-    ${exText?`<div class="coll-example">"${exText}"</div>`:''}`;
+    <div class="coll-correct" style="margin-top:12px">${correct?'✅':'❌'} ${correct?'Correcto:':'Respuesta:'} <b>${fullWord}</b></div>
+    ${!correct?`<div style="font-size:14px;padding:8px 12px;background:var(--bg2);border-radius:8px;margin-top:6px;color:var(--text2)">Escribiste: <i>${input.value.trim()}</i></div>`:''}
+    ${errText?`<div class="coll-error-badge" style="margin-top:8px">${errText}</div>`:''}
+    ${exText?`<div class="coll-example" style="margin-top:8px">"${exText}"</div>`:''}`;
   document.getElementById('coll-next').classList.add('visible');
 }
 
@@ -1307,44 +1333,38 @@ function renderRewrite(){
   setTimeout(()=>{const i=document.getElementById('rw-input');if(i){i.focus();const l=i.value.length;i.setSelectionRange(l,l);}},300);
 }
 
-async function checkRewrite(){
+function checkRewrite(){
   if(rwAnswered)return;
   const input=document.getElementById('rw-input');
   const btn=document.querySelector('.rw-check-btn');
-  if(!input||!input.value.trim()||input.value.trim()===rwDeck[rwIdx].keyword)return;
+  if(!input||!input.value.trim())return;
+  const val=input.value.trim();
+  if(normalise(val.toLowerCase())===normalise(rwDeck[rwIdx].keyword.toLowerCase()))return;
   rwAnswered=true;
   btn.disabled=true;
   input.disabled=true;
   const ex=rwDeck[rwIdx];
   const fb=document.getElementById('rw-feedback');
-  fb.innerHTML=`<div class="rw-ai-feedback loading"><div class="ex-label">Evaluando con IA...</div>Un momento...</div>`;
-  const system=`Eres un profesor de inglés C1. Evalúa si la reescritura del estudiante es gramaticalmente correcta y mantiene el significado original. Responde SOLO en este formato JSON (sin markdown):
-{"correct":true/false,"score":0-3,"feedback":"explicación en español en 2-3 frases","model":"respuesta modelo correcta"}`;
-  const user=`Original: "${ex.original}"\nPalabra clave: ${ex.keyword}\nRespuesta esperada: "${ex.answer}"\nRespuesta del estudiante: "${input.value.trim()}"\nPista gramatical: ${ex.hint}`;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:500,system,messages:[{role:'user',content:user}]})});
-    const data=await res.json();
-    const text=data.content?.find(c=>c.type==='text')?.text||'{}';
-    let result;
-    try{result=JSON.parse(text.replace(/```json|```/g,'').trim());}catch(e){result={correct:false,score:1,feedback:'No se pudo evaluar automáticamente.',model:ex.answer};}
-    if(result.correct||result.score>=2)rwScore++;
-    document.getElementById('rw-score').textContent=rwScore;
-    const isGood=result.correct||result.score>=2;
-    if(!document.getElementById('rw-feedback'))return;
-    fb.innerHTML=`
-      <div class="rw-answer-reveal">✅ Respuesta modelo: ${result.model||ex.answer}</div>
-      <div class="rw-ai-feedback${isGood?'':' wrong-ex'}" style="border-color:${isGood?'var(--green)':'var(--red)'};background:${isGood?'var(--green-light)':'var(--red-light)'}">
-        <div class="ex-label">${isGood?'✓ Correcto':'✗ Mejorable'} · ${result.score||0}/3</div>
-        ${result.feedback||ex.hint}
-      </div>
-      <div style="font-size:13px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px">💡 ${ex.hint}</div>`;
-    document.getElementById('rw-next').classList.add('visible');
-  }catch(e){
-    if(!document.getElementById('rw-feedback'))return;
-    fb.innerHTML=`<div class="rw-answer-reveal">✅ Respuesta modelo: ${ex.answer}</div>
-      <div style="font-size:13px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px">💡 ${ex.hint}</div>`;
-    document.getElementById('rw-next').classList.add('visible');
-  }
+  // Smart check: compare key structural words, case-insensitive
+  const given=normalise(val.toLowerCase());
+  // Accept if all key words from expected answer appear in given answer
+  const expected=normalise(ex.answer.toLowerCase());
+  const keyWords=expected.split(/\s+/).filter(w=>w.length>3&&!['that','with','have','been','were','would','could','should','will','from','into','this','they','them','their','what','when','where','which','there'].includes(w));
+  const matchCount=keyWords.filter(w=>given.includes(w)).length;
+  const correct=matchCount>=Math.ceil(keyWords.length*0.75)&&given.length>10;
+  if(correct)rwScore++;
+  document.getElementById('rw-score').textContent=rwScore;
+  input.style.borderColor=correct?'var(--green)':'var(--red)';
+  fb.innerHTML=`
+    <div class="rw-answer-reveal">✅ Respuesta modelo: <b>${ex.answer}</b></div>
+    <div class="rw-ai-feedback${correct?'':' wrong-ex'}" style="margin-top:10px">
+      <div class="ex-label">${correct?'✓ Bien orientado':'✗ Revisa'}</div>
+      ${correct
+        ?'Tu respuesta recoge los elementos clave. ¡Bien!'
+        :`Tu respuesta: <i>"${val}"</i><br><br>Compara con el modelo y fíjate en: <b>${ex.keyword}</b>`}
+    </div>
+    <div style="font-size:13px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px;line-height:1.6">💡 ${ex.hint}</div>`;
+  document.getElementById('rw-next').classList.add('visible');
 }
 
 function rwNext(){rwIdx++;renderRewrite();}
@@ -1718,56 +1738,30 @@ function renderSpeaking(){
     </div>`;
 }
 
-async function submitSpeaking(){
+function submitSpeaking(){
   const input=document.getElementById('sp-input');
   const btn=document.getElementById('sp-submit');
   if(!input||input.value.trim().length<20){showToast('Escribe al menos 3-4 frases');return;}
-  spAnswering=true;btn.disabled=true;
+  btn.disabled=true;btn.textContent='Ver frases modelo ✓';
   const q=spDeck[spIdx];
   const fb=document.getElementById('sp-feedback');
-  fb.innerHTML=`<div class="speaking-feedback"><div class="rw-ai-feedback loading"><div class="ex-label">Analizando tu respuesta...</div>Un momento, la IA está evaluando tu nivel C1...</div></div>`;
-  const system=`Eres un examinador de inglés C1 (EOI/Cambridge). Evalúa la respuesta del estudiante y responde SOLO en este JSON (sin markdown):
-{"grammar":0-5,"vocabulary":0-5,"coherence":0-5,"c1_level":0-5,"strengths":"en español","improvements":"en español, 2-3 puntos concretos","model_phrases":["frase C1 de ejemplo 1","frase C1 de ejemplo 2","frase C1 de ejemplo 3"]}
-Sé constructivo y específico. Menciona estructuras C1 concretas que podría usar.`;
-  const user=`Pregunta: "${q.question}"\nRespuesta del estudiante: "${input.value.trim()}"`;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system,messages:[{role:'user',content:user}]})});
-    const data=await res.json();
-    const text=data.content?.find(c=>c.type==='text')?.text||'{}';
-    let r;
-    try{r=JSON.parse(text.replace(/```json|```/g,'').trim());}
-    catch(e){r={grammar:3,vocabulary:3,coherence:3,c1_level:3,strengths:'Respuesta recibida.',improvements:'No se pudo analizar en detalle.',model_phrases:q.model||[]};}
-    if(!document.getElementById('sp-feedback'))return;
-    const avg=Math.round((r.grammar+r.vocabulary+r.coherence+r.c1_level)/4);
-    const scoreClass=avg>=4?'good':avg>=3?'ok':'bad';
-    const stars='⭐'.repeat(avg)+'☆'.repeat(5-avg);
-    fb.innerHTML=`
-      <div class="speaking-feedback">
-        <div class="sf-score">
-          <div class="sf-pill ${scoreClass}">${stars} ${avg}/5 general</div>
-          <div class="sf-pill ${r.grammar>=4?'good':r.grammar>=3?'ok':'bad'}">Grammar ${r.grammar}/5</div>
-          <div class="sf-pill ${r.vocabulary>=4?'good':r.vocabulary>=3?'ok':'bad'}">Vocab ${r.vocabulary}/5</div>
-          <div class="sf-pill ${r.c1_level>=4?'good':r.c1_level>=3?'ok':'bad'}">C1 Level ${r.c1_level}/5</div>
-        </div>
-        <div class="sf-section">
-          <div class="sf-section-title">✅ Puntos fuertes</div>
-          <div class="sf-text">${r.strengths}</div>
-        </div>
-        <div class="sf-section">
-          <div class="sf-section-title">💡 Mejoras concretas</div>
-          <div class="sf-text">${r.improvements}</div>
-        </div>
-        <div class="sf-section">
-          <div class="sf-section-title">🎯 Frases modelo C1</div>
-          <div class="sf-phrases">${(r.model_phrases||q.model||[]).map(p=>`<div class="sf-phrase">"${p}"</div>`).join('')}</div>
-        </div>
-      </div>`;
-  }catch(e){
-    if(!document.getElementById('sp-feedback'))return;
-    fb.innerHTML=`<div class="speaking-feedback">
-      <div class="sf-section"><div class="sf-section-title">🎯 Frases modelo C1</div>
-      <div class="sf-phrases">${(q.model||[]).map(p=>`<div class="sf-phrase">"${p}"</div>`).join('')}</div></div></div>`;
-  }
+  // Show model phrases and tips without AI
+  fb.innerHTML=`
+    <div class="speaking-feedback">
+      <div class="sf-section">
+        <div class="sf-section-title">✅ Tu respuesta</div>
+        <div class="sf-text" style="font-style:italic;padding:10px 14px;background:var(--bg2);border-radius:var(--radius);line-height:1.7">"${input.value.trim()}"</div>
+      </div>
+      <div class="sf-section">
+        <div class="sf-section-title">💡 Puntos clave a incluir</div>
+        <div class="speaking-tips">${q.tips.map(t=>`<div class="speaking-tip">• ${t}</div>`).join('')}</div>
+      </div>
+      <div class="sf-section">
+        <div class="sf-section-title">🎯 Frases modelo C1</div>
+        <div class="sf-phrases">${(q.model||[]).map(p=>`<div class="sf-phrase">"${p}"</div>`).join('')}</div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);text-align:center;margin-top:8px">Compara tu respuesta con las frases modelo y evalúa tú mismo.</div>
+    </div>`;
 }
 
 function spNext(){spIdx++;renderSpeaking();}
