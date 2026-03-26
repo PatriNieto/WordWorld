@@ -1,0 +1,1280 @@
+{
+  "collocations": [
+    {
+      "word": "make a decision",
+      "translation": "tomar una decisión",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a decision",
+      "example": "We need to a decision.",
+      "error": "❌ do a decision, take a decision",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make a mistake",
+      "translation": "cometer un error",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a mistake",
+      "example": "We need to a mistake.",
+      "error": "❌ do a mistake, commit a mistake",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make an effort",
+      "translation": "hacer un esfuerzo",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "an effort",
+      "example": "We need to an effort.",
+      "error": "❌ do an effort",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make progress",
+      "translation": "hacer progresos / avanzar",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "progress",
+      "example": "We need to progress.",
+      "error": "❌ do progress",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make a suggestion",
+      "translation": "hacer una sugerencia",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a suggestion",
+      "example": "We need to a suggestion.",
+      "error": "❌ do a suggestion",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make an argument",
+      "translation": "plantear un argumento",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "an argument",
+      "example": "We need to an argument.",
+      "error": "❌ do an argument",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make an exception",
+      "translation": "hacer una excepción",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "an exception",
+      "example": "We need to an exception.",
+      "error": "❌ do an exception",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make a point",
+      "translation": "hacer una observación / señalar algo",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a point",
+      "example": "We need to a point.",
+      "error": "❌ do a point",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make a difference",
+      "translation": "marcar la diferencia",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a difference",
+      "example": "We need to a difference.",
+      "error": "❌ do a difference",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make an impression",
+      "translation": "causar impresión",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "an impression",
+      "example": "We need to an impression.",
+      "error": "❌ do an impression",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make an appointment",
+      "translation": "pedir/concertar una cita",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "an appointment",
+      "example": "We need to an appointment.",
+      "error": "❌ do an appointment",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "make a contribution",
+      "translation": "hacer una contribución",
+      "type": "collocation",
+      "verb": "make",
+      "collocate": "a contribution",
+      "example": "We need to a contribution.",
+      "error": "❌ do a contribution",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do research",
+      "translation": "hacer investigación",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "research",
+      "example": "We need to research.",
+      "error": "❌ make research",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do damage",
+      "translation": "causar daños",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "damage",
+      "example": "We need to damage.",
+      "error": "❌ make damage",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do someone a favour",
+      "translation": "hacerle un favor a alguien",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "someone a favour",
+      "example": "We need to someone a favour.",
+      "error": "❌ make someone a favour",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do harm",
+      "translation": "hacer daño / causar perjuicio",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "harm",
+      "example": "We need to harm.",
+      "error": "❌ make harm",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do business",
+      "translation": "hacer negocios",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "business",
+      "example": "We need to business.",
+      "error": "❌ make business",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do a course",
+      "translation": "hacer un curso",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "a course",
+      "example": "We need to a course.",
+      "error": "❌ make a course",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do justice to",
+      "translation": "hacer justicia a / representar fielmente",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "justice to",
+      "example": "We need to justice to.",
+      "error": "❌ make justice to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "do the trick",
+      "translation": "funcionar / resolver el problema",
+      "type": "collocation",
+      "verb": "do",
+      "collocate": "the trick",
+      "example": "We need to the trick.",
+      "error": "❌ make the trick",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have an impact",
+      "translation": "tener un impacto",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "an impact",
+      "example": "We need to an impact.",
+      "error": "❌ make an impact (ambos válidos, pero 'have' es más natural)",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a party",
+      "translation": "organizar una fiesta",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a party",
+      "example": "We need to a party.",
+      "error": "❌ do a party, make a party",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a conversation",
+      "translation": "mantener una conversación",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a conversation",
+      "example": "We need to a conversation.",
+      "error": "❌ make a conversation",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a look",
+      "translation": "echar un vistazo",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a look",
+      "example": "We need to a look.",
+      "error": "❌ make a look",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have an argument",
+      "translation": "discutir / tener una pelea verbal",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "an argument",
+      "example": "We need to an argument.",
+      "error": "❌ do an argument",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a breakdown",
+      "translation": "sufrir un colapso nervioso",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a breakdown",
+      "example": "We need to a breakdown.",
+      "error": "❌ make a breakdown",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a go (at)",
+      "translation": "intentarlo / probar",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a go",
+      "example": "We need to a go (at).",
+      "error": "❌ make a go",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have second thoughts",
+      "translation": "tener dudas / reconsiderar",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "second thoughts",
+      "example": "We need to second thoughts.",
+      "error": "❌ make second thoughts",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "have a bearing on",
+      "translation": "tener relación con / influir en",
+      "type": "collocation",
+      "verb": "have",
+      "collocate": "a bearing on",
+      "example": "We need to a bearing on.",
+      "error": "❌ make a bearing on",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take responsibility",
+      "translation": "asumir la responsabilidad",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "responsibility",
+      "example": "We need to responsibility.",
+      "error": "❌ make responsibility",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take action",
+      "translation": "tomar medidas",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "action",
+      "example": "We need to action.",
+      "error": "❌ make action, do action",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take advantage of",
+      "translation": "aprovecharse de / sacar partido de",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "advantage of",
+      "example": "We need to advantage of.",
+      "error": "❌ make advantage of",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take into account",
+      "translation": "tener en cuenta",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "into account",
+      "example": "We need to into account.",
+      "error": "❌ make into account",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take a toll on",
+      "translation": "pasar factura / tener un efecto negativo en",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "a toll on",
+      "example": "We need to a toll on.",
+      "error": "❌ make a toll on",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take for granted",
+      "translation": "dar por sentado",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "for granted",
+      "example": "We need to for granted.",
+      "error": "❌ make for granted",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take a stand",
+      "translation": "adoptar una postura / posicionarse",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "a stand",
+      "example": "We need to a stand.",
+      "error": "❌ make a stand",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take measures",
+      "translation": "tomar medidas",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "measures",
+      "example": "We need to measures.",
+      "error": "❌ make measures",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "take a step",
+      "translation": "dar un paso",
+      "type": "collocation",
+      "verb": "take",
+      "collocate": "a step",
+      "example": "We need to a step.",
+      "error": "❌ make a step",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "raise awareness",
+      "translation": "concienciar / sensibilizar",
+      "type": "collocation",
+      "verb": "raise",
+      "collocate": "awareness",
+      "example": "We need to awareness.",
+      "error": "❌ rise awareness, make awareness",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "raise concerns",
+      "translation": "plantear preocupaciones",
+      "type": "collocation",
+      "verb": "raise",
+      "collocate": "concerns",
+      "example": "We need to concerns.",
+      "error": "❌ make concerns",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "raise the question",
+      "translation": "plantear la cuestión",
+      "type": "collocation",
+      "verb": "raise",
+      "collocate": "the question",
+      "example": "We need to the question.",
+      "error": "❌ make the question",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "raise standards",
+      "translation": "elevar los estándares",
+      "type": "collocation",
+      "verb": "raise",
+      "collocate": "standards",
+      "example": "We need to standards.",
+      "error": "❌ make standards",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "raise funds",
+      "translation": "recaudar fondos",
+      "type": "collocation",
+      "verb": "raise",
+      "collocate": "funds",
+      "example": "We need to funds.",
+      "error": "❌ make funds",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "draw attention to",
+      "translation": "llamar la atención sobre",
+      "type": "collocation",
+      "verb": "draw",
+      "collocate": "attention to",
+      "example": "We need to attention to.",
+      "error": "❌ make attention to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "draw a conclusion",
+      "translation": "sacar una conclusión",
+      "type": "collocation",
+      "verb": "draw",
+      "collocate": "a conclusion",
+      "example": "We need to a conclusion.",
+      "error": "❌ make a conclusion",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "draw a distinction",
+      "translation": "establecer una distinción",
+      "type": "collocation",
+      "verb": "draw",
+      "collocate": "a distinction",
+      "example": "We need to a distinction.",
+      "error": "❌ make a distinction between",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "draw on",
+      "translation": "recurrir a / basarse en",
+      "type": "collocation",
+      "verb": "draw",
+      "collocate": "on",
+      "example": "We need to on.",
+      "error": "❌ make on",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "reach a conclusion",
+      "translation": "llegar a una conclusión",
+      "type": "collocation",
+      "verb": "reach",
+      "collocate": "a conclusion",
+      "example": "We need to a conclusion.",
+      "error": "❌ arrive a conclusion",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "reach a compromise",
+      "translation": "llegar a un acuerdo intermedio",
+      "type": "collocation",
+      "verb": "reach",
+      "collocate": "a compromise",
+      "example": "We need to a compromise.",
+      "error": "❌ make a compromise",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "reach a consensus",
+      "translation": "alcanzar un consenso",
+      "type": "collocation",
+      "verb": "reach",
+      "collocate": "a consensus",
+      "example": "We need to a consensus.",
+      "error": "❌ arrive a consensus",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "reach a deadline",
+      "translation": "cumplir un plazo",
+      "type": "collocation",
+      "verb": "reach",
+      "collocate": "a deadline",
+      "example": "We need to a deadline.",
+      "error": "❌ arrive a deadline",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "pay attention",
+      "translation": "prestar atención",
+      "type": "collocation",
+      "verb": "pay",
+      "collocate": "attention",
+      "example": "We need to attention.",
+      "error": "❌ make attention, give attention",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "pay a compliment",
+      "translation": "hacer un cumplido",
+      "type": "collocation",
+      "verb": "pay",
+      "collocate": "a compliment",
+      "example": "We need to a compliment.",
+      "error": "❌ make a compliment",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "pay tribute to",
+      "translation": "rendir homenaje a",
+      "type": "collocation",
+      "verb": "pay",
+      "collocate": "tribute to",
+      "example": "We need to tribute to.",
+      "error": "❌ make tribute to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "give rise to",
+      "translation": "dar lugar a / provocar",
+      "type": "collocation",
+      "verb": "give",
+      "collocate": "rise to",
+      "example": "We need to rise to.",
+      "error": "❌ make rise to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "give way to",
+      "translation": "ceder el paso a / dar paso a",
+      "type": "collocation",
+      "verb": "give",
+      "collocate": "way to",
+      "example": "We need to way to.",
+      "error": "❌ make way to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "give a speech",
+      "translation": "dar un discurso",
+      "type": "collocation",
+      "verb": "give",
+      "collocate": "a speech",
+      "example": "We need to a speech.",
+      "error": "❌ make a speech — ambos válidos, 'give' más natural",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "give credit to",
+      "translation": "reconocer el mérito de",
+      "type": "collocation",
+      "verb": "give",
+      "collocate": "credit to",
+      "example": "We need to credit to.",
+      "error": "❌ make credit to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "set a precedent",
+      "translation": "establecer un precedente",
+      "type": "collocation",
+      "verb": "set",
+      "collocate": "a precedent",
+      "example": "We need to a precedent.",
+      "error": "❌ make a precedent",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "set the scene",
+      "translation": "preparar el terreno / situar el contexto",
+      "type": "collocation",
+      "verb": "set",
+      "collocate": "the scene",
+      "example": "We need to the scene.",
+      "error": "❌ make the scene",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "set out to",
+      "translation": "proponerse / tener como objetivo",
+      "type": "collocation",
+      "verb": "set",
+      "collocate": "out to",
+      "example": "We need to out to.",
+      "error": "❌ make out to",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "carry out research",
+      "translation": "llevar a cabo una investigación",
+      "type": "collocation",
+      "verb": "carry out",
+      "collocate": "research",
+      "example": "We need to research.",
+      "error": "❌ make research — 'carry out' es más formal",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "carry out a plan",
+      "translation": "ejecutar un plan",
+      "type": "collocation",
+      "verb": "carry out",
+      "collocate": "a plan",
+      "example": "We need to a plan.",
+      "error": "❌ make a plan (make = diseñar el plan, carry out = ejecutarlo)",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "carry weight",
+      "translation": "tener peso / ser influyente",
+      "type": "collocation",
+      "verb": "carry",
+      "collocate": "weight",
+      "example": "We need to weight.",
+      "error": "❌ make weight",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "run a risk",
+      "translation": "correr un riesgo",
+      "type": "collocation",
+      "verb": "run",
+      "collocate": "a risk",
+      "example": "We need to a risk.",
+      "error": "❌ make a risk",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "run a campaign",
+      "translation": "llevar a cabo una campaña",
+      "type": "collocation",
+      "verb": "run",
+      "collocate": "a campaign",
+      "example": "We need to a campaign.",
+      "error": "❌ make a campaign",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "run out of",
+      "translation": "quedarse sin",
+      "type": "collocation",
+      "verb": "run",
+      "collocate": "out of",
+      "example": "We need to out of.",
+      "error": "❌ finish of",
+      "topic": "Collocations · Verb Patterns"
+    },
+    {
+      "word": "heavy traffic",
+      "translation": "mucho tráfico / tráfico denso",
+      "type": "collocation",
+      "adjective": "heavy",
+      "noun": "traffic",
+      "error": "❌ strong traffic, big traffic",
+      "example": "There was heavy traffic in the city centre this morning.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "heavy rain",
+      "translation": "lluvia intensa",
+      "type": "collocation",
+      "adjective": "heavy",
+      "noun": "rain",
+      "error": "❌ strong rain, big rain",
+      "example": "She has heavy rain in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "heavy smoker",
+      "translation": "fumador empedernido",
+      "type": "collocation",
+      "adjective": "heavy",
+      "noun": "smoker",
+      "error": "❌ strong smoker",
+      "example": "She has heavy smoker in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "heavy responsibility",
+      "translation": "gran responsabilidad",
+      "type": "collocation",
+      "adjective": "heavy",
+      "noun": "responsibility",
+      "error": "❌ big responsibility — ambos pero heavy es más formal",
+      "example": "She has heavy responsibility in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "strong argument",
+      "translation": "argumento sólido / convincente",
+      "type": "collocation",
+      "adjective": "strong",
+      "noun": "argument",
+      "error": "❌ heavy argument, big argument",
+      "example": "She has strong argument in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "strong opinion",
+      "translation": "opinión firme",
+      "type": "collocation",
+      "adjective": "strong",
+      "noun": "opinion",
+      "error": "❌ heavy opinion",
+      "example": "She has strong opinion in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "strong evidence",
+      "translation": "evidencia sólida",
+      "type": "collocation",
+      "adjective": "strong",
+      "noun": "evidence",
+      "error": "❌ big evidence, heavy evidence",
+      "example": "She has strong evidence in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "strong belief",
+      "translation": "creencia firme",
+      "type": "collocation",
+      "adjective": "strong",
+      "noun": "belief",
+      "error": "❌ heavy belief",
+      "example": "She has strong belief in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "strong influence",
+      "translation": "gran influencia",
+      "type": "collocation",
+      "adjective": "strong",
+      "noun": "influence",
+      "error": "❌ big influence — ambos pero strong es más preciso",
+      "example": "She has strong influence in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "deep concern",
+      "translation": "profunda preocupación",
+      "type": "collocation",
+      "adjective": "deep",
+      "noun": "concern",
+      "error": "❌ big concern, heavy concern",
+      "example": "She has deep concern in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "deep impact",
+      "translation": "impacto profundo",
+      "type": "collocation",
+      "adjective": "deep",
+      "noun": "impact",
+      "error": "❌ big impact — ambos posibles",
+      "example": "She has deep impact in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "deep-rooted",
+      "translation": "profundamente arraigado",
+      "type": "collocation",
+      "adjective": "deep-rooted",
+      "noun": "(adj)",
+      "error": "❌ strongly rooted, heavily rooted",
+      "example": "She has deep-rooted in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "high priority",
+      "translation": "alta prioridad",
+      "type": "collocation",
+      "adjective": "high",
+      "noun": "priority",
+      "error": "❌ big priority, strong priority",
+      "example": "She has high priority in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "high standards",
+      "translation": "altos estándares",
+      "type": "collocation",
+      "adjective": "high",
+      "noun": "standards",
+      "error": "❌ big standards, strong standards",
+      "example": "She has high standards in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "high expectations",
+      "translation": "grandes expectativas",
+      "type": "collocation",
+      "adjective": "high",
+      "noun": "expectations",
+      "error": "❌ big expectations — ambos posibles",
+      "example": "She has high expectations in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "high risk",
+      "translation": "alto riesgo",
+      "type": "collocation",
+      "adjective": "high",
+      "noun": "risk",
+      "error": "❌ big risk, strong risk",
+      "example": "She has high risk in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "high demand",
+      "translation": "gran demanda",
+      "type": "collocation",
+      "adjective": "high",
+      "noun": "demand",
+      "error": "❌ big demand, strong demand — ambos posibles",
+      "example": "There was high demand in the city centre this morning.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "big impact",
+      "translation": "gran impacto",
+      "type": "collocation",
+      "adjective": "big",
+      "noun": "impact",
+      "error": "✅ también: major impact, significant impact",
+      "example": "She has big impact in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "wide range",
+      "translation": "amplia gama / abanico",
+      "type": "collocation",
+      "adjective": "wide",
+      "noun": "range",
+      "error": "❌ big range, large range — 'wide' es el natural",
+      "example": "She has wide range in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "wide variety",
+      "translation": "gran variedad",
+      "type": "collocation",
+      "adjective": "wide",
+      "noun": "variety",
+      "error": "❌ big variety",
+      "example": "She has wide variety in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "vast majority",
+      "translation": "la gran mayoría",
+      "type": "collocation",
+      "adjective": "vast",
+      "noun": "majority",
+      "error": "❌ big majority, large majority",
+      "example": "She has vast majority in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "sharp increase",
+      "translation": "aumento brusco",
+      "type": "collocation",
+      "adjective": "sharp",
+      "noun": "increase",
+      "error": "❌ big increase — ambos posibles pero sharp implica rapidez",
+      "example": "She has sharp increase in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "dramatic change",
+      "translation": "cambio drástico",
+      "type": "collocation",
+      "adjective": "dramatic",
+      "noun": "change",
+      "error": "❌ strong change, big change",
+      "example": "She has dramatic change in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "crucial role",
+      "translation": "papel fundamental",
+      "type": "collocation",
+      "adjective": "crucial",
+      "noun": "role",
+      "error": "❌ important role — ambos, crucial es más enfático",
+      "example": "She has crucial role in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "close attention",
+      "translation": "atención cercana / minuciosa",
+      "type": "collocation",
+      "adjective": "close",
+      "noun": "attention",
+      "error": "❌ strong attention",
+      "example": "She has close attention in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "narrow margin",
+      "translation": "margen estrecho",
+      "type": "collocation",
+      "adjective": "narrow",
+      "noun": "margin",
+      "error": "❌ small margin — ambos posibles",
+      "example": "She has narrow margin in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "pressing issue",
+      "translation": "asunto urgente",
+      "type": "collocation",
+      "adjective": "pressing",
+      "noun": "issue",
+      "error": "❌ urgent problem — ambos, pressing más formal",
+      "example": "She has pressing issue in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "conflicting views",
+      "translation": "opiniones contradictorias",
+      "type": "collocation",
+      "adjective": "conflicting",
+      "noun": "views",
+      "error": "❌ different views — conflicting implica contradicción",
+      "example": "She has conflicting views in her approach.",
+      "topic": "Collocations · Adjective + Noun"
+    },
+    {
+      "word": "reach an agreement",
+      "translation": "llegar a un acuerdo",
+      "type": "collocation",
+      "verb": "reach",
+      "object": "an agreement",
+      "error": "❌ arrive an agreement, make an agreement",
+      "example": "The government needs to reach an agreement.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "break a habit",
+      "translation": "romper un hábito",
+      "type": "collocation",
+      "verb": "break",
+      "object": "a habit",
+      "error": "❌ stop a habit",
+      "example": "The government needs to break a habit.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "overcome a challenge",
+      "translation": "superar un reto",
+      "type": "collocation",
+      "verb": "overcome",
+      "object": "a challenge",
+      "error": "❌ pass a challenge, win a challenge",
+      "example": "The government needs to overcome a challenge.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "address an issue",
+      "translation": "abordar un problema",
+      "type": "collocation",
+      "verb": "address",
+      "object": "an issue",
+      "error": "❌ solve an issue — address implica ocuparse de él",
+      "example": "The government needs to address an issue.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "tackle a problem",
+      "translation": "abordar / hacer frente a un problema",
+      "type": "collocation",
+      "verb": "tackle",
+      "object": "a problem",
+      "error": "❌ fight a problem, attack a problem",
+      "example": "The government needs to tackle a problem.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "meet a deadline",
+      "translation": "cumplir un plazo",
+      "type": "collocation",
+      "verb": "meet",
+      "object": "a deadline",
+      "error": "❌ catch a deadline, arrive a deadline",
+      "example": "The government needs to meet a deadline.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "miss an opportunity",
+      "translation": "perder una oportunidad",
+      "type": "collocation",
+      "verb": "miss",
+      "object": "an opportunity",
+      "error": "❌ lose an opportunity — ambos, miss más natural",
+      "example": "The government needs to miss an opportunity.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "seize an opportunity",
+      "translation": "aprovechar una oportunidad",
+      "type": "collocation",
+      "verb": "seize",
+      "object": "an opportunity",
+      "error": "❌ grab an opportunity — grab más informal",
+      "example": "The government needs to seize an opportunity.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "achieve a goal",
+      "translation": "lograr un objetivo",
+      "type": "collocation",
+      "verb": "achieve",
+      "object": "a goal",
+      "error": "❌ reach a goal — ambos, achieve más formal",
+      "example": "The government needs to achieve a goal.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "fulfil a requirement",
+      "translation": "cumplir un requisito",
+      "type": "collocation",
+      "verb": "fulfil",
+      "object": "a requirement",
+      "error": "❌ do a requirement, make a requirement",
+      "example": "The government needs to fulfil a requirement.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "impose restrictions",
+      "translation": "imponer restricciones",
+      "type": "collocation",
+      "verb": "impose",
+      "object": "restrictions",
+      "error": "❌ make restrictions, do restrictions",
+      "example": "The government needs to impose restrictions.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "implement a policy",
+      "translation": "implementar una política / medida",
+      "type": "collocation",
+      "verb": "implement",
+      "object": "a policy",
+      "error": "❌ make a policy, do a policy",
+      "example": "The government needs to implement a policy.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "launch a campaign",
+      "translation": "lanzar una campaña",
+      "type": "collocation",
+      "verb": "launch",
+      "object": "a campaign",
+      "error": "❌ begin a campaign, make a campaign",
+      "example": "The government needs to launch a campaign.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "gain experience",
+      "translation": "adquirir experiencia",
+      "type": "collocation",
+      "verb": "gain",
+      "object": "experience",
+      "error": "❌ make experience, do experience",
+      "example": "The government needs to gain experience.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "build confidence",
+      "translation": "desarrollar la confianza",
+      "type": "collocation",
+      "verb": "build",
+      "object": "confidence",
+      "error": "❌ make confidence, create confidence",
+      "example": "The government needs to build confidence.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "lose confidence",
+      "translation": "perder la confianza",
+      "type": "collocation",
+      "verb": "lose",
+      "object": "confidence",
+      "error": "❌ break confidence",
+      "example": "The government needs to lose confidence.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "spread awareness",
+      "translation": "difundir conciencia / sensibilizar",
+      "type": "collocation",
+      "verb": "spread",
+      "object": "awareness",
+      "error": "❌ make awareness, do awareness",
+      "example": "The government needs to spread awareness.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "boost morale",
+      "translation": "elevar la moral",
+      "type": "collocation",
+      "verb": "boost",
+      "object": "morale",
+      "error": "❌ make morale, increase morale — boost es el natural",
+      "example": "The government needs to boost morale.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "bridge the gap",
+      "translation": "cerrar la brecha / reducir diferencias",
+      "type": "collocation",
+      "verb": "bridge",
+      "object": "the gap",
+      "error": "❌ close the gap — ambos, bridge más metafórico",
+      "example": "The government needs to bridge the gap.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "bear in mind",
+      "translation": "tener en cuenta / recordar",
+      "type": "collocation",
+      "verb": "bear",
+      "object": "in mind",
+      "error": "❌ have in mind — 'have in mind' implica intención, 'bear in mind' = no olvidar",
+      "example": "The government needs to bear in mind.",
+      "topic": "Collocations · Key Verb + Object"
+    },
+    {
+      "word": "keen on",
+      "translation": "entusiasmado con / aficionado a",
+      "type": "collocation",
+      "pattern": "keen on",
+      "error": "❌ keen about, keen for",
+      "example": "She is keen on improving her English skills.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "aware of",
+      "translation": "consciente de",
+      "type": "collocation",
+      "pattern": "aware of",
+      "error": "❌ aware about, aware for",
+      "example": "We must be aware of the consequences of our actions.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "responsible for",
+      "translation": "responsable de",
+      "type": "collocation",
+      "pattern": "responsible for",
+      "error": "❌ responsible of",
+      "example": "The council is responsible for maintaining public spaces.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "concerned about",
+      "translation": "preocupado por",
+      "type": "collocation",
+      "pattern": "concerned about",
+      "error": "❌ concerned for (diferente matiz), concerned of",
+      "example": "Many people are concerned about climate change.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "interested in",
+      "translation": "interesado en",
+      "type": "collocation",
+      "pattern": "interested in",
+      "error": "❌ interested on, interested about",
+      "example": "She is particularly interested in urban policy.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "capable of",
+      "translation": "capaz de",
+      "type": "collocation",
+      "pattern": "capable of",
+      "error": "❌ capable to",
+      "example": "He is capable of achieving excellent results.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "in favour of",
+      "translation": "a favor de",
+      "type": "collocation",
+      "pattern": "in favour of",
+      "error": "❌ in favour for",
+      "example": "The majority voted in favour of the proposal.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "at risk",
+      "translation": "en riesgo",
+      "type": "collocation",
+      "pattern": "at risk",
+      "error": "❌ in risk, on risk",
+      "example": "Several species are at risk of extinction.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "in terms of",
+      "translation": "en términos de / en cuanto a",
+      "type": "collocation",
+      "pattern": "in terms of",
+      "error": "❌ in term of",
+      "example": "In terms of cost, the project seems viable.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "on behalf of",
+      "translation": "en nombre de / en representación de",
+      "type": "collocation",
+      "pattern": "on behalf of",
+      "error": "❌ in behalf of",
+      "example": "She spoke on behalf of the entire committee.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "in the wake of",
+      "translation": "a raíz de / como consecuencia de",
+      "type": "collocation",
+      "pattern": "in the wake of",
+      "error": "❌ in the wake from",
+      "example": "In the wake of the crisis, new policies were introduced.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "regardless of",
+      "translation": "independientemente de / sin importar",
+      "type": "collocation",
+      "pattern": "regardless of",
+      "error": "❌ regardless to",
+      "example": "The decision was made regardless of public opinion.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "in line with",
+      "translation": "en línea con / de acuerdo con",
+      "type": "collocation",
+      "pattern": "in line with",
+      "error": "❌ in line to",
+      "example": "The proposal is in line with current legislation.",
+      "topic": "Collocations · Prepositions"
+    },
+    {
+      "word": "on the grounds that",
+      "translation": "basándose en que / alegando que",
+      "type": "collocation",
+      "pattern": "on the grounds that",
+      "error": "❌ on the ground that, for the grounds that",
+      "example": "They refused on the grounds that it was too expensive.",
+      "topic": "Collocations · Prepositions"
+    }
+  ]
+}

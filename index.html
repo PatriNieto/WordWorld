@@ -148,6 +148,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .quiz-next-btn.visible{display:block}
 .quiz-next-btn:active{opacity:.88}
 
+/* ── COLLOCATIONS ── */
+.coll-mode-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.coll-mode-bar::-webkit-scrollbar{display:none}
+.coll-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.coll-score-pill{font-size:13px;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:5px 12px}
+.coll-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin-bottom:12px}
+.coll-base{font-size:34px;font-weight:800;color:var(--accent);margin-bottom:6px;line-height:1.1;word-break:break-word}
+.coll-hint{font-size:14px;color:var(--text3);margin-bottom:16px}
+.coll-error-badge{font-size:12px;padding:4px 10px;background:var(--red-light);color:var(--red);border-radius:8px;display:inline-block;margin-top:10px}
+.coll-correct{font-size:15px;padding:12px 14px;background:var(--green-light);color:var(--green);border-radius:var(--radius);border-left:4px solid #B2F2BB;font-weight:600;margin-bottom:10px}
+.coll-example{font-size:14px;color:var(--text2);font-style:italic;line-height:1.6;margin-top:8px}
+.nat-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.nat-btn{padding:16px 10px;border-radius:var(--radius);border:1.5px solid var(--border2);background:var(--bg2);color:var(--text);font-size:15px;font-weight:600;cursor:pointer;text-align:center;-webkit-tap-highlight-color:transparent;transition:all .15s;line-height:1.4;word-break:break-word}
+.nat-btn:active{transform:scale(.97)}
+.nat-btn.nat-correct{background:var(--green-light);border-color:#B2F2BB;color:var(--green)}
+.nat-btn.nat-wrong{background:var(--red-light);border-color:#FFC9C9;color:var(--red)}
+
+/* ── REWRITING ── */
+.rw-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:12px}
+.rw-original{font-size:16px;line-height:1.7;color:var(--text);padding:12px 14px;background:var(--bg2);border-radius:var(--radius);margin-bottom:14px;border-left:4px solid var(--border2)}
+.rw-keyword{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-light);padding:4px 12px;border-radius:8px;margin-bottom:14px}
+.rw-input{width:100%;padding:14px 16px;border-radius:var(--radius);border:2px solid var(--border2);background:var(--bg);color:var(--text);font-size:16px;outline:none;transition:border-color .15s;-webkit-appearance:none}
+.rw-input:focus{border-color:var(--accent)}
+.rw-input.rw-correct{border-color:var(--green);background:var(--green-light);color:var(--green)}
+.rw-input.rw-wrong{border-color:var(--red)}
+.rw-check-btn{width:100%;padding:14px;border-radius:var(--radius);border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-top:10px}
+.rw-check-btn:active{opacity:.88}
+.rw-check-btn:disabled{opacity:.4;cursor:default}
+.rw-answer-reveal{padding:12px 14px;background:var(--green-light);color:var(--green);border-radius:var(--radius);border-left:4px solid #B2F2BB;font-size:15px;font-weight:600;margin-top:10px;line-height:1.5}
+.rw-ai-feedback{padding:14px 16px;border-radius:var(--radius);border-left:4px solid var(--accent);background:var(--accent-light);font-size:14px;line-height:1.65;color:var(--text);margin-top:12px}
+.rw-ai-feedback.loading{color:var(--text3);border-color:var(--border2);background:var(--bg2);font-style:italic}
+
 /* ── THEORY ── */
 .theory-section{margin-bottom:10px}
 .theory-header{width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:left;gap:12px}
@@ -192,6 +224,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('flashcards')"><span class="tab-icon">📚</span>Vocab</button>
   <button class="tab-btn"        onclick="switchTab('errors')"><span class="tab-icon">❌</span>Errores</button>
+  <button class="tab-btn"        onclick="switchTab('collocations')"><span class="tab-icon">🔗</span>Colocac.</button>
+  <button class="tab-btn"        onclick="switchTab('rewriting')"><span class="tab-icon">✍️</span>Rewrite</button>
   <button class="tab-btn"        onclick="switchTab('grammar')"><span class="tab-icon">✏️</span>Quiz</button>
   <button class="tab-btn"        onclick="switchTab('theory')"><span class="tab-icon">📖</span>Teoría</button>
 </div>
@@ -243,6 +277,41 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   </div>
 </div>
 
+<!-- ══ COLLOCATIONS ══ -->
+<div class="tab-content" id="tab-collocations">
+  <div class="coll-header">
+    <div class="coll-score-pill">✓ <span id="coll-score">0</span> / <span id="coll-total">—</span></div>
+    <button class="nav-btn" onclick="restartCollocations()">↺ Reiniciar</button>
+  </div>
+  <div class="coll-mode-bar">
+    <button class="qtype-btn active" data-cmode="complete" onclick="setCollMode('complete')">Completa</button>
+    <button class="qtype-btn"        data-cmode="mc"       onclick="setCollMode('mc')">Opción múltiple</button>
+    <button class="qtype-btn"        data-cmode="natural"  onclick="setCollMode('natural')">Natural vs Raro</button>
+  </div>
+  <div class="topic-bar" id="coll-topic-bar"></div>
+  <div id="coll-area">
+    <div class="empty-state"><div class="big">🔗</div>Cargando collocations...</div>
+  </div>
+</div>
+
+<!-- ══ REWRITING ══ -->
+<div class="tab-content" id="tab-rewriting">
+  <div class="coll-header">
+    <div class="coll-score-pill">✓ <span id="rw-score">0</span> / <span id="rw-total">—</span></div>
+    <button class="nav-btn" onclick="restartRewriting()">↺ Reiniciar</button>
+  </div>
+  <div class="coll-mode-bar">
+    <button class="qtype-btn active" data-rwfilter="all"        onclick="setRwFilter('all')">Todos</button>
+    <button class="qtype-btn"        data-rwfilter="conditionals" onclick="setRwFilter('conditionals')">Conditionals</button>
+    <button class="qtype-btn"        data-rwfilter="passive"    onclick="setRwFilter('passive')">Passive</button>
+    <button class="qtype-btn"        data-rwfilter="modals"     onclick="setRwFilter('modals')">Modals</button>
+    <button class="qtype-btn"        data-rwfilter="mixed"      onclick="setRwFilter('mixed')">Mixed</button>
+  </div>
+  <div id="rw-area">
+    <div class="empty-state"><div class="big">✍️</div>Cargando ejercicios...</div>
+  </div>
+</div>
+
 <!-- ══ QUIZ ══ -->
 <div class="tab-content" id="tab-grammar">
   <div class="quiz-header">
@@ -274,7 +343,7 @@ const PROGRESS_KEY='vocab_progress_v2',EPROGRESS_KEY='error_progress_v1',VOCAB_K
 
 /* ── UTILS ── */
 function switchTab(tab){
-  const map={flashcards:0,errors:1,grammar:2,theory:3};
+  const map={flashcards:0,errors:1,collocations:2,rewriting:3,grammar:4,theory:5};
   document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===map[tab]));
   document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===map[tab]));
 }
@@ -893,14 +962,322 @@ function toggleTheory(idx){
   document.getElementById('tb-'+idx).classList.toggle('open');
 }
 
+/* ── COLLOCATIONS ── */
+let collocations=[],collDeck=[],collIdx=0,collScore=0,collMode='complete',collTopic='all',collAnswered=false;
+
+function loadCollocations(data){
+  collocations=data.collocations||(Array.isArray(data)?data:[]);
+  buildCollTopics();
+  document.getElementById('coll-total').textContent=collocations.length;
+  restartCollocations();
+}
+
+function buildCollTopics(){
+  const topics=['all',...new Set(collocations.map(c=>c.topic).filter(Boolean))];
+  document.getElementById('coll-topic-bar').innerHTML=topics.map(t=>
+    `<button class="topic-btn${t===collTopic?' active':''}" onclick="setCollTopic('${t}')">${t==='all'?'Todos':t.replace('Collocations · ','')}</button>`
+  ).join('');
+}
+
+function setCollTopic(t){collTopic=t;buildCollTopics();restartCollocations();}
+function setCollMode(m){
+  collMode=m;
+  document.querySelectorAll('[data-cmode]').forEach(b=>b.classList.toggle('active',b.dataset.cmode===m));
+  restartCollocations();
+}
+
+function restartCollocations(){
+  const base=collTopic==='all'?collocations:collocations.filter(c=>c.topic===collTopic);
+  collDeck=shuffle([...base]);
+  collIdx=0;collScore=0;collAnswered=false;
+  document.getElementById('coll-score').textContent='0';
+  document.getElementById('coll-total').textContent=collDeck.length;
+  renderCollocation();
+}
+
+function renderCollocation(){
+  const area=document.getElementById('coll-area');
+  if(!collDeck.length){
+    area.innerHTML=`<div class="empty-state"><div class="big">🔗</div>No hay collocations para este filtro.</div>`;
+    return;
+  }
+  if(collIdx>=collDeck.length){
+    const pct=Math.round((collScore/collDeck.length)*100);
+    area.innerHTML=`<div class="round-done"><div class="big">${pct>=70?'🎉':'💪'}</div><h2>¡Completado!</h2><p>Acertaste <b>${collScore} de ${collDeck.length}</b> (${pct}%)</p><button class="repeat-btn" onclick="restartCollocations()">↺ Repetir</button></div>`;
+    return;
+  }
+  collAnswered=false;
+  const c=collDeck[collIdx];
+  const pct=Math.round((collIdx/collDeck.length)*100);
+  const progHtml=`<div class="prog-row" style="margin-bottom:12px"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div><span class="prog-label">${collIdx+1}/${collDeck.length}</span></div>`;
+
+  if(collMode==='natural'){
+    renderCollNatural(c,progHtml,area);
+  } else if(collMode==='mc'){
+    renderCollMC(c,progHtml,area);
+  } else {
+    renderCollComplete(c,progHtml,area);
+  }
+}
+
+function renderCollComplete(c,progHtml,area){
+  const base=c.verb||c.adjective||c.pattern||'?';
+  const target=c.collocate||c.noun||c.object||c.pattern||'';
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>${(c.topic||'').replace('Collocations · ','')}</span></div>
+      <div class="coll-base">${base}</div>
+      <div class="coll-hint">${c.translation}</div>
+      <div class="type-in-wrap">
+        <input class="type-in-input" id="coll-input" type="text" placeholder="Completa la collocation..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkCollComplete('${encodeURIComponent(target)}','${encodeURIComponent(c.word)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')">
+        <button class="check-btn" onclick="checkCollComplete('${encodeURIComponent(target)}','${encodeURIComponent(c.word)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')">Comprobar</button>
+      </div>
+      <div id="coll-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="coll-next" onclick="collNext()">Siguiente →</button>`;
+  setTimeout(()=>{const i=document.getElementById('coll-input');if(i)i.focus();},300);
+}
+
+function checkCollComplete(target,word,error,example){
+  if(collAnswered)return;
+  const input=document.getElementById('coll-input');
+  if(!input||!input.value.trim())return;
+  collAnswered=true;
+  const given=normalise(input.value.trim().toLowerCase());
+  const expected=normalise(decodeURIComponent(target).toLowerCase());
+  const correct=given===expected||decodeURIComponent(word).toLowerCase().includes(given);
+  if(correct)collScore++;
+  document.getElementById('coll-score').textContent=collScore;
+  input.disabled=true;
+  document.querySelector('.check-btn').disabled=true;
+  input.classList.add(correct?'correct':'wrong');
+  const fb=document.getElementById('coll-feedback');
+  const errText=decodeURIComponent(error);
+  const exText=decodeURIComponent(example);
+  fb.innerHTML=`
+    <div class="coll-correct" style="margin-top:12px">✅ ${decodeURIComponent(word)}</div>
+    ${errText?`<div class="coll-error-badge">${errText}</div>`:''}
+    ${exText?`<div class="coll-example">"${exText}"</div>`:''}`;
+  document.getElementById('coll-next').classList.add('visible');
+}
+
+function renderCollMC(c,progHtml,area){
+  const target=c.collocate||c.noun||c.object||c.pattern||'';
+  const base=c.verb||c.adjective||c.pattern||'?';
+  // generate 3 distractors from other collocations
+  const others=shuffle(collDeck.filter((_,i)=>i!==collIdx)).slice(0,3);
+  const distractors=others.map(o=>o.collocate||o.noun||o.object||o.pattern||'other').filter(d=>d!==target);
+  const opts=shuffle([target,...distractors.slice(0,3)]);
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>${(c.topic||'').replace('Collocations · ','')}</span></div>
+      <div class="coll-base">${base} + ___</div>
+      <div class="coll-hint">${c.translation}</div>
+      <div class="options-grid" id="coll-opts">
+        ${opts.map((o,i)=>`<button class="option-btn" onclick="checkCollMC(${i},'${encodeURIComponent(target)}','${encodeURIComponent(c.word)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')" data-val="${encodeURIComponent(o)}">${o}</button>`).join('')}
+      </div>
+      <div id="coll-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="coll-next" onclick="collNext()">Siguiente →</button>`;
+}
+
+function checkCollMC(idx,target,word,error,example){
+  if(collAnswered)return;
+  collAnswered=true;
+  const btns=document.querySelectorAll('#coll-opts .option-btn');
+  const chosen=decodeURIComponent(btns[idx].dataset.val);
+  const expected=decodeURIComponent(target);
+  const correct=chosen===expected;
+  if(correct)collScore++;
+  document.getElementById('coll-score').textContent=collScore;
+  btns.forEach(b=>{b.disabled=true;const v=decodeURIComponent(b.dataset.val);if(v===expected)b.classList.add('correct');else if(b===btns[idx]&&!correct)b.classList.add('wrong');});
+  const fb=document.getElementById('coll-feedback');
+  const errText=decodeURIComponent(error);
+  const exText=decodeURIComponent(example);
+  fb.innerHTML=`<div class="coll-correct" style="margin-top:12px">✅ ${decodeURIComponent(word)}</div>
+    ${errText?`<div class="coll-error-badge">${errText}</div>`:''}
+    ${exText?`<div class="coll-example">"${exText}"</div>`:''}`;
+  document.getElementById('coll-next').classList.add('visible');
+}
+
+function renderCollNatural(c,progHtml,area){
+  // show correct collocation vs a wrong one using the error field
+  const correct=c.word;
+  // extract wrong form from error field e.g. "❌ strong rain → ✅ heavy rain" → "strong rain"
+  let wrongForm=c.error||'';
+  const m=wrongForm.match(/❌\s*([^→✅,]+)/);
+  const wrongText=m?m[1].trim():`*${(c.verb||c.adjective||'')} + wrong`;
+  const opts=shuffle([{text:correct,isCorrect:true},{text:wrongText,isCorrect:false}]);
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>${(c.topic||'').replace('Collocations · ','')}</span></div>
+      <div style="font-size:15px;color:var(--text2);margin-bottom:16px;text-align:center;line-height:1.6">¿Cuál suena más natural?<br><span style="font-size:13px;color:var(--text3)">${c.translation}</span></div>
+      <div class="nat-pair" id="nat-opts">
+        ${opts.map((o,i)=>`<button class="nat-btn" onclick="checkNatural(${i},${o.isCorrect},'${encodeURIComponent(correct)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')">${o.text}</button>`).join('')}
+      </div>
+      <div id="coll-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="coll-next" onclick="collNext()">Siguiente →</button>`;
+}
+
+function checkNatural(idx,isCorrect,word,error,example){
+  if(collAnswered)return;
+  collAnswered=true;
+  if(isCorrect)collScore++;
+  document.getElementById('coll-score').textContent=collScore;
+  const btns=document.querySelectorAll('#nat-opts .nat-btn');
+  btns.forEach((b,i)=>{b.disabled=true;b.classList.add(i===idx?(isCorrect?'nat-correct':'nat-wrong'):(i!==idx?'nat-correct':''));});
+  const fb=document.getElementById('coll-feedback');
+  const errText=decodeURIComponent(error);
+  const exText=decodeURIComponent(example);
+  fb.innerHTML=`<div class="explanation-box${isCorrect?'':' wrong-ex'}" style="margin-top:10px">
+    <div class="ex-label">${isCorrect?'✓ Correcto':'✗ Incorrecto'}</div>
+    ✅ La forma natural es: <b>${decodeURIComponent(word)}</b><br>
+    ${errText?`<span style="opacity:.85">${errText}</span><br>`:''}
+    ${exText?`<span style="font-style:italic;opacity:.8">"${exText}"</span>`:''}
+  </div>`;
+  document.getElementById('coll-next').classList.add('visible');
+}
+
+function collNext(){collIdx++;renderCollocation();}
+
+/* ── REWRITING ── */
+const REWRITE_EXERCISES=[
+  // Conditionals
+  {id:'r1',category:'conditionals',original:"He didn't study, so he failed the exam.",keyword:"HAD",answer:"If he had studied, he wouldn't have failed the exam.",hint:"3rd conditional: If + past perfect → would have + past participle"},
+  {id:'r2',category:'conditionals',original:"She doesn't exercise, so she feels tired.",keyword:"IF",answer:"If she exercised, she wouldn't feel so tired.",hint:"2nd conditional: If + past simple → would + base verb"},
+  {id:'r3',category:'conditionals',original:"They didn't warn us, so we weren't prepared.",keyword:"HAD",answer:"Had they warned us, we would have been prepared.",hint:"Inverted 3rd conditional: Had + subject + past participle (sin 'if')"},
+  {id:'r4',category:'conditionals',original:"Without proper funding, the project will fail.",keyword:"UNLESS",answer:"Unless the project receives proper funding, it will fail.",hint:"unless = if not. Usa presente simple en la cláusula con unless."},
+  {id:'r5',category:'conditionals',original:"You should apply now. Otherwise you'll miss the deadline.",keyword:"PROVIDED",answer:"Provided that you apply now, you won't miss the deadline.",hint:"provided (that) = as long as, on condition that"},
+  {id:'r6',category:'conditionals',original:"I didn't know about the change, so I couldn't prepare.",keyword:"KNOWN",answer:"Had I known about the change, I could have prepared.",hint:"Inverted 3rd conditional: Had I known... (formal, sin 'if')"},
+  {id:'r7',category:'conditionals',original:"He is very experienced, so he manages difficult situations well.",keyword:"WERE",answer:"Were he less experienced, he would struggle with difficult situations.",hint:"Inverted 2nd conditional: Were + subject + adjective (sin 'if')"},
+  // Passive
+  {id:'r8',category:'passive',original:"The government will announce the new policy next week.",keyword:"ANNOUNCED",answer:"The new policy will be announced by the government next week.",hint:"Future passive: will be + past participle"},
+  {id:'r9',category:'passive',original:"They expect the project to finish by December.",keyword:"EXPECTED",answer:"The project is expected to be finished by December.",hint:"Passive reporting verb: is expected to be + past participle"},
+  {id:'r10',category:'passive',original:"People believe that exercise improves mental health.",keyword:"BELIEVED",answer:"It is believed that exercise improves mental health.",hint:"Passive reporting: It is believed that... (impersonal passive)"},
+  {id:'r11',category:'passive',original:"Someone needs to address this issue urgently.",keyword:"ADDRESSED",answer:"This issue needs to be addressed urgently.",hint:"need + to be + past participle (pasivo con need)"},
+  {id:'r12',category:'passive',original:"The council is considering demolishing the old building.",keyword:"DEMOLISHED",answer:"The old building is being considered for demolition / is being considered to be demolished.",hint:"Passive continuous: is being + past participle"},
+  {id:'r13',category:'passive',original:"They reported that several people were injured.",keyword:"REPORTED",answer:"It was reported that several people had been injured.",hint:"Reported passive: It was reported that... (backshift del tiempo verbal)"},
+  // Modals
+  {id:'r14',category:'modals',original:"It wasn't necessary for her to attend the meeting.",keyword:"NEED",answer:"She needn't have attended the meeting.",hint:"needn't have + past participle = no era necesario pero lo hizo"},
+  {id:'r15',category:'modals',original:"I'm sure he didn't mean to offend anyone.",keyword:"HAVE",answer:"He can't have meant to offend anyone.",hint:"can't have + past participle = certeza de que algo NO ocurrió"},
+  {id:'r16',category:'modals',original:"Perhaps she forgot to send the email.",keyword:"MIGHT",answer:"She might have forgotten to send the email.",hint:"might have + past participle = posibilidad en el pasado"},
+  {id:'r17',category:'modals',original:"It was a mistake to accept the offer.",keyword:"SHOULD",answer:"He shouldn't have accepted the offer.",hint:"shouldn't have + past participle = crítica de algo ya hecho"},
+  {id:'r18',category:'modals',original:"I'm certain that they received the message.",keyword:"MUST",answer:"They must have received the message.",hint:"must have + past participle = certeza lógica sobre el pasado"},
+  {id:'r19',category:'modals',original:"It's possible that the flight was delayed.",keyword:"COULD",answer:"The flight could have been delayed.",hint:"could have + past participle = posibilidad en el pasado"},
+  // Mixed C1
+  {id:'r20',category:'mixed',original:"Despite the rain, they finished the match.",keyword:"DESPITE",answer:"Despite the rain, they managed to finish the match.",hint:"despite + noun/-ing (no se usa despite + that o despite + clause)"},
+  {id:'r21',category:'mixed',original:"He is too young to understand the situation.",keyword:"ENOUGH",answer:"He is not old enough to understand the situation.",hint:"not + adj + enough + to + infinitive (opuesto de 'too + adj')"},
+  {id:'r22',category:'mixed',original:"The last time I saw her was three years ago.",keyword:"SINCE",answer:"I haven't seen her since three years ago / for three years.",hint:"present perfect + since/for para hablar del tiempo transcurrido"},
+  {id:'r23',category:'mixed',original:"It's a pity she didn't come to the event.",keyword:"WISH",answer:"I wish she had come to the event.",hint:"wish + past perfect = lamentarse de algo que no ocurrió en el pasado"},
+  {id:'r24',category:'mixed',original:"She was so tired that she fell asleep immediately.",keyword:"SUCH",answer:"She was such a tired person that she fell asleep immediately. / It was such a tiring day that she fell asleep immediately.",hint:"such + a/an + adj + noun + that (contraste con 'so + adj + that')"},
+  {id:'r25',category:'mixed',original:"I regret not applying for that job.",keyword:"WISH",answer:"I wish I had applied for that job.",hint:"wish + past perfect para lamentarse de algo no hecho"},
+  {id:'r26',category:'mixed',original:"The company spent a lot on advertising but didn't increase sales.",keyword:"DESPITE",answer:"Despite spending a lot on advertising, the company didn't increase sales.",hint:"despite + -ing (gerundio, no infinitivo ni 'that')"},
+  {id:'r27',category:'mixed',original:"No other city in the region is as innovative as Barcelona.",keyword:"MOST",answer:"Barcelona is the most innovative city in the region.",hint:"superlativo: the most + adjective + in/of"},
+];
+
+let rwDeck=[],rwIdx=0,rwScore=0,rwFilter='all',rwAnswered=false;
+
+function restartRewriting(){
+  const base=rwFilter==='all'?REWRITE_EXERCISES:REWRITE_EXERCISES.filter(e=>e.category===rwFilter);
+  rwDeck=shuffle([...base]);
+  rwIdx=0;rwScore=0;rwAnswered=false;
+  document.getElementById('rw-score').textContent='0';
+  document.getElementById('rw-total').textContent=rwDeck.length;
+  renderRewrite();
+}
+
+function setRwFilter(f){
+  rwFilter=f;
+  document.querySelectorAll('[data-rwfilter]').forEach(b=>b.classList.toggle('active',b.dataset.rwfilter===f));
+  restartRewriting();
+}
+
+function renderRewrite(){
+  const area=document.getElementById('rw-area');
+  document.getElementById('rw-score').textContent=rwScore;
+  if(!rwDeck.length){area.innerHTML=`<div class="empty-state"><div class="big">✍️</div>No hay ejercicios para este filtro.</div>`;return;}
+  if(rwIdx>=rwDeck.length){
+    const pct=Math.round((rwScore/rwDeck.length)*100);
+    area.innerHTML=`<div class="round-done"><div class="big">${pct>=70?'🎉':'💪'}</div><h2>¡Completado!</h2><p>Acertaste <b>${rwScore} de ${rwDeck.length}</b> (${pct}%)</p><button class="repeat-btn" onclick="restartRewriting()">↺ Repetir</button></div>`;
+    return;
+  }
+  rwAnswered=false;
+  const ex=rwDeck[rwIdx];
+  const pct=Math.round((rwIdx/rwDeck.length)*100);
+  const catLabel={conditionals:'Condicionales',passive:'Voz Pasiva',modals:'Modales',mixed:'C1 Mixed'}[ex.category]||ex.category;
+  area.innerHTML=`
+    <div class="prog-row" style="margin-bottom:12px">
+      <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+      <span class="prog-label">${rwIdx+1}/${rwDeck.length}</span>
+    </div>
+    <div class="rw-card">
+      <div class="quiz-meta"><span>${catLabel}</span><span>Rewrite</span></div>
+      <div style="font-size:13px;color:var(--text3);margin-bottom:8px;font-weight:600">Frase original:</div>
+      <div class="rw-original">${ex.original}</div>
+      <div class="rw-keyword">Palabra clave: ${ex.keyword}</div>
+      <div style="font-size:13px;color:var(--text2);margin-bottom:10px">Reescribe usando la palabra clave. No cambies el significado.</div>
+      <textarea class="rw-input" id="rw-input" rows="2" placeholder="Escribe aquí tu versión..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();checkRewrite();}">${ex.keyword} </textarea>
+      <button class="rw-check-btn" onclick="checkRewrite()">Comprobar con IA</button>
+      <div id="rw-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="rw-next" onclick="rwNext()">Siguiente →</button>`;
+  setTimeout(()=>{const i=document.getElementById('rw-input');if(i){i.focus();const l=i.value.length;i.setSelectionRange(l,l);}},300);
+}
+
+async function checkRewrite(){
+  if(rwAnswered)return;
+  const input=document.getElementById('rw-input');
+  const btn=document.querySelector('.rw-check-btn');
+  if(!input||!input.value.trim()||input.value.trim()===rwDeck[rwIdx].keyword)return;
+  rwAnswered=true;
+  btn.disabled=true;
+  input.disabled=true;
+  const ex=rwDeck[rwIdx];
+  const fb=document.getElementById('rw-feedback');
+  fb.innerHTML=`<div class="rw-ai-feedback loading"><div class="ex-label">Evaluando con IA...</div>Un momento...</div>`;
+  const system=`Eres un profesor de inglés C1. Evalúa si la reescritura del estudiante es gramaticalmente correcta y mantiene el significado original. Responde SOLO en este formato JSON (sin markdown):
+{"correct":true/false,"score":0-3,"feedback":"explicación en español en 2-3 frases","model":"respuesta modelo correcta"}`;
+  const user=`Original: "${ex.original}"\nPalabra clave: ${ex.keyword}\nRespuesta esperada: "${ex.answer}"\nRespuesta del estudiante: "${input.value.trim()}"\nPista gramatical: ${ex.hint}`;
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:500,system,messages:[{role:'user',content:user}]})});
+    const data=await res.json();
+    const text=data.content?.find(c=>c.type==='text')?.text||'{}';
+    let result;
+    try{result=JSON.parse(text.replace(/```json|```/g,'').trim());}catch(e){result={correct:false,score:1,feedback:'No se pudo evaluar automáticamente.',model:ex.answer};}
+    if(result.correct||result.score>=2)rwScore++;
+    document.getElementById('rw-score').textContent=rwScore;
+    const isGood=result.correct||result.score>=2;
+    if(!document.getElementById('rw-feedback'))return;
+    fb.innerHTML=`
+      <div class="rw-answer-reveal">✅ Respuesta modelo: ${result.model||ex.answer}</div>
+      <div class="rw-ai-feedback${isGood?'':' wrong-ex'}" style="border-color:${isGood?'var(--green)':'var(--red)'};background:${isGood?'var(--green-light)':'var(--red-light)'}">
+        <div class="ex-label">${isGood?'✓ Correcto':'✗ Mejorable'} · ${result.score||0}/3</div>
+        ${result.feedback||ex.hint}
+      </div>
+      <div style="font-size:13px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px">💡 ${ex.hint}</div>`;
+    document.getElementById('rw-next').classList.add('visible');
+  }catch(e){
+    if(!document.getElementById('rw-feedback'))return;
+    fb.innerHTML=`<div class="rw-answer-reveal">✅ Respuesta modelo: ${ex.answer}</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px">💡 ${ex.hint}</div>`;
+    document.getElementById('rw-next').classList.add('visible');
+  }
+}
+
+function rwNext(){rwIdx++;renderRewrite();}
+
 /* ── INIT ── */
-loadProgress();loadEProgress();buildTheory();
+loadProgress();loadEProgress();buildTheory();restartRewriting();
 
 fetch('vocab.json').then(r=>r.json()).then(loadData)
   .catch(()=>{const sv=loadSavedVocab();if(sv)loadData(sv);else{updateGlobalStats();updateModeCounts();}});
 
 fetch('exercises.json').then(r=>r.json()).then(loadExercises)
   .catch(()=>{const se=loadSavedEx();if(se)loadExercises(se);});
+
+fetch('collocations.json').then(r=>r.json()).then(loadCollocations)
+  .catch(()=>document.getElementById('coll-area').innerHTML=`<div class="empty-state"><div class="big">🔗</div>No se pudo cargar collocations.json</div>`);
 </script>
 </body>
 </html>
