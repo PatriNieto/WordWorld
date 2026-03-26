@@ -32,8 +32,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .reset-btn{font-size:13px;padding:7px 13px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;-webkit-tap-highlight-color:transparent}
 
 /* ── TABS (bottom nav style) ── */
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bg2);border-radius:12px;padding:4px;margin-bottom:16px}
-.tab-btn{padding:9px 4px 8px;font-size:11px;font-weight:600;border:none;border-radius:9px;background:transparent;color:var(--text3);cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1.2}
+.tabs{display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;;gap:2px;background:var(--bg2);border-radius:12px;padding:4px;margin-bottom:16px}
+.tabs::-webkit-scrollbar{display:none}.tab-btn{padding:9px 8px 8px;font-size:10px;flex-shrink:0;min-width:60px;font-weight:600;border:none;border-radius:9px;background:transparent;color:var(--text3);cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1.2}
 .tab-btn .tab-icon{font-size:18px;line-height:1}
 .tab-btn.active{background:var(--bg);color:var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .tab-content{display:none}
@@ -180,6 +180,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .rw-ai-feedback{padding:14px 16px;border-radius:var(--radius);border-left:4px solid var(--accent);background:var(--accent-light);font-size:14px;line-height:1.65;color:var(--text);margin-top:12px}
 .rw-ai-feedback.loading{color:var(--text3);border-color:var(--border2);background:var(--bg2);font-style:italic}
 
+/* ── ERROR DETECTION ── */
+.detect-sentence{font-size:18px;line-height:1.8;color:var(--text);padding:16px;background:var(--bg2);border-radius:var(--radius-lg);margin-bottom:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;border:2px solid var(--border2);transition:border-color .15s;word-break:break-word}
+.detect-sentence:active{border-color:var(--accent)}
+.detect-sentence .err-word{cursor:pointer;border-bottom:2px dashed var(--orange);padding-bottom:1px;transition:all .15s}
+.detect-sentence .err-word:hover,.detect-sentence .err-word.tapped{background:var(--orange-light);border-radius:4px;padding:0 3px}
+.detect-sentence .err-word.found{background:var(--red-light);color:var(--red);border-bottom-color:var(--red);border-radius:4px;padding:0 3px;font-weight:700}
+.detect-sentence .err-word.missed{background:var(--orange-light);color:var(--orange);border-radius:4px;padding:0 3px;font-weight:700}
+.detect-correct{background:var(--green-light);border:1.5px solid #B2F2BB;border-radius:var(--radius-lg);padding:12px 16px;font-size:15px;color:var(--green);font-weight:600;margin-bottom:10px;line-height:1.5}
+.detect-hint{font-size:13px;color:var(--text3);text-align:center;margin-bottom:8px}
+.detect-give-up{width:100%;padding:10px;border-radius:var(--radius);border:1px solid var(--border2);background:transparent;color:var(--text3);font-size:13px;cursor:pointer;margin-top:8px;-webkit-tap-highlight-color:transparent}
+
+/* ── SPACED REPETITION BADGE ── */
+.sr-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;margin-left:6px}
+.sr-due{background:var(--red-light);color:var(--red)}
+.sr-soon{background:var(--orange-light);color:var(--orange)}
+.sr-ok{background:var(--green-light);color:var(--green)}
+.sr-banner{background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--accent);font-weight:500;display:flex;align-items:center;gap:10px}
+.sr-banner b{font-weight:700}
+
+/* ── SPEAKING ── */
+.speaking-q{font-size:17px;font-weight:600;line-height:1.6;color:var(--text);padding:18px;background:var(--bg2);border-radius:var(--radius-lg);margin-bottom:16px;border-left:4px solid var(--accent)}
+.speaking-context{font-size:13px;color:var(--text2);margin-bottom:16px;padding:10px 14px;background:var(--bg3);border-radius:var(--radius);line-height:1.6}
+.speaking-tips{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.speaking-tip{font-size:12px;color:var(--text3);padding:6px 10px;background:var(--bg2);border-radius:8px;border-left:3px solid var(--border2)}
+.speaking-input{width:100%;padding:14px 16px;border-radius:var(--radius);border:2px solid var(--border2);background:var(--bg);color:var(--text);font-size:15px;outline:none;transition:border-color .15s;-webkit-appearance:none;min-height:120px;resize:vertical;line-height:1.6}
+.speaking-input:focus{border-color:var(--accent)}
+.speaking-submit{width:100%;padding:14px;border-radius:var(--radius-lg);border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;margin-top:10px;-webkit-tap-highlight-color:transparent}
+.speaking-submit:active{opacity:.88}
+.speaking-submit:disabled{opacity:.4;cursor:default}
+.speaking-feedback{padding:16px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--bg);margin-top:14px}
+.sf-score{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.sf-pill{font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--bg2);color:var(--text2)}
+.sf-pill.good{background:var(--green-light);color:var(--green)}
+.sf-pill.ok{background:var(--orange-light);color:var(--orange)}
+.sf-pill.bad{background:var(--red-light);color:var(--red)}
+.sf-section{margin-bottom:14px}
+.sf-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:6px}
+.sf-text{font-size:14px;line-height:1.7;color:var(--text2)}
+.sf-phrases{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.sf-phrase{font-size:14px;padding:10px 14px;background:var(--green-light);color:var(--green);border-radius:var(--radius);border-left:3px solid #B2F2BB;font-style:italic}
+.speaking-filter-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.speaking-filter-bar::-webkit-scrollbar{display:none}
+
 /* ── THEORY ── */
 .theory-section{margin-bottom:10px}
 .theory-header{width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:left;gap:12px}
@@ -226,12 +269,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   <button class="tab-btn"        onclick="switchTab('errors')"><span class="tab-icon">❌</span>Errores</button>
   <button class="tab-btn"        onclick="switchTab('collocations')"><span class="tab-icon">🔗</span>Colocac.</button>
   <button class="tab-btn"        onclick="switchTab('rewriting')"><span class="tab-icon">✍️</span>Rewrite</button>
+  <button class="tab-btn"        onclick="switchTab('detect')"><span class="tab-icon">🔍</span>Detecta</button>
+  <button class="tab-btn"        onclick="switchTab('speaking')"><span class="tab-icon">🗣️</span>Speaking</button>
   <button class="tab-btn"        onclick="switchTab('grammar')"><span class="tab-icon">✏️</span>Quiz</button>
   <button class="tab-btn"        onclick="switchTab('theory')"><span class="tab-icon">📖</span>Teoría</button>
 </div>
 
 <!-- ══ VOCAB ══ -->
 <div class="tab-content active" id="tab-flashcards">
+  <div id="sr-banner" style="display:none" class="sr-banner">⏰ <span id="sr-banner-text">palabras pendientes de repaso</span></div>
   <div class="stats-bar">
     <div class="stats-bar-title">Progreso vocabulario</div>
     <div class="progress-track"><div class="pt-known" id="gp-known" style="width:0%"></div><div class="pt-hard" id="gp-hard" style="width:0%"></div><div class="pt-no" id="gp-no" style="width:0%"></div></div>
@@ -243,8 +289,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
       <div class="sn" style="margin-left:auto"><b id="g-total">0</b> total</div>
     </div>
   </div>
-  <div class="mode-bar">
-    <button class="mode-btn active" data-mode="all"    onclick="setMode('all')">Estudiar todo<span class="count" id="mc-all"></span></button>
+  <div class="mode-bar" style="grid-template-columns:repeat(4,1fr)">
+    <button class="mode-btn active" data-mode="all"    onclick="setMode('all')">Todo<span class="count" id="mc-all"></span></button>
+    <button class="mode-btn"        data-mode="due"    onclick="setMode('due')">Hoy<span class="count" id="mc-due"></span></button>
     <button class="mode-btn"        data-mode="hard"   onclick="setMode('hard')">Fallos<span class="count" id="mc-hard"></span></button>
     <button class="mode-btn"        data-mode="review" onclick="setMode('review')">Repaso<span class="count" id="mc-review"></span></button>
   </div>
@@ -312,6 +359,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   </div>
 </div>
 
+<!-- ══ ERROR DETECTION ══ -->
+<div class="tab-content" id="tab-detect">
+  <div class="coll-header">
+    <div class="coll-score-pill">✓ <span id="det-score">0</span> / <span id="det-total">—</span></div>
+    <button class="nav-btn" onclick="restartDetect()">↺ Reiniciar</button>
+  </div>
+  <div class="coll-mode-bar">
+    <button class="qtype-btn active" data-detmode="tap"  onclick="setDetMode('tap')">Toca el error</button>
+    <button class="qtype-btn"        data-detmode="mc"   onclick="setDetMode('mc')">Opción múltiple</button>
+    <button class="qtype-btn"        data-detmode="correct" onclick="setDetMode('correct')">Corrige tú</button>
+  </div>
+  <div id="det-area">
+    <div class="empty-state"><div class="big">🔍</div>Cargando...</div>
+  </div>
+</div>
+
+<!-- ══ SPEAKING ══ -->
+<div class="tab-content" id="tab-speaking">
+  <div class="coll-header">
+    <div class="coll-score-pill">Pregunta <span id="sp-current">—</span>/<span id="sp-total">—</span></div>
+    <button class="nav-btn" onclick="restartSpeaking()">↺ Reiniciar</button>
+  </div>
+  <div class="speaking-filter-bar">
+    <button class="qtype-btn active" data-spfilter="all"      onclick="setSpFilter('all')">Todos</button>
+    <button class="qtype-btn"        data-spfilter="opinion"  onclick="setSpFilter('opinion')">Opinión</button>
+    <button class="qtype-btn"        data-spfilter="compare"  onclick="setSpFilter('compare')">Comparar</button>
+    <button class="qtype-btn"        data-spfilter="problem"  onclick="setSpFilter('problem')">Problema</button>
+    <button class="qtype-btn"        data-spfilter="describe" onclick="setSpFilter('describe')">Describir</button>
+  </div>
+  <div id="sp-area">
+    <div class="empty-state"><div class="big">🗣️</div>Cargando preguntas...</div>
+  </div>
+</div>
+
 <!-- ══ QUIZ ══ -->
 <div class="tab-content" id="tab-grammar">
   <div class="quiz-header">
@@ -343,9 +424,10 @@ const PROGRESS_KEY='vocab_progress_v2',EPROGRESS_KEY='error_progress_v1',VOCAB_K
 
 /* ── UTILS ── */
 function switchTab(tab){
-  const map={flashcards:0,errors:1,collocations:2,rewriting:3,grammar:4,theory:5};
+  const map={flashcards:0,errors:1,collocations:2,rewriting:3,detect:4,speaking:5,grammar:6,theory:7};
   document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===map[tab]));
   document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===map[tab]));
+  if(tab==='flashcards') renderSRBanner();
 }
 function showToast(msg){
   const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
@@ -1267,8 +1349,432 @@ async function checkRewrite(){
 
 function rwNext(){rwIdx++;renderRewrite();}
 
+/* ═══════════════════════════════════════════
+   SPACED REPETITION
+═══════════════════════════════════════════ */
+const SR_KEY='sr_progress_v1';
+// intervals in ms: new→1d, hard→3d, known→7d, mastered→14d
+const SR_INTERVALS={no:0,hard:3*86400000,known:7*86400000,mastered:14*86400000};
+let srData={};// {word:{status,nextReview,reviewCount}}
+
+function loadSR(){try{srData=JSON.parse(localStorage.getItem(SR_KEY)||'{}');}catch(e){srData={};}}
+function saveSR(){try{localStorage.setItem(SR_KEY,JSON.stringify(srData));}catch(e){}}
+
+function srRate(word,val){
+  const now=Date.now();
+  const cur=srData[word]||{status:'new',nextReview:0,reviewCount:0};
+  const count=(cur.reviewCount||0)+1;
+  let next=now;
+  if(val==='known'){
+    // promote: if reviewed 2+ times as known, mark mastered
+    const status=count>=3?'mastered':'known';
+    next=now+(status==='mastered'?SR_INTERVALS.mastered:SR_INTERVALS.known);
+    srData[word]={status,nextReview:next,reviewCount:count};
+  } else if(val==='hard'){
+    srData[word]={status:'hard',nextReview:now+SR_INTERVALS.hard,reviewCount:count};
+  } else {
+    srData[word]={status:'no',nextReview:now+86400000,reviewCount:0};// reset
+  }
+  saveSR();
+}
+
+function srDueWords(){
+  const now=Date.now();
+  return vocab.filter(v=>{
+    const s=srData[v.word];
+    if(!s)return true;// never reviewed
+    if(s.status==='mastered')return now>=s.nextReview;
+    return now>=s.nextReview;
+  });
+}
+
+function renderSRBanner(){
+  const due=srDueWords();
+  const banner=document.getElementById('sr-banner');
+  const text=document.getElementById('sr-banner-text');
+  if(!banner)return;
+  if(due.length>0){
+    banner.style.display='flex';
+    text.textContent=`Tienes ${due.length} palabra${due.length===1?'':'s'} pendiente${due.length===1?'':'s'} de repaso hoy`;
+  } else {
+    banner.style.display='none';
+  }
+}
+
+// Patch rate() to also update SR
+const _origRate=window.rate;
+function rate(val){
+  if(currentDeck[currentIdx])srRate(currentDeck[currentIdx].word,val);
+  progress[currentDeck[currentIdx].word]=val;
+  saveProgress();updateGlobalStats();updateModeCounts();
+  setTimeout(()=>{
+    if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();}
+    else{
+      const known=vocab.filter(v=>progress[v.word]==='known').length;
+      document.getElementById('card-area').innerHTML=`
+        <div class="round-done"><div class="big">🎯</div><h2>¡Ronda completada!</h2>
+        <p>${known} de ${vocab.length} palabras dominadas en total.</p>
+        <button class="repeat-btn" onclick="updateDeck()">↺ Repetir</button></div>`;
+    }
+  },200);
+}
+
+/* ═══════════════════════════════════════════
+   UPDATE DECK — add 'due' mode
+═══════════════════════════════════════════ */
+function updateDeck(){
+  const base=filteredVocab();
+  if(currentMode==='due'){
+    const now=Date.now();
+    currentDeck=shuffle(base.filter(v=>{const s=srData[v.word];return !s||now>=s.nextReview;}));
+  } else if(currentMode==='hard'){
+    currentDeck=shuffle(base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no'));
+  } else if(currentMode==='review'){
+    currentDeck=shuffle(base.filter(v=>progress[v.word]==='known'));
+  } else {
+    const no=shuffle(base.filter(v=>progress[v.word]==='no'));
+    const hard=shuffle(base.filter(v=>progress[v.word]==='hard'));
+    const unseen=shuffle(base.filter(v=>!progress[v.word]));
+    const known=shuffle(base.filter(v=>progress[v.word]==='known'));
+    currentDeck=[...no,...hard,...unseen,...known];
+  }
+  currentIdx=0;flipped=false;updateModeCounts();renderSRBanner();renderCard();
+}
+
+function updateModeCounts(){
+  const base=filteredVocab();
+  const now=Date.now();
+  const due=base.filter(v=>{const s=srData[v.word];return !s||now>=s.nextReview;});
+  document.getElementById('mc-all').textContent='\n'+base.length;
+  document.getElementById('mc-due').textContent='\n'+due.length+(due.length>0?'🔴':'');
+  document.getElementById('mc-hard').textContent='\n'+base.filter(v=>progress[v.word]==='hard'||progress[v.word]==='no').length;
+  document.getElementById('mc-review').textContent='\n'+base.filter(v=>progress[v.word]==='known').length;
+}
+
+/* ═══════════════════════════════════════════
+   ERROR DETECTION
+═══════════════════════════════════════════ */
+const DETECT_EXERCISES=[
+  {id:'d1',sentence:"He did a decision without consulting the team.",error:"did a decision",correct:"made a decision",explanation:"'make a decision' es la collocation correcta. 'Do' no colocaciona con 'decision'."},
+  {id:'d2',sentence:"She has a very strong knowledge of grammar.",error:"strong knowledge",correct:"good / thorough knowledge",explanation:"'Knowledge' colocaciona con 'good', 'thorough' o 'extensive', no con 'strong'."},
+  {id:'d3',sentence:"The government needs to do an effort to reduce pollution.",error:"do an effort",correct:"make an effort",explanation:"'Make an effort' es la collocation natural. 'Do' no se usa con 'effort'."},
+  {id:'d4',sentence:"We should rise awareness about climate change.",error:"rise awareness",correct:"raise awareness",explanation:"'Raise awareness' (no 'rise'). Rise es intransitivo; raise es transitivo y significa 'elevar'."},
+  {id:'d5',sentence:"He made a party to celebrate his promotion.",error:"made a party",correct:"had / threw a party",explanation:"'Have a party' o 'throw a party' son las collocations naturales. 'Make a party' es un calco del español."},
+  {id:'d6',sentence:"Despite of the rain, they finished the match.",error:"Despite of",correct:"Despite",explanation:"'Despite' nunca va seguido de 'of'. Es directamente 'despite + noun/-ing'. 'In spite of' sí lleva 'of'."},
+  {id:'d7',sentence:"She is very emphatic with her students.",error:"emphatic",correct:"empathetic",explanation:"'Emphatic' significa 'enfático/contundente'. 'Empathetic' significa 'empático'. Falso amigo del español."},
+  {id:'d8',sentence:"The documents is required by the administration.",error:"is required",correct:"are required",explanation:"'Documents' es plural → 'are required'. Error de concordancia sujeto-verbo."},
+  {id:'d9',sentence:"She will need to request for a student visa.",error:"request for",correct:"apply for",explanation:"'Apply for a visa' es la collocation correcta. 'Request for' no es natural en este contexto."},
+  {id:'d10',sentence:"They did a great progress on the project last week.",error:"did a great progress",correct:"made great progress",explanation:"'Make progress' (no 'do') y 'progress' es incontable (no lleva artículo: ❌ a progress)."},
+  {id:'d11',sentence:"Due to my compromise with the project, I worked overtime.",error:"compromise",correct:"commitment",explanation:"'Compromise' en inglés significa 'acuerdo de concesiones mutuas'. 'Commitment' = compromiso/dedicación."},
+  {id:'d12',sentence:"I am writing to you in concern of the recent changes.",error:"in concern of",correct:"regarding / concerning",explanation:"'In concern of' es un calco del español. En inglés se dice 'regarding' o 'concerning'."},
+  {id:'d13',sentence:"The new policy will have strong consequences on employment.",error:"strong consequences",correct:"serious / significant consequences",explanation:"'Consequences' colocaciona con 'serious', 'significant' o 'major', no con 'strong'."},
+  {id:'d14',sentence:"He is a very actual expert in the field.",error:"actual",correct:"current / leading",explanation:"'Actual' en inglés significa 'real/verdadero', no 'actual/actual'. Falso amigo del español."},
+  {id:'d15',sentence:"She passed the documentation to the committee.",error:"passed the documentation",correct:"submitted the documentation",explanation:"'Submit documentation' es el término formal correcto. 'Pass' es informal y no preciso en contextos académicos."},
+  {id:'d16',sentence:"We need to make a deep research on this topic.",error:"make a deep research",correct:"carry out thorough research",explanation:"'Research' es incontable (sin artículo). 'Carry out research' o 'conduct research', no 'make research'."},
+  {id:'d17',sentence:"The plan didn't materialize because of a lack of funds.",error:null,correct:null,explanation:"Esta frase es correcta. 'Materialize' = hacerse realidad, y la estructura es perfecta."},
+  {id:'d18',sentence:"If he would have studied harder, he would have passed.",error:"would have studied",correct:"had studied",explanation:"En la cláusula 'if' de 3rd conditional: 'If + past perfect' (not 'would have'). ❌ If he would have → ✅ If he had."},
+  {id:'d19',sentence:"She is used to work late every night.",error:"used to work",correct:"used to working",explanation:"'Be used to' va seguido de -ing (gerundio). ❌ used to work → ✅ used to working."},
+  {id:'d20',sentence:"The council undertook a major renovation of the city centre.",error:null,correct:null,explanation:"Esta frase es correcta. 'Undertake' = emprender, y 'undertook' es su pasado irregular correcto."},
+];
+
+let detDeck=[],detIdx=0,detScore=0,detMode='tap',detAnswered=false;
+
+function restartDetect(){
+  detDeck=shuffle([...DETECT_EXERCISES]);
+  detIdx=0;detScore=0;detAnswered=false;
+  document.getElementById('det-score').textContent='0';
+  document.getElementById('det-total').textContent=detDeck.length;
+  renderDetect();
+}
+function setDetMode(m){
+  detMode=m;
+  document.querySelectorAll('[data-detmode]').forEach(b=>b.classList.toggle('active',b.dataset.detmode===m));
+  restartDetect();
+}
+
+function renderDetect(){
+  const area=document.getElementById('det-area');
+  if(detIdx>=detDeck.length){
+    const pct=Math.round((detScore/detDeck.length)*100);
+    area.innerHTML=`<div class="round-done"><div class="big">${pct>=70?'🎉':'💪'}</div><h2>¡Completado!</h2><p>Acertaste <b>${detScore} de ${detDeck.length}</b> (${pct}%)</p><button class="repeat-btn" onclick="restartDetect()">↺ Repetir</button></div>`;
+    return;
+  }
+  detAnswered=false;
+  const ex=detDeck[detIdx];
+  const pct=Math.round((detIdx/detDeck.length)*100);
+  const progHtml=`<div class="prog-row" style="margin-bottom:12px"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div><span class="prog-label">${detIdx+1}/${detDeck.length}</span></div>`;
+
+  if(detMode==='tap') renderDetectTap(ex,progHtml,area);
+  else if(detMode==='mc') renderDetectMC(ex,progHtml,area);
+  else renderDetectCorrect(ex,progHtml,area);
+}
+
+function renderDetectTap(ex,progHtml,area){
+  const hasError=!!ex.error;
+  // Build sentence with clickable words
+  const words=ex.sentence.split(' ');
+  const errorWords=ex.error?ex.error.toLowerCase().split(' '):[];
+  const html=words.map((w,i)=>{
+    const clean=w.replace(/[.,!?;:]/g,'').toLowerCase();
+    const isErr=errorWords.includes(clean);
+    return `<span class="${isErr?'err-word':''}" id="dw-${i}" ${isErr?`onclick="tapWord(${i},true)"`:''} style="cursor:${isErr?'pointer':'default'}">${w} </span>`;
+  }).join('');
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Toca el error</span><span>${hasError?'Hay 1 error':'Puede ser correcta'}</span></div>
+      <div style="font-size:13px;color:var(--text3);margin-bottom:12px;text-align:center">Toca la parte incorrecta, o indica si la frase es correcta</div>
+      <div class="detect-sentence" id="det-sentence">${html}</div>
+      ${hasError
+        ?`<button class="detect-give-up" onclick="detGiveUp()">No encuentro el error → ver respuesta</button>`
+        :`<button class="check-btn" style="margin-top:8px" onclick="detMarkCorrect()">✓ La frase es correcta</button>`
+      }
+      <div id="det-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="det-next" onclick="detNext()">Siguiente →</button>`;
+}
+
+function tapWord(idx,isErr){
+  if(detAnswered)return;
+  if(isErr){detAnswered=true;detScore++;document.getElementById('det-score').textContent=detScore;showDetFeedback(true);}
+}
+function detGiveUp(){
+  if(detAnswered)return;
+  detAnswered=true;showDetFeedback(false);
+}
+function detMarkCorrect(){
+  if(detAnswered)return;
+  detAnswered=true;
+  const ex=detDeck[detIdx];
+  const correct=!ex.error;
+  if(correct)detScore++;
+  document.getElementById('det-score').textContent=detScore;
+  showDetFeedback(correct);
+}
+function showDetFeedback(correct){
+  const ex=detDeck[detIdx];
+  const fb=document.getElementById('det-feedback');
+  const nb=document.getElementById('det-next');
+  if(nb)nb.classList.add('visible');
+  if(!ex.error){
+    fb.innerHTML=`<div class="explanation-box${correct?'':' wrong-ex'}" style="margin-top:12px">
+      <div class="ex-label">${correct?'✓ Correcto — la frase no tiene error':'✗ Incorrecto — la frase es correcta'}</div>
+      ${ex.explanation}</div>`;
+  } else {
+    fb.innerHTML=`<div class="explanation-box${correct?'':' wrong-ex'}" style="margin-top:12px">
+      <div class="ex-label">${correct?'✓ ¡Encontraste el error!':'✗ El error estaba en: "'+ex.error+'"'}</div>
+      ❌ <b>${ex.error}</b> → ✅ <b>${ex.correct}</b><br><br>${ex.explanation}</div>`;
+  }
+}
+
+function renderDetectMC(ex,progHtml,area){
+  const hasError=!!ex.error;
+  // Options: A) the sentence is correct B) error + correction option
+  let opts;
+  if(hasError){
+    opts=shuffle([
+      {text:`"${ex.error}" → debería ser "${ex.correct}"`,isCorrect:true},
+      {text:'La frase es correcta tal como está',isCorrect:false},
+      {text:`"${ex.correct}" → debería ser "${ex.error}"`,isCorrect:false},
+    ]);
+  } else {
+    opts=shuffle([
+      {text:'La frase es correcta tal como está',isCorrect:true},
+      {text:'Hay un error de concordancia verbal',isCorrect:false},
+      {text:'Hay un false friend mal usado',isCorrect:false},
+    ]);
+  }
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Detecta el error</span></div>
+      <div class="detect-sentence">${ex.sentence}</div>
+      <div class="options-grid" id="det-opts">
+        ${opts.map((o,i)=>`<button class="option-btn" onclick="checkDetMC(${i},${o.isCorrect},'${encodeURIComponent(ex.explanation)}')" >${o.text}</button>`).join('')}
+      </div>
+      <div id="det-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="det-next" onclick="detNext()">Siguiente →</button>`;
+}
+
+function checkDetMC(idx,isCorrect,explanation){
+  if(detAnswered)return;
+  detAnswered=true;
+  if(isCorrect)detScore++;
+  document.getElementById('det-score').textContent=detScore;
+  const btns=document.querySelectorAll('#det-opts .option-btn');
+  btns.forEach((b,i)=>{b.disabled=true;if(i===idx)b.classList.add(isCorrect?'correct':'wrong');});
+  const ex=detDeck[detIdx];
+  document.getElementById('det-feedback').innerHTML=`<div class="explanation-box${isCorrect?'':' wrong-ex'}" style="margin-top:12px">
+    <div class="ex-label">${isCorrect?'✓ Correcto':'✗ Incorrecto'}</div>
+    ${ex.error?`❌ <b>${ex.error}</b> → ✅ <b>${ex.correct}</b><br><br>`:''}${decodeURIComponent(explanation)}</div>`;
+  document.getElementById('det-next').classList.add('visible');
+}
+
+function renderDetectCorrect(ex,progHtml,area){
+  area.innerHTML=`${progHtml}
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Corrige la frase</span></div>
+      <div class="detect-sentence">${ex.sentence}</div>
+      ${ex.error
+        ?`<div style="font-size:13px;color:var(--text2);margin-bottom:10px">Escribe la frase corregida (o solo la parte incorrecta):</div>
+          <div class="type-in-wrap">
+            <input class="type-in-input" id="det-input" type="text" placeholder="Escribe la corrección..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkDetCorrect()">
+            <button class="check-btn" onclick="checkDetCorrect()">Comprobar</button>
+          </div>`
+        :`<button class="check-btn" style="margin-top:8px" onclick="detMarkCorrectFree()">✓ La frase es correcta</button>`
+      }
+      <div id="det-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="det-next" onclick="detNext()">Siguiente →</button>`;
+  if(ex.error)setTimeout(()=>{const i=document.getElementById('det-input');if(i)i.focus();},300);
+}
+
+function checkDetCorrect(){
+  if(detAnswered)return;
+  const input=document.getElementById('det-input');
+  if(!input||!input.value.trim())return;
+  detAnswered=true;
+  const ex=detDeck[detIdx];
+  const given=input.value.trim().toLowerCase();
+  const correct=ex.correct?given.includes(ex.correct.toLowerCase().split('/')[0].trim()):false;
+  if(correct)detScore++;
+  document.getElementById('det-score').textContent=detScore;
+  input.disabled=true;document.querySelector('.check-btn').disabled=true;
+  input.classList.add(correct?'correct':'wrong');
+  document.getElementById('det-feedback').innerHTML=`<div class="explanation-box${correct?'':' wrong-ex'}" style="margin-top:12px">
+    <div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto'}</div>
+    ❌ <b>${ex.error}</b> → ✅ <b>${ex.correct}</b><br><br>${ex.explanation}</div>`;
+  document.getElementById('det-next').classList.add('visible');
+}
+function detMarkCorrectFree(){
+  if(detAnswered)return;
+  detAnswered=true;
+  const ex=detDeck[detIdx];
+  const correct=!ex.error;
+  if(correct)detScore++;
+  document.getElementById('det-score').textContent=detScore;
+  showDetFeedback(correct);
+}
+function detNext(){detIdx++;renderDetect();}
+
+/* ═══════════════════════════════════════════
+   SPEAKING SIMULATOR
+═══════════════════════════════════════════ */
+const SPEAKING_QUESTIONS=[
+  {id:'s1',category:'opinion',question:"Do you think technology has improved our lives overall?",context:"Piensa en áreas como comunicación, trabajo, salud y relaciones personales.",tips:["Usa 'On the one hand... on the other hand'","Introduce concesiones: 'While it's true that..., I would argue that...'","Menciona ejemplos concretos"],model:["On the whole, I would argue that technology has had a largely positive impact on our lives, although it is not without its drawbacks.","While it's true that social media can lead to isolation, I would argue that the benefits — particularly in terms of communication and access to information — far outweigh the negatives.","That said, there are growing concerns about digital addiction, which is something policymakers need to address urgently."]},
+  {id:'s2',category:'opinion',question:"Some people believe that learning languages is less important now that technology can translate instantly. To what extent do you agree?",context:"Considera los beneficios del aprendizaje de idiomas más allá de la comunicación básica.",tips:["Matiza tu posición con 'to some extent' o 'while I accept that...'","Menciona beneficios cognitivos y culturales del aprendizaje","Usa hedging: 'It could be argued that...'"],model:["While I accept that translation apps have made basic communication easier, I would strongly disagree with the view that language learning has become redundant.","Learning a language goes far beyond mere translation — it develops cultural empathy, cognitive flexibility, and opens doors to deeper human connections.","Moreover, relying entirely on technology for communication can lead to misunderstandings, particularly in nuanced or high-stakes contexts such as business negotiations or medical consultations."]},
+  {id:'s3',category:'compare',question:"Compare living in a big city versus living in the countryside. What are the main advantages and disadvantages of each?",context:"Puedes estructurar tu respuesta por categorías: trabajo, calidad de vida, servicios, comunidad.",tips:["Usa binomials: 'pros and cons', 'hustle and bustle'","Conectores de contraste: 'whereas', 'in contrast to', 'unlike'","Añade ejemplos personales o hipotéticos"],model:["City life undoubtedly offers a wider range of professional opportunities and cultural activities, though this often comes at the cost of a hectic lifestyle and higher living expenses.","The countryside, on the other hand, provides peace and quiet and a stronger sense of community, but residents may struggle with limited access to services and employment.","Ultimately, the choice depends largely on one's priorities — for career-driven individuals, the city may be more appealing, whereas those who value well-being and quality of life might prefer rural living."]},
+  {id:'s4',category:'compare',question:"How does the education system in Spain compare to what you know about education in other countries?",context:"Puedes comparar métodos de enseñanza, estructura del sistema, valores educativos.",tips:["Usa 'In contrast to...' y 'Similarly...'","Evita generalizaciones absolutas: 'tends to', 'on the whole'","Muestra conocimiento del tema con vocabulario específico"],model:["In Spain, the education system tends to be more exam-focused, placing considerable emphasis on theoretical knowledge rather than critical thinking or practical skills.","In contrast, countries like Finland have adopted a more student-centred approach, with less standardised testing and greater teacher autonomy, which has yielded impressive results in terms of student well-being and performance.","That said, it would be an oversimplification to claim that one system is entirely superior — each reflects the cultural values and priorities of the society it serves."]},
+  {id:'s5',category:'problem',question:"What do you think are the main challenges facing cities today, and what solutions would you suggest?",context:"Piensa en: vivienda, transporte, medioambiente, desigualdad social, gentrificación.",tips:["Estructura: problema → causa → solución","Usa pasivas para propuestas: 'should be implemented', 'needs to be addressed'","Vocabulary: urban sprawl, gentrification, sustainable living"],model:["One of the most pressing issues facing modern cities is the lack of affordable housing, which is being exacerbated by gentrification as wealthier residents displace established communities.","In order to tackle this, local councils need to invest heavily in social housing and implement rent control policies, alongside stricter regulations on short-term lettings such as Airbnb.","Furthermore, improving public transport infrastructure and encouraging the use of renewables could significantly reduce congestion and pollution, making cities more liveable for all residents."]},
+  {id:'s6',category:'problem',question:"Many young people today feel disengaged from politics. What do you think are the causes of this, and how could it be addressed?",context:"Considera factores como la desconfianza en instituciones, redes sociales, falta de representación.",tips:["'This can be attributed to...' para causas","'One potential solution would be to...' para propuestas","Usa 'arguably' y 'it could be claimed that' para matizar"],model:["Political disengagement among young people can be attributed to a combination of factors, including a widespread distrust of political institutions and a perception that politicians fail to represent their interests.","This is arguably compounded by social media, which tends to promote polarised views and short-term thinking, making nuanced political debate increasingly difficult.","One potential solution would be to introduce compulsory civic education in schools, alongside lowering the voting age to 16, which could foster a stronger sense of political responsibility from an early age."]},
+  {id:'s7',category:'describe',question:"Describe a time when you had to resolve a conflict or difficult situation. What did you learn from the experience?",context:"Puedes hablar de conflictos en el trabajo, con amigos, en situaciones académicas.",tips:["Usa narrative tenses: past perfect + past simple","'Looking back...' / 'In retrospect...' para reflexionar","Vocabulary: mediation, resolve, confrontation, productive outcome"],model:["I recall a situation at work where a colleague and I had conflicting views on how to approach a project, which led to a rather heated exchange in a team meeting.","Rather than allowing the situation to escalate, I suggested we meet one-on-one to address our differences constructively, which ultimately led to a more productive outcome for the whole team.","Looking back, I think the experience taught me the importance of active listening and the value of separating personal feelings from professional disagreements — skills that have proved invaluable since."]},
+  {id:'s8',category:'describe',question:"Describe a cultural tradition or practice from your country that you think is particularly meaningful or interesting.",context:"Puede ser una festividad, costumbre social, práctica culinaria o tradición familiar.",tips:["'What makes this particularly special is...' (cleft sentence)","'It's not just about X, but also about Y'","Añade contexto histórico o social"],model:["One tradition I find particularly meaningful is the Spanish custom of gathering for long Sunday lunches with extended family, which I think reflects something fundamental about our culture's relationship with food and community.","What makes this especially significant is that it's not merely about eating — it's about maintaining family bonds and passing down shared stories and values from one generation to the next.","In an increasingly fast-paced world, I believe this kind of ritual serves as an important anchor, reminding us of what truly matters beyond the hustle and bustle of daily life."]},
+  {id:'s9',category:'opinion',question:"To what extent do you think social media has changed the way we communicate?",context:"Piensa en relaciones personales, comunicación profesional, expresión de identidad, desinformación.",tips:["'Fundamentally' y 'profoundly' para intensificar","'That said...' para introducir contraste","Menciona tanto efectos positivos como negativos"],model:["Social media has fundamentally transformed the way we communicate, enabling instant global connectivity that would have been unimaginable just two decades ago.","That said, there is a strong argument that the quality of communication has suffered — many interactions have become superficial, performative, or driven by algorithm-induced echo chambers rather than genuine exchange.","On balance, I would argue that social media is a powerful tool that, used responsibly, can foster community and awareness, but which poses significant risks when it replaces rather than complements face-to-face interaction."]},
+  {id:'s10',category:'compare',question:"Some people prefer to travel to well-known tourist destinations, while others seek out lesser-known places. Compare these two approaches to travel.",context:"Considera comodidad vs autenticidad, impacto económico, experiencia cultural.",tips:["'Whereas those who... tend to...', 'in contrast'","Usa vocab: off the beaten track, tourist trap, authentic experience","Introduce una posición personal al final"],model:["Travelling to well-known destinations offers the reassurance of established infrastructure, a wealth of attractions, and a sense of shared cultural experience, though this often comes with overcrowding and a somewhat commercialised atmosphere.","Seeking out lesser-known places, on the other hand, tends to offer a more authentic encounter with local culture and often proves more economically beneficial to smaller communities.","Personally, I find that the most rewarding trips combine both approaches — using popular destinations as a base while venturing off the beaten track to discover places that haven't yet been shaped by mass tourism."]},
+];
+
+let spDeck=[],spIdx=0,spFilter='all',spAnswering=false;
+
+function restartSpeaking(){
+  const base=spFilter==='all'?SPEAKING_QUESTIONS:SPEAKING_QUESTIONS.filter(q=>q.category===spFilter);
+  spDeck=shuffle([...base]);
+  spIdx=0;spAnswering=false;
+  document.getElementById('sp-current').textContent=spIdx+1;
+  document.getElementById('sp-total').textContent=spDeck.length;
+  renderSpeaking();
+}
+function setSpFilter(f){
+  spFilter=f;
+  document.querySelectorAll('[data-spfilter]').forEach(b=>b.classList.toggle('active',b.dataset.spfilter===f));
+  restartSpeaking();
+}
+
+function renderSpeaking(){
+  const area=document.getElementById('sp-area');
+  if(!spDeck.length){area.innerHTML=`<div class="empty-state"><div class="big">🗣️</div>Sin preguntas para este filtro.</div>`;return;}
+  if(spIdx>=spDeck.length){
+    area.innerHTML=`<div class="round-done"><div class="big">🎓</div><h2>¡Sesión completada!</h2><p>Has practicado las ${spDeck.length} preguntas.</p><button class="repeat-btn" onclick="restartSpeaking()">↺ Repetir</button></div>`;
+    return;
+  }
+  const q=spDeck[spIdx];
+  spAnswering=false;
+  document.getElementById('sp-current').textContent=spIdx+1;
+  document.getElementById('sp-total').textContent=spDeck.length;
+  const catLabel={opinion:'Opinión',compare:'Comparar',problem:'Proponer soluciones',describe:'Describir'}[q.category]||q.category;
+  area.innerHTML=`
+    <div class="rw-card">
+      <div class="quiz-meta"><span>${catLabel}</span><span>C1 Speaking</span></div>
+      <div class="speaking-q">${q.question}</div>
+      ${q.context?`<div class="speaking-context">💡 ${q.context}</div>`:''}
+      <div style="font-size:13px;font-weight:600;color:var(--text3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Puntos clave a incluir:</div>
+      <div class="speaking-tips">${q.tips.map(t=>`<div class="speaking-tip">• ${t}</div>`).join('')}</div>
+      <div style="font-size:13px;color:var(--text2);margin-bottom:8px">Escribe tu respuesta (mínimo 3-4 frases):</div>
+      <textarea class="speaking-input" id="sp-input" placeholder="Escribe tu respuesta aquí...&#10;&#10;Intenta usar las estructuras C1 de los puntos clave."></textarea>
+      <button class="speaking-submit" id="sp-submit" onclick="submitSpeaking()">Obtener feedback de IA ✨</button>
+      <div id="sp-feedback"></div>
+    </div>
+    <div class="nav-row" style="margin-top:12px">
+      <button class="nav-btn" onclick="spPrev()" ${spIdx===0?'disabled':''}>← Anterior</button>
+      <button class="nav-btn" id="sp-next" onclick="spNext()" style="background:var(--accent);color:#fff;border-color:var(--accent)">Siguiente →</button>
+    </div>`;
+}
+
+async function submitSpeaking(){
+  const input=document.getElementById('sp-input');
+  const btn=document.getElementById('sp-submit');
+  if(!input||input.value.trim().length<20){showToast('Escribe al menos 3-4 frases');return;}
+  spAnswering=true;btn.disabled=true;
+  const q=spDeck[spIdx];
+  const fb=document.getElementById('sp-feedback');
+  fb.innerHTML=`<div class="speaking-feedback"><div class="rw-ai-feedback loading"><div class="ex-label">Analizando tu respuesta...</div>Un momento, la IA está evaluando tu nivel C1...</div></div>`;
+  const system=`Eres un examinador de inglés C1 (EOI/Cambridge). Evalúa la respuesta del estudiante y responde SOLO en este JSON (sin markdown):
+{"grammar":0-5,"vocabulary":0-5,"coherence":0-5,"c1_level":0-5,"strengths":"en español","improvements":"en español, 2-3 puntos concretos","model_phrases":["frase C1 de ejemplo 1","frase C1 de ejemplo 2","frase C1 de ejemplo 3"]}
+Sé constructivo y específico. Menciona estructuras C1 concretas que podría usar.`;
+  const user=`Pregunta: "${q.question}"\nRespuesta del estudiante: "${input.value.trim()}"`;
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system,messages:[{role:'user',content:user}]})});
+    const data=await res.json();
+    const text=data.content?.find(c=>c.type==='text')?.text||'{}';
+    let r;
+    try{r=JSON.parse(text.replace(/```json|```/g,'').trim());}
+    catch(e){r={grammar:3,vocabulary:3,coherence:3,c1_level:3,strengths:'Respuesta recibida.',improvements:'No se pudo analizar en detalle.',model_phrases:q.model||[]};}
+    if(!document.getElementById('sp-feedback'))return;
+    const avg=Math.round((r.grammar+r.vocabulary+r.coherence+r.c1_level)/4);
+    const scoreClass=avg>=4?'good':avg>=3?'ok':'bad';
+    const stars='⭐'.repeat(avg)+'☆'.repeat(5-avg);
+    fb.innerHTML=`
+      <div class="speaking-feedback">
+        <div class="sf-score">
+          <div class="sf-pill ${scoreClass}">${stars} ${avg}/5 general</div>
+          <div class="sf-pill ${r.grammar>=4?'good':r.grammar>=3?'ok':'bad'}">Grammar ${r.grammar}/5</div>
+          <div class="sf-pill ${r.vocabulary>=4?'good':r.vocabulary>=3?'ok':'bad'}">Vocab ${r.vocabulary}/5</div>
+          <div class="sf-pill ${r.c1_level>=4?'good':r.c1_level>=3?'ok':'bad'}">C1 Level ${r.c1_level}/5</div>
+        </div>
+        <div class="sf-section">
+          <div class="sf-section-title">✅ Puntos fuertes</div>
+          <div class="sf-text">${r.strengths}</div>
+        </div>
+        <div class="sf-section">
+          <div class="sf-section-title">💡 Mejoras concretas</div>
+          <div class="sf-text">${r.improvements}</div>
+        </div>
+        <div class="sf-section">
+          <div class="sf-section-title">🎯 Frases modelo C1</div>
+          <div class="sf-phrases">${(r.model_phrases||q.model||[]).map(p=>`<div class="sf-phrase">"${p}"</div>`).join('')}</div>
+        </div>
+      </div>`;
+  }catch(e){
+    if(!document.getElementById('sp-feedback'))return;
+    fb.innerHTML=`<div class="speaking-feedback">
+      <div class="sf-section"><div class="sf-section-title">🎯 Frases modelo C1</div>
+      <div class="sf-phrases">${(q.model||[]).map(p=>`<div class="sf-phrase">"${p}"</div>`).join('')}</div></div></div>`;
+  }
+}
+
+function spNext(){spIdx++;renderSpeaking();}
+function spPrev(){if(spIdx>0){spIdx--;renderSpeaking();}}
+
 /* ── INIT ── */
-loadProgress();loadEProgress();buildTheory();restartRewriting();
+loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();
 
 fetch('vocab.json').then(r=>r.json()).then(loadData)
   .catch(()=>{const sv=loadSavedVocab();if(sv)loadData(sv);else{updateGlobalStats();updateModeCounts();}});
