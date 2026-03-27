@@ -3863,6 +3863,300 @@
       "type": "adj",
       "example": "She has a two-year-old daughter who is learning to read.",
       "topic": "Grammar · Compound Adjectives (Rules)"
+    },
+    {
+      "word": "bound to",
+      "translation": "casi seguro que va a pasar / inevitable",
+      "type": "phrase",
+      "example": "It's bound to happen — the signs are all there.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "sure to",
+      "translation": "prácticamente seguro / casi inevitable",
+      "type": "phrase",
+      "example": "She's sure to pass the exam given how hard she's worked.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "due to (adj)",
+      "translation": "esperado / previsto para (adj predicativo)",
+      "type": "phrase",
+      "example": "The report is due to arrive tomorrow.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "very likely",
+      "translation": "muy probable",
+      "type": "phrase",
+      "example": "It's very likely to rain this afternoon.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "likely to",
+      "translation": "probable / con tendencia a",
+      "type": "phrase",
+      "example": "He's likely to be late — he always is.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "unlikely to",
+      "translation": "poco probable",
+      "type": "phrase",
+      "example": "It's unlikely to snow here in July.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "tend to",
+      "translation": "tender a / soler (patrón o hábito)",
+      "type": "phrase",
+      "example": "It tends to rain a lot in October.",
+      "topic": "Grammar · Speculative Language"
+    },
+    {
+      "word": "gentrification",
+      "translation": "gentrificación / transformación de un barrio humilde en uno de clase media-alta",
+      "type": "noun",
+      "example": "Gentrification has pushed many long-term residents out of the city centre.",
+      "topic": "Unit 1 · Urban Planning"
+    },
+    {
+      "word": "there's a real buzz about",
+      "translation": "hay mucho entusiasmo / ambiente animado en torno a",
+      "type": "phrase",
+      "example": "There's a real buzz about the new arts district opening next year.",
+      "topic": "Unit 1 · Describing Cities"
+    },
+    {
+      "word": "estranged",
+      "translation": "distanciado / con relación rota o enfriada",
+      "type": "adj",
+      "example": "He's estranged from his father after a bitter argument.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "confide in",
+      "translation": "confiar en alguien / contarle algo íntimo",
+      "type": "phrase",
+      "example": "She confided in her best friend about her health problems.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "prone to",
+      "translation": "propenso a / con tendencia a",
+      "type": "phrase",
+      "example": "He's prone to exaggerating when he tells stories.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "bubbly",
+      "translation": "alegre y animado / con mucha energía positiva",
+      "type": "adj",
+      "example": "She's bubbly and enthusiastic, which makes her great with clients.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "resilience",
+      "translation": "resiliencia / capacidad de recuperarse de las dificultades",
+      "type": "noun",
+      "example": "Her sheer resilience after the redundancy was impressive.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "not on speaking terms",
+      "translation": "sin hablarse / con la relación rota",
+      "type": "phrase",
+      "example": "They've not been on speaking terms since the argument last Christmas.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "rub off on",
+      "translation": "pegarse / transmitirse (actitud o hábito)",
+      "type": "phrase",
+      "example": "Her enthusiasm really rubs off on the rest of the team.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "see eye to eye",
+      "translation": "estar de acuerdo / compartir la misma opinión",
+      "type": "phrase",
+      "example": "We don't always see eye to eye, but we respect each other.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "at each other's throats",
+      "translation": "discutiendo constantemente / en conflicto continuo",
+      "type": "phrase",
+      "example": "The two colleagues were constantly at each other's throats.",
+      "topic": "Unit 2 · Relationships"
+    },
+    {
+      "word": "conform",
+      "translation": "conformarse / ajustarse a las normas sociales",
+      "type": "verb",
+      "example": "There is pressure on young people to conform to social expectations.",
+      "topic": "Unit 3 · Culture & Identity"
+    },
+    {
+      "word": "banter",
+      "translation": "broma amistosa / intercambio de bromas entre amigos",
+      "type": "noun",
+      "example": "The banter between teammates is part of what makes the group so close.",
+      "topic": "Unit 3 · Culture & Identity"
+    },
+    {
+      "word": "social mobility",
+      "translation": "movilidad social / posibilidad de cambiar de clase social",
+      "type": "noun",
+      "example": "Education is seen as the key driver of social mobility.",
+      "topic": "Unit 3 · Culture & Identity"
+    },
+    {
+      "word": "secular society",
+      "translation": "sociedad laica / no regida por valores religiosos",
+      "type": "noun",
+      "example": "France is known for its commitment to a secular society.",
+      "topic": "Unit 3 · Culture & Identity"
+    },
+    {
+      "word": "bureaucratic red tape",
+      "translation": "burocracia excesiva / trabas administrativas",
+      "type": "phrase",
+      "example": "Setting up a business here involves a lot of bureaucratic red tape.",
+      "topic": "Unit 3 · Culture & Identity"
+    },
+    {
+      "word": "carbon footprint",
+      "translation": "huella de carbono / impacto ambiental de una persona u organización",
+      "type": "noun",
+      "example": "Flying frequently significantly increases your carbon footprint.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "harmful emissions",
+      "translation": "emisiones dañinas / gases que contaminan la atmósfera",
+      "type": "noun",
+      "example": "The factory was fined for releasing harmful emissions into the air.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "deforestation",
+      "translation": "deforestación / tala masiva de bosques",
+      "type": "noun",
+      "example": "Deforestation in the Amazon is accelerating at an alarming rate.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "mitigate climate change",
+      "translation": "mitigar el cambio climático / reducir su impacto",
+      "type": "phrase",
+      "example": "Governments must act urgently to mitigate climate change.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "soaring temperatures",
+      "translation": "temperaturas disparadas / subida extrema de la temperatura",
+      "type": "phrase",
+      "example": "Soaring temperatures this summer have broken all records.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "rising sea levels",
+      "translation": "subida del nivel del mar",
+      "type": "phrase",
+      "example": "Rising sea levels threaten coastal communities around the world.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "acid rain",
+      "translation": "lluvia ácida / lluvia contaminada con sustancias tóxicas",
+      "type": "noun",
+      "example": "Acid rain caused significant damage to forests in the 1980s.",
+      "topic": "Vocabulary · Environment"
+    },
+    {
+      "word": "perpetuate",
+      "translation": "perpetuar / mantener algo que debería desaparecer",
+      "type": "verb",
+      "example": "Media representations often perpetuate harmful stereotypes.",
+      "topic": "Vocabulary · Stereotypes"
+    },
+    {
+      "word": "dispel a myth",
+      "translation": "disipar un mito / demostrar que algo es falso",
+      "type": "phrase",
+      "example": "The research aims to dispel the myth that young people are disengaged.",
+      "topic": "Vocabulary · Stereotypes"
+    },
+    {
+      "word": "reinforce stereotypes",
+      "translation": "reforzar estereotipos / confirmar ideas preconcebidas",
+      "type": "phrase",
+      "example": "These adverts reinforce stereotypes about gender roles.",
+      "topic": "Vocabulary · Stereotypes"
+    },
+    {
+      "word": "undermine achievements",
+      "translation": "socavar logros / restar mérito a lo que alguien ha conseguido",
+      "type": "phrase",
+      "example": "Constant criticism can undermine a student's achievements.",
+      "topic": "Vocabulary · Stereotypes"
+    },
+    {
+      "word": "a major breakthrough",
+      "translation": "un gran avance / descubrimiento o logro importante",
+      "type": "phrase",
+      "example": "Scientists announced a major breakthrough in cancer research.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "pave the way for",
+      "translation": "allanar el camino / abrir posibilidades para algo",
+      "type": "phrase",
+      "example": "This discovery could pave the way for new treatments.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "cutting-edge",
+      "translation": "de vanguardia / lo más avanzado disponible",
+      "type": "adj",
+      "example": "The hospital uses cutting-edge technology for diagnosis.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "the stuff of science fiction",
+      "translation": "propio de la ciencia ficción / lo que parecía imposible",
+      "type": "phrase",
+      "example": "Ten years ago, self-driving cars were the stuff of science fiction.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "foresee",
+      "translation": "prever / anticipar algo que va a ocurrir",
+      "type": "verb",
+      "example": "No one could have foreseen the impact of social media on politics.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "unforeseen consequences",
+      "translation": "consecuencias imprevistas / efectos no anticipados",
+      "type": "phrase",
+      "example": "The policy had several unforeseen consequences.",
+      "topic": "Vocabulary · Technology & Future"
+    },
+    {
+      "word": "tackle",
+      "translation": "abordar / hacer frente a un problema o desafío",
+      "type": "verb",
+      "example": "The council needs to tackle the housing crisis urgently.",
+      "topic": "Vocabulary · Conflict & Resolution"
+    },
+    {
+      "word": "by word of mouth",
+      "translation": "de boca en boca / transmitido oralmente",
+      "type": "phrase",
+      "example": "The legend spread by word of mouth long before it was written down.",
+      "topic": "Unit 1 · Urban Myths"
     }
   ]
 }

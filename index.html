@@ -15,8 +15,28 @@
   --green:#2F9E44;--green-light:#EBFBEE;
   --red:#E03131;--red-light:#FFF5F5;
   --orange:#E67700;--orange-light:#FFF9DB;
-  --card-h:280px;
+  --card-h:300px;
 }
+
+/* ── IRREGULAR VERBS ── */
+.irr-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:12px}
+.irr-infinitive{font-size:30px;font-weight:800;color:var(--accent);margin-bottom:4px;line-height:1.2}
+.irr-translation{font-size:15px;color:var(--text3);margin-bottom:18px}
+.irr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.irr-input-wrap{display:flex;flex-direction:column;gap:4px}
+.irr-label{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}
+.irr-input{width:100%;padding:12px 14px;border-radius:var(--radius);border:2px solid var(--border2);background:var(--bg);color:var(--text);font-size:16px;outline:none;transition:border-color .15s;-webkit-appearance:none;font-weight:600}
+.irr-input:focus{border-color:var(--accent)}
+.irr-input.correct{border-color:var(--green);background:var(--green-light);color:var(--green)}
+.irr-input.wrong{border-color:var(--red);background:var(--red-light);color:var(--red)}
+.irr-input.revealed{border-color:var(--accent);background:var(--accent-light);color:var(--accent);font-weight:700}
+.irr-example{font-size:13px;color:var(--text2);font-style:italic;line-height:1.6;margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px}
+.irr-check-btn{width:100%;padding:14px;border-radius:var(--radius);border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-top:10px}
+.irr-check-btn:active{opacity:.88}
+.irr-check-btn:disabled{opacity:.4;cursor:default}
+.irr-mode-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.irr-mode-bar::-webkit-scrollbar{display:none}
+
 @media(prefers-color-scheme:dark){
   :root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f2f2f7;--text2:#aeaeb2;--text3:#636366;--border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.18);--accent-light:#1a1f4a;--green-light:#0d2e15;--red-light:#2d0f0f;--orange-light:#2d1f00}
 }
@@ -79,7 +99,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .card-phonetic{font-size:14px;color:var(--text2);margin-bottom:6px}
 .card-hint{font-size:12px;color:var(--text3);margin-top:auto;padding-top:8px}
 .card-translation{font-size:clamp(17px,4.5vw,24px);font-weight:700;margin-bottom:10px;line-height:1.4;word-break:break-word;color:var(--text)}
-.card-example{font-size:14px;color:var(--text2);font-style:italic;line-height:1.65;margin-top:8px}
+.card-example{font-size:15px;color:var(--text2);font-style:italic;line-height:1.7;margin-top:10px;padding:0 4px}
 .card-type-badge{font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:10px;font-weight:600}
 .tb-noun{background:#E1F5EE;color:#0F6E56}.tb-verb{background:#EEF2FF;color:#3B5BDB}.tb-adj{background:#FFF9DB;color:#854F0B}.tb-adv{background:#F8F0FC;color:#862E9C}.tb-phrase{background:#E7F5FF;color:#1864AB}.tb-error{background:var(--red-light);color:var(--red)}
 .card-status{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:12px;right:12px;font-size:12px;font-weight:700}
@@ -147,6 +167,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .quiz-next-btn{width:100%;padding:14px;border-radius:var(--radius-lg);border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;margin-top:12px;-webkit-tap-highlight-color:transparent;display:none}
 .quiz-next-btn.visible{display:block}
 .quiz-next-btn:active{opacity:.88}
+
+
+/* ── IRREGULAR VERBS ── */
+.irr-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:12px}
+.irr-infinitive{font-size:30px;font-weight:800;color:var(--accent);margin-bottom:4px;line-height:1.2}
+.irr-translation{font-size:15px;color:var(--text3);margin-bottom:18px}
+.irr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.irr-input-wrap{display:flex;flex-direction:column;gap:4px}
+.irr-label{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}
+.irr-input{width:100%;padding:12px 14px;border-radius:var(--radius);border:2px solid var(--border2);background:var(--bg);color:var(--text);font-size:16px;outline:none;transition:border-color .15s;-webkit-appearance:none;font-weight:600}
+.irr-input:focus{border-color:var(--accent)}
+.irr-input.correct{border-color:var(--green);background:var(--green-light);color:var(--green)}
+.irr-input.wrong{border-color:var(--red);background:var(--red-light);color:var(--red)}
+.irr-input.revealed{border-color:var(--accent);background:var(--accent-light);color:var(--accent);font-weight:700}
+.irr-example{font-size:13px;color:var(--text2);font-style:italic;line-height:1.6;margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:8px}
+.irr-check-btn{width:100%;padding:14px;border-radius:var(--radius);border:none;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-top:10px}
+.irr-check-btn:active{opacity:.88}
+.irr-check-btn:disabled{opacity:.4;cursor:default}
+.irr-mode-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.irr-mode-bar::-webkit-scrollbar{display:none}
 
 /* ── COLLOCATIONS ── */
 .coll-mode-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -271,6 +311,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   <button class="tab-btn"        onclick="switchTab('rewriting')"><span class="tab-icon">✍️</span>Rewrite</button>
   <button class="tab-btn"        onclick="switchTab('detect')"><span class="tab-icon">🔍</span>Detecta</button>
   <button class="tab-btn"        onclick="switchTab('speaking')"><span class="tab-icon">🗣️</span>Speaking</button>
+  <button class="tab-btn"        onclick="switchTab('irregulars')"><span class="tab-icon">🔤</span>Verbos</button>
   <button class="tab-btn"        onclick="switchTab('grammar')"><span class="tab-icon">✏️</span>Quiz</button>
   <button class="tab-btn"        onclick="switchTab('theory')"><span class="tab-icon">📖</span>Teoría</button>
 </div>
@@ -393,6 +434,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   </div>
 </div>
 
+
+<!-- ══ IRREGULAR VERBS ══ -->
+<div class="tab-content" id="tab-irregulars">
+  <div class="coll-header">
+    <div class="coll-score-pill">✓ <span id="irr-score">0</span> / <span id="irr-total">—</span></div>
+    <button class="nav-btn" onclick="restartIrregulars()">↺ Reiniciar</button>
+  </div>
+  <div class="irr-mode-bar">
+    <button class="qtype-btn active" data-imode="all"        onclick="setIrrMode('all')">Todos</button>
+    <button class="qtype-btn"        data-imode="common"     onclick="setIrrMode('common')">Frecuentes</button>
+    <button class="qtype-btn"        data-imode="aaa"        onclick="setIrrMode('aaa')">A-A-A</button>
+    <button class="qtype-btn"        data-imode="abb"        onclick="setIrrMode('abb')">A-B-B</button>
+    <button class="qtype-btn"        data-imode="abc"        onclick="setIrrMode('abc')">A-B-C</button>
+    <button class="qtype-btn"        data-imode="typein"     onclick="setIrrMode('typein')">Escribe</button>
+    <button class="qtype-btn"        data-imode="mc"         onclick="setIrrMode('mc')">Opción múltiple</button>
+  </div>
+  <div id="irr-area">
+    <div class="empty-state"><div class="big">🔤</div>Cargando verbos...</div>
+  </div>
+</div>
+
 <!-- ══ QUIZ ══ -->
 <div class="tab-content" id="tab-grammar">
   <div class="quiz-header">
@@ -424,7 +486,7 @@ const PROGRESS_KEY='vocab_progress_v2',EPROGRESS_KEY='error_progress_v1',VOCAB_K
 
 /* ── UTILS ── */
 function switchTab(tab){
-  const map={flashcards:0,errors:1,collocations:2,rewriting:3,detect:4,speaking:5,grammar:6,theory:7};
+  const map={flashcards:0,errors:1,collocations:2,rewriting:3,detect:4,speaking:5,irregulars:6,grammar:7,theory:8};
   document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===map[tab]));
   document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===map[tab]));
   if(tab==='flashcards') renderSRBanner();
@@ -475,7 +537,7 @@ function buildVocabQuizzes(){
       prompt: `¿Qué significa "${v.word}"?`,
       answer: v.translation.split('/')[0].trim(),
       distractors: shuffle(vocab.filter(o=>o.word!==v.word&&o.translation)).slice(0,3).map(o=>o.translation.split('/')[0].trim()),
-      explanation: v.example?`Ejemplo: "${v.example}"`:'',
+      explanation: v.example ? 'Ejemplo: "' + v.example + '"' : '',
       source:'vocab'
     });
     // Exercise 2: translation → word (type-in, for phrases/patterns)
@@ -487,7 +549,8 @@ function buildVocabQuizzes(){
           prompt: `Completa la frase:\n${exWithBlank}`,
           answer: v.word,
           distractors: shuffle(vocab.filter(o=>o.word!==v.word)).slice(0,3).map(o=>o.word),
-explanation: `${v.translation}${v.example ? ' | "' + v.example + '"' : ''}`,          source:'vocab'
+          explanation: v.translation + (v.example ? ' | "' + v.example + '"' : ''),
+          source:'vocab'
         });
       }
     }
@@ -1066,6 +1129,7 @@ function toggleTheory(idx){
   document.getElementById('tb-'+idx).classList.toggle('open');
 }
 
+
 /* ── COLLOCATIONS ── */
 let collocations=[],collDeck=[],collIdx=0,collScore=0,collMode='complete',collTopic='all',collAnswered=false;
 
@@ -1127,14 +1191,16 @@ function renderCollocation(){
 function renderCollComplete(c,progHtml,area){
   const base=c.verb||c.adjective||c.pattern||'?';
   const target=c.collocate||c.noun||c.object||c.pattern||'';
+  const tE=encodeURIComponent(target),wE=encodeURIComponent(c.word),eE=encodeURIComponent(c.error||'[ninguno]'),xE=encodeURIComponent(c.example||'');
   area.innerHTML=`${progHtml}
     <div class="coll-card">
-      <div class="quiz-meta"><span>${(c.topic||'').replace('Collocations · ','')}</span></div>
-      <div class="coll-base">${base}</div>
-      <div class="coll-hint">${c.translation}</div>
+      <div class="quiz-meta"><span>${(c.topic||''). replace('Collocations · ','')}</span></div>
+      <div class="coll-base">${base} + ___</div>
+      <div class="coll-hint" style="margin-bottom:6px">${c.translation}</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:14px">Escribe el collocate o la frase completa</div>
       <div class="type-in-wrap">
-        <input class="type-in-input" id="coll-input" type="text" placeholder="Completa la collocation..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkCollComplete('${encodeURIComponent(target)}','${encodeURIComponent(c.word)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')">
-        <button class="check-btn" onclick="checkCollComplete('${encodeURIComponent(target)}','${encodeURIComponent(c.word)}','${encodeURIComponent(c.error||'')}','${encodeURIComponent(c.example||'')}')">Comprobar</button>
+        <input class="type-in-input" id="coll-input" type="text" placeholder='p.ej. "${target}" o "${c.word}"' autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkCollComplete('${tE}','${wE}','${eE}','${xE}')">
+        <button class="check-btn" onclick="checkCollComplete('${tE}','${wE}','${eE}','${xE}')">Comprobar</button>
       </div>
       <div id="coll-feedback"></div>
     </div>
@@ -1148,22 +1214,25 @@ function checkCollComplete(target,word,error,example){
   if(!input||!input.value.trim())return;
   collAnswered=true;
   const given=normalise(input.value.trim().toLowerCase());
-  const tgt=decodeURIComponent(target);
-  const fullWord=decodeURIComponent(word);
-  // Accept slash-separated alternatives, case-insensitive, ignore articles
-  const alternatives=tgt.split('/').map(a=>normalise(a.trim().toLowerCase()));
-  const correct=alternatives.some(a=>given===a);
+  const tgt=decodeURIComponent(target);   // e.g. "a mistake"
+  const fullWord=decodeURIComponent(word); // e.g. "make a mistake"
+  // Build all valid answers: just the collocate OR the full collocation
+  const collocateAlts=tgt.split('/').map(a=>normalise(a.trim().toLowerCase()));
+  const fullAlts=fullWord.split('/').map(a=>normalise(a.trim().toLowerCase()));
+  const allAlts=[...collocateAlts,...fullAlts];
+  const correct=allAlts.some(a=>given===a);
   if(correct)collScore++;
   document.getElementById('coll-score').textContent=collScore;
   input.disabled=true;
-  document.querySelector('.check-btn').disabled=true;
+  document.querySelectorAll('.check-btn').forEach(b=>b.disabled=true);
   input.classList.add(correct?'correct':'wrong');
   const fb=document.getElementById('coll-feedback');
   const errText=decodeURIComponent(error);
   const exText=decodeURIComponent(example);
   fb.innerHTML=`
-    <div class="coll-correct" style="margin-top:12px">${correct?'✅':'❌'} ${correct?'Correcto:':'Respuesta:'} <b>${fullWord}</b></div>
-    ${!correct?`<div style="font-size:14px;padding:8px 12px;background:var(--bg2);border-radius:8px;margin-top:6px;color:var(--text2)">Escribiste: <i>${input.value.trim()}</i></div>`:''}
+    <div class="coll-correct" style="margin-top:12px">${correct?'✅ Correcto:':'❌ Respuesta:'} <b>${fullWord}</b></div>
+    <div style="font-size:13px;color:var(--text3);margin-top:4px">(puedes escribir solo "<i>${tgt}</i>" o la frase completa)</div>
+    ${!correct?`<div style="font-size:14px;padding:8px 12px;background:var(--bg2);border-radius:8px;margin-top:8px;color:var(--text2)">Escribiste: <i>${input.value.trim()}</i></div>`:''}
     ${errText?`<div class="coll-error-badge" style="margin-top:8px">${errText}</div>`:''}
     ${exText?`<div class="coll-example" style="margin-top:8px">"${exText}"</div>`:''}`;
   document.getElementById('coll-next').classList.add('visible');
@@ -1767,8 +1836,146 @@ function submitSpeaking(){
 function spNext(){spIdx++;renderSpeaking();}
 function spPrev(){if(spIdx>0){spIdx--;renderSpeaking();}}
 
+
+/* ═══════════════════════════════════════════
+   IRREGULAR VERBS
+═══════════════════════════════════════════ */
+/* ── IRREGULAR VERBS ── */
+const IRREGULAR_VERBS = [
+  ['be', 'was/were', 'been', 'ser/estar', 'She was very tired after the exam.', 'abc', true],
+  ['become', 'became', 'become', 'llegar a ser / convertirse en', 'He became a doctor after years of study.', 'aba', true],
+  ['begin', 'began', 'begun', 'empezar', 'The meeting began at 9 o\'clock.', 'abc', true], // Escapado o\'clock
+  ['break', 'broke', 'broken', 'romper', 'He broke the window by accident.', 'abc', true],
+  ['bring', 'brought', 'brought', 'traer', 'She brought her notes to class.', 'abb', true],
+  ['build', 'built', 'built', 'construir', 'They built a new school in the town.', 'abb', true],
+  ['buy', 'bought', 'bought', 'comprar', 'We bought tickets online last week.', 'abb', true],
+  ['catch', 'caught', 'caught', 'coger / atrapar', 'I caught the bus just in time.', 'abb', true],
+  ['choose', 'chose', 'chosen', 'elegir', 'She chose the most difficult option.', 'abc', true],
+  ['come', 'came', 'come', 'venir', 'They came to the party late.', 'aba', true],
+  ['cost', 'cost', 'cost', 'costar', 'The course cost more than expected.', 'aaa', true],
+  ['cut', 'cut', 'cut', 'cortar', 'She cut the paper into small pieces.', 'aaa', true],
+  ['do', 'did', 'done', 'hacer', 'He did all the exercises carefully.', 'abc', true],
+  ['draw', 'drew', 'drawn', 'dibujar / trazar', 'The scientist drew a clear diagram.', 'abc', false],
+  ['drink', 'drank', 'drunk', 'beber', 'She drank two glasses of water.', 'abc', true],
+  ['drive', 'drove', 'driven', 'conducir', 'He drove to work every day.', 'abc', true],
+  ['eat', 'ate', 'eaten', 'comer', 'We ate at a local restaurant.', 'abc', true],
+  ['fall', 'fell', 'fallen', 'caer', 'He fell off his bike during the race.', 'abc', true],
+  ['feel', 'felt', 'felt', 'sentir / sentirse', 'She felt nervous before the exam.', 'abb', true],
+  ['find', 'found', 'found', 'encontrar', 'I found my keys under the sofa.', 'abb', true],
+  ['get', 'got', 'got', 'obtener / ponerse', 'He got a promotion last month.', 'abb', true],
+  ['give', 'gave', 'given', 'dar', 'She gave an excellent presentation.', 'abc', true],
+  ['go', 'went', 'gone', 'ir', 'They went to the conference together.', 'abc', true],
+  ['grow', 'grew', 'grown', 'crecer', 'The economy grew rapidly that year.', 'abc', true],
+  ['have', 'had', 'had', 'tener', 'She had a great idea during the meeting.', 'abb', true],
+  ['know', 'knew', 'known', 'saber / conocer', 'He knew the answer immediately.', 'abc', true],
+  ['leave', 'left', 'left', 'salir / dejar', 'He left the office early that day.', 'abb', true],
+  ['make', 'made', 'made', 'hacer / fabricar', 'She made a great effort to improve.', 'abb', true],
+  ['say', 'said', 'said', 'decir', 'He said he would be there on time.', 'abb', true],
+  ['see', 'saw', 'seen', 'ver', 'I saw the results of the experiment.', 'abc', true],
+  ['take', 'took', 'taken', 'tomar / llevar', 'She took notes throughout the lecture.', 'abc', true],
+  ['write', 'wrote', 'written', 'escribir', 'She wrote a detailed proposal.', 'abc', true]
+];
+
+let irrDeck = [], irrIdx = 0, irrScore = 0, irrMode = 'all', irrAnswered = false;
+
+function restartIrregulars() {
+    let base = IRREGULAR_VERBS;
+    if (irrMode === 'common') base = IRREGULAR_VERBS.filter(v => v[6]);
+    else if (irrMode === 'aaa') base = IRREGULAR_VERBS.filter(v => v[5] === 'aaa');
+    else if (irrMode === 'abb') base = IRREGULAR_VERBS.filter(v => v[5] === 'abb');
+    else if (irrMode === 'abc') base = IRREGULAR_VERBS.filter(v => v[5] === 'abc' || v[5] === 'aba');
+    
+    irrDeck = shuffle([...base]);
+    irrIdx = 0; irrScore = 0; irrAnswered = false;
+    document.getElementById('irr-score').textContent = '0';
+    document.getElementById('irr-total').textContent = irrDeck.length;
+    renderIrregular();
+}
+
+function setIrrMode(m) {
+    irrMode = m;
+    document.querySelectorAll('[data-imode]').forEach(b => b.classList.toggle('active', b.dataset.imode === m));
+    restartIrregulars();
+}
+
+function renderIrregular() {
+    const area = document.getElementById('irr-area');
+    document.getElementById('irr-score').textContent = irrScore;
+    if (!irrDeck.length) { area.innerHTML = `<div class="empty-state">Sin verbos.</div>`; return; }
+    if (irrIdx >= irrDeck.length) {
+        area.innerHTML = `<div class="round-done"><h2>¡Completado!</h2><button class="repeat-btn" onclick="restartIrregulars()">↺ Repetir</button></div>`;
+        return;
+    }
+    irrAnswered = false;
+    const v = irrDeck[irrIdx];
+    const useMC = (irrMode === 'mc' || (irrMode !== 'typein' && irrIdx % 3 === 0));
+
+    if (useMC) renderIrrMC(v, area);
+    else renderIrrTypeIn(v, area);
+}
+
+function renderIrrTypeIn(v, area) {
+    area.innerHTML = `
+        <div class="irr-card">
+            <div class="irr-infinitive">${v[0]}</div>
+            <div class="irr-translation">${v[3]}</div>
+            <div class="irr-grid">
+                <div class="irr-input-wrap"><div class="irr-label">Past Simple</div><input class="irr-input" id="irr-past" type="text"></div>
+                <div class="irr-input-wrap"><div class="irr-label">Past Participle</div><input class="irr-input" id="irr-pp" type="text"></div>
+            </div>
+            <button class="irr-check-btn" onclick="checkIrrTypeIn('${encodeURIComponent(v[1])}','${encodeURIComponent(v[2])}')">Comprobar</button>
+            <div id="irr-feedback"></div>
+        </div>
+        <button class="quiz-next-btn" id="irr-next" onclick="irrNext()">Siguiente →</button>`;
+}
+
+function checkIrrTypeIn(pE, ppE) {
+    if (irrAnswered) return;
+    irrAnswered = true;
+    const pI = document.getElementById('irr-past'), ppI = document.getElementById('irr-pp');
+    const pOk = normalise(pI.value) === normalise(decodeURIComponent(pE));
+    const ppOk = normalise(ppI.value) === normalise(decodeURIComponent(ppE));
+    if (pOk && ppOk) irrScore++;
+    pI.classList.add(pOk ? 'correct' : 'wrong');
+    ppI.classList.add(ppOk ? 'correct' : 'wrong');
+    if(!pOk) pI.value = decodeURIComponent(pE);
+    if(!ppOk) ppI.value = decodeURIComponent(ppE);
+    document.getElementById('irr-next').classList.add('visible');
+}
+
+function renderIrrMC(v, area) {
+    const others = shuffle(IRREGULAR_VERBS.filter(o => o[0] !== v[0])).slice(0, 3);
+    const opts = shuffle([v[1], ...others.map(o => o[1])]);
+    area.innerHTML = `
+        <div class="irr-card">
+            <div class="irr-infinitive">${v[0]}</div>
+            <div class="options-grid" id="irr-opts">
+                ${opts.map(o => `<button class="option-btn" onclick="checkIrrMC(this,'${encodeURIComponent(v[1])}')">${o}</button>`).join('')}
+            </div>
+            <div id="irr-feedback"></div>
+        </div>
+        <button class="quiz-next-btn" id="irr-next" onclick="irrNext()">Siguiente →</button>`;
+}
+
+function checkIrrMC(btn, pE) {
+    if (irrAnswered) return;
+    irrAnswered = true;
+    const correct = btn.textContent === decodeURIComponent(pE);
+    if (correct) irrScore++;
+    btn.classList.add(correct ? 'correct' : 'wrong');
+    document.getElementById('irr-next').classList.add('visible');
+}
+
+function irrNext() { irrIdx++; renderIrregular(); }
+
 /* ── INIT ── */
-loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();
+window.onload = () => {
+    loadProgress(); loadEProgress(); loadSR(); buildTheory();
+    restartRewriting(); restartDetect(); restartSpeaking(); restartIrregulars();
+    // Aquí puedes añadir tus fetch de JSON si los tienes en el servidor
+};
+/* ── INIT ── */
+loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();restartIrregulars();
 
 fetch('vocab.json').then(r=>r.json()).then(loadData)
   .catch(()=>{const sv=loadSavedVocab();if(sv)loadData(sv);else{updateGlobalStats();updateModeCounts();}});
