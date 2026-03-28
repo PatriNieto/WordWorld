@@ -137,7 +137,7 @@
       "word": "ancient",
       "translation": "antiguo / de muy lejana antigüedad",
       "type": "adj",
-      "example": "The city has an ancient historical centre that dates back 300 years.",
+      "example": "The city has an ancient historical centre that dates back over 2,000 years.",
       "topic": "Unit 1 · Describing Cities"
     },
     {
@@ -3239,6 +3239,76 @@
       "translation": "False friend: empático = empathetic. emphatic (inglés) = enfático, contundente",
       "type": "phrase",
       "example": "❌ She is very emphatic with her students. ✅ She is very empathetic.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ since five years → ✅ for five years",
+      "translation": "since = desde un punto. for = durante un período",
+      "type": "phrase",
+      "example": "❌ She has been working here since five years. ✅ She has been working here for five years.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ used to drive → ✅ used to driving",
+      "translation": "be used to + -ing (estar acostumbrado)",
+      "type": "phrase",
+      "example": "❌ I am not used to drive on the left. ✅ I am not used to driving on the left.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ suggested me to go → ✅ suggested that I go",
+      "translation": "suggest + that + subject + bare infinitive (no to-infinitive con objeto)",
+      "type": "phrase",
+      "example": "❌ He suggested me to go to the doctor. ✅ He suggested that I go to the doctor.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ based in → ✅ based on",
+      "translation": "based on = basado en. based in = ubicado en",
+      "type": "phrase",
+      "example": "❌ The book is based in a true story. ✅ The book is based on a true story.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ interested on → ✅ interested in",
+      "translation": "interested in = interesado en",
+      "type": "phrase",
+      "example": "❌ She is interested on art. ✅ She is interested in art.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ am agree → ✅ agree",
+      "translation": "agree no necesita be (es intransitivo)",
+      "type": "phrase",
+      "example": "❌ I am agree with you. ✅ I agree with you.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ like a teacher → ✅ as a teacher",
+      "translation": "as = en calidad de. like = similar a",
+      "type": "phrase",
+      "example": "❌ He works like a teacher. ✅ He works as a teacher.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ can to swim → ✅ can swim",
+      "translation": "can + bare infinitive (sin to)",
+      "type": "phrase",
+      "example": "❌ She can to swim very well. ✅ She can swim very well.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ discussed about → ✅ discussed",
+      "translation": "discuss + objeto directo (sin about)",
+      "type": "phrase",
+      "example": "❌ They discussed about the problem. ✅ They discussed the problem.",
+      "topic": "Unit 7 · Common Errors ❌→✅"
+    },
+    {
+      "word": "❌ in Monday → ✅ on Monday",
+      "translation": "on + día de la semana. in + mes/año",
+      "type": "phrase",
+      "example": "❌ The meeting is in Monday. ✅ The meeting is on Monday.",
       "topic": "Unit 7 · Common Errors ❌→✅"
     },
     {
