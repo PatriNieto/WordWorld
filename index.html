@@ -1206,7 +1206,7 @@ function renderCollComplete(c,progHtml,area){
       <div class="coll-hint" style="margin-bottom:6px">${c.translation}</div>
       <div style="font-size:12px;color:var(--text3);margin-bottom:14px">Escribe el collocate o la frase completa</div>
       <div class="type-in-wrap">
-        <input class="type-in-input" id="coll-input" type="text" placeholder='p.ej. "${target}" o "${c.word}"' autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkCollComplete('${tE}','${wE}','${eE}','${xE}')">
+        <input class="type-in-input" id="coll-input" type="text" placeholder="Escribe tu respuesta" autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkCollComplete('${tE}','${wE}','${eE}','${xE}')">
         <button class="check-btn" onclick="checkCollComplete('${tE}','${wE}','${eE}','${xE}')">Comprobar</button>
       </div>
       <div id="coll-feedback"></div>
