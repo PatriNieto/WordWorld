@@ -665,7 +665,11 @@ function flipCard(){
     :`<button class="reveal-btn" onclick="flipCard()">Ver traducción</button>`;
 }
 function rate(val){
-  progress[currentDeck[currentIdx].word]=val;
+  const word=currentDeck[currentIdx] && currentDeck[currentIdx].word;
+  if(word){
+    progress[word]=val;
+    srRate(word,val);
+  }
   saveProgress();updateGlobalStats();updateModeCounts();
   setTimeout(()=>{
     if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();}
@@ -999,7 +1003,7 @@ function renderMatchRound(){
       </div>
       <div id="explanation-area"></div>
     </div>
-    <button class="quiz-next-btn" id="next-btn" onclick="()=>{}">Siguiente →</button>`;
+    <button class="quiz-next-btn" id="next-btn" onclick="nextQuestion()">Siguiente →</button`;
 }
 
 function selectMatch(side,idx){
@@ -1056,7 +1060,10 @@ function selectMatch(side,idx){
   }
 }
 
-function nextQuestion(){quizIdx++;renderQuiz();}
+function nextQuestion(){
+  if(!quizAnswered) return;
+  quizIdx++;renderQuiz();
+}
 
 function fetchExplanation(ex,chosen,correct){
   const box=document.getElementById('explanation-area');if(!box)return;
@@ -1316,7 +1323,10 @@ function checkNatural(idx,isCorrect,word,error,example){
   document.getElementById('coll-next').classList.add('visible');
 }
 
-function collNext(){collIdx++;renderCollocation();}
+function collNext(){
+  if(!collAnswered) return;
+  collIdx++;renderCollocation();
+}
 
 /* ── REWRITING ── */
 const REWRITE_EXERCISES=[
@@ -1490,24 +1500,6 @@ function renderSRBanner(){
   }
 }
 
-// Patch rate() to also update SR
-const _origRate=window.rate;
-function rate(val){
-  if(currentDeck[currentIdx])srRate(currentDeck[currentIdx].word,val);
-  progress[currentDeck[currentIdx].word]=val;
-  saveProgress();updateGlobalStats();updateModeCounts();
-  setTimeout(()=>{
-    if(currentIdx<currentDeck.length-1){currentIdx++;flipped=false;renderCard();}
-    else{
-      const known=vocab.filter(v=>progress[v.word]==='known').length;
-      document.getElementById('card-area').innerHTML=`
-        <div class="round-done"><div class="big">🎯</div><h2>¡Ronda completada!</h2>
-        <p>${known} de ${vocab.length} palabras dominadas en total.</p>
-        <button class="repeat-btn" onclick="updateDeck()">↺ Repetir</button></div>`;
-    }
-  },200);
-}
-
 /* ═══════════════════════════════════════════
    UPDATE DECK — add 'due' mode
 ═══════════════════════════════════════════ */
@@ -1623,8 +1615,18 @@ function renderDetectTap(ex,progHtml,area){
 }
 
 function tapWord(idx,isErr){
-  if(detAnswered)return;
-  if(isErr){detAnswered=true;detScore++;document.getElementById('det-score').textContent=detScore;showDetFeedback(true);}
+  if(detAnswered) return;
+  detAnswered=true;
+  const el=document.getElementById('dw-'+idx);
+  if(isErr){
+    detScore++;
+    if(el) el.classList.add('found');
+    document.getElementById('det-score').textContent=detScore;
+    showDetFeedback(true);
+  } else {
+    if(el) el.classList.add('missed');
+    showDetFeedback(false);
+  }
 }
 function detGiveUp(){
   if(detAnswered)return;
@@ -1743,7 +1745,10 @@ function detMarkCorrectFree(){
   document.getElementById('det-score').textContent=detScore;
   showDetFeedback(correct);
 }
-function detNext(){detIdx++;renderDetect();}
+function detNext(){
+  if(!detAnswered) return;
+  detIdx++;renderDetect();
+}
 
 /* ═══════════════════════════════════════════
    SPEAKING SIMULATOR
