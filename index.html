@@ -308,6 +308,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   <button class="tab-btn active" onclick="switchTab('flashcards')"><span class="tab-icon">📚</span>Vocab</button>
   <button class="tab-btn"        onclick="switchTab('errors')"><span class="tab-icon">❌</span>Errores</button>
   <button class="tab-btn"        onclick="switchTab('collocations')"><span class="tab-icon">🔗</span>Colocac.</button>
+  <button class="tab-btn"        onclick="switchTab('phrasal')"><span class="tab-icon">🔁</span>Phrasal</button>
   <button class="tab-btn"        onclick="switchTab('rewriting')"><span class="tab-icon">✍️</span>Rewrite</button>
   <button class="tab-btn"        onclick="switchTab('detect')"><span class="tab-icon">🔍</span>Detecta</button>
   <button class="tab-btn"        onclick="switchTab('speaking')"><span class="tab-icon">🗣️</span>Speaking</button>
@@ -379,6 +380,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   <div class="topic-bar" id="coll-topic-bar"></div>
   <div id="coll-area">
     <div class="empty-state"><div class="big">🔗</div>Cargando collocations...</div>
+  </div>
+</div>
+
+<!-- ══ PHRASAL VERBS ══ -->
+<div class="tab-content" id="tab-phrasal">
+  <div class="coll-header">
+    <div class="coll-score-pill">✓ <span id="phrasal-score">0</span> / <span id="phrasal-total">—</span></div>
+    <button class="nav-btn" onclick="restartPhrasal()">↺ Reiniciar</button>
+  </div>
+  <div class="coll-header" style="gap:0;margin-bottom:12px">
+    <div style="font-size:13px;color:var(--text3)">Une la terminación del phrasal verb con su significado.</div>
+  </div>
+  <div id="phrasal-area">
+    <div class="empty-state"><div class="big">🔁</div>Cargando phrasal verbs...</div>
   </div>
 </div>
 
@@ -486,7 +501,7 @@ const PROGRESS_KEY='vocab_progress_v2',EPROGRESS_KEY='error_progress_v1',VOCAB_K
 
 /* ── UTILS ── */
 function switchTab(tab){
-  const map={flashcards:0,errors:1,collocations:2,rewriting:3,detect:4,speaking:5,irregulars:6,grammar:7,theory:8};
+  const map={flashcards:0,errors:1,collocations:2,phrasal:3,rewriting:4,detect:5,speaking:6,irregulars:7,grammar:8,theory:9};
   document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===map[tab]));
   document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===map[tab]));
   if(tab==='flashcards') renderSRBanner();
@@ -1324,6 +1339,216 @@ function renderCollNatural(c,progHtml,area){
     <button class="quiz-next-btn" id="coll-next" onclick="collNext()">Siguiente →</button>`;
 }
 
+const PHRASAL_ROOTS = [
+  {verb:'get', phrasal:[
+      {form:'get up', translation:'levantarse'},
+      {form:'get in', translation:'entrar (coche)'},
+      {form:'get out', translation:'salir'},
+      {form:'get on', translation:'subir (transporte)'},
+      {form:'get off', translation:'bajarse'},
+      {form:'get back', translation:'volver'},
+      {form:'get over', translation:'superar'},
+      {form:'get along (with)', translation:'llevarse bien'},
+      {form:'get by', translation:'arreglárselas'},
+      {form:'get through', translation:'terminar / superar'},
+      {form:'get away', translation:'escaparse'},
+      {form:'get ahead', translation:'progresar'},
+      {form:'get around', translation:'moverse / evitar'}
+  ]},
+  {verb:'take', phrasal:[
+      {form:'take off', translation:'quitarse / despegar'},
+      {form:'take on', translation:'asumir'},
+      {form:'take over', translation:'tomar control'},
+      {form:'take up', translation:'empezar (hobbie)'},
+      {form:'take back', translation:'devolver'},
+      {form:'take out', translation:'sacar / invitar'},
+      {form:'take in', translation:'absorber / entender'},
+      {form:'take down', translation:'bajar / anotar'},
+      {form:'take apart', translation:'desmontar'},
+      {form:'take away', translation:'quitar'}
+  ]},
+  {verb:'make', phrasal:[
+      {form:'make up', translation:'inventar / reconciliarse'},
+      {form:'make out', translation:'entender / distinguir'},
+      {form:'make up for', translation:'compensar'},
+      {form:'make off', translation:'escapar'},
+      {form:'make into', translation:'convertir en'},
+      {form:'make over', translation:'renovar'}
+  ]},
+  {verb:'look', phrasal:[
+      {form:'look for', translation:'buscar'},
+      {form:'look after', translation:'cuidar'},
+      {form:'look up', translation:'buscar información'},
+      {form:'look into', translation:'investigar'},
+      {form:'look forward to', translation:'esperar con ganas'},
+      {form:'look back', translation:'recordar'},
+      {form:'look out', translation:'tener cuidado'},
+      {form:'look down on', translation:'menospreciar'},
+      {form:'look up to', translation:'admirar'}
+  ]},
+  {verb:'put', phrasal:[
+      {form:'put on', translation:'ponerse (ropa)'},
+      {form:'put off', translation:'posponer'},
+      {form:'put away', translation:'guardar'},
+      {form:'put out', translation:'apagar'},
+      {form:'put up with', translation:'tolerar'},
+      {form:'put down', translation:'dejar / menospreciar'},
+      {form:'put forward', translation:'proponer'},
+      {form:'put together', translation:'ensamblar'}
+  ]},
+  {verb:'go', phrasal:[
+      {form:'go on', translation:'continuar'},
+      {form:'go out', translation:'salir'},
+      {form:'go back', translation:'volver'},
+      {form:'go up', translation:'subir'},
+      {form:'go down', translation:'bajar'},
+      {form:'go over', translation:'repasar'},
+      {form:'go through', translation:'pasar por'},
+      {form:'go ahead', translation:'seguir adelante'},
+      {form:'go off', translation:'explotar / sonar'}
+  ]},
+  {verb:'come', phrasal:[
+      {form:'come back', translation:'volver'},
+      {form:'come in', translation:'entrar'},
+      {form:'come out', translation:'salir / publicarse'},
+      {form:'come across', translation:'encontrarse con'},
+      {form:'come up with', translation:'idear'},
+      {form:'come on', translation:'vamos / darse prisa'},
+      {form:'come up', translation:'surgir'},
+      {form:'come down', translation:'bajar'}
+  ]},
+  {verb:'run', phrasal:[
+      {form:'run into', translation:'encontrarse por casualidad'},
+      {form:'run out (of)', translation:'quedarse sin'},
+      {form:'run away', translation:'huir'},
+      {form:'run over', translation:'atropellar / repasar'},
+      {form:'run through', translation:'repasar'},
+      {form:'run across', translation:'encontrar por casualidad'}
+  ]},
+  {verb:'break', phrasal:[
+      {form:'break down', translation:'averiarse / colapsar'},
+      {form:'break up', translation:'romper (relación)'},
+      {form:'break into', translation:'entrar por la fuerza'},
+      {form:'break out', translation:'estallar'},
+      {form:'break off', translation:'interrumpir'}
+  ]},
+  {verb:'give', phrasal:[
+      {form:'give up', translation:'rendirse'},
+      {form:'give in', translation:'ceder'},
+      {form:'give away', translation:'regalar'},
+      {form:'give back', translation:'devolver'},
+      {form:'give out', translation:'repartir'}
+  ]}
+];
+
+let phrasalRootIndex=0,phrasalRoot=null,phrasalPairs=[],phrasalMatchedCount=0,phrasalSide=null,phrasalSelected=null,phrasalLeft=[],phrasalRight=[];
+
+function restartPhrasal(index=0){
+  phrasalRootIndex = index;
+  phrasalRoot = PHRASAL_ROOTS[phrasalRootIndex];
+  phrasalPairs = shuffle(phrasalRoot.phrasal.map((item,i)=>({
+    pairId:i,
+    form:item.form,
+    translation:item.translation
+  })));
+  phrasalMatchedCount = 0;
+  phrasalSide = null;
+  phrasalSelected = null;
+  phrasalLeft = [];
+  phrasalRight = [];
+  document.getElementById('phrasal-score').textContent = '0';
+  document.getElementById('phrasal-total').textContent = phrasalPairs.length;
+  renderPhrasal();
+}
+
+function setPhrasalRoot(index){
+  restartPhrasal(index);
+}
+
+function renderPhrasal(){
+  const area=document.getElementById('phrasal-area');
+  if(!phrasalPairs.length){
+    area.innerHTML=`<div class="empty-state"><div class="big">🔁</div>No hay phrasal verbs.</div>`;
+    return;
+  }
+  if(phrasalMatchedCount>=phrasalPairs.length){
+    area.innerHTML=`<div class="round-done"><div class="big">🎯</div><h2>¡Listo!</h2><p>Has emparejado ${phrasalMatchedCount} phrasal verbs con la raíz <b>${phrasalRoot.verb}</b>.</p><button class="repeat-btn" onclick="restartPhrasal(${phrasalRootIndex})">↺ Repetir</button></div>`;
+    return;
+  }
+  phrasalLeft = shuffle(phrasalPairs.map(item=>({pairId:item.pairId,text:item.form})));
+  phrasalRight = shuffle(phrasalPairs.map(item=>({pairId:item.pairId,text:item.translation})));
+  area.innerHTML=`
+    <div class="prog-row" style="margin-bottom:12px">
+      <div class="prog-bar"><div class="prog-fill" style="width:${Math.round((phrasalMatchedCount/phrasalPairs.length)*100)}%"></div></div>
+      <span class="prog-label">${phrasalMatchedCount}/${phrasalPairs.length}</span>
+    </div>
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Raíz: ${phrasalRoot.verb}</span><span>Phrasal verbs</span></div>
+      <div class="topic-bar" style="margin-top:12px;margin-bottom:14px;justify-content:flex-start;flex-wrap:wrap;gap:6px;">${PHRASAL_ROOTS.map((root,ri)=>`<button class="topic-btn${ri===phrasalRootIndex?' active':''}" onclick="setPhrasalRoot(${ri})">${root.verb}</button>`).join('')}</div>
+      <div class="coll-hint" style="margin-bottom:12px">Empareja cada phrasal verb con su significado.</div>
+      <div class="match-grid">
+        <div class="match-col" id="phrasal-left">
+          ${phrasalLeft.map((l,i)=>`<button class="match-item" id="phl-${i}" onclick="selectPhrasal('left',${i})">${l.text}</button>`).join('')}
+        </div>
+        <div class="match-col" id="phrasal-right">
+          ${phrasalRight.map((r,i)=>`<button class="match-item" id="phr-${i}" onclick="selectPhrasal('right',${i})">${r.text}</button>`).join('')}
+        </div>
+      </div>
+      <div id="phrasal-feedback"></div>
+    </div>`;
+}
+
+function selectPhrasal(side,idx){
+  const el=document.getElementById(`ph${side[0]}-${idx}`);
+  if(!el||el.classList.contains('matched')) return;
+  if(phrasalSide===null){
+    phrasalSide=side;phrasalSelected=idx;
+    document.querySelectorAll('#phrasal-area .match-item').forEach(e=>e.classList.remove('selected'));
+    el.classList.add('selected');
+    return;
+  }
+  if(phrasalSide===side){
+    document.querySelectorAll('#phrasal-area .match-item').forEach(e=>e.classList.remove('selected'));
+    phrasalSide=side;phrasalSelected=idx;
+    el.classList.add('selected');
+    return;
+  }
+  const leftIdx = side==='left'?idx:phrasalSelected;
+  const rightIdx = side==='right'?idx:phrasalSelected;
+  const leftItem = phrasalLeft[leftIdx];
+  const rightItem = phrasalRight[rightIdx];
+  const correct = leftItem.pairId===rightItem.pairId;
+  const leftEl = document.getElementById(`phl-${leftIdx}`);
+  const rightEl = document.getElementById(`phr-${rightIdx}`);
+  if(correct){
+    leftEl.classList.add('matched');rightEl.classList.add('matched');
+    leftEl.disabled=true;rightEl.disabled=true;
+    phrasalMatchedCount++;
+    document.getElementById('phrasal-score').textContent=phrasalMatchedCount;
+    document.getElementById('phrasal-feedback').innerHTML=`<div class="explanation-box"><div class="ex-label">✓ ¡Bien!</div>${leftItem.text} = ${rightItem.text}</div>`;
+    updatePhrasalProgress();
+    if(phrasalMatchedCount>=phrasalPairs.length){
+      setTimeout(()=>renderPhrasal(),400);
+      return;
+    }
+  } else {
+    leftEl.classList.add('wrong-flash');rightEl.classList.add('wrong-flash');
+    document.getElementById('phrasal-feedback').innerHTML=`<div class="explanation-box wrong-ex"><div class="ex-label">✗ No coincide</div>Intenta otra combinación.</div>`;
+    setTimeout(()=>{
+      leftEl.classList.remove('wrong-flash');rightEl.classList.remove('wrong-flash');
+      document.querySelectorAll('#phrasal-area .match-item').forEach(e=>e.classList.remove('selected'));
+    },500);
+  }
+  phrasalSide=null;phrasalSelected=null;
+}
+
+function updatePhrasalProgress(){
+  const fill=document.querySelector('#phrasal-area .prog-fill');
+  const label=document.querySelector('#phrasal-area .prog-label');
+  if(fill) fill.style.width=Math.round((phrasalMatchedCount/phrasalPairs.length)*100)+'%';
+  if(label) label.textContent=`${phrasalMatchedCount}/${phrasalPairs.length}`;
+}
+
 function checkNatural(idx,isCorrect,word,error,example){
   if(collAnswered)return;
   collAnswered=true;
@@ -2021,11 +2246,11 @@ function verbNext() { verbIdx++; renderVerb(); }
 /* ── INIT ── */
 window.onload = () => {
     loadProgress(); loadEProgress(); loadSR(); buildTheory();
-    restartRewriting(); restartDetect(); restartSpeaking(); restartVerbs();
+    restartRewriting(); restartDetect(); restartSpeaking(); restartPhrasal(); restartVerbs();
     // Aquí puedes añadir tus fetch de JSON si los tienes en el servidor
 };
 /* ── INIT ── */
-loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();restartVerbs();
+loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();restartPhrasal();restartVerbs();
 
 fetch('vocab.json').then(r=>r.json()).then(loadData)
   .catch(()=>{const sv=loadSavedVocab();if(sv)loadData(sv);else{updateGlobalStats();updateModeCounts();}});
