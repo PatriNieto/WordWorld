@@ -1,0 +1,301 @@
+[
+  {
+    "verb": "get",
+    "phrasal": [
+      { "form": "get up", "translation": "levantarse" },
+      { "form": "get in", "translation": "entrar (en un vehículo)" },
+      { "form": "get out", "translation": "salir" },
+      { "form": "get on", "translation": "subir (a un transporte)" },
+      { "form": "get off", "translation": "bajarse" },
+      { "form": "get back", "translation": "volver" },
+      { "form": "get over", "translation": "superar / recuperarse" },
+      { "form": "get along with", "translation": "llevarse bien con" },
+      { "form": "get by", "translation": "arreglárselas" },
+      { "form": "get through", "translation": "superar / terminar" },
+      { "form": "get away", "translation": "escaparse / irse de vacaciones" },
+      { "form": "get ahead", "translation": "progresar / adelantarse" },
+      { "form": "get around", "translation": "desplazarse / evitar" },
+      { "form": "get across", "translation": "comunicar / hacer entender" },
+      { "form": "get down", "translation": "bajar / deprimirse" }
+    ]
+  },
+  {
+    "verb": "take",
+    "phrasal": [
+      { "form": "take off", "translation": "despegar / quitarse" },
+      { "form": "take on", "translation": "asumir / aceptar" },
+      { "form": "take over", "translation": "tomar control / hacerse cargo" },
+      { "form": "take up", "translation": "empezar (un hobby) / ocupar espacio" },
+      { "form": "take back", "translation": "devolver" },
+      { "form": "take out", "translation": "sacar / invitar a salir" },
+      { "form": "take in", "translation": "absorber / entender" },
+      { "form": "take down", "translation": "bajar / anotar" },
+      { "form": "take apart", "translation": "desmontar / analizar" },
+      { "form": "take away", "translation": "quitar / llevarse" },
+      { "form": "take over from", "translation": "reemplazar a" },
+      { "form": "take up on", "translation": "aceptar (una oferta)" },
+      { "form": "take after", "translation": "parecerse a / heredar rasgos" }
+    ]
+  },
+  {
+    "verb": "make",
+    "phrasal": [
+      { "form": "make up", "translation": "inventar / reconciliarse" },
+      { "form": "make out", "translation": "entender / ver vagamente" },
+      { "form": "make up for", "translation": "compensar / reparar" },
+      { "form": "make off", "translation": "escapar" },
+      { "form": "make into", "translation": "convertir en" },
+      { "form": "make over", "translation": "renovar / cambiar de aspecto" },
+      { "form": "make away with", "translation": "llevar/robar algo" },
+      { "form": "make for", "translation": "dirigirse hacia" },
+      { "form": "make of", "translation": "opinar sobre / entender de" }
+    ]
+  },
+  {
+    "verb": "look",
+    "phrasal": [
+      { "form": "look for", "translation": "buscar" },
+      { "form": "look after", "translation": "cuidar" },
+      { "form": "look up", "translation": "buscar información" },
+      { "form": "look into", "translation": "investigar" },
+      { "form": "look forward to", "translation": "esperar con ganas" },
+      { "form": "look back", "translation": "recordar / mirar atrás" },
+      { "form": "look out", "translation": "tener cuidado / vigilar" },
+      { "form": "look down on", "translation": "menospreciar / mirar con desdén" },
+      { "form": "look up to", "translation": "admirar" },
+      { "form": "look through", "translation": "revisar / hojear" },
+      { "form": "look around", "translation": "mirar alrededor" }
+    ]
+  },
+  {
+    "verb": "put",
+    "phrasal": [
+      { "form": "put on", "translation": "ponerse (ropa)" },
+      { "form": "put off", "translation": "posponer / desagradar" },
+      { "form": "put away", "translation": "guardar" },
+      { "form": "put out", "translation": "apagar / publicar" },
+      { "form": "put up with", "translation": "tolerar / aguantar" },
+      { "form": "put down", "translation": "dejar / menospreciar / anotar" },
+      { "form": "put forward", "translation": "proponer" },
+      { "form": "put together", "translation": "ensamblar / juntar" },
+      { "form": "put up", "translation": "colgar / alojar" },
+      { "form": "put aside", "translation": "apartar / dejar de lado" },
+      { "form": "put back", "translation": "devolver al lugar" }
+    ]
+  },
+  {
+    "verb": "go",
+    "phrasal": [
+      { "form": "go on", "translation": "continuar / ocurrir" },
+      { "form": "go out", "translation": "salir" },
+      { "form": "go back", "translation": "volver / retroceder" },
+      { "form": "go up", "translation": "subir" },
+      { "form": "go down", "translation": "bajar / descender" },
+      { "form": "go over", "translation": "repasar / revisar" },
+      { "form": "go through", "translation": "pasar por / sufrir" },
+      { "form": "go ahead", "translation": "seguir adelante / proceder" },
+      { "form": "go off", "translation": "explotar / sonar / estropearse" },
+      { "form": "go out with", "translation": "salir con (romántica/amistosamente)" },
+      { "form": "go against", "translation": "ir contra / oponerse a" },
+      { "form": "go by", "translation": "pasar (tiempo) / guiarse por" }
+    ]
+  },
+  {
+    "verb": "come",
+    "phrasal": [
+      { "form": "come back", "translation": "volver" },
+      { "form": "come in", "translation": "entrar" },
+      { "form": "come out", "translation": "salir / publicarse / revelar" },
+      { "form": "come across", "translation": "encontrarse con / parecer" },
+      { "form": "come up with", "translation": "idear / proponer" },
+      { "form": "come on", "translation": "vamos / darse prisa" },
+      { "form": "come up", "translation": "surgir / acercarse" },
+      { "form": "come down", "translation": "bajar / decidirse" },
+      { "form": "come over", "translation": "venir / acercarse" },
+      { "form": "come along", "translation": "acompañar / venir" },
+      { "form": "come by", "translation": "visitar / obtener" }
+    ]
+  },
+  {
+    "verb": "run",
+    "phrasal": [
+      { "form": "run into", "translation": "encontrarse por casualidad" },
+      { "form": "run out of", "translation": "quedarse sin" },
+      { "form": "run away", "translation": "huir / escaparse" },
+      { "form": "run over", "translation": "atropellar / repasar" },
+      { "form": "run through", "translation": "repasar / pasar" },
+      { "form": "run across", "translation": "encontrar por casualidad" },
+      { "form": "run by", "translation": "consultar / proponer idea" },
+      { "form": "run down", "translation": "atropellar / criticar / agotarse" },
+      { "form": "run up", "translation": "acumular (deuda)" }
+    ]
+  },
+  {
+    "verb": "break",
+    "phrasal": [
+      { "form": "break down", "translation": "averiarse / colapsar / analizar" },
+      { "form": "break up", "translation": "romper (relación) / terminar" },
+      { "form": "break into", "translation": "entrar por la fuerza / interrumpir" },
+      { "form": "break out", "translation": "estallar / huir" },
+      { "form": "break off", "translation": "interrumpir / romper" },
+      { "form": "break away", "translation": "escapar / separarse" },
+      { "form": "break in", "translation": "dominar / acostumbrar algo nuevo" }
+    ]
+  },
+  {
+    "verb": "give",
+    "phrasal": [
+      { "form": "give up", "translation": "rendirse / abandonar" },
+      { "form": "give in", "translation": "ceder / rendirse" },
+      { "form": "give away", "translation": "regalar / revelar secreto" },
+      { "form": "give back", "translation": "devolver" },
+      { "form": "give out", "translation": "repartir / agotarse" },
+      { "form": "give off", "translation": "emitir (olor/luz)" },
+      { "form": "give over", "translation": "ceder / dedicar" }
+    ]
+  },
+  {
+    "verb": "bring",
+    "phrasal": [
+      { "form": "bring up", "translation": "criar / educar / mencionar" },
+      { "form": "bring back", "translation": "devolver / traer" },
+      { "form": "bring about", "translation": "causar / provocar" },
+      { "form": "bring out", "translation": "sacar al mercado / destacar" },
+      { "form": "bring in", "translation": "traer / introducir" },
+      { "form": "bring over", "translation": "traer" },
+      { "form": "bring forward", "translation": "proponer / adelantar" }
+    ]
+  },
+  {
+    "verb": "set",
+    "phrasal": [
+      { "form": "set up", "translation": "montar / organizar / establecer" },
+      { "form": "set off", "translation": "partir / activar / contrastar" },
+      { "form": "set out", "translation": "empezar / disponer" },
+      { "form": "set back", "translation": "retrasar / costar" },
+      { "form": "set aside", "translation": "apartar / dejar de lado" },
+      { "form": "set down", "translation": "registrar / establecer" },
+      { "form": "set about", "translation": "empezar a hacer" }
+    ]
+  },
+  {
+    "verb": "turn",
+    "phrasal": [
+      { "form": "turn on", "translation": "encender / seducir" },
+      { "form": "turn off", "translation": "apagar / desagradar" },
+      { "form": "turn up", "translation": "aparecer / llegar / subir volumen" },
+      { "form": "turn down", "translation": "rechazar / bajar volumen" },
+      { "form": "turn into", "translation": "convertirse en" },
+      { "form": "turn over", "translation": "dar la vuelta / entregar" },
+      { "form": "turn around", "translation": "girar / cambiar de dirección" },
+      { "form": "turn out", "translation": "resultar ser / apagar luz" }
+    ]
+  },
+  {
+    "verb": "work",
+    "phrasal": [
+      { "form": "work out", "translation": "hacer ejercicio / resolver / resultar" },
+      { "form": "work on", "translation": "trabajar en / mejorar" },
+      { "form": "work for", "translation": "trabajar para" },
+      { "form": "work up", "translation": "desarrollar / provocar" },
+      { "form": "work through", "translation": "resolver / procesar" },
+      { "form": "work at", "translation": "trabajar en / esforzarse" },
+      { "form": "work off", "translation": "quemar / pagar trabajando" }
+    ]
+  },
+  {
+    "verb": "pick",
+    "phrasal": [
+      { "form": "pick up", "translation": "recoger / aprender / mejorar" },
+      { "form": "pick out", "translation": "elegir / seleccionar" },
+      { "form": "pick on", "translation": "meterse con / acosar" },
+      { "form": "pick off", "translation": "eliminar uno a uno" }
+    ]
+  },
+  {
+    "verb": "carry",
+    "phrasal": [
+      { "form": "carry on", "translation": "continuar / comportarse" },
+      { "form": "carry out", "translation": "realizar / ejecutar" },
+      { "form": "carry over", "translation": "trasladar / mantener" },
+      { "form": "carry off", "translation": "llevarse / ganar" }
+    ]
+  },
+  {
+    "verb": "find",
+    "phrasal": [
+      { "form": "find out", "translation": "descubrir / averiguar" },
+      { "form": "find up", "translation": "encontrar hacia arriba" },
+      { "form": "find for", "translation": "decidir a favor de" }
+    ]
+  },
+  {
+    "verb": "call",
+    "phrasal": [
+      { "form": "call off", "translation": "cancelar / suspender" },
+      { "form": "call on", "translation": "visitar / pedir que actúe" },
+      { "form": "call back", "translation": "devolver la llamada / recordar" },
+      { "form": "call up", "translation": "llamar por teléfono / evocar" },
+      { "form": "call in", "translation": "llamar / consultar" },
+      { "form": "call out", "translation": "gritar / sacar a relucir" }
+    ]
+  },
+  {
+    "verb": "hold",
+    "phrasal": [
+      { "form": "hold on", "translation": "esperar / aferrarse / aguantar" },
+      { "form": "hold up", "translation": "sostener / atracar / retrasar" },
+      { "form": "hold back", "translation": "contener / retener / dudar" },
+      { "form": "hold down", "translation": "mantener / sujetar" },
+      { "form": "hold out", "translation": "resistir / ofrecer" }
+    ]
+  },
+  {
+    "verb": "keep",
+    "phrasal": [
+      { "form": "keep on", "translation": "continuar / seguir" },
+      { "form": "keep up", "translation": "mantener el ritmo / continuar" },
+      { "form": "keep off", "translation": "mantenerse alejado" },
+      { "form": "keep out", "translation": "mantener fuera / prohibir entrada" },
+      { "form": "keep back", "translation": "retener / no revelar" }
+    ]
+  },
+  {
+    "verb": "cut",
+    "phrasal": [
+      { "form": "cut off", "translation": "cortar / desconectar" },
+      { "form": "cut down", "translation": "reducir / talar" },
+      { "form": "cut out", "translation": "recortar / eliminar" },
+      { "form": "cut back", "translation": "reducir / disminuir" },
+      { "form": "cut in", "translation": "interrumpir / colarse" }
+    ]
+  },
+  {
+    "verb": "fall",
+    "phrasal": [
+      { "form": "fall apart", "translation": "desmoronarse / descomponerse" },
+      { "form": "fall down", "translation": "caer / fallar" },
+      { "form": "fall off", "translation": "caerse / disminuir" },
+      { "form": "fall out", "translation": "reñir / caerse" },
+      { "form": "fall over", "translation": "caerse / tropezar" }
+    ]
+  },
+  {
+    "verb": "stand",
+    "phrasal": [
+      { "form": "stand up", "translation": "levantarse / defenderse" },
+      { "form": "stand out", "translation": "destacar / resaltar" },
+      { "form": "stand by", "translation": "apoyar / estar listo" },
+      { "form": "stand for", "translation": "representar / tolerar" }
+    ]
+  },
+  {
+    "verb": "pass",
+    "phrasal": [
+      { "form": "pass out", "translation": "desmayarse / distribuir" },
+      { "form": "pass away", "translation": "fallecer" },
+      { "form": "pass by", "translation": "pasar junto a" },
+      { "form": "pass on", "translation": "transmitir / continuar" }
+    ]
+  }
+]

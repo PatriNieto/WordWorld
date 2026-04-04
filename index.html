@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>English C1 Study</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -1339,109 +1341,9 @@ function renderCollNatural(c,progHtml,area){
     <button class="quiz-next-btn" id="coll-next" onclick="collNext()">Siguiente →</button>`;
 }
 
-const PHRASAL_ROOTS = [
-  {verb:'get', phrasal:[
-      {form:'get up', translation:'levantarse'},
-      {form:'get in', translation:'entrar (coche)'},
-      {form:'get out', translation:'salir'},
-      {form:'get on', translation:'subir (transporte)'},
-      {form:'get off', translation:'bajarse'},
-      {form:'get back', translation:'volver'},
-      {form:'get over', translation:'superar'},
-      {form:'get along (with)', translation:'llevarse bien'},
-      {form:'get by', translation:'arreglárselas'},
-      {form:'get through', translation:'terminar / superar'},
-      {form:'get away', translation:'escaparse'},
-      {form:'get ahead', translation:'progresar'},
-      {form:'get around', translation:'moverse / evitar'}
-  ]},
-  {verb:'take', phrasal:[
-      {form:'take off', translation:'quitarse / despegar'},
-      {form:'take on', translation:'asumir'},
-      {form:'take over', translation:'tomar control'},
-      {form:'take up', translation:'empezar (hobbie)'},
-      {form:'take back', translation:'devolver'},
-      {form:'take out', translation:'sacar / invitar'},
-      {form:'take in', translation:'absorber / entender'},
-      {form:'take down', translation:'bajar / anotar'},
-      {form:'take apart', translation:'desmontar'},
-      {form:'take away', translation:'quitar'}
-  ]},
-  {verb:'make', phrasal:[
-      {form:'make up', translation:'inventar / reconciliarse'},
-      {form:'make out', translation:'entender / distinguir'},
-      {form:'make up for', translation:'compensar'},
-      {form:'make off', translation:'escapar'},
-      {form:'make into', translation:'convertir en'},
-      {form:'make over', translation:'renovar'}
-  ]},
-  {verb:'look', phrasal:[
-      {form:'look for', translation:'buscar'},
-      {form:'look after', translation:'cuidar'},
-      {form:'look up', translation:'buscar información'},
-      {form:'look into', translation:'investigar'},
-      {form:'look forward to', translation:'esperar con ganas'},
-      {form:'look back', translation:'recordar'},
-      {form:'look out', translation:'tener cuidado'},
-      {form:'look down on', translation:'menospreciar'},
-      {form:'look up to', translation:'admirar'}
-  ]},
-  {verb:'put', phrasal:[
-      {form:'put on', translation:'ponerse (ropa)'},
-      {form:'put off', translation:'posponer'},
-      {form:'put away', translation:'guardar'},
-      {form:'put out', translation:'apagar'},
-      {form:'put up with', translation:'tolerar'},
-      {form:'put down', translation:'dejar / menospreciar'},
-      {form:'put forward', translation:'proponer'},
-      {form:'put together', translation:'ensamblar'}
-  ]},
-  {verb:'go', phrasal:[
-      {form:'go on', translation:'continuar'},
-      {form:'go out', translation:'salir'},
-      {form:'go back', translation:'volver'},
-      {form:'go up', translation:'subir'},
-      {form:'go down', translation:'bajar'},
-      {form:'go over', translation:'repasar'},
-      {form:'go through', translation:'pasar por'},
-      {form:'go ahead', translation:'seguir adelante'},
-      {form:'go off', translation:'explotar / sonar'}
-  ]},
-  {verb:'come', phrasal:[
-      {form:'come back', translation:'volver'},
-      {form:'come in', translation:'entrar'},
-      {form:'come out', translation:'salir / publicarse'},
-      {form:'come across', translation:'encontrarse con'},
-      {form:'come up with', translation:'idear'},
-      {form:'come on', translation:'vamos / darse prisa'},
-      {form:'come up', translation:'surgir'},
-      {form:'come down', translation:'bajar'}
-  ]},
-  {verb:'run', phrasal:[
-      {form:'run into', translation:'encontrarse por casualidad'},
-      {form:'run out (of)', translation:'quedarse sin'},
-      {form:'run away', translation:'huir'},
-      {form:'run over', translation:'atropellar / repasar'},
-      {form:'run through', translation:'repasar'},
-      {form:'run across', translation:'encontrar por casualidad'}
-  ]},
-  {verb:'break', phrasal:[
-      {form:'break down', translation:'averiarse / colapsar'},
-      {form:'break up', translation:'romper (relación)'},
-      {form:'break into', translation:'entrar por la fuerza'},
-      {form:'break out', translation:'estallar'},
-      {form:'break off', translation:'interrumpir'}
-  ]},
-  {verb:'give', phrasal:[
-      {form:'give up', translation:'rendirse'},
-      {form:'give in', translation:'ceder'},
-      {form:'give away', translation:'regalar'},
-      {form:'give back', translation:'devolver'},
-      {form:'give out', translation:'repartir'}
-  ]}
-];
+let PHRASAL_ROOTS = [];
 
-let phrasalRootIndex=0,phrasalRoot=null,phrasalPairs=[],phrasalMatchedCount=0,phrasalSide=null,phrasalSelected=null,phrasalLeft=[],phrasalRight=[];
+let phrasalRootIndex=0,phrasalRoot=null,phrasalPairs=[],phrasalMatchedCount=0,phrasalSide=null,phrasalSelected=null,phrasalLeft=[],phrasalRight=[],phrasalMode='match',phrasalIdx=0,phrasalScore=0,phrasalAnswered=false;
 
 function restartPhrasal(index=0){
   phrasalRootIndex = index;
@@ -1451,13 +1353,21 @@ function restartPhrasal(index=0){
     form:item.form,
     translation:item.translation
   })));
-  phrasalMatchedCount = 0;
-  phrasalSide = null;
-  phrasalSelected = null;
-  phrasalLeft = [];
-  phrasalRight = [];
-  document.getElementById('phrasal-score').textContent = '0';
-  document.getElementById('phrasal-total').textContent = phrasalPairs.length;
+  if(phrasalMode==='match'){
+    phrasalMatchedCount = 0;
+    phrasalSide = null;
+    phrasalSelected = null;
+    phrasalLeft = [];
+    phrasalRight = [];
+    document.getElementById('phrasal-score').textContent = '0';
+    document.getElementById('phrasal-total').textContent = phrasalPairs.length;
+  } else {
+    phrasalIdx = 0;
+    phrasalScore = 0;
+    phrasalAnswered = false;
+    document.getElementById('phrasal-score').textContent = '0';
+    document.getElementById('phrasal-total').textContent = phrasalPairs.length;
+  }
   renderPhrasal();
 }
 
@@ -1465,12 +1375,39 @@ function setPhrasalRoot(index){
   restartPhrasal(index);
 }
 
+function setPhrasalMode(m){
+  phrasalMode = m;
+  document.querySelectorAll('[data-pmode]').forEach(b=>b.classList.toggle('active',b.dataset.pmode===m));
+  
+  if(m === 'review'){
+    reviewPhrasalFailures(phrasalRoot.verb);
+  } else if(m === 'review-all'){
+    reviewPhrasalFailures(); // No verb parameter = review all
+  } else {
+    restartPhrasal(phrasalRootIndex);
+  }
+}
+
 function renderPhrasal(){
   const area=document.getElementById('phrasal-area');
+  if(!PHRASAL_ROOTS||!PHRASAL_ROOTS.length||!phrasalRoot){
+    area.innerHTML=`<div class="empty-state"><div class="big">⏳</div>Cargando phrasal verbs...</div>`;
+    return;
+  }
   if(!phrasalPairs.length){
     area.innerHTML=`<div class="empty-state"><div class="big">🔁</div>No hay phrasal verbs.</div>`;
     return;
   }
+  if(phrasalMode==='match'){
+    renderPhrasalMatch(area);
+  } else if(phrasalMode==='review' || phrasalMode==='review-all'){
+    renderPhrasalReview(area);
+  } else {
+    renderPhrasalTypeIn(area);
+  }
+}
+
+function renderPhrasalMatch(area){
   if(phrasalMatchedCount>=phrasalPairs.length){
     area.innerHTML=`<div class="round-done"><div class="big">🎯</div><h2>¡Listo!</h2><p>Has emparejado ${phrasalMatchedCount} phrasal verbs con la raíz <b>${phrasalRoot.verb}</b>.</p><button class="repeat-btn" onclick="restartPhrasal(${phrasalRootIndex})">↺ Repetir</button></div>`;
     return;
@@ -1484,7 +1421,8 @@ function renderPhrasal(){
     </div>
     <div class="coll-card">
       <div class="quiz-meta"><span>Raíz: ${phrasalRoot.verb}</span><span>Phrasal verbs</span></div>
-      <div class="topic-bar" style="margin-top:12px;margin-bottom:14px;justify-content:flex-start;flex-wrap:wrap;gap:6px;">${PHRASAL_ROOTS.map((root,ri)=>`<button class="topic-btn${ri===phrasalRootIndex?' active':''}" onclick="setPhrasalRoot(${ri})">${root.verb}</button>`).join('')}</div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none">${PHRASAL_ROOTS.map((root,ri)=>`<button class="topic-btn${ri===phrasalRootIndex?' active':''}" onclick="setPhrasalRoot(${ri})">${root.verb}</button>`).join('')}</div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;flex-shrink:0">${['match','typein','review','review-all'].map(mode=>`<button class="qtype-btn${mode===phrasalMode?' active':''}" data-pmode="${mode}" onclick="setPhrasalMode('${mode}')">${mode==='match'?'Empareja':mode==='typein'?'Escribe':mode==='review'?'Repasar fallos':'Repasar todos'}</button>`).join('')}</div>
       <div class="coll-hint" style="margin-bottom:12px">Empareja cada phrasal verb con su significado.</div>
       <div class="match-grid">
         <div class="match-col" id="phrasal-left">
@@ -1496,6 +1434,114 @@ function renderPhrasal(){
       </div>
       <div id="phrasal-feedback"></div>
     </div>`;
+}
+
+function renderPhrasalTypeIn(area){
+  if(phrasalIdx>=phrasalPairs.length){
+    const pct=Math.round((phrasalScore/phrasalPairs.length)*100);
+    area.innerHTML=`<div class="round-done"><div class="big">${pct>=70?'🎉':'💪'}</div><h2>¡Completado!</h2><p>Acertaste <b>${phrasalScore} de ${phrasalPairs.length}</b> (${pct}%)</p><button class="repeat-btn" onclick="restartPhrasal(${phrasalRootIndex})">↺ Repetir</button></div>`;
+    return;
+  }
+  phrasalAnswered=false;
+  const item=phrasalPairs[phrasalIdx];
+  const pct=Math.round((phrasalIdx/phrasalPairs.length)*100);
+  const baseForm=item.form.replace(/\s+\S+$/,'');
+  area.innerHTML=`
+    <div class="prog-row" style="margin-bottom:12px">
+      <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+      <span class="prog-label">${phrasalIdx+1}/${phrasalPairs.length}</span>
+    </div>
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Raíz: ${phrasalRoot.verb}</span><span>Escribe la terminación</span></div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none">${PHRASAL_ROOTS.map((root,ri)=>`<button class="topic-btn${ri===phrasalRootIndex?' active':''}" onclick="setPhrasalRoot(${ri})">${root.verb}</button>`).join('')}</div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;flex-shrink:0">${['match','typein','review','review-all'].map(mode=>`<button class="qtype-btn${mode===phrasalMode?' active':''}" data-pmode="${mode}" onclick="setPhrasalMode('${mode}')">${mode==='match'?'Empareja':mode==='typein'?'Escribe':mode==='review'?'Repasar fallos':'Repasar todos'}</button>`).join('')}</div>
+      <div class="coll-base">${baseForm} ___</div>
+      <div class="coll-hint" style="margin-bottom:14px">${item.translation}</div>
+      <div class="type-in-wrap">
+        <input class="type-in-input" id="phrasal-input" type="text" placeholder="Escribe la terminación..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkPhrasalTypeIn()">
+        <button class="check-btn" onclick="checkPhrasalTypeIn()">Comprobar</button>
+      </div>
+      <div id="phrasal-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="phrasal-next" onclick="phrasalNext()">Siguiente →</button>`;
+  setTimeout(()=>{const i=document.getElementById('phrasal-input');if(i)i.focus();},300);
+}
+
+function checkPhrasalTypeIn(){
+  if(phrasalAnswered) return;
+  const input=document.getElementById('phrasal-input');
+  if(!input||!input.value.trim()) return;
+  phrasalAnswered=true;
+  const item=phrasalPairs[phrasalIdx];
+  const ending=item.form.split(/\s+/).slice(1).join(' ');
+  const given=normalise(input.value.trim().toLowerCase());
+  const expected=normalise(ending.toLowerCase());
+  const correct=given===expected;
+  if(correct) phrasalScore++;
+  else savePhrasalFailure(item); // Track failed attempt
+  document.getElementById('phrasal-score').textContent=phrasalScore;
+  input.disabled=true;
+  document.querySelector('.check-btn').disabled=true;
+  input.classList.add(correct?'correct':'wrong');
+  const fb=document.getElementById('phrasal-feedback');
+  fb.innerHTML=`<div class="explanation-box${correct?'':' wrong-ex'}" style="margin-top:12px">
+    <div class="ex-label">${correct?'✓ Correcto':'✗ Incorrecto'}</div>
+    ${correct?`${item.form} = ${item.translation}`:`<b>${item.form}</b> = ${item.translation}`}
+  </div>`;
+  document.getElementById('phrasal-next').classList.add('visible');
+}
+
+function phrasalNext(){
+  if(!phrasalAnswered) return;
+  phrasalIdx++;renderPhrasal();
+}
+
+function renderPhrasalReview(area){
+  if(phrasalIdx>=phrasalPairs.length){
+    const pct=Math.round((phrasalScore/phrasalPairs.length)*100);
+    const isReviewAll = phrasalPairs.some(p => p.rootVerb);
+    const completionMessage = isReviewAll 
+      ? '¡Repaso completado!' 
+      : '¡Repaso completado!';
+    const cleanupMessage = isReviewAll
+      ? '<small>Los errores se han limpiado de todas tus listas de repaso.</small>'
+      : '<small>Los errores se han limpiado de tu lista de repaso.</small>';
+    
+    area.innerHTML=`<div class="round-done"><div class="big">${pct>=70?'🎉':'💪'}</div><h2>${completionMessage}</h2><p>Acertaste <b>${phrasalScore} de ${phrasalPairs.length}</b> (${pct}%)<br>${cleanupMessage}</p><button class="repeat-btn" onclick="setPhrasalMode('typein')">Volver al modo normal</button></div>`;
+    
+    if(isReviewAll){
+      // Clear failures for all roots
+      PHRASAL_ROOTS.forEach(root => clearPhrasalFailures(root.verb));
+    } else {
+      clearPhrasalFailures(phrasalRoot.verb);
+    }
+    return;
+  }
+  phrasalAnswered=false;
+  const item=phrasalPairs[phrasalIdx];
+  const pct=Math.round((phrasalIdx/phrasalPairs.length)*100);
+  const baseForm=item.form.replace(/\s+\S+$/,'');
+  const rootDisplay = item.rootVerb ? ` (de "${item.rootVerb}")` : '';
+  
+  area.innerHTML=`
+    <div class="prog-row" style="margin-bottom:12px">
+      <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+      <span class="prog-label">${phrasalIdx+1}/${phrasalPairs.length}</span>
+    </div>
+    <div class="coll-card">
+      <div class="quiz-meta"><span>Repasando fallos${rootDisplay}</span><span>Repasando fallos</span></div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none">${PHRASAL_ROOTS.map((root,ri)=>`<button class="topic-btn${ri===phrasalRootIndex?' active':''}" onclick="setPhrasalRoot(${ri})">${root.verb}</button>`).join('')}</div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;flex-shrink:0">${['match','typein','review','review-all'].map(mode=>`<button class="qtype-btn${mode===phrasalMode?' active':''}" data-pmode="${mode}" onclick="setPhrasalMode('${mode}')">${mode==='match'?'Empareja':mode==='typein'?'Escribe':mode==='review'?'Repasar fallos':'Repasar todos'}</button>`).join('')}</div>
+      <div class="coll-base">${baseForm} ___</div>
+      <div class="coll-hint" style="margin-bottom:14px">${item.translation}</div>
+      <div class="type-in-wrap">
+        <input class="type-in-input" id="phrasal-input" type="text" placeholder="Escribe la terminación..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkPhrasalTypeIn()">
+        <button class="check-btn" onclick="checkPhrasalTypeIn()">Comprobar</button>
+      </div>
+      <div id="phrasal-feedback"></div>
+    </div>
+    <button class="quiz-next-btn" id="phrasal-next" onclick="phrasalNext()">Siguiente →</button>`;
+  setTimeout(()=>{const i=document.getElementById('phrasal-input');if(i)i.focus();},300);
 }
 
 function selectPhrasal(side,idx){
@@ -1532,6 +1578,10 @@ function selectPhrasal(side,idx){
       return;
     }
   } else {
+    // Track failed attempt
+    const failedItem = phrasalPairs.find(p => p.pairId === leftItem.pairId);
+    savePhrasalFailure(failedItem);
+    
     leftEl.classList.add('wrong-flash');rightEl.classList.add('wrong-flash');
     document.getElementById('phrasal-feedback').innerHTML=`<div class="explanation-box wrong-ex"><div class="ex-label">✗ No coincide</div>Intenta otra combinación.</div>`;
     setTimeout(()=>{
@@ -1547,6 +1597,69 @@ function updatePhrasalProgress(){
   const label=document.querySelector('#phrasal-area .prog-label');
   if(fill) fill.style.width=Math.round((phrasalMatchedCount/phrasalPairs.length)*100)+'%';
   if(label) label.textContent=`${phrasalMatchedCount}/${phrasalPairs.length}`;
+}
+
+function savePhrasalFailure(item){
+  const key = `phrasal_failed_${phrasalRoot.verb}`;
+  let failed = JSON.parse(localStorage.getItem(key) || '[]');
+  if(!failed.find(f => f.form === item.form)){
+    failed.push({form: item.form, translation: item.translation});
+    localStorage.setItem(key, JSON.stringify(failed));
+  }
+}
+
+function getPhrasalFailures(verb){
+  const key = `phrasal_failed_${verb}`;
+  return JSON.parse(localStorage.getItem(key) || '[]');
+}
+
+function clearPhrasalFailures(verb){
+  const key = `phrasal_failed_${verb}`;
+  localStorage.removeItem(key);
+}
+
+function reviewPhrasalFailures(verb = null){
+  let failedItems = [];
+  
+  if(verb){
+    // Review failures for a specific verb
+    failedItems = getPhrasalFailures(verb);
+  } else {
+    // Review failures for all verbs
+    PHRASAL_ROOTS.forEach(root => {
+      const rootFailures = getPhrasalFailures(root.verb);
+      failedItems = failedItems.concat(rootFailures.map(item => ({
+        ...item,
+        rootVerb: root.verb
+      })));
+    });
+  }
+  
+  if(failedItems.length === 0){
+    const message = verb 
+      ? `¡Excelente! No tienes errores que repasar para la raíz "${verb}".`
+      : '¡Excelente! No tienes errores que repasar en ninguna raíz.';
+    alert(message);
+    return;
+  }
+  
+  // Switch to review mode
+  phrasalMode = 'review';
+  phrasalPairs = shuffle(failedItems).map((item, i) => ({
+    pairId: i,
+    form: item.form,
+    translation: item.translation,
+    rootVerb: item.rootVerb || verb || phrasalRoot.verb
+  }));
+  
+  if(phrasalPairs.length > 0){
+    phrasalIdx = 0;
+    phrasalScore = 0;
+    phrasalAnswered = false;
+    document.getElementById('phrasal-score').textContent = '0';
+    document.getElementById('phrasal-total').textContent = phrasalPairs.length;
+    renderPhrasal();
+  }
 }
 
 function checkNatural(idx,isCorrect,word,error,example){
@@ -2246,11 +2359,11 @@ function verbNext() { verbIdx++; renderVerb(); }
 /* ── INIT ── */
 window.onload = () => {
     loadProgress(); loadEProgress(); loadSR(); buildTheory();
-    restartRewriting(); restartDetect(); restartSpeaking(); restartPhrasal(); restartVerbs();
+    restartRewriting(); restartDetect(); restartSpeaking(); restartVerbs();
     // Aquí puedes añadir tus fetch de JSON si los tienes en el servidor
 };
 /* ── INIT ── */
-loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();restartPhrasal();restartVerbs();
+loadProgress();loadEProgress();loadSR();buildTheory();restartRewriting();restartDetect();restartSpeaking();restartVerbs();
 
 fetch('vocab.json').then(r=>r.json()).then(loadData)
   .catch(()=>{const sv=loadSavedVocab();if(sv)loadData(sv);else{updateGlobalStats();updateModeCounts();}});
@@ -2261,8 +2374,11 @@ fetch('exercises.json').then(r=>r.json()).then(loadExercises)
 fetch('collocations.json').then(r=>r.json()).then(loadCollocations)
   .catch(()=>document.getElementById('coll-area').innerHTML=`<div class="empty-state"><div class="big">🔗</div>No se pudo cargar collocations.json</div>`);
 
-fetch('500_real_verbs.json').then(r=>r.json()).then(loadVerbs)
-  .catch(() => console.error('Failed to load verbs'));
+fetch('phrasal_verbs_300.json').then(r=>r.json()).then(data=>{
+  PHRASAL_ROOTS=data;
+  if(data&&data.length>0) restartPhrasal();
+})
+  .catch(e=>{console.error('Error cargando phrasal_verbs_300.json:', e); document.getElementById('phrasal-area').innerHTML='<div class="empty-state"><div class="big">❌</div>No se pudo cargar phrasal_verbs_300.json</div>';});
 </script>
 </body>
 </html>
