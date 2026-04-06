@@ -43,7 +43,7 @@
   :root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f2f2f7;--text2:#aeaeb2;--text3:#636366;--border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.18);--accent-light:#1a1f4a;--green-light:#0d2e15;--red-light:#2d0f0f;--orange-light:#2d1f00}
 }
 html{-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;overscroll-behavior:none}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;overscroll-behavior:none;padding-bottom:20px}
 
 /* ── LAYOUT ── */
 .app{max-width:600px;margin:0 auto;padding:env(safe-area-inset-top,16px) 16px env(safe-area-inset-bottom,16px)}
@@ -354,6 +354,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     <button class="qtype-btn active" data-cmode="complete" onclick="setCollMode('complete')">Completa</button>
     <button class="qtype-btn"        data-cmode="mc"       onclick="setCollMode('mc')">Opción múltiple</button>
     <button class="qtype-btn"        data-cmode="natural"  onclick="setCollMode('natural')">Natural vs Raro</button>
+    <button class="qtype-btn"        data-cmode="review"   onclick="setCollMode('review')">Repaso</button>
   </div>
   <div class="topic-bar" id="coll-topic-bar"></div>
   <div id="coll-area">
@@ -1134,7 +1135,7 @@ function toggleTheory(idx){
 
 
 /* ── COLLOCATIONS ── */
-let collocations=[],collDeck=[],collIdx=0,collScore=0,collMode='complete',collTopic='all',collAnswered=false;
+let collocations=[],collDeck=[],collIdx=0,collScore=0,collMode='complete',collTopic='all',collAnswered=false,collProgress={};
 
 function loadCollocations(data){
   collocations=data.collocations||(Array.isArray(data)?data:[]);
@@ -1179,7 +1180,11 @@ function setCollMode(m){
 
 function restartCollocations(){
   const base=collTopic==='all'?collocations:collocations.filter(c=>c.topic===collTopic);
-  collDeck=shuffle([...base]);
+  if(collMode==='review'){
+    collDeck=shuffle(base.filter(c=>collProgress[c.word]==='hard'));
+  } else {
+    collDeck=shuffle([...base]);
+  }
   collIdx=0;collScore=0;collAnswered=false;
   document.getElementById('coll-score').textContent='0';
   document.getElementById('coll-total').textContent=collDeck.length;
@@ -1245,6 +1250,7 @@ function checkCollComplete(target,word,error,example){
   const allAlts=[...collocateAlts,...fullAlts];
   const correct=allAlts.some(a=>given===a);
   if(correct)collScore++;
+  else collProgress[fullWord] = 'hard';
   document.getElementById('coll-score').textContent=collScore;
   input.disabled=true;
   document.querySelectorAll('.check-btn').forEach(b=>b.disabled=true);
@@ -1289,6 +1295,7 @@ function checkCollMC(idx,target,word,error,example){
   const expected=decodeURIComponent(target);
   const correct=chosen===expected;
   if(correct)collScore++;
+  else collProgress[decodeURIComponent(word)] = 'hard';
   document.getElementById('coll-score').textContent=collScore;
   btns.forEach(b=>{b.disabled=true;const v=decodeURIComponent(b.dataset.val);if(v===expected)b.classList.add('correct');else if(b===btns[idx]&&!correct)b.classList.add('wrong');});
   const fb=document.getElementById('coll-feedback');
@@ -1645,6 +1652,7 @@ function checkNatural(idx,isCorrect,word,error,example){
   if(collAnswered)return;
   collAnswered=true;
   if(isCorrect)collScore++;
+  else collProgress[decodeURIComponent(word)] = 'hard';
   document.getElementById('coll-score').textContent=collScore;
   const btns=document.querySelectorAll('#nat-opts .nat-btn');
   btns.forEach((b,i)=>{b.disabled=true;b.classList.add(i===idx?(isCorrect?'nat-correct':'nat-wrong'):(i!==idx?'nat-correct':''));});
