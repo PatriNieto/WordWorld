@@ -308,7 +308,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('flashcards')"><span class="tab-icon">📚</span>Vocab</button>
-  <button class="tab-btn"        onclick="switchTab('errors')"><span class="tab-icon">❌</span>Errores</button>
   <button class="tab-btn"        onclick="switchTab('collocations')"><span class="tab-icon">🔗</span>Colocac.</button>
   <button class="tab-btn"        onclick="switchTab('phrasal')"><span class="tab-icon">🔁</span>Phrasal</button>
   <button class="tab-btn"        onclick="switchTab('rewriting')"><span class="tab-icon">✍️</span>Rewrite</button>
@@ -342,29 +341,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
   <div class="topic-bar" id="topic-bar"></div>
   <div class="card-area" id="card-area">
     <div class="empty-state"><div class="big">📚</div>Cargando vocabulario...</div>
-  </div>
-</div>
-
-<!-- ══ ERRORS ══ -->
-<div class="tab-content" id="tab-errors">
-  <div class="stats-bar">
-    <div class="stats-bar-title">Progreso errores</div>
-    <div class="progress-track"><div class="pt-known" id="ep-known" style="width:0%"></div><div class="pt-hard" id="ep-hard" style="width:0%"></div><div class="pt-no" id="ep-no" style="width:0%"></div></div>
-    <div class="stats-nums">
-      <div class="sn"><div class="sn-dot" style="background:#2F9E44"></div><b id="eg-known">0</b> dominados</div>
-      <div class="sn"><div class="sn-dot" style="background:#E67700"></div><b id="eg-hard">0</b> difíciles</div>
-      <div class="sn"><div class="sn-dot" style="background:var(--bg3);border:1px solid var(--border2)"></div><b id="eg-new">0</b> nuevos</div>
-      <div class="sn" style="margin-left:auto"><b id="eg-total">0</b> total</div>
-    </div>
-  </div>
-  <div class="mode-bar">
-    <button class="mode-btn active" data-emode="all"    onclick="setEMode('all')">Estudiar todo<span class="count" id="emc-all"></span></button>
-    <button class="mode-btn"        data-emode="hard"   onclick="setEMode('hard')">Fallos<span class="count" id="emc-hard"></span></button>
-    <button class="mode-btn"        data-emode="review" onclick="setEMode('review')">Repaso<span class="count" id="emc-review"></span></button>
-  </div>
-  <div class="topic-bar" id="error-topic-bar"></div>
-  <div class="card-area" id="error-card-area">
-    <div class="empty-state"><div class="big">❌</div>Cargando...</div>
   </div>
 </div>
 
@@ -503,7 +479,7 @@ const PROGRESS_KEY='vocab_progress_v2',EPROGRESS_KEY='error_progress_v1',VOCAB_K
 
 /* ── UTILS ── */
 function switchTab(tab){
-  const map={flashcards:0,errors:1,collocations:2,phrasal:3,rewriting:4,detect:5,speaking:6,irregulars:7,grammar:8,theory:9};
+  const map={flashcards:0,collocations:1,phrasal:2,rewriting:3,detect:4,speaking:5,irregulars:6,grammar:7,theory:8};
   document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===map[tab]));
   document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===map[tab]));
   if(tab==='flashcards') renderSRBanner();
@@ -833,6 +809,9 @@ function saveEx(d){try{localStorage.setItem(EXER_KEY,JSON.stringify(d));}catch(e
 
 function loadExercises(data){
   exercises=data.exercises||(Array.isArray(data)?data:[]);
+  if (Array.isArray(window.NEW_EXERCISES_DATA)) {
+    exercises.push(...window.NEW_EXERCISES_DATA);
+  }
   saveEx(data);buildQuizFilters();restartQuiz();
 }
 function buildQuizFilters(){
@@ -1846,16 +1825,8 @@ function srDueWords(){
 }
 
 function renderSRBanner(){
-  const due=srDueWords();
   const banner=document.getElementById('sr-banner');
-  const text=document.getElementById('sr-banner-text');
-  if(!banner)return;
-  if(due.length>0){
-    banner.style.display='flex';
-    text.textContent=`Tienes ${due.length} palabra${due.length===1?'':'s'} pendiente${due.length===1?'':'s'} de repaso hoy`;
-  } else {
-    banner.style.display='none';
-  }
+  if(banner) banner.style.display='none';
 }
 
 /* ═══════════════════════════════════════════
@@ -2374,11 +2345,386 @@ fetch('exercises.json').then(r=>r.json()).then(loadExercises)
 fetch('collocations.json').then(r=>r.json()).then(loadCollocations)
   .catch(()=>document.getElementById('coll-area').innerHTML=`<div class="empty-state"><div class="big">🔗</div>No se pudo cargar collocations.json</div>`);
 
+fetch('500_real_verbs.json').then(r=>r.json()).then(loadVerbs)
+  .catch(()=>{document.getElementById('verb-area').innerHTML=`<div class="empty-state"><div class="big">🔤</div>No se pudo cargar verbos.</div>`;});
+
 fetch('phrasal_verbs_300.json').then(r=>r.json()).then(data=>{
   PHRASAL_ROOTS=data;
   if(data&&data.length>0) restartPhrasal();
 })
   .catch(e=>{console.error('Error cargando phrasal_verbs_300.json:', e); document.getElementById('phrasal-area').innerHTML='<div class="empty-state"><div class="big">❌</div>No se pudo cargar phrasal_verbs_300.json</div>';});
+
+// ═══════════════════════════════════════════
+// PATCH: NUEVOS APUNTES — AÑADIR AL FINAL DEL SCRIPT
+// ═══════════════════════════════════════════
+
+// ── NUEVAS SECCIONES DE TEORÍA ──
+(function() {
+  const NEW_THEORY = [
+    {
+      title: '📰 Writing · Articles (Opinion & Regular)',
+      subtitle: 'Estructura, tono, estadísticas e inversiones',
+      sections: [
+        { label:'tip', labelText:'Dos tipos de artículo', text:'',
+          examples:[
+            { type:'tip', text:'✅ Opinion article: experiencia personal + opinión propia.\n   (p.ej. "Who is your role model?" / "Write about your town")\n\n✅ Regular article: periódico/revista. Opinión imparcial, "voz del pueblo".\n   → "Most students think that..." / "A recent study showed that..."' }
+          ]
+        },
+        { label:'tip', labelText:'Todo artículo debe incluir', text:'',
+          examples:[
+            { type:'good', text:'• Catchy title/headline — llama la atención, sugiere el tema. Preguntas permitidas.\n• Facts, data, percentages, quotes, statistics (pueden ser inventados)\n• 3–5 paragraphs\n• Vocabulary específico + linking words + smart adjectives/idioms\n\n⚠️ TONO: NUNCA totalmente formal. Semiformal/informal e INTERESANTE.' }
+          ]
+        },
+        { label:'tip', labelText:'Jugando con estadísticas (inventadas)', text:'',
+          examples:[
+            { type:'good', text:'"80% of the young people interviewed believe that..."\n"A recent Oxford study revealed/showed/found out that..."\n"Dr. Murray Hoffmann from Cambridge University says \'The crisis is over\'"\n"A research from Crown Labs NY discovered that..."\n"Statistically speaking, in 1959 there were fewer cases of..."' }
+          ]
+        },
+        { label:'tip', labelText:'Inversiones para artículos C1', text:'Añaden dramatismo y nivel.',
+          examples:[
+            { type:'good', text:'✅ Seldom have I witnessed such rapid change.\n✅ No sooner had the pandemic ended than a new crisis emerged.\n✅ Little did we know that AI would transform everything so quickly.\n✅ Not only has technology changed how we work, but it has also redefined how we connect.' }
+          ]
+        }
+      ]
+    },
+    {
+      title: '🔄 Grammar · Inversion (Negative Adverbs)',
+      subtitle: 'Inversión tras adverbios negativos/limitadores — C1/C2',
+      sections: [
+        { label:'tip', labelText:'Estructura básica', text:'Cuando empezamos con adverbio negativo/limitador, invertimos sujeto y auxiliar.',
+          examples:[
+            { type:'tip', text:'Negative adverb + AUXILIARY + SUBJECT + VERB\n\n✅ Never have I seen such a performance.\n✅ Seldom do we get the chance to practice.\n✅ Not only did they rob the bank, but they also got away.' }
+          ]
+        },
+        { label:'tip', labelText:'Tabla: tiempo → auxiliar', text:'',
+          examples:[
+            { type:'tip', text:'Presente simple → do / does\nPasado simple → did\nPasado perfecto → had\nPresente perfecto → have / has\nCondicional / formal → should / were / had' }
+          ]
+        },
+        { label:'tip', labelText:'Relación temporal (TIME)', text:'',
+          examples:[
+            { type:'good', text:'✅ No sooner had I arrived THAN the alarm went off.\n   (NO SOONER... THAN — nunca "when")\n✅ Hardly had I woken up WHEN the fire alarm went off.\n   (HARDLY... WHEN)\n✅ Scarcely had I finished WHEN the examiner announced the end.\n✅ Not since I was at university did I eat at a canteen.\n✅ Only after I had done my chores was I able to cook dinner.' }
+          ]
+        },
+        { label:'tip', labelText:'Frecuencia y cantidad', text:'',
+          examples:[
+            { type:'good', text:'✅ Never have I visited the MoMA.\n✅ Rarely have I cooked bread at home.\n✅ Seldom are we forced to stay overtime.\n✅ Little did she realise what was about to happen.\n✅ Nowhere have I had such bad service.' }
+          ]
+        },
+        { label:'tip', labelText:'Circunstancia / prohibición', text:'',
+          examples:[
+            { type:'good', text:'✅ In no way was I able to convince her.\n✅ Under no circumstances should you sign without reading.\n✅ On no account should the children go on their own.\n✅ At no point did he admit responsibility.' }
+          ]
+        },
+        { label:'tip', labelText:'Condicionales invertidas (muy formal)', text:'Se elimina "if" e invierte el auxiliar.',
+          examples:[
+            { type:'good', text:'✅ Had Mr Chan been kinder, his business would not have collapsed.\n   (= If Mr Chan had been kinder...)\n✅ Should an emergency arise, dial 999.\n   (= If an emergency should arise...)\n✅ Were she more experienced, she would apply.\n   (= If she were more experienced...)' }
+          ]
+        },
+        { label:'bad', labelText:'Errores frecuentes con inversiones', text:'',
+          examples:[
+            { type:'bad', text:'❌ No sooner had they married, did they argue.\n✅ No sooner had they married than they started to argue.\n\n❌ Had Mr Chan been kinder, not would his business have collapsed.\n✅ Had Mr Chan been kinder, his business would not have collapsed.\n\n❌ Not only did she got the job...\n✅ Not only did she get the job... (did → bare infinitive)' }
+          ]
+        }
+      ]
+    },
+    {
+      title: '🎯 Grammar · Uses of Will (Complete)',
+      subtitle: 'Todos los usos de will con matices y ejemplos',
+      sections: [
+        { label:'tip', labelText:'Todos los usos de WILL', text:'',
+          examples:[
+            { type:'tip', text:'PREDICCIÓN (opinión): "I think it will rain." → subjetivo\nDECISIÓN ESPONTÁNEA: "I will call her now." → sin plan previo\nPROMESA: "I will help you." → intención fuerte\nOFRECIMIENTO: "I will carry that for you." → cortés\nHECHOS GENERALES: "Accidents will happen." → formal/neutro\nHÁBITOS IRRITANTES: "He will always complain." → tono de queja\nINSISTENCIA: "She will keep talking." → enfático\nNEGATIVA (won\'t): "He won\'t listen." → resistencia/actitud\nSUPOSICIÓN PRESENTE: "That will be John." → "seguramente es..."\nFUTURO PERFECTO: "She will have finished by then."\nPETICIONES: "Will you help me?" → educado' }
+          ]
+        },
+        { label:'tip', labelText:'Posición del adverbio con will', text:'Después del auxiliar, antes del verbo principal.',
+          examples:[
+            { type:'good', text:'✅ He will usually call if he is going to be late.\n✅ The procedure will generally take half an hour.\n✅ She will sometimes leave a light on to let people know.\n✅ They won\'t usually answer the phone after hours.' }
+          ]
+        },
+        { label:'tip', labelText:'Will vs Going to vs Present tenses', text:'',
+          examples:[
+            { type:'tip', text:'WILL → decisión en el momento / promesas / predicción de opinión\nGOING TO → planes previos / predicción con evidencia visible\nPRESENT CONTINUOUS → planes y arreglos ya fijados con otra persona\nPRESENT SIMPLE → horarios oficiales y programas' },
+            { type:'good', text:'✅ "Look at those clouds! It\'s going to rain." (evidencia → going to)\n✅ "I think it will rain this afternoon." (opinión → will)\n✅ "We are meeting at 8pm." (plan fijado → present continuous)\n✅ "The train leaves at 9." (horario oficial → present simple)' }
+          ]
+        }
+      ]
+    },
+    {
+      title: '🎮 Vocabulary · Sports & Game Idioms',
+      subtitle: 'Idioms de juego y negociación para C1',
+      sections: [
+        { label:'tip', labelText:'13 idioms esenciales con significados', text:'',
+          examples:[
+            { type:'good', text:'Hit the jackpot → lograr éxito inesperado y espectacular\nThrow in the towel → rendirse / tirar la toalla\nPlay your cards right → tomar las decisiones correctas para tener éxito\nUp your game → mejorar el rendimiento en respuesta a la competencia\nPlay second fiddle → papel secundario / puesto inferior\nGame-changer → algo que transforma completamente la situación\nPlay the hand you\'re dealt → aceptar y aprovechar lo que tienes\nAll bets are off → situación donde las reglas habituales ya no aplican\nIn the driver\'s seat → tener el control / tomar las decisiones\nTurn the tables → invertir la situación de desventaja a ventaja\nCall it a day → parar o concluir algo\nPlay hardball → ser duro e inflexible en negociaciones\nThe ball is in your court → te toca a ti actuar / tomar la decisión' }
+          ]
+        }
+      ]
+    },
+    {
+      title: '🔗 Grammar · Linkers & Connectors (Complete)',
+      subtitle: 'Conectores por función — errores críticos',
+      sections: [
+        { label:'tip', labelText:'Añadir información', text:'',
+          examples:[{ type:'good', text:'furthermore / moreover / as well as this / in addition / along with / besides / what is more / not only... but on top of that' }]
+        },
+        { label:'tip', labelText:'Contrastar ideas', text:'',
+          examples:[{ type:'good', text:'whereas / although / yet / however / nonetheless / even though / on the other hand / in contrast / nevertheless / conversely / unlike / while' }]
+        },
+        { label:'tip', labelText:'Causa y consecuencia', text:'',
+          examples:[{ type:'good', text:'since / because / as / consequently / for this reason / as a result / therefore / due to / owing to / considering / in the wake of' }]
+        },
+        { label:'tip', labelText:'Condición', text:'',
+          examples:[{ type:'good', text:'provided that / unless / as long as / so long as / on condition that / whether or not / in order not to / so as not to' }]
+        },
+        { label:'bad', labelText:'Errores críticos con linkers', text:'',
+          examples:[
+            { type:'bad', text:'❌ Despite of the rain → ✅ Despite the rain\n   (despite NUNCA lleva "of")\n\n❌ Despite she was tired → ✅ Although/Even though she was tired\n   (despite + noun/-ing, NO + subject+verb)\n\n❌ However the plan was expensive, it worked.\n✅ Although the plan was expensive, it worked.\n✅ The plan was expensive. However, it worked.\n   (however → nueva oración o tras punto y coma)\n\n❌ In spite of she passed → ✅ In spite of passing / Despite passing' }
+          ]
+        }
+      ]
+    },
+    {
+      title: '💡 Grammar · Modal Verbs for Speculation',
+      subtitle: 'Certeza y probabilidad — presente y pasado',
+      sections: [
+        { label:'tip', labelText:'Expresiones de probabilidad (sin modales)', text:'',
+          examples:[
+            { type:'tip', text:'bound to → ~100% seguro: "It\'s bound to happen"\nsure to → ~100% seguro: "She\'s sure to pass the exam"\ndue to (adj) → esperado: "It\'s due to arrive tomorrow"\nvery likely → muy probable: "It\'s very likely to rain"\nlikely to → probable: "He\'s likely to be late"\nunlikely to → poco probable: "It\'s unlikely to snow here"\ntend to → hábito/patrón: "It tends to rain in October"' }
+          ]
+        },
+        { label:'tip', labelText:'Certeza con modales (presente)', text:'',
+          examples:[
+            { type:'tip', text:'must → seguro positivo: "He must be tired — 12 hours working"\ncan\'t/couldn\'t → seguro negativo: "She can\'t be home"\nshould → se espera: "They should be there by now"\nwould → bastante probable: "That would be the answer"\ncould → posible: "It could be dangerous"\nmay → posible (formal): "He may be right"\nmight → posible (menos seguro): "It might rain later"\ncan → solo preguntas/negativo: "Can it really be true?"' }
+          ]
+        },
+        { label:'tip', labelText:'Especulación sobre el pasado', text:'Modal + have + past participle',
+          examples:[
+            { type:'good', text:'✅ She must have forgotten about the meeting. (certeza positiva)\n✅ He can\'t have meant to offend anyone. (certeza negativa)\n✅ They might have left already. (posibilidad)\n✅ She could have been delayed by traffic. (posibilidad)\n✅ He should have arrived by now — something is wrong. (expectativa)' }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // Añadir las nuevas secciones al array THEORY_DATA existente
+  if (typeof THEORY_DATA !== 'undefined') {
+    THEORY_DATA.push(...NEW_THEORY);
+    buildTheory(); // Reconstruir la teoría con las nuevas secciones
+  }
+})();
+
+// ── NUEVOS EJERCICIOS DE QUIZ ──
+(function() {
+  window.NEW_EXERCISES_DATA = [
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Rewrite using inversion:\n'John had never been to such a fantastic restaurant.'",
+      answer: "Never had John been to such a fantastic restaurant.",
+      distractors: ["Never John had been to such a fantastic restaurant.", "Never John has been to such a restaurant.", "Never did John been to such a restaurant."],
+      explanation: "NEVER + had (aux pasado perfecto) + John + been. Orden: Negative adverb + auxiliary + subject + main verb."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Rewrite using inversion:\n'I in no way want to be associated with this project.'",
+      answer: "In no way do I want to be associated with this project.",
+      distractors: ["In no way I want to be associated.", "In no way I do want to be associated.", "In no way wants I to be associated."],
+      explanation: "IN NO WAY + do (aux presente) + I + want. Presente simple → do/does."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Which word completes this correctly?\n'No sooner had they got married ___ they started to argue.'",
+      answer: "than",
+      distractors: ["when", "that", "but"],
+      explanation: "NO SOONER + had... THAN (siempre 'than'). Compara: HARDLY/SCARCELY + had... WHEN."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Rewrite as formal conditional (without 'if'):\n'If an emergency should arise, dial 999.'",
+      answer: "Should an emergency arise, dial 999.",
+      distractors: ["Had an emergency arisen, dial 999.", "Were an emergency to arise, call 999.", "Should emergency arise, dial 999."],
+      explanation: "SHOULD + subject + bare infinitive (sin 'if'). Para situaciones posibles hipotéticas — muy formal."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Rewrite as inverted 3rd conditional:\n'If he had studied harder, he would have passed.'",
+      answer: "Had he studied harder, he would have passed.",
+      distractors: ["Had he study harder, he would have passed.", "Have he studied harder, he would have passed.", "Should he have studied harder, he would have passed."],
+      explanation: "3rd conditional invertida: HAD + subject + past participle (sin 'if'). La cláusula principal NO cambia."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Choose the correct inversion:\n'I seldom leave my house so early.'",
+      answer: "Seldom do I leave my house so early.",
+      distractors: ["Seldom I do leave my house so early.", "Seldom I leave my house so early.", "Seldom have I left my house so early."],
+      explanation: "SELDOM + do (presente simple) + I + leave. Presente → do/does (no have)."
+    },
+    {
+      topic: "Grammar · Inversion",
+      prompt: "Find the mistake:\n'Not only did she got the job, but she was also offered a bonus.'",
+      answer: "got → get (bare infinitive after 'did')",
+      distractors: ["'did' should be 'has'", "Missing 'also' before 'offered'", "The sentence is correct"],
+      explanation: "Con NOT ONLY + did, el verbo principal va en BARE INFINITIVE: 'did she GET'. 'Did' ya marca el pasado — no hay que marcar el verbo también."
+    },
+    {
+      topic: "Grammar · Uses of Will",
+      prompt: "What use of 'will' is shown?\n'That will be John at the door — he always comes at 7.'",
+      answer: "Supposition / deduction about the present",
+      distractors: ["Future prediction", "Habitual behaviour (annoying)", "Spontaneous decision"],
+      explanation: "'Will' para deducción en el presente = 'That's probably John'. No es una predicción futura sino una suposición sobre lo que está pasando AHORA."
+    },
+    {
+      topic: "Grammar · Uses of Will",
+      prompt: "What use of 'will' is shown?\n'He will keep leaving the lid off the toothpaste — it drives me mad!'",
+      answer: "Repetitive, annoying behaviour",
+      distractors: ["Promise", "Habitual action (neutral)", "Spontaneous decision"],
+      explanation: "'Will' + always/keep para comportamiento repetitivo irritante. El tono implica queja — diferente de 'He usually leaves...' que es neutral."
+    },
+    {
+      topic: "Grammar · Uses of Will",
+      prompt: "Choose the correct future form:\n'Look at those dark clouds! It ___ rain.'",
+      answer: "is going to",
+      distractors: ["will", "will be", "might"],
+      explanation: "'Going to' para predicciones basadas en EVIDENCIA VISIBLE. 'Will' para predicciones de OPINIÓN sin evidencia concreta: 'I think it will rain this afternoon.'"
+    },
+    {
+      topic: "Vocabulary · Idioms",
+      prompt: "Choose the idiom that means 'to give up or admit defeat':",
+      answer: "throw in the towel",
+      distractors: ["hit the jackpot", "play hardball", "call it a day"],
+      explanation: "'Throw in the towel' = rendirse (del boxeo). 'Call it a day' = parar algo (no implica derrota). 'Play hardball' = ser inflexible."
+    },
+    {
+      topic: "Vocabulary · Idioms",
+      prompt: "Choose the idiom that means 'something that dramatically changes a situation':",
+      answer: "game-changer",
+      distractors: ["the ball is in your court", "all bets are off", "play second fiddle"],
+      explanation: "'Game-changer' = factor que transforma completamente el resultado. Muy usado en negocios, tecnología y política."
+    },
+    {
+      topic: "Vocabulary · Idioms",
+      prompt: "Complete the sentence:\n'After years of struggle, she finally ___ when her startup was sold for millions.'",
+      answer: "hit the jackpot",
+      distractors: ["turned the tables", "called it a day", "played hardball"],
+      explanation: "'Hit the jackpot' = lograr éxito inesperado y espectacular — del juego: ganar el premio gordo."
+    },
+    {
+      topic: "Vocabulary · Idioms",
+      prompt: "What does 'the ball is in your court' mean?",
+      answer: "It's your turn to act / make a decision",
+      distractors: ["You are winning the game", "The situation is under control", "You should give up now"],
+      explanation: "'The ball is in your court' = la responsabilidad de actuar ha pasado a ti. Del tenis: cuando la pelota está en tu campo, te toca jugar."
+    },
+    {
+      topic: "Grammar · Linkers",
+      prompt: "Choose the correct linker:\n'___ the rain, they managed to finish the match.'",
+      answer: "Despite",
+      distractors: ["Despite of", "Although", "However"],
+      explanation: "'Despite' + noun/-ing (NUNCA + 'of' y NUNCA + subject+verb). 'Although/even though' sí llevan subject+verb completo."
+    },
+    {
+      topic: "Grammar · Linkers",
+      prompt: "Which sentence uses 'however' CORRECTLY?",
+      answer: "The plan was expensive. However, it proved very effective.",
+      distractors: ["However the plan was expensive, it worked.", "The plan was expensive however it worked.", "It was expensive however proved effective."],
+      explanation: "'However' introduce nueva oración o va tras punto y coma: '. However,' o '; however,'. NO sustituye 'although' dentro de una misma oración."
+    },
+    {
+      topic: "Grammar · Linkers",
+      prompt: "Choose the correct conditional linker:\n'___ you apply now, you won't miss the deadline.'",
+      answer: "Provided that",
+      distractors: ["Unless", "Despite", "Although"],
+      explanation: "'Provided that' = siempre que (condición positiva). 'Unless' = a menos que (condición negativa — si no se cumple, algo malo pasa)."
+    },
+    {
+      topic: "Grammar · Linkers",
+      prompt: "Which linker expresses CONTRAST?\n'She passed the exam ___ not studying much.'",
+      answer: "despite",
+      distractors: ["because of", "provided that", "as a result of"],
+      explanation: "'Despite + -ing' expresa contraste: algo sucedió a pesar de otra cosa. 'Despite not studying much' = aunque no estudió mucho."
+    }
+  ];
+
+  // Añadir al array de ejercicios existente
+  if (typeof exercises !== 'undefined') {
+    exercises.push(...NEW_EXERCISES_DATA);
+    buildQuizFilters();
+  }
+  // También guardar para futuros recargas
+  if (typeof vocabExercisesCache !== 'undefined') {
+    // Merge into the deck on next restart
+  }
+})();
+
+// ── NUEVOS ERRORES DE DETECCIÓN ──
+(function() {
+  const NEW_DETECT = [
+    {
+      id:'d31',
+      sentence: "No sooner had they got married, did they start arguing.",
+      error: "married, did",
+      correct: "married than they",
+      explanation: "'No sooner... than' — NUNCA se usa coma + 'did'. La estructura correcta es: No sooner had [subject] [past participle] THAN [subject] [past simple]."
+    },
+    {
+      id:'d32',
+      sentence: "Despite of the heavy rain, the match continued.",
+      error: "Despite of",
+      correct: "Despite",
+      explanation: "'Despite' NUNCA va seguido de 'of'. Directamente: 'Despite + noun/-ing'. Si quieres usar 'of', usa 'In spite of'."
+    },
+    {
+      id:'d33',
+      sentence: "However the plan was expensive, it proved effective.",
+      error: "However the plan was expensive",
+      correct: "Although the plan was expensive",
+      explanation: "'However' no puede sustituir 'although'. 'However' va al inicio de una nueva oración: 'The plan was expensive. However, it proved effective.'"
+    },
+    {
+      id:'d34',
+      sentence: "Not only did she got the promotion, but she also received a bonus.",
+      error: "did she got",
+      correct: "did she get",
+      explanation: "Con NOT ONLY + did, el verbo principal va en BARE INFINITIVE. 'Did' ya marca el tiempo pasado, así que el verbo no cambia: 'did she GET'."
+    },
+    {
+      id:'d35',
+      sentence: "Look at those clouds! It will rain.",
+      error: "It will rain",
+      correct: "It's going to rain",
+      explanation: "Con evidencia visible, usamos 'going to' para predicciones. 'Will' es para predicciones de opinión sin evidencia concreta. Las nubes = evidencia → 'going to'."
+    },
+    {
+      id:'d36',
+      sentence: "He will leave the lid off the toothpaste — it's so annoying!",
+      error: null,
+      correct: null,
+      explanation: "Esta frase ES CORRECTA. 'Will + always/keep' para comportamiento repetitivo irritante es un uso válido de 'will' en inglés (no es futuro, es queja)."
+    },
+    {
+      id:'d37',
+      sentence: "Seldom I leave my house so early in the morning.",
+      error: "Seldom I leave",
+      correct: "Seldom do I leave",
+      explanation: "Tras 'seldom' (adverbio de frecuencia negativo) al inicio de frase, el auxiliar se invierte: Seldom + DO + I + leave (presente simple → do/does)."
+    },
+    {
+      id:'d38',
+      sentence: "She threw in the towel and hit the jackpot at the same time.",
+      error: null,
+      correct: null,
+      explanation: "Esta frase es gramaticalmente correcta pero conceptualmente contradictoria: 'throw in the towel' = rendirse y 'hit the jackpot' = tener éxito. Son opuestos — en un texto real esto sería un error de lógica, no de gramática."
+    }
+  ];
+
+  // Añadir al array de ejercicios de detección
+  if (typeof DETECT_EXERCISES !== 'undefined') {
+    DETECT_EXERCISES.push(...NEW_DETECT);
+  }
+})();
+
+// ── FIN DEL PATCH ──
+console.log('✅ Patch aplicado: +6 secciones teoría, +18 ejercicios quiz, +8 ejercicios detección');
 </script>
 </body>
 </html>
